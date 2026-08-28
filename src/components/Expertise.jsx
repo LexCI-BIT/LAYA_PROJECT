@@ -44,6 +44,33 @@ const Expertise = () => {
                     <path d="M12 8l4 4-4 4-4-4 4-4z"></path>
                 </svg>
             )
+        },
+        {
+            title: 'Construction',
+            desc: 'End-to-end construction services with quality craftsmanship.',
+            icon: (
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M2 20h20"></path>
+                    <path d="M5 20V10l7-5 7 5v10"></path>
+                    <rect x="9" y="14" width="6" height="6"></rect>
+                    <line x1="12" y1="3" x2="12" y2="5"></line>
+                    <polyline points="3 11 5 10"></polyline>
+                    <polyline points="19 10 21 11"></polyline>
+                </svg>
+            )
+        },
+        {
+            title: 'Glasswork',
+            desc: 'Premium glass installations for elegant, modern spaces.',
+            icon: (
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="1"></rect>
+                    <line x1="12" y1="3" x2="12" y2="21"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="3" x2="12" y2="12"></line>
+                    <line x1="12" y1="12" x2="21" y2="21"></line>
+                </svg>
+            )
         }
     ];
 
@@ -55,7 +82,7 @@ const Expertise = () => {
                 </div>
                 <div className="expertise-grid">
                     {expertiseItems.map((item, index) => (
-                        <div key={index} className={`expertise-card reveal-on-scroll delay-${(index % 4) * 100 + 100}`}>
+                        <div key={index} className={`expertise-card reveal-on-scroll delay-${(index % 3) * 100 + 100}`}>
                             <div className="expertise-icon">{item.icon}</div>
                             <h3 className="expertise-card-title">{item.title}</h3>
                             <p className="expertise-card-desc">{item.desc}</p>
