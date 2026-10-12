@@ -128,15 +128,42 @@
 }
 
 .navbar-logo {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
 
-.navbar-logo h2 {
-  font-size: 1.5rem;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  margin: 0;
-  font-weight: 300;
+.navbar-logo-img {
+  height: 48px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar-logo:hover .navbar-logo-img {
+  transform: scale(1.02);
+}
+
+/* Default state: transparent hero navbar (dark background) */
+.navbar .logo-dark {
+  display: block;
+}
+.navbar .logo-light {
+  display: none;
+}
+
+/* Scrolled state: light navbar */
+.navbar.scrolled .logo-dark {
+  display: none;
+}
+.navbar.scrolled .logo-light {
+  display: block;
+}
+
+.navbar.scrolled .navbar-logo-img {
+  height: 42px;
 }
 
 .nav-links {
@@ -381,9 +408,13 @@
     margin-bottom: 0;
   }
 
-  .navbar-logo h2 {
-    font-size: 1.2rem;
-    letter-spacing: 2px;
+  .navbar-logo-img {
+    height: 38px;
+    max-width: 180px;
+  }
+
+  .navbar.scrolled .navbar-logo-img {
+    height: 34px;
   }
 
   .navbar {

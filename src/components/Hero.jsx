@@ -1,57 +1,107 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Pause, Play } from 'lucide-react';
 import { useModal } from '../context/ModalContext';
 import './Hero.css';
 
+// A showreel of the home: each shot drifts like a slow camera move (`from` -> `to`),
+// then hard-cuts to the next room, looping back to the exterior after the balcony.
+const SHOTS = [
+  { title: 'Exterior', image: '/images/hero/exterior.jpg?v=2', origin: '54% 67%', from: 'scale(1.04)', to: 'scale(1.14)' },
+  { title: 'Entrance Foyer', image: '/images/hero/foyer.jpg', origin: '50% 50%', from: 'scale(1.12) translateX(3%)', to: 'scale(1.12) translateX(-3%)' },
+  { title: 'Living Room', image: '/images/hero/living.jpg', origin: '50% 50%', from: 'scale(1.12) translateX(-3%)', to: 'scale(1.12) translateX(3%)' },
+  { title: 'Kitchen & Dining', image: '/images/hero/kitchen.jpg', origin: '50% 45%', from: 'scale(1.03)', to: 'scale(1.13)' },
+  { title: 'Master Bedroom', image: '/images/hero/bedroom.jpg?v=2', origin: '50% 50%', from: 'scale(1.12) translateX(-3%)', to: 'scale(1.12) translateX(3%)' },
+  { title: 'The Balcony', image: '/images/hero/balcony.jpg?v=2', origin: '50% 55%', from: 'scale(1.15)', to: 'scale(1.03)' },
+];
+
+const SHOT_MS = 3000; // how long each shot runs before the cut
+
 const Hero = () => {
   const { openModal } = useModal();
-  const [scrollY, setScrollY] = useState(0);
+  const sectionRef = useRef(null);
+  const [shot, setShot] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const [inView, setInView] = useState(true);
+  const [reducedMotion] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    if (paused || !inView || reducedMotion) return;
+    const t = setTimeout(() => setShot((s) => (s + 1) % SHOTS.length), SHOT_MS);
+    return () => clearTimeout(t);
+  }, [shot, paused, inView, reducedMotion]);
+
+  // Stop while the hero is off screen, and start again from the exterior when the visitor returns.
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      setInView(entry.isIntersecting);
+      if (!entry.isIntersecting) setShot(0);
+    }, { threshold: 0.25 });
+    observer.observe(sectionRef.current);
+    return () => observer.disconnect();
   }, []);
 
-  // Calculate scale: starts at 1, zooms in slowly as you scroll down
-  const scale = 1 + scrollY * 0.0005;
-  // Calculate vertical parallax for the text content
-  const textTranslateY = scrollY * 0.4;
-  // Fade out text slightly as you scroll down
-  const textOpacity = Math.max(1 - scrollY * 0.002, 0);
-
   return (
-    <section className="hero" id="home">
-      <div 
-        className="hero-background"
-        style={{ 
-          transform: `scale(${scale})`,
-          transformOrigin: 'center center'
-        }}
-      >
-        <div className="hero-overlay"></div>
+    <section ref={sectionRef} className={`hero ${paused ? 'is-paused' : ''}`} id="home">
+      <div className="hero-slides" aria-hidden="true">
+        {SHOTS.map((s, i) => (
+          <div key={s.title} className={`hero-slide ${i === shot ? 'is-active' : ''}`}>
+            <img
+              src={s.image}
+              alt=""
+              fetchPriority={i === 0 ? 'high' : 'auto'}
+              decoding="async"
+              style={{
+                transformOrigin: s.origin,
+                '--shot-from': s.from,
+                '--shot-to': s.to,
+                '--shot-duration': `${SHOT_MS + 400}ms`,
+              }}
+            />
+          </div>
+        ))}
       </div>
+      <div className="hero-overlay"></div>
 
       <div className="hero-content container">
-        <div 
-          className="hero-text animate-in"
-          style={{ 
-            transform: `translateY(${textTranslateY}px)`,
-            opacity: textOpacity
-          }}
-        >
-          <h1 className="hero-title">Precision in Every Detail</h1>
-          <p className="hero-subtitle">
-            Modern aluminium interiors crafted for durability, elegance, and everyday living.
-          </p>
-          <div className="hero-cta">
-            <button onClick={openModal} className="cta-primary">Get Free Consultation</button>
-            <Link to="/projects" className="cta-secondary">View Projects</Link>
+        <div className="hero-text">
+          <div className="animate-in">
+            <h1 className="hero-title">Precision in Every Detail</h1>
+            <p className="hero-subtitle">
+              Modern aluminium interiors crafted for durability, elegance, and everyday living.
+            </p>
+            <div className="hero-cta">
+              <button onClick={openModal} className="cta-primary">Get Free Consultation</button>
+              <Link to="/projects" className="cta-secondary">View Projects</Link>
+            </div>
           </div>
         </div>
       </div>
+
+      <nav className="hero-rooms" aria-label="Rooms">
+        <div className="hero-rooms-track">
+          <div className="hero-rooms-bar" style={{ transform: `scaleY(${shot / (SHOTS.length - 1)})` }}></div>
+        </div>
+        {SHOTS.map((s, i) => (
+          <button
+            key={s.title}
+            className={`hero-room ${shot === i ? 'is-active' : ''}`}
+            onClick={() => setShot(i)}
+          >
+            <span className="hero-room-dot"></span>
+            <span className="hero-room-label">{s.title}</span>
+          </button>
+        ))}
+        {!reducedMotion && (
+          <button
+            className="hero-play"
+            onClick={() => setPaused((p) => !p)}
+            aria-label={paused ? 'Play showreel' : 'Pause showreel'}
+          >
+            {paused ? <Play size={14} /> : <Pause size={14} />}
+          </button>
+        )}
+      </nav>
     </section>
   );
 };

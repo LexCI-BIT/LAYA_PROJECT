@@ -86,8 +86,17 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <Link to="/" className="navbar-logo" onClick={(e) => { if (location.pathname === '/') { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); } }}>
-          <h2>LAYA DESIGN</h2>
+        <Link to="/" className="navbar-logo" aria-label="Laya Space Design" onClick={(e) => { if (location.pathname === '/') { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); } }}>
+          <img 
+            src="/images/laya-logo-horizontal-dark.png" 
+            alt="Laya Space Design" 
+            className="navbar-logo-img logo-dark" 
+          />
+          <img 
+            src="/images/laya-logo-horizontal.png" 
+            alt="Laya Space Design" 
+            className="navbar-logo-img logo-light" 
+          />
         </Link>
 
         <div className="nav-links right-links">
@@ -101,7 +110,7 @@ const Navbar = () => {
       <div className="navbar-bottom-container container">
         <div className="sub-nav-links">
           <Link to="/" onClick={(e) => { if (location.pathname === '/') { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); } }}><span>Home</span></Link>
-          <Link to="/#how-it-works" onClick={(e) => handleHashLink(e, 'how-it-works')}><span>How It Works</span></Link>
+          <Link to="/#manufacturing-unit" onClick={(e) => handleHashLink(e, 'manufacturing-unit')}><span>Aluminium Manufacturing</span></Link>
           <div className="nav-item-dropdown">
             <Link to="/#offerings" className="dropdown-trigger" onClick={(e) => handleHashLink(e, 'offerings')}>
               <span>Offerings</span>
@@ -125,7 +134,6 @@ const Navbar = () => {
               <Link to="/price-calculator/full-home">Full Home Interior Calculator</Link>
             </div>
           </div>
-          <Link to="/#modular-journey" onClick={(e) => handleHashLink(e, 'modular-journey')}><span>The Modular Journey</span></Link>
         </div>
       </div>
     </nav>

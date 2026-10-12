@@ -1,16 +1,16 @@
 .footer {
   background-color: #0d0d0d;
   color: #fff;
-  padding: 0 0 120px 0; /* Extra bottom padding for floating widgets */
+  padding: 0 0 60px 0;
   font-family: 'Inter', sans-serif;
   overflow: hidden;
-  margin-top: 8rem; /* Prevent overlap and provide breathing room */
+  margin-top: 4rem;
 }
 
 /* CTA Strip */
 .footer-cta-strip {
   background-color: #151515;
-  padding: 6rem 0; /* Increased padding */
+  padding: 3rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -18,34 +18,33 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 3rem;
-  min-height: 100px; /* Ensure consistent height */
+  gap: 2rem;
 }
 
 .cta-content h3 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 2.6rem;
+  font-size: 2.1rem;
   font-weight: 400;
   margin: 0;
   color: #fff;
-  line-height: 1.1;
-  max-width: 600px;
+  line-height: 1.15;
+  max-width: 550px;
 }
 
 .cta-buttons {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.2rem;
 }
 
 .cta-btn {
-  padding: 1.3rem 3rem;
-  font-size: 0.85rem;
+  padding: 0.85rem 2.2rem;
+  font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   border: none;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.3s ease;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -57,13 +56,13 @@
 .cta-btn.primary {
   background-color: #fff;
   color: #000;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .cta-btn.primary:hover {
   background-color: #f0f0f0;
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .cta-btn.secondary {
@@ -75,58 +74,77 @@
 .cta-btn.secondary:hover {
   background-color: rgba(255, 255, 255, 0.1);
   border-color: #fff;
-  transform: translateY(-5px);
+  transform: translateY(-2px);
 }
 
 /* Main Footer */
 .footer-main {
-  padding: 10rem 0 8rem;
+  padding: 4.5rem 0 3.5rem;
 }
 
 .footer-brand {
-  margin-bottom: 8rem;
-  max-width: 600px;
+  margin-bottom: 3.5rem;
+  max-width: 540px;
+}
+
+.footer-logo-link {
+  display: inline-block;
+  margin-bottom: 1.2rem;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.footer-logo-link:hover {
+  transform: translateY(-2px);
+}
+
+.footer-logo-img {
+  height: 68px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+  display: block;
 }
 
 .footer-logo {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 400;
-  margin-bottom: 1.5rem;
-  letter-spacing: 5px;
+  margin-bottom: 1rem;
+  letter-spacing: 4px;
   color: #fff;
   text-transform: uppercase;
 }
 
 .tagline {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   font-style: italic;
   color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 2rem;
-  letter-spacing: 1.5px;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
 }
 
 .description {
   color: rgba(255, 255, 255, 0.5);
-  line-height: 1.8;
-  font-size: 1rem;
-  margin-bottom: 3.5rem;
+  line-height: 1.6;
+  font-size: 0.92rem;
+  margin-bottom: 1.8rem;
   font-weight: 300;
 }
 
 .footer-social {
   display: flex;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .social-icon {
   color: #fff;
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   transition: all 0.3s ease;
   opacity: 0.5;
   position: relative;
@@ -135,7 +153,7 @@
 .social-icon::after {
   content: '';
   position: absolute;
-  bottom: -8px;
+  bottom: -4px;
   left: 0;
   width: 0;
   height: 1px;
@@ -155,15 +173,15 @@
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 4rem 2rem;
+  gap: 2.5rem 1.8rem;
 }
 
 .footer-col h4 {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   font-weight: 700;
-  margin-bottom: 3.5rem;
+  margin-bottom: 1.4rem;
   color: #fff;
 }
 
@@ -174,15 +192,15 @@
 }
 
 .footer-col li {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .footer-col a,
 .link-btn {
-  color: rgba(255, 255, 255, 0.6); /* Increased visibility */
+  color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
+  font-size: 0.88rem;
+  transition: all 0.25s ease;
   display: inline-block;
   background: none;
   border: none;
@@ -195,28 +213,28 @@
 .footer-col a:hover,
 .link-btn:hover {
   color: #fff;
-  transform: translateX(10px);
+  transform: translateX(4px);
 }
 
 .city-group {
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
 }
 
 .city-group h5 {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.5); /* Slightly brighter for consistency */
-  margin-bottom: 1.5rem;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 0.75rem;
   font-weight: 700;
   display: block;
 }
 
 .contact-info p {
   color: rgba(255, 255, 255, 0.6);
-  font-size: 0.95rem;
-  line-height: 1.8;
-  margin-bottom: 2rem;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
   font-weight: 300;
 }
 
@@ -224,10 +242,10 @@
   color: rgba(255, 255, 255, 0.9);
   font-weight: 600;
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
   text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 2px;
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
 }
 
 .contact-info a {
@@ -241,44 +259,27 @@
 
 /* Footer Bottom */
 .footer-bottom {
-  padding: 5rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1.8rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
-.footer-bottom-links {
-  display: flex;
-  gap: 4rem;
-}
-
-.footer-bottom-links a {
-  color: rgba(255, 255, 255, 0.3);
-  text-decoration: none;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  transition: color 0.3s ease;
-}
-
-.footer-bottom-links a:hover {
-  color: #fff;
-}
-
 .copyright {
-  color: rgba(255, 255, 255, 0.3);
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.82rem;
+  letter-spacing: 0.3px;
+  line-height: 1.6;
   margin: 0;
+  text-align: center;
 }
 
 /* Responsive */
 @media (max-width: 1400px) {
   .footer-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 6rem 4rem;
+    gap: 3rem 2.5rem;
   }
 }
 
@@ -286,24 +287,24 @@
   .cta-content {
     flex-direction: column;
     text-align: center;
-    gap: 4rem;
+    gap: 2rem;
   }
   
   .cta-content h3 {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
     max-width: 100%;
   }
 
   .footer-main {
-    padding: 8rem 0;
+    padding: 3.5rem 0;
   }
   
   .footer-brand {
-    margin-bottom: 6rem;
+    margin-bottom: 2.5rem;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    max-width: 100%; /* Allow full width on mobile for centering */
+    max-width: 100%;
   }
   
   .footer-social {
@@ -314,18 +315,20 @@
 @media (max-width: 768px) {
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 1.5rem;
   }
   
   .footer-bottom {
     flex-direction: column;
-    gap: 3rem;
+    gap: 1.5rem;
     text-align: center;
+    padding: 2rem 0;
   }
   
   .footer-bottom-links {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 2rem 4rem;
+    gap: 1rem 2rem;
   }
 }
 
@@ -333,10 +336,6 @@
   .footer-grid {
     grid-template-columns: 1fr;
     text-align: center;
-  }
-  
-  .footer-logo {
-    font-size: 2.2rem;
   }
   
   .cta-buttons {
@@ -347,7 +346,7 @@
   .cta-btn {
     text-align: center;
     width: 100%;
-    padding: 1.3rem;
+    padding: 0.9rem;
   }
   
   .footer-col a:hover,
@@ -356,8 +355,8 @@
   }
   
   .footer-logo {
-    font-size: 1.8rem;
-    letter-spacing: 3px;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
   }
 }
 

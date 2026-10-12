@@ -2,7 +2,7 @@ export const offeringsData = {
   'aluminium-interiors': {
     title: 'Aluminium Interiors',
     shortTitle: 'Modern Aluminium Solutions',
-    heroImage: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2070',
+    heroImage: '/images/offerings/aluminium-interiors.jpg?v=2',
     about: 'Our core service provides a modern, eco-friendly alternative to traditional wood. Aluminium interiors are not just about looks; they represent a leap forward in durability, hygiene, and sustainable design.',
     benefits: [
       { title: 'Eco-Friendly', icon: 'star', desc: '100% recyclable material with zero deforestation, making it the most sustainable choice for modern homes.' },
@@ -51,7 +51,7 @@ export const offeringsData = {
   'exterior-works': {
     title: 'Exterior Works',
     shortTitle: 'Durable Outdoor Applications',
-    heroImage: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=2070',
+    heroImage: '/images/offerings/exterior-works.jpg',
     about: 'Extend your premium design to the outdoors. Our exterior aluminium solutions are engineered to withstand the elements while providing superior security and aesthetic appeal.',
     services: [
       { title: 'Balcony Railings', icon: 'partition', desc: 'Sleek, rust-proof railings that provide safety without obstructing your view.' },
