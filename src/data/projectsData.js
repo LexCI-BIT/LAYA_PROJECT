@@ -24,7 +24,7 @@ export const projectsData = [
     materials: ['Powder-coated Aluminium', 'Quartz Countertop', 'Stainless Steel Hardware'],
     gallery: [
       'https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=2070',
-      'https://images.unsplash.com/photo-1556909214-31e845b65944?auto=format&fit=crop&q=80&w=2070'
+      '/images/renovation/kitchen-aluminium.jpg'
     ]
   },
   {
@@ -38,7 +38,7 @@ export const projectsData = [
     materials: ['Weather-resistant Aluminium', 'Architectural Finishes'],
     gallery: [
       'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=2070',
-      'https://images.unsplash.com/photo-1621293954908-d81149c0df0b?auto=format&fit=crop&q=80&w=2070'
+      '/images/offerings/exterior-works.jpg'
     ]
   },
   {
@@ -99,7 +99,7 @@ export const projectsData = [
     title: 'Premium Balcony Railing',
     shortDesc: 'Rust-proof safety solutions with high visibility.',
     fullDesc: 'Safety meets breathtaking views. Our balcony railings are built to last a lifetime against sun and rain, using high-tension glass and reinforced aluminium profiles.',
-    image: 'https://images.unsplash.com/photo-1621293954908-d81149c0df0b?auto=format&fit=crop&q=80&w=2070',
+    image: '/images/hero/balcony.jpg?v=2',
     type: 'Safety Railing',
     materials: ['T-Grade Aluminium', 'Toughened Glass', 'Non-corrosive Fixings'],
     gallery: [

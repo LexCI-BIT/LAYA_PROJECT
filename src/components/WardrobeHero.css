@@ -1,0 +1,202 @@
+/* Stepped wardrobe reveal: each scroll swings one pair of closed door panels open over the open render.
+   Builds on the layout in RenovationHero.css; --open = share of pairs opened. */
+.wd-hero {
+  --open: 0;
+  height: 100vh;
+  height: 100svh;
+}
+
+/* Behaves like object-fit: cover for the 1200x896 renders, so door cut-outs stay aligned */
+.wd-stage {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: max(100%, calc(100svh * 1200 / 896));
+  aspect-ratio: 1200 / 896;
+  transform: translate(-50%, -50%);
+  perspective: 2600px;
+  perspective-origin: 50% 45%;
+}
+
+.wd-base {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Interior starts dim and brightens as the doors open, like the LED strips switching on */
+.wd-interior-shade {
+  position: absolute;
+  left: calc(197 / 1200 * 100%);
+  width: calc((1005 - 197) / 1200 * 100%);
+  top: calc(149 / 896 * 100%);
+  height: calc((676 - 149) / 896 * 100%);
+  background: rgba(20, 12, 4, 0.55);
+  opacity: calc(1 - var(--open));
+  transition: opacity 0.9s ease;
+  pointer-events: none;
+}
+
+.wd-door {
+  position: absolute;
+  overflow: hidden;
+  backface-visibility: hidden;
+  transform-style: flat;
+  will-change: transform;
+  /* Closing: reappear first, then swing shut */
+  transition: transform 0.85s cubic-bezier(0.55, 0, 0.25, 1), opacity 0.15s ease;
+}
+
+.wd-door.is-open {
+  opacity: 0;
+  /* Opening: swing, then fade the last few degrees so the edge-on sliver never shows */
+  transition: transform 0.85s cubic-bezier(0.55, 0, 0.25, 1), opacity 0.2s ease 0.65s;
+}
+
+.wd-door-left {
+  transform-origin: 0% 50%;
+}
+
+.wd-door-left.is-open {
+  transform: rotateY(-88deg);
+}
+
+.wd-door-right {
+  transform-origin: 100% 50%;
+}
+
+.wd-door-right.is-open {
+  transform: rotateY(88deg);
+}
+
+.wd-door-face {
+  position: absolute;
+  max-width: none;
+}
+
+/* Darkens the door face as it turns away from the light */
+.wd-door::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.85s ease;
+}
+
+.wd-door.is-open::after {
+  opacity: 1;
+}
+
+.wd-door-left::after {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.55));
+}
+
+.wd-door-right::after {
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.55));
+}
+
+.wd-shade {
+  background:
+    linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.12) 38%, rgba(0, 0, 0, 0) 60%),
+    linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 32%);
+  opacity: calc(1 - var(--open) * 0.6);
+  transition: opacity 0.9s ease;
+}
+
+.wd-intro {
+  position: absolute;
+  left: 4rem;
+  top: 50%;
+  max-width: 640px;
+  transform: translateY(-50%);
+  z-index: 3;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.wd-intro.is-hidden {
+  opacity: 0;
+  transform: translateY(calc(-50% - 40px));
+  pointer-events: none;
+}
+
+.wd-scroll-hint {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  transition: opacity 0.4s ease;
+}
+
+.wd-scroll-hint.is-hidden {
+  opacity: 0;
+}
+
+.wd-final {
+  position: absolute;
+  left: 50%;
+  bottom: 6vh;
+  z-index: 3;
+  width: min(720px, calc(100% - 32px));
+  transform: translate(-50%, 30px);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.7s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
+  pointer-events: none;
+}
+
+.wd-final.is-active {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  pointer-events: auto;
+}
+
+.wd-final::before {
+  content: '';
+  position: absolute;
+  inset: -3rem -6rem -6vh;
+  background: radial-gradient(ellipse at 50% 70%, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0) 70%);
+  z-index: -1;
+}
+
+.wd-final-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 0.6rem;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+}
+
+.wd-final-sub {
+  font-size: 0.78rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+.wd-final .reno-card-cta {
+  margin-top: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .wd-intro { left: 16px; right: 16px; }
+  .wd-final-title { font-size: 2.1rem; }
+  .wd-final-sub { font-size: 0.68rem; letter-spacing: 1.5px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wd-door { display: none; }
+}

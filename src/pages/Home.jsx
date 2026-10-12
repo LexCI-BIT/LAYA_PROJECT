@@ -2,6 +2,7 @@ import React from 'react';
 import Hero from '../components/Hero';
 import Expertise from '../components/Expertise';
 import WhyChooseUs from '../components/WhyChooseUs';
+import ManufacturingUnit from '../components/ManufacturingUnit';
 import HowItWorks from '../components/HowItWorks';
 import FeaturedProjects from '../components/FeaturedProjects';
 import PriceCalculatorPreview from '../components/PriceCalculatorPreview';
@@ -14,6 +15,7 @@ const Home = () => {
             <Hero />
             <Expertise />
             <WhyChooseUs />
+            <ManufacturingUnit />
             <HowItWorks />
             <FeaturedProjects />
             <PriceCalculatorPreview />

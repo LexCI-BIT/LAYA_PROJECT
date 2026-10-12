@@ -1,4 +1,6 @@
 .app-wrapper {
   overflow: hidden;
+  /* clip (unlike hidden) keeps position: sticky working for the hero walkthrough */
+  overflow: clip;
   width: 100%;
 }

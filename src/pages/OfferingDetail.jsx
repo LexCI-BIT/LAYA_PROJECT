@@ -1,17 +1,39 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import { offeringsData } from '../data/offeringsData';
 import { useModal } from '../context/ModalContext';
 import { IconRenderer } from '../components/Icons';
+import RenovationHero, { WOOD_IMG, ALUMINIUM_IMG } from '../components/RenovationHero';
+import WardrobeHero, { CLOSED_IMG, OPEN_IMG } from '../components/WardrobeHero';
 import './OfferingDetail.css';
+
+// Offerings with a scroll-driven hero, used once their image pair is available
+const SCROLL_HEROES = {
+  renovation: { Component: RenovationHero, images: [WOOD_IMG, ALUMINIUM_IMG] },
+  'modular-cupboards': { Component: WardrobeHero, images: [CLOSED_IMG, OPEN_IMG] },
+};
 
 const OfferingDetail = () => {
   const { slug } = useParams();
   const { openModal } = useModal();
   const data = offeringsData[slug];
+  const scrollHero = SCROLL_HEROES[slug];
+  const [failedSlug, setFailedSlug] = useState(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, [slug]);
+
+  useEffect(() => {
+    if (!SCROLL_HEROES[slug]) return;
+    let cancelled = false;
+    Promise.all(SCROLL_HEROES[slug].images.map((src) => new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = resolve;
+      img.onerror = reject;
+      img.src = src;
+    }))).catch(() => { if (!cancelled) setFailedSlug(slug); });
+    return () => { cancelled = true; };
   }, [slug]);
 
   if (!data) {
@@ -21,6 +43,7 @@ const OfferingDetail = () => {
   return (
     <div className="offering-detail-page">
       {/* Hero Section */}
+      {scrollHero && failedSlug !== slug ? <scrollHero.Component data={data} /> : (
       <section className="offering-hero">
         <img src={data.heroImage} alt={data.title} className="offering-hero-img" />
         <div className="offering-hero-content">
@@ -32,6 +55,7 @@ const OfferingDetail = () => {
           </div>
         </div>
       </section>
+      )}
 
       {/* About Section */}
       <section className="offering-section">

@@ -27,7 +27,7 @@ const Testimonials = () => {
             desc: "\"From concept to completion, Laya Space Design delivered excellence at every step of our project.\""
         },
         {
-            src: "/videos/client_testimonatial3.MP4",
+            src: "/videos/client_testimonial.mp4",
             title: "Beyond Expectations",
             desc: "\"The attention to detail and quality of materials used truly set them apart from every other team we considered.\""
         }
@@ -46,7 +46,7 @@ const Testimonials = () => {
                             poster="/videos/testimonial-poster-vertical.png"
                             className="testimonial-video"
                         >
-                            <source src="/videos/client_testimonial.mp4" type="video/mp4" />
+                            <source src="/videos/client_testimonatial3.MP4" type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
                         <div className="video-overlay">

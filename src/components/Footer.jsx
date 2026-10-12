@@ -26,7 +26,9 @@ const Footer = () => {
             <div className="container">
                 <div className="footer-main">
                     <div className="footer-brand">
-                        <h2 className="footer-logo">LAYA SPACE DESIGN</h2>
+                        <Link to="/" className="footer-logo-link" aria-label="Laya Space Design" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                            <img src="/images/laya-logo-dark.png" alt="Laya Space Design" className="footer-logo-img" />
+                        </Link>
                         <p className="tagline">Modern Aluminium Interiors Crafted for Elegant Living</p>
                         <p className="description">
                             Premium aluminium interiors, modular cupboards, custom designs, and renovation solutions for modern homes.
@@ -105,7 +107,7 @@ const Footer = () => {
                                 <li><Link to="/#process">Our Process</Link></li>
                                 <li><Link to="/projects">Projects</Link></li>
                                 <li><button className="link-btn" onClick={openModal}>Consultation</button></li>
-                                <li><Link to="/faqs">FAQs</Link></li>
+                                <li><Link to="/#faqs">FAQs</Link></li>
                                 <li><Link to="/#contact">Contact Us</Link></li>
                             </ul>
                         </div>
@@ -114,7 +116,7 @@ const Footer = () => {
                             <h4>Contact Us</h4>
                             <div className="contact-info">
                                 <p className="contact-phone"><strong>Phone:</strong> <a href="tel:+918341884094">+91 83418 84094</a></p>
-                                <p><strong>Email:</strong> <a href="mailto:info@layaspacedesign.com">info@layaspacedesign.com</a></p>
+                                <p><strong>Email:</strong> <a href="mailto: layaspacedesign1993@gmail.com"> layaspacedesign1993@gmail.com</a></p>
                                 <p><strong>Location:</strong> Telangana & Andhra Pradesh</p>
                                 <p><strong>Working Hours:</strong><br />Mon – Sat | 9:00 AM – 7:00 PM</p>
                             </div>
@@ -122,6 +124,11 @@ const Footer = () => {
                     </div>
                 </div>
 
+                <div className="footer-bottom">
+                    <p className="copyright">
+                        © 1993–{new Date().getFullYear()} Laya Space Design. Engineers & Contractors in Architectural Aluminium Building Products. All Rights Reserved.
+                    </p>
+                </div>
             </div>
         </footer>
     );

@@ -1,0 +1,348 @@
+.manufacturing {
+  padding: 10rem 0;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  scroll-margin-top: 80px;
+}
+
+/* Intro: factory photo with copy alongside */
+.mfg-intro {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.mfg-intro-media {
+  position: relative;
+}
+
+.mfg-intro-main {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+}
+
+.mfg-eyebrow {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 1.5rem;
+}
+
+.mfg-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+}
+
+.mfg-intro-text p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(34, 33, 31, 0.75);
+  margin-bottom: 1.5rem;
+}
+
+.mfg-cta {
+  margin-top: 1rem;
+  padding: 1.1rem 2.4rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background: var(--text-dark);
+  color: #fff;
+  border: 1px solid var(--text-dark);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mfg-cta:hover {
+  background: transparent;
+  color: var(--text-dark);
+  transform: translateY(-2px);
+}
+
+/* Sub-sections */
+.mfg-block {
+  margin-top: 8rem;
+}
+
+.mfg-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.6rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+/* Full-width dark band, matching How It Works */
+.mfg-offer {
+  margin-top: 8rem;
+  padding: 8rem 0;
+  background-color: var(--bg-dark);
+  color: #fff;
+}
+
+/* Services zig-zag: cards alternate either side of a centre line */
+.mfg-services {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.mfg-services::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.mfg-service {
+  position: relative;
+  width: 50%;
+  padding-right: 4rem;
+  text-align: right;
+}
+
+.mfg-service + .mfg-service {
+  margin-top: -1rem;
+}
+
+.mfg-service:nth-child(even) {
+  margin-left: 50%;
+  padding-right: 0;
+  padding-left: 4rem;
+  text-align: left;
+}
+
+/* Marker on the centre line */
+.mfg-service::after {
+  content: '';
+  position: absolute;
+  top: 2.6rem;
+  right: -6px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--bg-dark);
+  border: 1px solid var(--accent-gold);
+  transition: background 0.3s ease;
+}
+
+.mfg-service:nth-child(even)::after {
+  right: auto;
+  left: -6px;
+}
+
+.mfg-service:hover::after {
+  background: var(--accent-gold);
+}
+
+.mfg-service-body {
+  padding: 2rem 0;
+}
+
+.mfg-service-index {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--accent-gold);
+  margin-bottom: 1rem;
+}
+
+.mfg-service-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.mfg-service-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.mfg-products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.mfg-product {
+  margin: 0;
+}
+
+.mfg-product-media {
+  aspect-ratio: 5 / 4;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #e9e6e0;
+}
+
+.mfg-product-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.mfg-product:hover .mfg-product-media img {
+  transform: scale(1.05);
+}
+
+.mfg-product figcaption {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 1.25rem;
+}
+
+.mfg-strengths {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem 4rem;
+}
+
+.mfg-strength {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.mfg-strength-icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+.mfg-strength h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.mfg-strength p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(34, 33, 31, 0.7);
+}
+
+@media (max-width: 1024px) {
+  .mfg-intro {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .mfg-strengths {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mfg-products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .manufacturing {
+    padding: 6rem 0;
+  }
+
+  .mfg-title {
+    font-size: 2.6rem;
+  }
+
+  .mfg-subtitle {
+    font-size: 2.1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .mfg-block,
+  .mfg-offer {
+    margin-top: 5rem;
+  }
+
+  .mfg-offer {
+    padding: 5rem 0;
+  }
+
+  /* Single column: the line moves to the left and every card sits to its right */
+  .mfg-services::before {
+    left: 5px;
+  }
+
+  .mfg-service,
+  .mfg-service:nth-child(even) {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 0;
+    padding: 0 0 0 2.5rem;
+    text-align: left;
+  }
+
+  .mfg-service::after,
+  .mfg-service:nth-child(even)::after {
+    right: auto;
+    left: 0;
+  }
+
+  .mfg-service-index {
+    font-size: 2.6rem;
+  }
+
+  .mfg-strengths {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .mfg-products {
+    gap: 1.25rem;
+  }
+
+  .mfg-product figcaption {
+    font-size: 0.75rem;
+  }
+
+  .mfg-cta {
+    width: 100%;
+  }
+}

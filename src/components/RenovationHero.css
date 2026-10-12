@@ -1,0 +1,308 @@
+/* Scroll-driven wood -> aluminium transformation. --p = scroll progress, --t = eased material progress. */
+.reno-hero {
+  --p: 0;
+  --t: 0;
+  --edge: calc(var(--t) * 130% - 15%);
+  position: relative;
+  height: 300vh;
+  background: #0d0c0b;
+}
+
+.reno-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  color: #fff;
+}
+
+.reno-scene {
+  position: absolute;
+  inset: 0;
+  transform: scale(calc(1.06 - var(--p) * 0.06));
+  transform-origin: 50% 55%;
+}
+
+.reno-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 60%;
+}
+
+/* The aluminium render is revealed by a soft diagonal sweep, so surfaces change one after another */
+.reno-layer-after {
+  -webkit-mask-image: linear-gradient(100deg, #000 calc(var(--edge) - 12%), transparent calc(var(--edge) + 12%));
+  mask-image: linear-gradient(100deg, #000 calc(var(--edge) - 12%), transparent calc(var(--edge) + 12%));
+}
+
+/* Cool light reflection travelling along the sweep edge */
+.reno-glint {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg,
+    transparent calc(var(--edge) - 7%),
+    rgba(214, 228, 245, 0.22) calc(var(--edge) - 1%),
+    rgba(255, 255, 255, 0.38) var(--edge),
+    rgba(214, 228, 245, 0.22) calc(var(--edge) + 1%),
+    transparent calc(var(--edge) + 7%));
+  mix-blend-mode: screen;
+  opacity: calc(var(--t) * (1 - var(--t)) * 4);
+  pointer-events: none;
+}
+
+.reno-light {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+}
+
+.reno-light-warm {
+  background: radial-gradient(ellipse 70% 60% at 55% 40%, rgba(255, 176, 92, 0.55), transparent 70%);
+  opacity: calc(1 - var(--t));
+}
+
+.reno-light-cool {
+  background: radial-gradient(ellipse 70% 60% at 55% 35%, rgba(196, 220, 255, 0.5), transparent 70%);
+  opacity: var(--t);
+}
+
+.reno-shade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 22%),
+    linear-gradient(to right, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.15) 38%, rgba(0, 0, 0, 0) 60%),
+    linear-gradient(to top, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 30%);
+}
+
+/* Intro title, fades away as soon as the transformation starts */
+.reno-intro {
+  position: absolute;
+  left: 4rem;
+  top: 50%;
+  max-width: 640px;
+  transform: translateY(calc(-50% - var(--p) * 300px));
+  opacity: calc(1 - var(--p) * 9);
+  z-index: 3;
+}
+
+.reno-tag {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
+}
+
+.reno-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 5.5rem;
+  font-weight: 300;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+}
+
+.reno-lede {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 2.5rem;
+  max-width: 480px;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Narrative cards */
+.reno-cards {
+  position: absolute;
+  left: 4rem;
+  bottom: 12vh;
+  width: min(440px, calc(100% - 2rem));
+  z-index: 3;
+}
+
+.reno-card {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 2.25rem 2.25rem 2rem;
+  background: linear-gradient(160deg, rgba(20, 18, 16, 0.78), rgba(20, 18, 16, 0.6));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
+  pointer-events: none;
+}
+
+.reno-card.is-active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.reno-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.25rem;
+}
+
+.reno-swatch {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  flex-shrink: 0;
+}
+
+.reno-swatch-wood {
+  background: repeating-linear-gradient(80deg, #b98a57 0 3px, #c99d6a 3px 6px, #a8794a 6px 8px);
+}
+
+.reno-swatch-aluminium {
+  background: linear-gradient(135deg, #e9ecef 0%, #9aa1a8 45%, #d4d8dc 60%, #6c737a 100%);
+}
+
+.reno-swatch-blend {
+  background: linear-gradient(135deg, #c49464 0 50%, #b8bec4 50% 100%);
+}
+
+.reno-card-eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.reno-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.6rem;
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 0.4rem;
+}
+
+.reno-card-subtitle {
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 1.1rem;
+}
+
+.reno-card-body {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.78);
+  font-weight: 300;
+}
+
+.reno-card-cta {
+  margin-top: 1.6rem;
+  padding: 1rem 2rem;
+  background: #fff;
+  color: #111;
+  border: 1px solid #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.reno-card-cta:hover {
+  background: transparent;
+  color: #fff;
+}
+
+/* Oak -> Aluminium progress meter */
+.reno-meter {
+  position: absolute;
+  right: 4rem;
+  bottom: 12vh;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.reno-meter-track {
+  width: 140px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.reno-meter-fill {
+  height: 100%;
+  background: linear-gradient(to right, #c99d6a, #e6ebf0);
+  transform-origin: left;
+  transform: scaleX(var(--t));
+}
+
+.reno-scroll-hint {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  opacity: calc(1 - var(--p) * 12);
+}
+
+.reno-scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, #fff, transparent);
+  animation: renoScrollLine 1.8s ease-in-out infinite;
+  transform-origin: top;
+}
+
+@keyframes renoScrollLine {
+  0% { transform: scaleY(0); opacity: 1; }
+  60% { transform: scaleY(1); opacity: 1; }
+  100% { transform: scaleY(1); opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  .reno-hero { height: 270vh; }
+  .reno-intro { left: 16px; right: 16px; }
+  .reno-title { font-size: 3.4rem; }
+  .reno-lede { font-size: 1rem; }
+  .reno-cards { left: 16px; right: 16px; width: auto; bottom: 5.5rem; }
+  .reno-card { padding: 1.5rem; }
+  .reno-card-title { font-size: 2rem; }
+  .reno-card-body { font-size: 0.88rem; }
+  .reno-meter { right: auto; left: 16px; bottom: 2rem; }
+  .reno-meter-track { width: 90px; }
+  .reno-scroll-hint { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reno-hero { height: auto; }
+  .reno-scroll-hint, .reno-glint { display: none; }
+}
