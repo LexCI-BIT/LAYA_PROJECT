@@ -17,7 +17,6 @@ import CityDetail from './pages/CityDetail';
 import ConsultationModal from './components/ConsultationModal';
 import FloatingActions from './components/FloatingActions';
 import Footer from './components/Footer';
-import FAQSection from './components/FAQSection';
 import CustomCursor from './components/CustomCursor';
 import './App.css';
 
@@ -99,7 +98,6 @@ function App() {
 
         <ConsultationModal />
         <FloatingActions />
-        <FAQSection />
         <Footer />
       </div>
     </ModalProvider>

@@ -5,10 +5,12 @@ import { useModal } from '../context/ModalContext';
 import { IconRenderer } from '../components/Icons';
 import RenovationHero, { WOOD_IMG, ALUMINIUM_IMG } from '../components/RenovationHero';
 import WardrobeHero, { CLOSED_IMG, OPEN_IMG } from '../components/WardrobeHero';
+import KitchenHero, { EMPTY_IMG, FULL_IMG } from '../components/KitchenHero';
 import './OfferingDetail.css';
 
 // Offerings with a scroll-driven hero, used once their image pair is available
 const SCROLL_HEROES = {
+  'aluminium-interiors': { Component: KitchenHero, images: [EMPTY_IMG, FULL_IMG] },
   renovation: { Component: RenovationHero, images: [WOOD_IMG, ALUMINIUM_IMG] },
   'modular-cupboards': { Component: WardrobeHero, images: [CLOSED_IMG, OPEN_IMG] },
 };

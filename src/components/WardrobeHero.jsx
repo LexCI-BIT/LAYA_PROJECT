@@ -1,5 +1,6 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React from 'react';
 import { useModal } from '../context/ModalContext';
+import useSteppedScroll from '../hooks/useSteppedScroll';
 import './RenovationHero.css';
 import './WardrobeHero.css';
 
@@ -19,9 +20,7 @@ const PAIRS = [
   [[738, 872], [872, 1005]],
 ];
 const LAST = PAIRS.length;
-const WHEEL_THRESHOLD = 30;
 const STEP_LOCK = 900; // door swing time plus trackpad inertia
-const SWIPE_THRESHOLD = 40;
 
 const doorStyle = ([x1, x2]) => {
   const w = x2 - x1;
@@ -44,90 +43,7 @@ const doorStyle = ([x1, x2]) => {
 
 const WardrobeHero = ({ data }) => {
   const { openModal } = useModal();
-  const [reduced] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches);
-  const [stage, setStage] = useState(reduced ? LAST : 0);
-  const stageRef = useRef(stage);
-  const busyRef = useRef(false);
-  const sectionRef = useRef(null);
-
-  const goTo = useCallback((target) => {
-    if (busyRef.current || target < 0) return;
-    if (target > LAST) {
-      // One scroll past the open wardrobe takes the visitor straight to the next section
-      busyRef.current = true;
-      const navbar = document.querySelector('.navbar');
-      const offset = navbar && getComputedStyle(navbar).position === 'fixed' ? navbar.offsetHeight : 0;
-      const top = sectionRef.current.getBoundingClientRect().bottom + window.scrollY - offset;
-      window.scrollTo({ top, behavior: 'smooth' });
-      setTimeout(() => { busyRef.current = false; }, STEP_LOCK);
-      return;
-    }
-    if (target === stageRef.current) return;
-    busyRef.current = true;
-    stageRef.current = target;
-    setStage(target);
-    setTimeout(() => { busyRef.current = false; }, STEP_LOCK);
-  }, []);
-
-  useEffect(() => {
-    if (reduced) return;
-
-    // The doors only take over scrolling while the hero is at the very top of the page.
-    const shouldCapture = (dir) => window.scrollY <= 2 && (dir > 0 || stageRef.current > 0);
-
-    let wheelDelta = 0;
-    const onWheel = (e) => {
-      const dir = Math.sign(e.deltaY);
-      if (!dir || !shouldCapture(dir)) {
-        wheelDelta = 0;
-        return;
-      }
-      e.preventDefault();
-      if (busyRef.current) return;
-      wheelDelta += e.deltaY;
-      if (Math.abs(wheelDelta) >= WHEEL_THRESHOLD) {
-        wheelDelta = 0;
-        goTo(stageRef.current + dir);
-      }
-    };
-
-    let touchStartY = null;
-    const onTouchStart = (e) => { touchStartY = e.touches[0].clientY; };
-    const onTouchMove = (e) => {
-      if (touchStartY === null) return;
-      const dir = Math.sign(touchStartY - e.touches[0].clientY);
-      if (dir && shouldCapture(dir)) e.preventDefault();
-    };
-    const onTouchEnd = (e) => {
-      if (touchStartY === null) return;
-      const dy = touchStartY - e.changedTouches[0].clientY;
-      touchStartY = null;
-      const dir = Math.sign(dy);
-      if (Math.abs(dy) >= SWIPE_THRESHOLD && shouldCapture(dir)) goTo(stageRef.current + dir);
-    };
-
-    const onKey = (e) => {
-      if (e.target.closest('input, textarea, select, [contenteditable]')) return;
-      const dir = ['ArrowDown', 'PageDown', ' '].includes(e.key) ? 1
-        : ['ArrowUp', 'PageUp'].includes(e.key) ? -1 : 0;
-      if (!dir || !shouldCapture(dir)) return;
-      e.preventDefault();
-      goTo(stageRef.current + dir);
-    };
-
-    window.addEventListener('wheel', onWheel, { passive: false });
-    window.addEventListener('touchstart', onTouchStart, { passive: true });
-    window.addEventListener('touchmove', onTouchMove, { passive: false });
-    window.addEventListener('touchend', onTouchEnd, { passive: true });
-    window.addEventListener('keydown', onKey);
-    return () => {
-      window.removeEventListener('wheel', onWheel);
-      window.removeEventListener('touchstart', onTouchStart);
-      window.removeEventListener('touchmove', onTouchMove);
-      window.removeEventListener('touchend', onTouchEnd);
-      window.removeEventListener('keydown', onKey);
-    };
-  }, [goTo, reduced]);
+  const { stage, sectionRef } = useSteppedScroll(LAST, STEP_LOCK);
 
   const done = stage === LAST;
 

@@ -11,8 +11,8 @@ const SHOTS = [
   { title: 'Entrance Foyer', image: '/images/hero/foyer.jpg', origin: '50% 50%', from: 'scale(1.12) translateX(3%)', to: 'scale(1.12) translateX(-3%)' },
   { title: 'Living Room', image: '/images/hero/living.jpg', origin: '50% 50%', from: 'scale(1.12) translateX(-3%)', to: 'scale(1.12) translateX(3%)' },
   { title: 'Kitchen & Dining', image: '/images/hero/kitchen.jpg', origin: '50% 45%', from: 'scale(1.03)', to: 'scale(1.13)' },
-  { title: 'Master Bedroom', image: '/images/hero/bedroom.jpg?v=2', origin: '50% 50%', from: 'scale(1.12) translateX(-3%)', to: 'scale(1.12) translateX(3%)' },
-  { title: 'The Balcony', image: '/images/hero/balcony.jpg?v=2', origin: '50% 55%', from: 'scale(1.15)', to: 'scale(1.03)' },
+  { title: 'Master Bedroom', image: '/images/hero/bedroom.jpg?v=6', origin: '50% 50%', from: 'scale(1.12) translateX(-3%)', to: 'scale(1.12) translateX(3%)' },
+  { title: 'The Balcony', image: '/images/hero/balcony.jpg?v=6', origin: '50% 55%', from: 'scale(1.15)', to: 'scale(1.03)' },
 ];
 
 const SHOT_MS = 3000; // how long each shot runs before the cut
