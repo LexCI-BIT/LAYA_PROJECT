@@ -43,9 +43,15 @@ const ManufacturingUnit = () => {
                 <div className="mfg-intro">
                     <div className="mfg-intro-media reveal-on-scroll">
                         <img
-                            src="/images/manufacturing/factory-floor.jpg"
+                            src="/images/manufacturing/factory-floor.jpg?v=2"
                             alt="Technicians assembling aluminium window frames on the Laya Space Design factory floor"
                             className="mfg-intro-main"
+                            loading="lazy"
+                        />
+                        <img
+                            src="/images/manufacturing/cnc-machining.jpg?v=2"
+                            alt="Technician machining an aluminium profile on a CNC machine"
+                            className="mfg-intro-inset"
                             loading="lazy"
                         />
                     </div>

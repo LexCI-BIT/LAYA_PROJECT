@@ -8,6 +8,7 @@ import FeaturedProjects from '../components/FeaturedProjects';
 import PriceCalculatorPreview from '../components/PriceCalculatorPreview';
 import ModularJourney from '../components/ModularJourney';
 import Testimonials from '../components/Testimonials';
+import FAQSection from '../components/FAQSection';
 
 const Home = () => {
     return (
@@ -21,6 +22,7 @@ const Home = () => {
             <PriceCalculatorPreview />
             <ModularJourney />
             <Testimonials />
+            <FAQSection />
         </>
     );
 };
