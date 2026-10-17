@@ -1,7 +1,34 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Testimonials.css';
 
 const Testimonials = () => {
+    const sectionRef = useRef(null);
+
+    // Muted autoplay, only while a video is on screen so three videos aren't playing at once off-screen
+    useEffect(() => {
+        const videos = sectionRef.current.querySelectorAll('video');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(({ target, isIntersecting }) => {
+                if (isIntersecting) target.play().catch(() => {});
+                else target.pause();
+            });
+        }, { threshold: 0.5 });
+        // Only one video plays sound at a time: unmuting one mutes the rest
+        const onVolumeChange = (e) => {
+            if (e.target.muted) return;
+            videos.forEach((v) => { if (v !== e.target) v.muted = true; });
+        };
+        videos.forEach((v) => {
+            v.muted = true; // React doesn't reliably set the muted attribute, and browsers block unmuted autoplay
+            observer.observe(v);
+            v.addEventListener('volumechange', onVolumeChange);
+        });
+        return () => {
+            observer.disconnect();
+            videos.forEach((v) => v.removeEventListener('volumechange', onVolumeChange));
+        };
+    }, []);
+
     const reviews = [
         {
             text: "Excellent quality and modern design. Very satisfied with the work.",
@@ -34,7 +61,7 @@ const Testimonials = () => {
     ];
 
     return (
-        <section className="testimonials" id="testimonials">
+        <section className="testimonials" id="testimonials" ref={sectionRef}>
             <div className="container">
                 <h2 className="testimonials-title reveal-on-scroll">What Our Clients Say</h2>
                 
@@ -42,11 +69,14 @@ const Testimonials = () => {
                 <div className="featured-video-container reveal-on-scroll delay-100">
                     <div className="video-wrapper">
                         <video 
-                            controls 
-                            poster="/videos/testimonial-poster-vertical.png"
+                            controls
+                            preload="metadata"
+                            muted
+                            loop
+                            playsInline
                             className="testimonial-video"
                         >
-                            <source src="/videos/client_testimonatial3.MP4" type="video/mp4" />
+                            <source src="/videos/client_testimonatial3.MP4#t=0.1" type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
                         <div className="video-overlay">
@@ -65,11 +95,14 @@ const Testimonials = () => {
                         <div key={index} className={`video-testimonial-card reveal-on-scroll delay-${(index + 1) * 200}`}>
                             <div className="video-card-wrapper">
                                 <video 
-                                    controls 
-                                    poster="/videos/testimonial-poster-vertical.png"
+                                    controls
+                                    preload="metadata"
+                                    muted
+                                    loop
+                                    playsInline
                                     className="testimonial-video-card"
                                 >
-                                    <source src={video.src} type="video/mp4" />
+                                    <source src={`${video.src}#t=0.1`} type="video/mp4" />
                                     Your browser does not support the video tag.
                                 </video>
                                 <div className="video-overlay">
