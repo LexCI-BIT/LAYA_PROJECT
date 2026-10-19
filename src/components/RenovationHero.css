@@ -4,7 +4,7 @@
   --t: 0;
   --edge: calc(var(--t) * 130% - 15%);
   position: relative;
-  height: 300vh;
+  height: 250vh;
   background: #0d0c0b;
 }
 
@@ -289,7 +289,7 @@
 }
 
 @media (max-width: 768px) {
-  .reno-hero { height: 270vh; }
+  .reno-hero { height: 250vh; }
   .reno-intro { left: 16px; right: 16px; }
   .reno-title { font-size: 3.4rem; }
   .reno-lede { font-size: 1rem; }
