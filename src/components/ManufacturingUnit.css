@@ -1,3 +1,4 @@
+
 .manufacturing {
   padding: 10rem 0;
   background-color: var(--bg-light);
@@ -5,7 +6,6 @@
   scroll-margin-top: 80px;
 }
 
-/* Intro: factory photo with copy alongside */
 .mfg-intro {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
@@ -25,7 +25,6 @@
   border-radius: 4px;
 }
 
-/* Close-up photo overlapping the bottom-right corner of the factory shot */
 .mfg-intro-inset {
   position: absolute;
   right: -3rem;
@@ -89,7 +88,6 @@
   transform: translateY(-2px);
 }
 
-/* Sub-sections */
 .mfg-block {
   margin-top: 8rem;
 }
@@ -101,17 +99,16 @@
   letter-spacing: 1px;
   text-align: center;
   margin-bottom: 4rem;
+  color: var(--text-dark);
 }
 
-/* Full-width dark band, matching How It Works */
 .mfg-offer {
   margin-top: 8rem;
   padding: 8rem 0;
-  background-color: var(--bg-dark);
-  color: #fff;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
 }
 
-/* Services zig-zag: cards alternate either side of a centre line */
 .mfg-services {
   position: relative;
   max-width: 1000px;
@@ -125,7 +122,7 @@
   bottom: 0;
   left: 50%;
   width: 1px;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(34, 33, 31, 0.15);
 }
 
 .mfg-service {
@@ -146,7 +143,6 @@
   text-align: left;
 }
 
-/* Marker on the centre line */
 .mfg-service::after {
   content: '';
   position: absolute;
@@ -155,7 +151,7 @@
   width: 11px;
   height: 11px;
   border-radius: 50%;
-  background: var(--bg-dark);
+  background: var(--bg-light);
   border: 1px solid var(--accent-gold);
   transition: background 0.3s ease;
 }
@@ -189,6 +185,7 @@
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
+  color: var(--text-dark);
   margin-bottom: 1rem;
 }
 
@@ -197,7 +194,7 @@
   font-size: 0.95rem;
   font-weight: 300;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(34, 33, 31, 0.7);
 }
 
 .mfg-products {
@@ -236,6 +233,7 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-top: 1.25rem;
+  color: var(--text-dark);
 }
 
 .mfg-strengths {
@@ -271,6 +269,7 @@
   font-weight: 700;
   letter-spacing: 0.5px;
   margin-bottom: 0.5rem;
+  color: var(--text-dark);
 }
 
 .mfg-strength p {
@@ -328,9 +327,9 @@
 
   .mfg-offer {
     padding: 5rem 0;
+    background-color: var(--bg-light);
   }
 
-  /* Single column: the line moves to the left and every card sits to its right */
   .mfg-services::before {
     left: 5px;
   }

@@ -18,6 +18,7 @@ import ConsultationModal from './components/ConsultationModal';
 import FloatingActions from './components/FloatingActions';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
+import AluminiumManufacturing from './pages/AluminiumManufacturing';
 import './App.css';
 
 function App() {
@@ -82,6 +83,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/aluminium-manufacturing" element={<AluminiumManufacturing />} />
             <Route path="/price-calculator" element={<PriceCalculatorMain />} />
             <Route path="/price-calculator/:type" element={<CalculatorIntro />} />
             <Route path="/price-calculator/:type/form" element={<CalculatorForm />} />

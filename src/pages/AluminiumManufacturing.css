@@ -1,0 +1,471 @@
+
+/* ========================================
+   ALUMINIUM MANUFACTURING HERO
+======================================== */
+
+.aluminium-hero {
+  position: relative;
+  height: 100vh;
+  height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #172832;
+  color: #fff;
+  isolation: isolate;
+}
+
+/* Background image */
+
+.aluminium-hero-art,
+.aluminium-hero-shade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.aluminium-hero-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 52%;
+  display: block;
+  transform: var(--shot-from, scale(1.015));
+  will-change: transform;
+}
+
+/* Dark overlay */
+
+.aluminium-hero-shade {
+  background:
+    linear-gradient(
+      0deg,
+      rgba(13, 24, 31, 0.96) 10%,
+      rgba(13, 24, 31, 0.82) 10%,
+      rgba(13, 24, 31, 0.18) 10%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(13, 24, 31, 0.48),
+      transparent 10%
+    );
+}
+
+/* Hero content */
+
+.aluminium-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  width: 100%;
+  padding-top: 150px;
+  padding-bottom: 100px;
+}
+
+.aluminium-kicker {
+  display: inline-block;
+  color: #e5bd78;
+  font: 600 0.72rem / 1.4 Inter, sans-serif;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+/* Main heading */
+
+.aluminium-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(3.6rem, 7vw, 6.7rem);
+  line-height: 0.98;
+  letter-spacing: -1.5px;
+  max-width: 850px;
+  margin: 0 0 28px;
+}
+
+.aluminium-hero h1 em {
+  font-weight: 300;
+  color: #e5bd78;
+}
+
+/* Description */
+
+.aluminium-hero-content > p {
+  font: 300 1.05rem / 1.9 Inter, sans-serif;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 570px;
+  margin: 0 0 34px;
+}
+
+/* Hero buttons */
+
+.aluminium-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  flex-wrap: wrap;
+}
+
+.aluminium-primary-cta,
+.aluminium-secondary-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  font: 600 0.78rem / 1 Inter, sans-serif;
+  letter-spacing: 0.8px;
+  transition: all 0.25s ease;
+}
+
+.aluminium-primary-cta {
+  background: #e5bd78;
+  color: #172832;
+  padding: 17px 22px;
+  border: 1px solid #e5bd78;
+}
+
+.aluminium-primary-cta:hover {
+  background: #f2d6a3;
+  transform: translateY(-2px);
+}
+
+.aluminium-secondary-cta {
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 12px 0;
+}
+
+.aluminium-secondary-cta:hover {
+  color: #e5bd78;
+  border-color: #e5bd78;
+}
+
+/* Scroll indicator */
+
+.aluminium-scroll-cue {
+  position: absolute;
+  bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  text-transform: uppercase;
+  font: 500 0.65rem / 1 Inter, sans-serif;
+  letter-spacing: 2px;
+}
+
+/* Bottom-right caption */
+
+.aluminium-hero-caption {
+  position: absolute;
+  right: max(4vw, 28px);
+  bottom: 32px;
+  color: rgba(255, 255, 255, 0.6);
+  font: 500 0.62rem / 1 Inter, sans-serif;
+  letter-spacing: 2px;
+  display: flex;
+  gap: 28px;
+}
+
+.aluminium-hero-caption span {
+  color: #e5bd78;
+}
+
+/* ========================================
+   MANUFACTURING PAGE SPACING
+======================================== */
+
+/* Remove the unwanted gap after the hero */
+
+.aluminium-page-sections {
+  margin-top: 0;
+  padding-top: 0;
+  min-height: 0;
+}
+
+/* Manufacturing section */
+
+.aluminium-page-sections .manufacturing {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* What We Offer */
+
+.aluminium-page-sections .mfg-offer {
+  margin-top: 0;
+  scroll-margin-top: 90px;
+}
+
+/* ========================================
+   TABLET AND MOBILE RESPONSIVENESS
+======================================== */
+
+@media (max-width: 768px) {
+  .aluminium-hero {
+    min-height: 680px;
+    height: 78vh;
+    height: 78svh;
+    align-items: flex-start;
+  }
+
+  .aluminium-hero-art img {
+    object-position: 58% center;
+    opacity: 0.55;
+  }
+
+  .aluminium-hero-shade {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(13, 24, 31, 0.94),
+        rgba(13, 24, 31, 0.52)
+      ),
+      linear-gradient(
+        0deg,
+        rgba(13, 24, 31, 0.55),
+        transparent
+      );
+  }
+
+  .aluminium-hero-content {
+    padding-top: 145px;
+    padding-bottom: 110px;
+  }
+
+  .aluminium-hero h1 {
+    font-size: clamp(3.2rem, 13vw, 5rem);
+  }
+
+  .aluminium-hero-content > p {
+    font-size: 0.95rem;
+  }
+
+  .aluminium-scroll-cue {
+    bottom: 24px;
+  }
+
+  .aluminium-hero-caption {
+    display: none;
+  }
+
+  .aluminium-page-sections {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .aluminium-page-sections .manufacturing {
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
+
+/* ========================================
+   SMALL MOBILE SCREENS
+======================================== */
+
+@media (max-width: 480px) {
+  .aluminium-hero {
+    min-height: 640px;
+  }
+
+  .aluminium-hero-content {
+    padding-top: 125px;
+    padding-bottom: 90px;
+  }
+
+  .aluminium-kicker {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+  }
+
+  .aluminium-hero h1 {
+    font-size: clamp(2.8rem, 12vw, 3.8rem);
+    letter-spacing: -1px;
+    margin-bottom: 22px;
+  }
+
+  .aluminium-hero-content > p {
+    font-size: 0.9rem;
+    line-height: 1.75;
+    margin-bottom: 26px;
+  }
+
+  .aluminium-hero-actions {
+    gap: 18px;
+  }
+
+  .aluminium-primary-cta {
+    padding: 15px 17px;
+    font-size: 0.72rem;
+  }
+
+  .aluminium-secondary-cta {
+    font-size: 0.72rem;
+  }
+
+  .aluminium-scroll-cue {
+    font-size: 0.58rem;
+    letter-spacing: 1.5px;
+  }
+}
+
+
+/* Vertical project slideshow */
+
+.mfg-projects-showcase {
+  height: 650px;
+  overflow: hidden;
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+}
+
+.mfg-projects-track {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: mfg-vertical-slide 24s linear infinite;
+}
+
+.mfg-projects-showcase:hover .mfg-projects-track {
+  animation-play-state: paused;
+}
+
+.mfg-project-slide {
+  position: relative;
+  flex: 0 0 360px;
+  width: 100%;
+  height: 360px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+  background: #172832;
+  color: white;
+}
+
+.mfg-project-slide img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.mfg-project-slide:hover img {
+  transform: scale(1.05);
+}
+
+.mfg-project-slide-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 32px;
+  background: linear-gradient(
+    to top,
+    rgba(13, 24, 31, 0.95),
+    rgba(13, 24, 31, 0.25) 65%,
+    transparent
+  );
+}
+
+.mfg-project-slide-overlay > span:first-child {
+  color: #e5bd78;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.mfg-project-slide-overlay h3 {
+  margin: 10px 0;
+  font-size: clamp(22px, 3vw, 32px);
+  color: #fff;
+}
+
+.mfg-project-slide-overlay p {
+  margin: 0 0 14px;
+  max-width: 600px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.mfg-slide-link {
+  color: #e5bd78;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Seamless upward animation */
+
+@keyframes mfg-vertical-slide {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(
+      calc(-50% - 12px)
+    );
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .mfg-projects-showcase {
+    height: 480px;
+  }
+
+  .mfg-project-slide {
+    flex-basis: 280px;
+    height: 280px;
+  }
+
+  .mfg-project-slide-overlay {
+    padding: 20px;
+  }
+
+  .mfg-projects-track {
+    gap: 20px;
+    animation-duration: 18s;
+  }
+}
+
+/* Respect accessibility preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  .mfg-projects-track {
+    animation: none;
+  }
+
+  .mfg-projects-showcase {
+    height: auto;
+    max-height: 650px;
+    overflow-y: auto;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+}
+

@@ -16,7 +16,7 @@ const Home = () => {
             <Hero />
             <Expertise />
             <WhyChooseUs />
-            <ManufacturingUnit />
+            <ManufacturingUnit showIntro={true} showBody={false}/>
             <HowItWorks />
             <FeaturedProjects />
             <PriceCalculatorPreview />
