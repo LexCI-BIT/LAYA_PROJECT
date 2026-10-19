@@ -4,6 +4,7 @@ import { Check } from 'lucide-react';
 import { useModal } from '../context/ModalContext';
 import './ManufacturingUnit.css';
 
+
 const services = [
   {
     number: '01',
@@ -38,15 +39,15 @@ const products = [
   },
   {
     title: 'Door & Window Profiles',
-    image: '/images/manufacturing/Door-Window-Profiles.png'
+    image: 'https://image.made-in-china.com/2f0j00RNFcsMQBQjkZ/Manufacture-Modern-Custom-Made-Window-and-Aluminum-Aluminium-Profile-Metal-Door-Sliding-Doors.webp'
   },
   {
     title: 'Partition & Interior Sections',
-    image: '/images/manufacturing/Partition-Interior-Sections.png'
+    image: 'https://i.pinimg.com/474x/cd/49/f1/cd49f1b6a3b453389aa60e92bf9133ac.jpg'
   },
   {
     title: 'Custom-Fabricated Components',
-    image: '/images/manufacturing/Custom-Fabricated Components.png'
+    image: 'https://www.alineautomation.com/wp-content/uploads/2025/06/A-lineAutomation-399414-AluminumProfileBars-BlogBanner1-1024x536.jpg'
   }
 ];
 
@@ -97,20 +98,36 @@ const ManufacturingUnit = ({
         <div className="container">
           <div className="mfg-intro">
 
-            <div className="mfg-intro-media">
-              <img
-                className="mfg-intro-main"
-                src="/images/manufacturing/factory-floor.jpg"
-                alt="Aluminium manufacturing facility"
-                loading="lazy"
-              />
+           
+            <div
+              className="mfg-intro-media mfg-3d-scene"
+              onMouseMove={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width;
+                const y = (e.clientY - rect.top) / rect.height;
 
-              <img
-                className="mfg-intro-inset"
-                src="/images/manufacturing/cnc-machining.jpg"
-                alt="Precision aluminium machining"
-                loading="lazy"
-              />
+                e.currentTarget.style.setProperty(
+                  '--tilt-y',
+                  `${(x - 0.5) * 30}deg`
+                );
+                e.currentTarget.style.setProperty(
+                  '--tilt-x',
+                  `${(0.5 - y) * 20}deg`
+                );
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.setProperty('--tilt-y', '0deg');
+                e.currentTarget.style.setProperty('--tilt-x', '0deg');
+              }}
+            >
+              <div className="mfg-3d-object">
+                <img
+                  className="mfg-intro-main mfg-3d-image"
+                  src="/images/manufacturing/aluminium-manufacturing1.png"
+                  alt="Aluminium profiles with metallic liquid splash"
+                  loading="eager"
+                />
+              </div>
             </div>
 
             <div className="mfg-intro-text">
@@ -191,7 +208,7 @@ const ManufacturingUnit = ({
           </section>
 
           {/* Types of Aluminium Products */}
-          <section className="container mfg-block">
+          <section className="container mfg-block block1">
             <span className="mfg-eyebrow">
               OUR PRODUCT RANGE
             </span>
