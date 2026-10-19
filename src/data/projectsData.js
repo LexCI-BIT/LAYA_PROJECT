@@ -105,5 +105,59 @@ export const projectsData = [
     gallery: [
       'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&q=80&w=2070'
     ]
+  },
+  {
+    id: 'island-modular-kitchen',
+    category: 'KITCHEN',
+    title: 'Island Modular Kitchen',
+    shortDesc: 'Warm wood-finish island kitchen with integrated appliances.',
+    fullDesc: 'A statement kitchen built around a sculpted island. Aluminium carcasses with wood-finish shutters give the warmth of timber with the moisture and termite resistance of metal, paired with tall appliance units and glass-front display cabinets.',
+    image: '/images/offerings/kitchen-full.jpg',
+    type: 'Island Kitchen',
+    materials: ['Aluminium Carcass', 'Wood-finish Laminate', 'Quartz Countertop'],
+    gallery: [
+      '/images/offerings/kitchen-full.jpg',
+      '/images/renovation/kitchen-aluminium.jpg'
+    ]
+  },
+  {
+    id: 'open-shelf-wardrobe',
+    category: 'WARDROBE',
+    title: 'Open-Shelf Wardrobe',
+    shortDesc: 'Full-height wardrobe with lit open shelving and colour accents.',
+    fullDesc: 'A floor-to-ceiling wardrobe wall combining hanging zones, drawers and shoe racks. Concealed LED strips light every shelf, while colour-accented aluminium shutters slide across to close the unit off completely.',
+    image: '/images/offerings/wardrobe-open.jpg',
+    type: 'Hinged / Open Shelf',
+    materials: ['Aluminium Frame', 'Matte Laminate Shutters', 'LED Profile Lighting'],
+    gallery: [
+      '/images/offerings/wardrobe-open.jpg',
+      '/images/offerings/wardrobe-closed.jpg'
+    ]
+  },
+  {
+    id: 'bedroom-wall-paneling',
+    category: 'BEDROOM',
+    title: 'Bedroom Wall Paneling',
+    shortDesc: 'Backlit geometric wall panels with a floating bed unit.',
+    fullDesc: 'A calm, layered bedroom built around a backlit geometric headboard wall. Aluminium-framed panels are finished in soft fabric and wood tones, with matching floating side tables and full-height aluminium windows.',
+    image: '/images/hero/bedroom.jpg',
+    type: 'Wall Paneling',
+    materials: ['Aluminium Sub-frame', 'Fabric & Veneer Panels', 'Warm LED Backlighting'],
+    gallery: [
+      '/images/hero/bedroom.jpg'
+    ]
+  },
+  {
+    id: 'glass-staircase-foyer',
+    category: 'CUSTOM',
+    title: 'Glass Staircase & Foyer',
+    shortDesc: 'Floating staircase with frameless glass railing.',
+    fullDesc: 'A double-height foyer designed around a floating staircase. Frameless toughened-glass railings on concealed aluminium channels keep the space open and bright, framed by full-height aluminium glazing.',
+    image: '/images/hero/foyer.jpg',
+    type: 'Staircase Railing',
+    materials: ['Concealed Aluminium Channel', 'Toughened Glass', 'Stainless Fixings'],
+    gallery: [
+      '/images/hero/foyer.jpg'
+    ]
   }
 ];

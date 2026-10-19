@@ -1,43 +1,89 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useModal } from '../context/ModalContext';
+import {
+    validateName, validatePhone, validateEmail, validateRequired,
+    validateMaxLength, validateAll, trimValues
+} from '../utils/formValidation';
 import './ConsultationModal.css';
 
+const initialFormData = {
+    name: '',
+    phone: '',
+    email: '',
+    city: '',
+    requirement: '',
+    message: ''
+};
+
+const rules = {
+    name: validateName,
+    phone: validatePhone,
+    email: (v) => validateEmail(v),
+    city: validateRequired('Please select your city.'),
+    requirement: validateRequired('Please select your requirement.'),
+    message: validateMaxLength(500, 'Message')
+};
+
+// Only mounted while the modal is open, so the form state resets every time it closes
 const ConsultationModal = () => {
     const { isModalOpen, closeModal } = useModal();
-    const [submitted, setSubmitted] = useState(false);
-    const [formData, setFormData] = useState({
-        name: '',
-        phone: '',
-        email: '',
-        city: '',
-        requirement: '',
-        message: ''
-    });
+    return isModalOpen ? <ConsultationModalContent closeModal={closeModal} /> : null;
+};
 
-    if (!isModalOpen) return null;
+const ConsultationModalContent = ({ closeModal }) => {
+    const [submitted, setSubmitted] = useState(false);
+    const [formData, setFormData] = useState(initialFormData);
+    const [errors, setErrors] = useState({});
+    const [touched, setTouched] = useState({});
+    const timeoutRef = useRef(null);
+
+    // Cancel the pending auto-close timer if the modal is closed manually
+    useEffect(() => () => clearTimeout(timeoutRef.current), []);
 
     const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+        if (touched[name]) {
+            setErrors({ ...errors, [name]: rules[name](value) });
+        }
+    };
+
+    const handleBlur = (e) => {
+        const { name, value } = e.target;
+        setTouched({ ...touched, [name]: true });
+        setErrors({ ...errors, [name]: rules[name](value) });
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        const formErrors = validateAll(formData, rules);
+        setErrors(formErrors);
+        setTouched(Object.keys(rules).reduce((acc, key) => ({ ...acc, [key]: true }), {}));
+
+        const firstInvalid = Object.keys(rules).find((key) => formErrors[key]);
+        if (firstInvalid) {
+            e.currentTarget.querySelector(`[name="${firstInvalid}"]`)?.focus();
+            return;
+        }
+
         // Simulate API call
-        console.log('Form Submitted:', formData);
+        console.log('Form Submitted:', trimValues(formData));
         setSubmitted(true);
-        setTimeout(() => {
-            setSubmitted(false);
-            closeModal();
-            setFormData({
-                name: '',
-                phone: '',
-                email: '',
-                city: '',
-                requirement: '',
-                message: ''
-            });
-        }, 3000);
+        timeoutRef.current = setTimeout(closeModal, 3000);
     };
+
+    const fieldProps = (name) => ({
+        name,
+        value: formData[name],
+        onChange: handleChange,
+        onBlur: handleBlur,
+        className: errors[name] ? 'input-error' : undefined,
+        'aria-invalid': !!errors[name],
+        'aria-describedby': errors[name] ? `consult-${name}-error` : undefined
+    });
+
+    const renderError = (name) =>
+        errors[name] ? <span id={`consult-${name}-error`} className="field-error">{errors[name]}</span> : null;
 
     return (
         <div className="modal-overlay" onClick={closeModal}>
@@ -50,30 +96,33 @@ const ConsultationModal = () => {
                             <h2>Book Your Free Consultation</h2>
                             <p>Our experts will connect with you to suggest the best aluminium design solutions.</p>
                         </div>
-                        <form onSubmit={handleSubmit} className="consultation-form">
+                        <form onSubmit={handleSubmit} className="consultation-form" noValidate>
                             <div className="form-group">
                                 <input
-                                    type="text" name="name" placeholder="Full Name"
-                                    required value={formData.name} onChange={handleChange}
+                                    type="text" placeholder="Full Name" autoComplete="name"
+                                    maxLength={60} {...fieldProps('name')}
                                 />
+                                {renderError('name')}
                             </div>
                             <div className="form-row">
                                 <div className="form-group">
                                     <input
-                                        type="tel" name="phone" placeholder="Phone Number"
-                                        required value={formData.phone} onChange={handleChange}
+                                        type="tel" placeholder="Phone Number" autoComplete="tel"
+                                        inputMode="tel" maxLength={16} {...fieldProps('phone')}
                                     />
+                                    {renderError('phone')}
                                 </div>
                                 <div className="form-group">
                                     <input
-                                        type="email" name="email" placeholder="Email Address"
-                                        required value={formData.email} onChange={handleChange}
+                                        type="email" placeholder="Email Address" autoComplete="email"
+                                        maxLength={100} {...fieldProps('email')}
                                     />
+                                    {renderError('email')}
                                 </div>
                             </div>
                             <div className="form-row">
                                 <div className="form-group">
-                                    <select name="city" required value={formData.city} onChange={handleChange}>
+                                    <select {...fieldProps('city')}>
                                         <option value="">Select City</option>
                                         <option value="Hyderabad">Hyderabad</option>
                                         <option value="Warangal">Warangal</option>
@@ -81,9 +130,10 @@ const ConsultationModal = () => {
                                         <option value="Vijayawada">Vijayawada</option>
                                         <option value="Other">Other (Telangana/AP)</option>
                                     </select>
+                                    {renderError('city')}
                                 </div>
                                 <div className="form-group">
-                                    <select name="requirement" required value={formData.requirement} onChange={handleChange}>
+                                    <select {...fieldProps('requirement')}>
                                         <option value="">Requirement</option>
                                         <option value="Wardrobe">Wardrobe Designs</option>
                                         <option value="Kitchen">Kitchen Designs</option>
@@ -91,13 +141,15 @@ const ConsultationModal = () => {
                                         <option value="Space Saving">Space Saving</option>
                                         <option value="Full Home">Full Home Interiors</option>
                                     </select>
+                                    {renderError('requirement')}
                                 </div>
                             </div>
                             <div className="form-group">
                                 <textarea
-                                    name="message" placeholder="Message (Optional)"
-                                    rows="3" value={formData.message} onChange={handleChange}
+                                    placeholder="Message (Optional)" rows="3"
+                                    maxLength={500} {...fieldProps('message')}
                                 ></textarea>
+                                {renderError('message')}
                             </div>
                             <button type="submit" className="submit-btn-premium">Submit Requirement</button>
                         </form>

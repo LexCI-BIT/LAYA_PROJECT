@@ -15,7 +15,7 @@ const Footer = () => {
                         <h3>Need help designing your space?</h3>
                         <div className="cta-buttons">
                             <button className="cta-btn primary" onClick={openModal}>Get Free Consultation</button>
-                            <a href="https://wa.me/918341884094" target="_blank" rel="noopener noreferrer" className="cta-btn secondary">
+                            <a href="https://wa.me/918341884094?text=Hi%2C%20I%E2%80%99m%20interested%20in%20aluminium%20interiors.%20I%20would%20like%20a%20consultation." target="_blank" rel="noopener noreferrer" className="cta-btn secondary">
                                 Contact on WhatsApp
                             </a>
                         </div>
