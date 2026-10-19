@@ -104,6 +104,22 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
+.form-group input.input-error,
+.form-group select.input-error,
+.form-group textarea.input-error {
+  border-color: #d93025;
+  background: #fffafa;
+}
+
+.field-error {
+  display: block;
+  margin-top: 0.4rem;
+  color: #d93025;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.3;
+}
+
 .submit-btn-premium {
   background: var(--text-dark);
   color: #fff;

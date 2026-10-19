@@ -1,9 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import './PromoModal.css';
 import promoImg from '../assets/promo_offer.png';
+import { validateName, validatePhone, validatePincode, validateAll, trimValues } from '../utils/formValidation';
+
+const promoRules = {
+    name: validateName,
+    phone: validatePhone,
+    pincode: validatePincode
+};
 
 const PromoModal = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [formData, setFormData] = useState({ name: '', phone: '', pincode: '' });
+    const [errors, setErrors] = useState({});
+    const [touched, setTouched] = useState({});
 
     useEffect(() => {
         const REFRESH_INTERVAL = 5 * 60 * 1000; // 5 minutes in ms
@@ -37,12 +47,49 @@ const PromoModal = () => {
         localStorage.setItem('laya_promo_last_shown', Date.now().toString());
     };
 
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+        if (touched[name]) {
+            setErrors({ ...errors, [name]: promoRules[name](value) });
+        }
+    };
+
+    const handleBlur = (e) => {
+        const { name, value } = e.target;
+        setTouched({ ...touched, [name]: true });
+        setErrors({ ...errors, [name]: promoRules[name](value) });
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Lead captured');
+        const formErrors = validateAll(formData, promoRules);
+        setErrors(formErrors);
+        setTouched({ name: true, phone: true, pincode: true });
+
+        const firstInvalid = Object.keys(promoRules).find((key) => formErrors[key]);
+        if (firstInvalid) {
+            e.currentTarget.querySelector(`[name="${firstInvalid}"]`)?.focus();
+            return;
+        }
+
+        console.log('Lead captured', trimValues(formData));
         localStorage.setItem('laya_promo_completed', 'true');
         setIsOpen(false);
     };
+
+    const fieldProps = (name) => ({
+        name,
+        value: formData[name],
+        onChange: handleChange,
+        onBlur: handleBlur,
+        className: `promo-input${errors[name] ? ' input-error' : ''}`,
+        'aria-invalid': !!errors[name],
+        'aria-describedby': errors[name] ? `promo-${name}-error` : undefined
+    });
+
+    const renderError = (name) =>
+        errors[name] ? <span id={`promo-${name}-error`} className="promo-field-error">{errors[name]}</span> : null;
 
     if (!isOpen) return null;
 
@@ -63,25 +110,39 @@ const PromoModal = () => {
                     <h2 className="promo-title">Exclusive Offer</h2>
                     <p className="promo-subtitle sans-serif">Unlock 20% Off Your First Project</p>
 
-                    <form className="promo-form" onSubmit={handleSubmit}>
-                        <input
-                            type="text"
-                            placeholder="Your Name"
-                            className="promo-input"
-                            required
-                        />
-                        <input
-                            type="tel"
-                            placeholder="Mobile Number"
-                            className="promo-input"
-                            required
-                        />
-                        <input
-                            type="text"
-                            placeholder="Pincode"
-                            className="promo-input"
-                            required
-                        />
+                    <form className="promo-form" onSubmit={handleSubmit} noValidate>
+                        <div>
+                            <input
+                                type="text"
+                                placeholder="Your Name"
+                                autoComplete="name"
+                                maxLength={60}
+                                {...fieldProps('name')}
+                            />
+                            {renderError('name')}
+                        </div>
+                        <div>
+                            <input
+                                type="tel"
+                                placeholder="Mobile Number"
+                                autoComplete="tel"
+                                inputMode="tel"
+                                maxLength={16}
+                                {...fieldProps('phone')}
+                            />
+                            {renderError('phone')}
+                        </div>
+                        <div>
+                            <input
+                                type="text"
+                                placeholder="Pincode"
+                                autoComplete="postal-code"
+                                inputMode="numeric"
+                                maxLength={6}
+                                {...fieldProps('pincode')}
+                            />
+                            {renderError('pincode')}
+                        </div>
 
                         <button type="submit" className="promo-submit-btn">
                             Continue
