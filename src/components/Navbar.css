@@ -288,7 +288,32 @@
 /* Sub Navigation (UPDATED)  */
 /* ========================= */
 
+
 .navbar-bottom-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.sub-nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+
+/* .navbar-bottom-container {
   display: flex;
   justify-content: center;
 }
@@ -297,14 +322,14 @@
   display: flex;
   align-items: center;
   gap: 3rem; /* Increased spacing as requested */
-  font-family: 'Inter', sans-serif;
+  /* font-family: 'Inter', sans-serif;
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   opacity: 1;              /* FIXED: removed dim */
-  color: #fff;             /* FIXED: proper white */
-}
+  /* color: #fff;             /* FIXED: proper white */
+/* } */ */ */ */
 
 .navbar.scrolled .sub-nav-links {
   color: var(--text-dark);
@@ -401,12 +426,37 @@
     display: none;
   }
 
-  .navbar-top-container {
+.navbar-top-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 4%;
+  margin-bottom: 1.2rem;
+  box-sizing: border-box;
+}
+
+.navbar-top-container .left-links {
+  margin-right: auto;
+}
+
+.navbar-top-container .right-links {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  flex-shrink: 0;
+}
+
+
+  /* .navbar-top-container {
     display: flex;
     justify-content: space-between;
     padding: 0 1.5rem;
     margin-bottom: 0;
-  }
+  } */
 
   .navbar-logo-img {
     height: 38px;
@@ -420,4 +470,31 @@
   .navbar {
     padding: 1rem 0;
   }
+}
+
+
+
+/* Force Login and Consult Online to the far right */
+.navbar .navbar-top-container {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: none !important;
+  box-sizing: border-box !important;
+  padding-left: 4% !important;
+  padding-right: 4% !important;
+}
+
+.navbar .navbar-top-container .left-links {
+  margin-right: auto !important;
+}
+
+.navbar .navbar-top-container .right-links {
+  margin-left: auto !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  gap: 1.5rem !important;
+  flex-shrink: 0 !important;
 }
