@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useModal } from '../context/ModalContext';
 import './Navbar.css';
+import AluminiumManufacturing from "../pages/AluminiumManufacturing";
+
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -110,7 +112,7 @@ const Navbar = () => {
       <div className="navbar-bottom-container container">
         <div className="sub-nav-links">
           <Link to="/" onClick={(e) => { if (location.pathname === '/') { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); } }}><span>Home</span></Link>
-          <Link to="/#manufacturing-unit" onClick={(e) => handleHashLink(e, 'manufacturing-unit')}><span>Aluminium Manufacturing</span></Link>
+          <Link to="/aluminium-manufacturing"><span>Aluminium Manufacturing</span></Link>
           <div className="nav-item-dropdown">
             <Link to="/#offerings" className="dropdown-trigger" onClick={(e) => handleHashLink(e, 'offerings')}>
               <span>Offerings</span>
