@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Navigate, useNavigate } from 'react-router-dom';
 import { calculatorConfigs } from '../../data/calculatorConfig';
+import { validateName, validatePhone, validateCity, validateEmail, validateAll, trimValues } from '../../utils/formValidation';
 import './CalculatorFunnel.css';
+
+const leadRules = {
+    name: validateName,
+    phone: validatePhone,
+    city: validateCity,
+    email: (v) => validateEmail(v, { required: false })
+};
 
 const CalculatorForm = () => {
     const { type } = useParams();
@@ -11,6 +19,8 @@ const CalculatorForm = () => {
     const [currentStep, setCurrentStep] = useState(0);
     const [selections, setSelections] = useState({});
     const [leadInfo, setLeadInfo] = useState({ name: '', phone: '', city: '', email: '' });
+    const [leadErrors, setLeadErrors] = useState({});
+    const [leadTouched, setLeadTouched] = useState({});
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -28,9 +38,10 @@ const CalculatorForm = () => {
             ...prev,
             [sectionId]: option
         }));
-        // Auto-advance for single selection
+        // Auto-advance for single selection (to a fixed step, so double-clicks can't skip a step)
+        const nextStep = currentStep + 1;
         setTimeout(() => {
-            setCurrentStep(prev => prev + 1);
+            setCurrentStep(nextStep);
         }, 400);
     };
 
@@ -48,8 +59,31 @@ const CalculatorForm = () => {
     };
 
     const handleLeadChange = (e) => {
-        setLeadInfo({ ...leadInfo, [e.target.name]: e.target.value });
+        const { name, value } = e.target;
+        setLeadInfo({ ...leadInfo, [name]: value });
+        if (leadTouched[name]) {
+            setLeadErrors({ ...leadErrors, [name]: leadRules[name](value) });
+        }
     };
+
+    const handleLeadBlur = (e) => {
+        const { name, value } = e.target;
+        setLeadTouched({ ...leadTouched, [name]: true });
+        setLeadErrors({ ...leadErrors, [name]: leadRules[name](value) });
+    };
+
+    const leadFieldProps = (name) => ({
+        name,
+        value: leadInfo[name],
+        onChange: handleLeadChange,
+        onBlur: handleLeadBlur,
+        className: leadErrors[name] ? 'input-error' : undefined,
+        'aria-invalid': !!leadErrors[name],
+        'aria-describedby': leadErrors[name] ? `lead-${name}-error` : undefined
+    });
+
+    const renderLeadError = (name) =>
+        leadErrors[name] ? <span id={`lead-${name}-error`} className="cf-field-error">{leadErrors[name]}</span> : null;
 
     const calculateTotal = () => {
         let calculatedBase = config.basePrice;
@@ -75,13 +109,23 @@ const CalculatorForm = () => {
 
     const submitForm = (e) => {
         e.preventDefault();
+        const formErrors = validateAll(leadInfo, leadRules);
+        setLeadErrors(formErrors);
+        setLeadTouched({ name: true, phone: true, city: true, email: true });
+
+        const firstInvalid = Object.keys(leadRules).find((key) => formErrors[key]);
+        if (firstInvalid) {
+            e.currentTarget.querySelector(`[name="${firstInvalid}"]`)?.focus();
+            return;
+        }
+
         // Here, an API call would normally fire to save the lead.
-        
+
         const estimate = calculateTotal();
-        
+
         // Push to result page with the data
         navigate(`/price-calculator/${type}/result`, {
-            state: { estimate, selections, leadInfo }
+            state: { estimate, selections, leadInfo: trimValues(leadInfo) }
         });
     };
 
@@ -129,22 +173,26 @@ const CalculatorForm = () => {
                 <div className="cf-form-step animate-in">
                     <h2 className="cf-step-question">Last Step: Get Your Quote</h2>
                     <p className="cf-lead-desc">Where should we send your detailed interior estimate?</p>
-                    <form className="cf-lead-form" onSubmit={submitForm}>
+                    <form className="cf-lead-form" onSubmit={submitForm} noValidate>
                         <div className="input-group">
-                            <label>Full Name</label>
-                            <input type="text" name="name" required value={leadInfo.name} onChange={handleLeadChange} placeholder="Enter your name" />
+                            <label htmlFor="lead-name">Full Name</label>
+                            <input id="lead-name" type="text" autoComplete="name" maxLength={60} placeholder="Enter your name" {...leadFieldProps('name')} />
+                            {renderLeadError('name')}
                         </div>
                         <div className="input-group">
-                            <label>Phone Number</label>
-                            <input type="tel" name="phone" required value={leadInfo.phone} onChange={handleLeadChange} placeholder="+91 XXXXX XXXXX" />
+                            <label htmlFor="lead-phone">Phone Number</label>
+                            <input id="lead-phone" type="tel" autoComplete="tel" inputMode="tel" maxLength={16} placeholder="+91 XXXXX XXXXX" {...leadFieldProps('phone')} />
+                            {renderLeadError('phone')}
                         </div>
                         <div className="input-group">
-                            <label>City / Location</label>
-                            <input type="text" name="city" required value={leadInfo.city} onChange={handleLeadChange} placeholder="E.g., Hyderabad" />
+                            <label htmlFor="lead-city">City / Location</label>
+                            <input id="lead-city" type="text" autoComplete="address-level2" maxLength={50} placeholder="E.g., Hyderabad" {...leadFieldProps('city')} />
+                            {renderLeadError('city')}
                         </div>
                         <div className="input-group">
-                            <label>Email Address (Optional)</label>
-                            <input type="email" name="email" value={leadInfo.email} onChange={handleLeadChange} placeholder="you@example.com" />
+                            <label htmlFor="lead-email">Email Address (Optional)</label>
+                            <input id="lead-email" type="email" autoComplete="email" maxLength={100} placeholder="you@example.com" {...leadFieldProps('email')} />
+                            {renderLeadError('email')}
                         </div>
                         <button type="submit" className="cf-btn-submit">View My Estimate</button>
                     </form>

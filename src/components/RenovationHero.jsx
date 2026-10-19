@@ -3,15 +3,15 @@ import { useModal } from '../context/ModalContext';
 import './RenovationHero.css';
 
 // Two renders of the same kitchen from the same camera angle; the scroll sweeps one into the other.
-export const WOOD_IMG = '/images/renovation/kitchen-oak.jpg';
-export const ALUMINIUM_IMG = '/images/renovation/kitchen-aluminium.jpg';
+export const WOOD_IMG = '/images/renovation/kitchen-before.jpg';
+export const ALUMINIUM_IMG = '/images/renovation/kitchen-after.jpg';
 
 const CARDS = [
   {
     eyebrow: 'Before',
-    title: 'Organic Warmth',
-    subtitle: 'Natural Oak & Warm Textures',
-    body: 'Honey-toned oak cabinetry, a fluted wood island and the soft glow of under-cabinet light. Beautiful, but wood warps, swells and invites termites.',
+    title: 'Worn-Out Wood',
+    subtitle: 'Swollen, Peeling & Termite-Prone',
+    body: 'Years of moisture, heat and termites take their toll: doors swell and warp, laminate peels away and panels rot from the inside. Repairs only buy time, because wood keeps breaking down.',
     swatch: 'wood',
     range: [0.08, 0.3],
   },
@@ -26,8 +26,8 @@ const CARDS = [
   {
     eyebrow: 'After',
     title: 'Metropolitan Edge',
-    subtitle: 'Brushed Aluminium & Titanium Precision',
-    body: 'Brushed aluminium cabinetry, a seamless metal hood and polished chrome pendants. Waterproof, termite-proof and built to stay immaculate.',
+    subtitle: 'Burgundy Aluminium & Brass Accents',
+    body: 'Rich burgundy aluminium cabinetry, a seamless white hood and brushed brass pendants. Waterproof, termite-proof and built to stay immaculate.',
     swatch: 'aluminium',
     range: [0.78, 1.01],
     cta: true,
@@ -84,8 +84,8 @@ const RenovationHero = ({ data }) => {
     <section className="reno-hero" ref={sectionRef} aria-label={data.title}>
       <div className="reno-sticky">
         <div className="reno-scene">
-          <img src={WOOD_IMG} alt="Oak wood kitchen before renovation" className="reno-layer" />
-          <img src={ALUMINIUM_IMG} alt="Aluminium kitchen after renovation" className="reno-layer reno-layer-after" />
+          <img src={WOOD_IMG} alt="Damaged wooden kitchen before renovation" className="reno-layer" />
+          <img src={ALUMINIUM_IMG} alt="Burgundy aluminium kitchen after renovation" className="reno-layer reno-layer-after" />
           <div className="reno-glint" aria-hidden="true"></div>
           <div className="reno-light reno-light-warm" aria-hidden="true"></div>
           <div className="reno-light reno-light-cool" aria-hidden="true"></div>
@@ -95,7 +95,7 @@ const RenovationHero = ({ data }) => {
         <div className="reno-intro">
           <span className="reno-tag">{data.shortTitle}</span>
           <h1 className="reno-title">{data.title}</h1>
-          <p className="reno-lede">From warm oak to precision aluminium. Scroll to watch the transformation.</p>
+          <p className="reno-lede">Damaged wood out, durable aluminium in. Scroll to watch the transformation.</p>
           <button className="offering-primary-btn" onClick={openModal}>Get Free Consultation</button>
         </div>
 

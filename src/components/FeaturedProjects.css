@@ -24,15 +24,36 @@
   margin: 0 auto;
 }
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.projects-marquee {
+  position: relative;
+  overflow: hidden;
+  padding: 1.5rem 0 2.5rem;
+  /* Fade the cards out at both edges */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+
+.projects-track {
+  display: flex;
   gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto 4rem auto;
+  width: max-content;
+  animation: projects-scroll var(--marquee-duration, 40s) linear infinite;
+}
+
+/* Pause so visitors can look at or click a project */
+.projects-marquee:hover .projects-track,
+.projects-marquee:focus-within .projects-track {
+  animation-play-state: paused;
+}
+
+@keyframes projects-scroll {
+  from { transform: translateX(0); }
+  /* The track holds two identical sets, so shifting by half (plus half a gap) loops seamlessly */
+  to { transform: translateX(calc(-50% - 1rem)); }
 }
 
 .project-card {
+  flex: 0 0 340px;
   text-align: left;
   background-color: #fff;
   transition: transform 0.3s ease;
@@ -123,7 +144,7 @@
 }
 
 .projects-footer {
-  margin-top: 6rem;
+  margin-top: 3.5rem;
 }
 
 .view-all-projects-btn {
@@ -146,19 +167,38 @@
   color: #fff;
 }
 
-@media (max-width: 1024px) {
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 0 2rem;
-  }
-}
-
 @media (max-width: 768px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 4rem;
+  .projects-track {
+    gap: 1.25rem;
+  }
+  @keyframes projects-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-50% - 0.625rem)); }
+  }
+  .project-card {
+    flex-basis: 260px;
+  }
+  .project-info {
+    padding: 1.2rem 1.4rem;
   }
   .projects-title {
     font-size: 2.5rem;
+  }
+}
+
+/* No auto-scroll for visitors who prefer reduced motion: let them swipe/scroll instead */
+@media (prefers-reduced-motion: reduce) {
+  .projects-track {
+    animation: none;
+  }
+  .projects-marquee {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .project-card[aria-hidden="true"] {
+    display: none;
   }
 }

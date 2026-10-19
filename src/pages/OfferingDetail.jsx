@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import { offeringsData } from '../data/offeringsData';
 import { useModal } from '../context/ModalContext';
@@ -21,6 +21,7 @@ const OfferingDetail = () => {
   const data = offeringsData[slug];
   const scrollHero = SCROLL_HEROES[slug];
   const [failedSlug, setFailedSlug] = useState(null);
+  const heroRef = useRef(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -38,6 +39,18 @@ const OfferingDetail = () => {
     return () => { cancelled = true; };
   }, [slug]);
 
+  // Heroes flagged heroBelowNav start their photo below the fixed navbar, whose height varies by screen size
+  useEffect(() => {
+    const hero = heroRef.current;
+    const navbar = document.querySelector('.navbar');
+    if (!hero || !navbar) return;
+    const measure = () => hero.style.setProperty('--nav-h', `${navbar.offsetHeight}px`);
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(navbar);
+    return () => observer.disconnect();
+  }, [slug, failedSlug]);
+
   if (!data) {
     return <Navigate to="/" />;
   }
@@ -46,7 +59,7 @@ const OfferingDetail = () => {
     <div className="offering-detail-page">
       {/* Hero Section */}
       {scrollHero && failedSlug !== slug ? <scrollHero.Component data={data} /> : (
-      <section className="offering-hero">
+      <section className={`offering-hero ${data.heroBelowNav ? 'offering-hero-below-nav' : ''}`} ref={data.heroBelowNav ? heroRef : null}>
         <img src={data.heroImage} alt={data.title} className="offering-hero-img" />
         <div className="offering-hero-content">
           <span className="offering-tag">{data.shortTitle}</span>

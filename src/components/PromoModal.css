@@ -114,6 +114,20 @@
   border-color: var(--text-dark);
 }
 
+.promo-input.input-error {
+  border-color: #d93025;
+}
+
+.promo-field-error {
+  display: block;
+  margin-top: 0.35rem;
+  color: #d93025;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.3;
+  text-align: left;
+}
+
 .promo-submit-btn {
   width: 100%;
   padding: 1rem;

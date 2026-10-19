@@ -51,7 +51,8 @@ export const offeringsData = {
   'exterior-works': {
     title: 'Exterior Works',
     shortTitle: 'Durable Outdoor Applications',
-    heroImage: '/images/offerings/exterior-works.jpg',
+    heroImage: '/images/offerings/exterior-works-facade.jpg',
+    heroBelowNav: true, // whole photo shown uncropped under the navbar
     about: 'Extend your premium design to the outdoors. Our exterior aluminium solutions are engineered to withstand the elements while providing superior security and aesthetic appeal.',
     services: [
       { title: 'Balcony Railings', icon: 'partition', desc: 'Sleek, rust-proof railings that provide safety without obstructing your view.' },

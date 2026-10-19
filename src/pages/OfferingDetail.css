@@ -29,6 +29,20 @@
   background-color: #222;
 }
 
+/* Hero takes the photo's own shape below the fixed navbar, so the whole 2400x1340 image (55.84vw tall) shows uncropped.
+   On narrow screens the min-height keeps room for the title, trimming only the sides. */
+.offering-hero-below-nav {
+  height: calc(var(--nav-h, 120px) + 55.84vw);
+  min-height: 560px;
+  padding: var(--nav-h, 120px) 0 0;
+}
+
+.offering-hero-below-nav .offering-hero-img {
+  top: var(--nav-h, 120px);
+  height: calc(100% - var(--nav-h, 120px));
+  opacity: 1;
+}
+
 .offering-hero-content {
   position: relative;
   z-index: 5;

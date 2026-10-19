@@ -88,7 +88,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <Link to="/" className="navbar-logo" aria-label="Laya Space Design" onClick={(e) => { if (location.pathname === '/') { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); } }}>
+        {/* <Link to="/" className="navbar-logo" aria-label="Laya Space Design" onClick={(e) => { if (location.pathname === '/') { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); } }}>
           <img 
             src="/images/laya-logo-horizontal-dark.png" 
             alt="Laya Space Design" 
@@ -99,7 +99,7 @@ const Navbar = () => {
             alt="Laya Space Design" 
             className="navbar-logo-img logo-light" 
           />
-        </Link>
+        </Link> */}
 
         <div className="nav-links right-links">
           <Link to="/#login" className="icon-link">

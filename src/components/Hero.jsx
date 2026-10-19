@@ -7,12 +7,12 @@ import './Hero.css';
 // A showreel of the home: each shot drifts like a slow camera move (`from` -> `to`),
 // then hard-cuts to the next room, looping back to the exterior after the balcony.
 const SHOTS = [
-  { title: 'Exterior', image: '/images/hero/exterior.jpg?v=2', origin: '54% 67%', from: 'scale(1.04)', to: 'scale(1.14)' },
+  { title: 'Exterior', image: '/images/hero/exterior.png?v=2', origin: '50% 50%', from: 'scale(1)', to: 'scale(1.12)' },
   { title: 'Entrance Foyer', image: '/images/hero/foyer.jpg', origin: '50% 50%', from: 'scale(1.12) translateX(3%)', to: 'scale(1.12) translateX(-3%)' },
   { title: 'Living Room', image: '/images/hero/living.jpg', origin: '50% 50%', from: 'scale(1.12) translateX(-3%)', to: 'scale(1.12) translateX(3%)' },
-  { title: 'Kitchen & Dining', image: '/images/hero/kitchen.jpg', origin: '50% 45%', from: 'scale(1.03)', to: 'scale(1.13)' },
-  { title: 'Master Bedroom', image: '/images/hero/bedroom.jpg?v=6', origin: '50% 50%', from: 'scale(1.12) translateX(-3%)', to: 'scale(1.12) translateX(3%)' },
-  { title: 'The Balcony', image: '/images/hero/balcony.jpg?v=6', origin: '50% 55%', from: 'scale(1.15)', to: 'scale(1.03)' },
+  { title: 'Kitchen & Dining', image: '/images/hero/kitchen2.jpg', origin: '50% 45%', from: 'scale(1.03)', to: 'scale(1.13)' },
+  { title: 'Master Bedroom', image: '/images/hero/bedroom3.jpg?v=6', origin: '50% 50%', from: 'scale(1.12) translateX(-3%)', to: 'scale(1.12) translateX(3%)' },
+  { title: 'The Balcony', image: '/images/hero/balcony.jpg?v=6', origin: '50% 55%', from: 'scale(1.15)', to: 'scale(1.07)' },
 ];
 
 const SHOT_MS = 3000; // how long each shot runs before the cut
@@ -66,6 +66,13 @@ const Hero = () => {
       <div className="hero-content container">
         <div className="hero-text">
           <div className="animate-in">
+          <div className="hero-content">
+  <img
+    src="/images/laya-logo-horizontal-dark.png"
+    alt="Laya Space Design"
+    className="hero-logo"
+  />
+  </div>
             <h1 className="hero-title">Precision in Every Detail</h1>
             <p className="hero-subtitle">
               Modern aluminium interiors crafted for durability, elegance, and everyday living.
