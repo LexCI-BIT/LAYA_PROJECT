@@ -10,7 +10,7 @@ const Projects = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const categories = ['ALL', 'WARDROBE', 'KITCHEN', 'LIVING ROOM', 'EXTERIOR', 'CUSTOM'];
+  const categories = ['ALL', 'WARDROBE', 'KITCHEN', 'LIVING ROOM', 'BEDROOM', 'EXTERIOR', 'CUSTOM'];
 
   const filteredProjects = filter === 'ALL'
     ? projectsData
