@@ -18,7 +18,7 @@ const AluminiumManufacturing = () => {
         {/* Hero Background Image */}
         <div className="aluminium-hero-art" aria-hidden="true">
           <img
-            src="/images/manufacturing/aluminium-manufacturing.jpeg"
+            src="/images/manufacturing/aluminium-manufacturing-hero.jpg"
             alt=""
           />
         </div>

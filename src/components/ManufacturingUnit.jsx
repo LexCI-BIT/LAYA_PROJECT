@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Check } from 'lucide-react';
 import { useModal } from '../context/ModalContext';
 import './ManufacturingUnit.css';
 
@@ -132,7 +131,7 @@ const ManufacturingUnit = ({
 
             <div className="mfg-intro-text">
               <span className="mfg-eyebrow">
-                OUR MANUFACTURING
+                PRECISION ALUMINIUM ENGINEERING
               </span>
 
               <h2 className="mfg-title">
@@ -240,32 +239,28 @@ const ManufacturingUnit = ({
           </section>
 
           {/* Why Source With Us */}
-          <section className="container mfg-block">
-            <span className="mfg-eyebrow">
-              THE LAYA ADVANTAGE
-            </span>
+          <section className="mfg-why">
+            <div className="container">
+              <span className="mfg-eyebrow">
+                THE LAYA ADVANTAGE
+              </span>
 
-            <h2 className="mfg-subtitle">
-              Why Source With Us
-            </h2>
+              <h2 className="mfg-subtitle">
+                Why Source With Us
+              </h2>
 
-            <ul className="mfg-strengths">
-              {strengths.map((strength) => (
-                <li
-                  className="mfg-strength"
-                  key={strength.title}
-                >
-                  <span className="mfg-strength-icon">
-                    <Check size={16} />
-                  </span>
-
-                  <div>
+              <ul className="mfg-strengths">
+                {strengths.map((strength) => (
+                  <li
+                    className="mfg-strength"
+                    key={strength.title}
+                  >
                     <h4>{strength.title}</h4>
                     <p>{strength.description}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </section>
         </>
       )}

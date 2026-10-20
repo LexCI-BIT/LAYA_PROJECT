@@ -10,7 +10,11 @@ const Navbar = () => {
   const location = useLocation();
   const { openModal } = useModal();
   const isSubPage = location.pathname !== '/';
-  const isProjectsPage = location.pathname.startsWith('/projects');
+  // Pages whose top is light: the transparent white-text navbar would be invisible there
+  const hasSolidNav =
+    location.pathname.startsWith('/projects') ||
+    location.pathname.startsWith('/design-ideas') ||
+    /^\/price-calculator\/[^/]+\/(form|result)$/.test(location.pathname);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,7 +36,7 @@ const Navbar = () => {
 
   return (
     <nav className={`navbar ${(scrolled || isSubPage) ? 'scrolled' : ''} ${ isSubPage ? 'subpage-navbar' : ''} ${
-    isProjectsPage ? 'projects-navbar' : ''}`}>
+    hasSolidNav ? 'solid-navbar' : ''}`}>
       <div className="navbar-top-container container">
         <div className="nav-links left-links">
           <div className="nav-item-dropdown">

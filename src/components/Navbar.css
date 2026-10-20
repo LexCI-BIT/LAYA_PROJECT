@@ -500,12 +500,12 @@
   background: #fff !important;
 }
 
-.navbar.projects-navbar .dropdown-menu {
+.navbar.solid-navbar .dropdown-menu {
   background: #fff !important;
   z-index: 10000;
 }
 
-.navbar.projects-navbar {
+.navbar.solid-navbar {
   position: relative;
   top: 0;
   width: 100%;
@@ -516,32 +516,32 @@
   z-index: 9999;
 }
 
-.navbar.projects-navbar .nav-links,
-.navbar.projects-navbar .nav-links a,
-.navbar.projects-navbar .sub-nav-links,
-.navbar.projects-navbar .sub-nav-links a,
-.navbar.projects-navbar .icon-link {
+.navbar.solid-navbar .nav-links,
+.navbar.solid-navbar .nav-links a,
+.navbar.solid-navbar .sub-nav-links,
+.navbar.solid-navbar .sub-nav-links a,
+.navbar.solid-navbar .icon-link {
   color: var(--text-dark) !important;
 }
 
-.navbar.projects-navbar .consult-btn {
+.navbar.solid-navbar .consult-btn {
   color: var(--text-dark) !important;
   border-color: rgba(0, 0, 0, 0.2);
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-.navbar.projects-navbar .dropdown-menu,
-.navbar.projects-navbar .nested-dropdown-menu {
+.navbar.solid-navbar .dropdown-menu,
+.navbar.solid-navbar .nested-dropdown-menu {
   background-color: var(--bg-light) !important;
   z-index: 10000;
 }
 
-.navbar.projects-navbar .dropdown-menu a,
-.navbar.projects-navbar .nested-dropdown-menu a {
+.navbar.solid-navbar .dropdown-menu a,
+.navbar.solid-navbar .nested-dropdown-menu a {
   color: var(--text-dark) !important;
 }
 
-.navbar.projects-navbar {
+.navbar.solid-navbar {
   position: relative;
   display: block;
   width: 100%;
@@ -550,38 +550,40 @@
   z-index: 9999;
 }
 
-.navbar.projects-navbar .navbar-top-container,
-.navbar.projects-navbar .navbar-bottom-container {
+.navbar.solid-navbar .navbar-top-container,
+.navbar.solid-navbar .navbar-bottom-container {
   display: flex;
   visibility: visible;
   opacity: 1;
 }
 
-.navbar.projects-navbar .nav-links,
-.navbar.projects-navbar .nav-links a,
-.navbar.projects-navbar .sub-nav-links,
-.navbar.projects-navbar .sub-nav-links a {
+/* Direct children only: forcing visibility on links inside .dropdown-menu
+   made the hidden menus hoverable, so they popped open near the top-left. */
+.navbar.solid-navbar .nav-links,
+.navbar.solid-navbar .nav-links > a,
+.navbar.solid-navbar .sub-nav-links,
+.navbar.solid-navbar .sub-nav-links > a {
   visibility: visible !important;
   opacity: 1 !important;
   color: var(--text-dark) !important;
 }
 
-.navbar.projects-navbar a {
+.navbar.solid-navbar a {
   pointer-events: auto;
 }
 
-.navbar.projects-navbar .navbar-top-container {
+.navbar.solid-navbar .navbar-top-container {
   display: flex !important;
   visibility: visible !important;
 }
 
-.navbar.projects-navbar .navbar-bottom-container {
+.navbar.solid-navbar .navbar-bottom-container {
   display: flex !important;
   justify-content: center !important;
   visibility: visible !important;
 }
 
-.navbar.projects-navbar .sub-nav-links {
+.navbar.solid-navbar .sub-nav-links {
   display: flex !important;
   flex-wrap: wrap;
   align-items: center;
@@ -592,20 +594,20 @@
   color: var(--text-dark) !important;
 }
 
-.navbar.projects-navbar .sub-nav-links a {
+.navbar.solid-navbar .sub-nav-links > a {
   display: inline-flex !important;
   visibility: visible !important;
   opacity: 1 !important;
   color: var(--text-dark) !important;
 }
 
-.navbar.projects-navbar .nav-links {
+.navbar.solid-navbar .nav-links {
   display: flex !important;
   visibility: visible !important;
 }
 
 @media (max-width: 1024px) {
-  .navbar.projects-navbar .sub-nav-links {
+  .navbar.solid-navbar .sub-nav-links {
     display: flex !important;
   }
 }
