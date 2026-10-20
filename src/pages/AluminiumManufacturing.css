@@ -40,18 +40,25 @@
 
 /* Dark overlay */
 
+/* The photo is already dark: darken only behind the centred text, keep the edges (sparks, lights) vivid,
+   and fade the bottom into the navy section below. */
 .aluminium-hero-shade {
   background:
-    linear-gradient(
-      0deg,
-      rgba(13, 24, 31, 0.96) 10%,
-      rgba(13, 24, 31, 0.82) 10%,
-      rgba(13, 24, 31, 0.18) 10%
+    radial-gradient(
+      ellipse 55% 45% at 50% 52%,
+      rgba(13, 24, 31, 0.62) 0%,
+      rgba(13, 24, 31, 0.32) 55%,
+      rgba(13, 24, 31, 0) 100%
     ),
     linear-gradient(
       0deg,
-      rgba(13, 24, 31, 0.48),
-      transparent 10%
+      #172832 0%,
+      rgba(23, 40, 50, 0) 22%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(13, 24, 31, 0.5) 0%,
+      rgba(13, 24, 31, 0) 18%
     );
 }
 
@@ -208,6 +215,7 @@
 .aluminium-page-sections .manufacturing {
   margin-top: 0;
   padding-top: 0;
+  padding-bottom: 0; /* the dark "Why Source With Us" band ends the section edge to edge */
 }
 
 /* What We Offer */
@@ -231,20 +239,16 @@
 
   .aluminium-hero-art img {
     object-position: 58% center;
-    opacity: 0.55;
   }
 
   .aluminium-hero-shade {
     background:
       linear-gradient(
-        90deg,
-        rgba(13, 24, 31, 0.94),
-        rgba(13, 24, 31, 0.52)
-      ),
-      linear-gradient(
-        0deg,
-        rgba(13, 24, 31, 0.55),
-        transparent
+        180deg,
+        rgba(13, 24, 31, 0.55) 0%,
+        rgba(13, 24, 31, 0.5) 45%,
+        rgba(13, 24, 31, 0.15) 75%,
+        #172832 100%
       );
   }
 

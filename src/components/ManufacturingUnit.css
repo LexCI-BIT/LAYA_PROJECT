@@ -282,6 +282,59 @@
   color: rgba(34, 33, 31, 0.7);
 }
 
+/* Why Source With Us: same look as the Home page's "Why Laya Space Design?" (WhyChooseUs.css) */
+.mfg-why {
+  margin-top: 8rem;
+  padding: 7rem 0;
+  background-color: #0d0d0d;
+  color: #fff;
+}
+
+.mfg-why .mfg-eyebrow {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.mfg-why .mfg-subtitle {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  margin-bottom: 4rem;
+  color: #fff;
+}
+
+.mfg-why .mfg-strengths {
+  gap: 3rem 4rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.mfg-why .mfg-strength {
+  display: block;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1rem 0 1rem 2.5rem;
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.mfg-why .mfg-strength:hover {
+  border-left-color: #fff;
+  transform: translateX(10px);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
+}
+
+.mfg-why .mfg-strength h4 {
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  color: #fff;
+}
+
+.mfg-why .mfg-strength p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.5);
+}
+
 @media (max-width: 1024px) {
   .mfg-intro {
     grid-template-columns: 1fr;
@@ -358,6 +411,24 @@
   .mfg-strengths {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+  }
+
+  .mfg-why {
+    margin-top: 5rem;
+    padding: 5rem 0;
+  }
+
+  .mfg-why .mfg-subtitle {
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .mfg-why .mfg-strengths {
+    gap: 2rem;
+  }
+
+  .mfg-why .mfg-strength {
+    padding-left: 2rem;
   }
 
   .mfg-products {

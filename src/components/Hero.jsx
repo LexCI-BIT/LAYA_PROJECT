@@ -232,7 +232,7 @@ const Hero = () => {
 
             <h1 className="hero-title">Precision in Every Detail</h1>
             <p className="hero-subtitle">
-              Modern aluminium interiors crafted for durability, elegance, and everyday living.
+              Engineers &amp; Contractors in Architectural Aluminium Building Products
             </p>
 
             <div className="hero-cta">

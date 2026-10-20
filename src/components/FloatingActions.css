@@ -66,10 +66,13 @@
 }
 
 @media (max-width: 768px) {
+  /* Bottom-right corner on phones: mid-screen it covered hero text */
   .floating-actions-container {
+    top: auto;
     bottom: 1.5rem;
-    left: 1.5rem; /* Match desktop left-side position */
-    right: auto;
+    right: 16px;
+    left: auto;
+    transform: none;
   }
   
   .sticky-book-btn .btn-text {
