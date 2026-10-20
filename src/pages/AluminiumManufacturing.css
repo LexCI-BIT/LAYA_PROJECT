@@ -13,6 +13,10 @@
   background: #172832;
   color: #fff;
   isolation: isolate;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Background image */
@@ -53,14 +57,29 @@
 
 /* Hero content */
 
-.aluminium-hero-content {
-  position: relative;
+
+  /* position: relative;
   z-index: 1;
   max-width: 1200px;
   width: 100%;
   padding-top: 150px;
+  padding-bottom: 100px; */
+
+  .aluminium-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 150px;
   padding-bottom: 100px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
+
 
 .aluminium-kicker {
   display: inline-block;
@@ -91,7 +110,7 @@
 /* Description */
 
 .aluminium-hero-content > p {
-  font: 300 1.05rem / 1.9 Inter, sans-serif;
+  font: 2000 1.05rem / 1.9 Inter, sans-serif;
   color: rgba(255, 255, 255, 0.78);
   max-width: 570px;
   margin: 0 0 34px;
@@ -469,3 +488,15 @@
   }
 }
 
+.mfg-intro-media {
+  width: 80%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.mfg-intro-main {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}

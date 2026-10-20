@@ -1,6 +1,5 @@
-
-import React, { useState } from 'react';
-import { X, ArrowUpRight } from 'lucide-react';
+import React from 'react';
+import { ArrowUpRight } from 'lucide-react';
 import './ManufacturingProjects.css';
 
 const projects = [
@@ -35,7 +34,6 @@ const projects = [
 ];
 
 const ManufacturingProjects = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
 
   // Duplicate cards for seamless scrolling.
   const slideshowProjects = [...projects, ...projects];
@@ -80,50 +78,14 @@ const ManufacturingProjects = () => {
 
                 <h3>{project.title}</h3>
 
-                <span className="mfg-project-open">
+                {/* <span className="mfg-project-open">
                   <ArrowUpRight size={20} />
-                </span>
+                </span> */}
               </div>
             </button>
           ))}
         </div>
       </div>
-
-      {/* Image popup */}
-      {selectedProject && (
-        <div
-          className="mfg-project-modal"
-          onClick={() => setSelectedProject(null)}
-        >
-          <div
-            className="mfg-project-modal-content"
-            role="dialog"
-            aria-modal="true"
-            aria-label={selectedProject.title}
-            onClick={(event) => event.stopPropagation()}
-          >
-            <button
-              type="button"
-              className="mfg-project-modal-close"
-              onClick={() => setSelectedProject(null)}
-              aria-label="Close preview"
-            >
-              <X size={24} />
-            </button>
-
-            <img
-              src={selectedProject.image}
-              alt={selectedProject.title}
-            />
-
-            <div className="mfg-project-modal-info">
-              <span>{selectedProject.category}</span>
-              <h2>{selectedProject.title}</h2>
-              <p>{selectedProject.description}</p>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 };

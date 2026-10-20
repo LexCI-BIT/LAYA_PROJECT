@@ -10,6 +10,7 @@ const Navbar = () => {
   const location = useLocation();
   const { openModal } = useModal();
   const isSubPage = location.pathname !== '/';
+  const isProjectsPage = location.pathname.startsWith('/projects');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,7 +31,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`navbar ${(scrolled || isSubPage) ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${(scrolled || isSubPage) ? 'scrolled' : ''} ${ isSubPage ? 'subpage-navbar' : ''} ${
+    isProjectsPage ? 'projects-navbar' : ''}`}>
       <div className="navbar-top-container container">
         <div className="nav-links left-links">
           <div className="nav-item-dropdown">

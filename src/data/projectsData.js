@@ -86,7 +86,7 @@ export const projectsData = [
     title: 'Minimalist Partition',
     shortDesc: 'Sleek room dividers that maximize light flow.',
     fullDesc: 'Define your space without closing it off. These slender aluminium partitions with glass inserts provide acoustic and visual separation while keeping your interior bright and airy.',
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2070',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGpU59gvwl40t3MOgjSUfCgwwuC3xQb7gHRkP1WXMpYQ&s=10',
     type: 'Room Divider',
     materials: ['Slimline Aluminium', 'Fluted Glass', 'Floor-to-ceiling Track'],
     gallery: [
@@ -126,7 +126,7 @@ export const projectsData = [
     title: 'Open-Shelf Wardrobe',
     shortDesc: 'Full-height wardrobe with lit open shelving and colour accents.',
     fullDesc: 'A floor-to-ceiling wardrobe wall combining hanging zones, drawers and shoe racks. Concealed LED strips light every shelf, while colour-accented aluminium shutters slide across to close the unit off completely.',
-    image: '/images/offerings/wardrobe-open.jpg',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-qt99Fwhk7_YAxNN_ub6ogifGNBGXLQXGV1dJbPTcUQ&s=10',
     type: 'Hinged / Open Shelf',
     materials: ['Aluminium Frame', 'Matte Laminate Shutters', 'LED Profile Lighting'],
     gallery: [

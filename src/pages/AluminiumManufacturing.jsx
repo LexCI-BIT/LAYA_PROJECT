@@ -65,14 +65,14 @@ const AluminiumManufacturing = () => {
 
           </div>
 
-          {/* Scroll Cue */}
+          {/* Scroll Cue
           <a
             className="aluminium-scroll-cue"
             href="#what-we-offer"
           >
             <ArrowDown size={16} />
             Scroll to explore
-          </a>
+          </a> */}
 
         </div>
 

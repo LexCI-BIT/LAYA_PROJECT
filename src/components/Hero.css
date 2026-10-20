@@ -16,7 +16,7 @@
   animation: heroReelIn 0.9s ease-out both;
 }
 
-.hero-slide {
+/* .hero-slide {
   position: absolute;
   inset: 0;
   visibility: hidden;
@@ -24,8 +24,22 @@
 
 .hero-slide.is-active {
   visibility: visible;
+} */
+ .hero-slide {
+  position: absolute;
+  inset: 0;
+  visibility: visible;
+  opacity: 0;
+  z-index: 0;
+  transition: opacity 1.2s ease-in-out;
 }
 
+.hero-slide.is-active {
+  visibility: visible;
+  opacity: 1;
+  z-index: 1;
+}
+/* 
 .hero-slide img {
   width: 100%;
   height: 100%;
@@ -42,6 +56,33 @@
 
 .hero.is-paused .hero-slide.is-active img {
   animation-play-state: paused;
+} */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+  visibility: visible;
+  transition: none;
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+  z-index: 2;
+  pointer-events: auto;
+  animation: slideFadeIn 0.8s ease both;
+}
+
+.hero-slide.is-previous {
+  opacity: 1;
+  z-index: 1;
+  pointer-events: none;
+ 
+}
+
+.hero-slide.is-active img {
+  animation: heroShot var(--shot-duration) linear both;
 }
 
 @keyframes heroShot {
@@ -52,6 +93,24 @@
 @keyframes heroReelIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 /* The headline stays over every shot, including bright interiors, so keep a steady scrim on the left */
