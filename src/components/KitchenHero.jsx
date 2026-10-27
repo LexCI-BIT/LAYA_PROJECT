@@ -16,13 +16,15 @@ const STEP_LOCK = 1000; // piece fade-in time plus trackpad inertia
 // (the two renders light the floor differently). Foreground pieces come first, so a later piece never has to show
 // through one that is not placed yet.
 const MASK_DIR = '/images/offerings';
+// `focus` is where the piece sits across the render (0 = left edge, 1 = right edge); narrow screens pan there.
 const PIECES = [
-  'Island & seating',
-  'Tall units & built-in appliances',
-  'Glass display cabinet',
-  'Cooking wall & open shelving',
-].map((label, i) => ({
+  { label: 'Island & seating', focus: 0.5 },
+  { label: 'Tall units & built-in appliances', focus: 0.33 },
+  { label: 'Glass display cabinet', focus: 0.12 },
+  { label: 'Cooking wall & open shelving', focus: 0.7 },
+].map(({ label, focus }, i) => ({
   label,
+  focus,
   piece: `${MASK_DIR}/kitchen-piece-${i + 1}.png`,
   floor: `${MASK_DIR}/kitchen-floor-${i + 1}.png`,
 }));
@@ -35,9 +37,10 @@ const KitchenHero = ({ data }) => {
   const { stage, sectionRef } = useSteppedScroll(LAST, STEP_LOCK);
 
   const done = stage === LAST;
+  const focus = stage === 0 ? 0.5 : PIECES[stage - 1].focus;
 
   return (
-    <section className="reno-hero wd-hero kt-hero" ref={sectionRef} style={{ '--open': stage / LAST }} aria-label={data.title}>
+    <section className="reno-hero wd-hero kt-hero" ref={sectionRef} style={{ '--open': stage / LAST, '--focus': focus }} aria-label={data.title}>
       <div className="reno-sticky">
         <div className="kt-stage">
           <img src={EMPTY_IMG} alt="Empty room with panelled walls and herringbone floor" className="kt-layer" />

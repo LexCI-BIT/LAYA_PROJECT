@@ -135,9 +135,9 @@ const ManufacturingUnit = ({
               </span>
 
               <h2 className="mfg-title">
-                Where Precision
+                Aluminium Manufacturing
                 <br />
-                Meets Possibility
+                <em>&amp; Supply</em>
               </h2>
 
               <p>

@@ -5,8 +5,9 @@
 
 .aluminium-hero {
   position: relative;
-  height: 100vh;
-  height: 100svh;
+  /* min-height (not height) so the content is never clipped on short / landscape screens */
+  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -117,7 +118,7 @@
 /* Description */
 
 .aluminium-hero-content > p {
-  font: 2000 1.05rem / 1.9 Inter, sans-serif;
+  font: 300 1.05rem / 1.9 Inter, sans-serif;
   color: rgba(255, 255, 255, 0.78);
   max-width: 570px;
   margin: 0 0 34px;
@@ -128,6 +129,7 @@
 .aluminium-hero-actions {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 26px;
   flex-wrap: wrap;
 }
@@ -232,8 +234,7 @@
 @media (max-width: 768px) {
   .aluminium-hero {
     min-height: 680px;
-    height: 78vh;
-    height: 78svh;
+    min-height: max(680px, 78svh);
     align-items: flex-start;
   }
 
@@ -476,6 +477,21 @@
   }
 }
 
+@media (max-width: 480px) {
+  .mfg-projects-showcase {
+    height: 420px;
+  }
+
+  .mfg-project-slide {
+    flex-basis: 240px;
+    height: 240px;
+  }
+
+  .mfg-project-slide-overlay {
+    padding: 16px;
+  }
+}
+
 /* Respect accessibility preferences */
 
 @media (prefers-reduced-motion: reduce) {
@@ -490,17 +506,4 @@
     mask-image: none;
     -webkit-mask-image: none;
   }
-}
-
-.mfg-intro-media {
-  width: 80%;
-  max-width: 480px;
-  margin: 0 auto;
-}
-
-.mfg-intro-main {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
 }

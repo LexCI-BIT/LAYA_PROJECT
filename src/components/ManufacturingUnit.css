@@ -15,13 +15,16 @@
 
 .mfg-intro-media {
   position: relative;
+  width: 80%;
+  max-width: 480px;
+  margin: 0 auto;
 }
 
 .mfg-intro-main {
   width: 100%;
-  aspect-ratio: 3 / 2;
-  object-fit:fill;
+  height: auto;
   display: block;
+  object-fit: contain;
   border-radius: 4px;
 }
 
@@ -315,10 +318,13 @@
   transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.mfg-why .mfg-strength:hover {
-  border-left-color: #fff;
-  transform: translateX(10px);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
+/* Hover shift only on real pointers: on touch it sticks after a tap and nudges the card sideways */
+@media (hover: hover) and (pointer: fine) {
+  .mfg-why .mfg-strength:hover {
+    border-left-color: #fff;
+    transform: translateX(10px);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
+  }
 }
 
 .mfg-why .mfg-strength h4 {
@@ -441,6 +447,81 @@
 
   .mfg-cta {
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .manufacturing {
+    padding: 4.5rem 0;
+  }
+
+  .mfg-intro {
+    gap: 3rem;
+  }
+
+  .mfg-intro-media {
+    width: 100%;
+  }
+
+  .mfg-eyebrow {
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+  }
+
+  .mfg-title {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .mfg-subtitle,
+  .mfg-why .mfg-subtitle {
+    font-size: 1.85rem;
+    margin-bottom: 2rem;
+  }
+
+  .mfg-block,
+  .mfg-offer,
+  .mfg-why {
+    margin-top: 3.5rem;
+  }
+
+  .mfg-offer {
+    padding: 3.5rem 0 0;
+  }
+
+  .mfg-why {
+    padding: 3.5rem 0;
+  }
+
+  .mfg-service,
+  .mfg-service:nth-child(even) {
+    padding-left: 2rem;
+  }
+
+  .mfg-service-body {
+    padding: 1.5rem 0;
+  }
+
+  .mfg-service::after {
+    top: 2rem;
+  }
+
+  .mfg-service-index {
+    font-size: 2.2rem;
+  }
+
+  .mfg-products {
+    gap: 1.5rem 1rem;
+  }
+
+  .mfg-product figcaption {
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+    margin-top: 0.75rem;
+  }
+
+  .mfg-why .mfg-strength {
+    padding: 0.5rem 0 0.5rem 1.5rem;
   }
 }
 

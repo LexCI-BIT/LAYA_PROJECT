@@ -220,6 +220,15 @@
 
 @media (max-width: 768px) {
   .wd-intro { left: 16px; right: 16px; }
+  .wd-scroll-hint { white-space: nowrap; font-size: 0.65rem; letter-spacing: 2px; bottom: 1.75rem; }
+  /* Keep the closing CTA clear of the floating WhatsApp button in the bottom-right corner */
+  .wd-final { bottom: 6.5rem; }
+  .wd-final .reno-card-cta { padding: 0.9rem 1.6rem; font-size: 0.72rem; letter-spacing: 1.5px; }
+}
+
+@media (max-width: 480px) {
+  .wd-final-title { font-size: 1.85rem; }
+  .wd-final-sub { font-size: 0.62rem; letter-spacing: 1px; line-height: 1.6; }
   .wd-final-title { font-size: 2.1rem; }
   .wd-final-sub { font-size: 0.68rem; letter-spacing: 1.5px; }
 }
