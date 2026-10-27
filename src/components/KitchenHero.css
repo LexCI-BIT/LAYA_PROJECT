@@ -100,6 +100,18 @@
 }
 
 @media (max-width: 768px) {
+  /* Portrait screens only show a narrow slice of the wide render, so pan the camera to the piece being placed
+     (--focus), clamped so the image always covers the screen edge to edge. */
+  .kt-hero {
+    --kt-w: max(100vw, calc(100svh * 1376 / 768));
+  }
+
+  .kt-stage {
+    left: 0;
+    transform: translate(clamp(100vw - var(--kt-w), 50vw - var(--focus, 0.5) * var(--kt-w), 0px), -50%);
+    transition: transform 1.1s cubic-bezier(0.65, 0, 0.35, 1);
+  }
+
   .kt-labels {
     right: 16px;
     left: 16px;
@@ -108,9 +120,13 @@
     transform: none;
   }
 
+  /* Anchor labels by their bottom edge so they sit above the scroll hint instead of hanging into it */
   .kt-label {
     right: auto;
     left: 0;
+    top: auto;
+    bottom: 0;
+    max-width: 100%;
     white-space: normal;
     font-size: 0.68rem;
     letter-spacing: 1.5px;
@@ -118,6 +134,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .kt-stage,
   .kt-piece,
   .kt-floor,
   .kt-finish {

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Link, useLocation } from 'react-router-dom';
 import { useModal } from '../context/ModalContext';
 import './Navbar.css';
@@ -6,9 +7,9 @@ import AluminiumManufacturing from "../pages/AluminiumManufacturing";
 
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const { openModal } = useModal();
+  const [menuOpen, setMenuOpen] = useState(false);
   const isSubPage = location.pathname !== '/';
   // Pages whose top is light: the transparent white-text navbar would be invisible there
   const hasSolidNav =
@@ -16,13 +17,25 @@ const Navbar = () => {
     location.pathname.startsWith('/design-ideas') ||
     /^\/price-calculator\/[^/]+\/(form|result)$/.test(location.pathname);
 
+  // Mobile menu: lock page scroll while open, close on Escape
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+    if (!menuOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const handleKey = (e) => {
+      if (e.key === 'Escape') setMenuOpen(false);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    window.addEventListener('keydown', handleKey);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', handleKey);
+    };
+  }, [menuOpen]);
+
+  // Any link tapped inside the drawer closes it
+  const handleMenuClick = (e) => {
+    if (e.target.closest('a')) setMenuOpen(false);
+  };
 
   const handleHashLink = (e, targetId) => {
     if (location.pathname === '/') {
@@ -35,9 +48,21 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`navbar ${(scrolled || isSubPage) ? 'scrolled' : ''} ${ isSubPage ? 'subpage-navbar' : ''} ${
+    <nav className={`navbar ${isSubPage ? 'scrolled' : ''} ${ isSubPage ? 'subpage-navbar' : ''} ${
     hasSolidNav ? 'solid-navbar' : ''}`}>
       <div className="navbar-top-container container">
+        <button
+          type="button"
+          className="menu-toggle"
+          aria-label="Open menu"
+          aria-expanded={menuOpen}
+          aria-controls="mobile-menu"
+          onClick={() => setMenuOpen(true)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
         <div className="nav-links left-links">
           <div className="nav-item-dropdown">
             <Link to="/design-ideas" className="dropdown-trigger nav-link-with-arrow">
@@ -144,6 +169,95 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+
+      {createPortal(
+        <div className={`mobile-menu ${menuOpen ? 'open' : ''}`} inert={!menuOpen}>
+          <div className="mobile-menu-backdrop" onClick={() => setMenuOpen(false)} />
+          <aside
+            id="mobile-menu"
+            className="mobile-menu-panel"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Site menu"
+            onClick={handleMenuClick}
+          >
+            <div className="mobile-menu-header">
+              <span className="mobile-menu-title">Menu</span>
+              <button
+                type="button"
+                className="mobile-menu-close"
+                aria-label="Close menu"
+                onClick={() => setMenuOpen(false)}
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><path d="M6 6l12 12M18 6L6 18" /></svg>
+              </button>
+            </div>
+
+            <nav className="mobile-menu-links">
+              <Link to="/" onClick={(e) => { if (location.pathname === '/') { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); } }}>Home</Link>
+              <Link to="/aluminium-manufacturing">Aluminium Manufacturing</Link>
+              <Link to="/projects">Projects</Link>
+
+              <details>
+                <summary>Design Ideas</summary>
+                <div className="mobile-submenu">
+                  <Link to="/design-ideas">All Design Ideas</Link>
+                  <Link to="/design-ideas/wardrobe">Wardrobe Designs</Link>
+                  <Link to="/design-ideas/kitchen">Kitchen Designs</Link>
+                  <Link to="/design-ideas/living-room">Living Room Designs</Link>
+                  <Link to="/design-ideas/space-saving">Space Saving Ideas</Link>
+                </div>
+              </details>
+
+              <details>
+                <summary>Offerings</summary>
+                <div className="mobile-submenu">
+                  <Link to="/#offerings" onClick={(e) => handleHashLink(e, 'offerings')}>All Offerings</Link>
+                  <Link to="/offerings/aluminium-interiors">Aluminium Interiors</Link>
+                  <Link to="/offerings/modular-cupboards">Modular Cupboards</Link>
+                  <Link to="/offerings/exterior-works">Exterior Works</Link>
+                  <Link to="/offerings/custom-designs">Custom Designs</Link>
+                  <Link to="/offerings/renovation">Renovation</Link>
+                </div>
+              </details>
+
+              <details>
+                <summary>Price Calculator</summary>
+                <div className="mobile-submenu">
+                  <Link to="/price-calculator">All Calculators</Link>
+                  <Link to="/price-calculator/wardrobe">Wardrobe Cost Calculator</Link>
+                  <Link to="/price-calculator/kitchen">Kitchen Cost Calculator</Link>
+                  <Link to="/price-calculator/living-room">Living Room Cost Calculator</Link>
+                  <Link to="/price-calculator/full-home">Full Home Interior Calculator</Link>
+                </div>
+              </details>
+
+              <details>
+                <summary>Cities</summary>
+                <div className="mobile-submenu">
+                  <span className="mobile-submenu-label">Telangana</span>
+                  <Link to="/cities/hyderabad">Hyderabad</Link>
+                  <Link to="/cities/warangal">Warangal</Link>
+                  <Link to="/cities/karimnagar">Karimnagar</Link>
+                  <span className="mobile-submenu-label">Andhra Pradesh</span>
+                  <Link to="/cities/vijayawada">Vijayawada</Link>
+                  <Link to="/cities/visakhapatnam">Visakhapatnam</Link>
+                  <Link to="/cities/guntur">Guntur</Link>
+                </div>
+              </details>
+            </nav>
+
+            <button
+              type="button"
+              className="mobile-menu-cta"
+              onClick={() => { setMenuOpen(false); openModal(); }}
+            >
+              Consult Online
+            </button>
+          </aside>
+        </div>,
+        document.body
+      )}
     </nav>
   );
 };

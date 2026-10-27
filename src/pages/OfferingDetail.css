@@ -246,22 +246,132 @@
   transform: scale(1.05);
 }
 
+/* Card lift only on real pointers: on touch it sticks after a tap */
+@media (hover: none) {
+  .grid-item:hover {
+    transform: none;
+  }
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
-  .about-grid, .offering-grid-container {
+  .about-grid {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 1.5rem;
+  }
+  .offering-grid-container {
+    gap: 1.5rem;
+  }
+  .grid-item {
+    padding: 2rem;
   }
   .offering-hero-title {
     font-size: 3.5rem;
   }
-}
-@media (max-width: 768px) {
   .offering-section {
-    padding: 6rem 0;
+    padding: 7rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .offering-hero {
+    min-height: 80vh;
+    min-height: 80svh;
+    padding-top: 140px;
+    padding-bottom: 80px;
+  }
+  .offering-hero-below-nav {
+    min-height: 520px;
+    padding: var(--nav-h, 80px) 0 0;
   }
   .offering-hero-content {
-    margin-left: 16px;
-    margin-right: 16px;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+  .offering-tag {
+    font-size: 0.7rem;
+    letter-spacing: 2.5px;
+    margin-bottom: 1rem;
+  }
+  .offering-hero-title {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+  }
+  .offering-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    max-width: 300px;
+  }
+  .offering-primary-btn,
+  .offering-secondary-btn {
+    padding: 1rem 1.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+  }
+
+  .offering-section {
+    padding: 4.5rem 0;
+  }
+  .offering-container {
+    padding: 0 1.5rem;
+  }
+  .offering-section-title {
+    font-size: 2.3rem;
+    line-height: 1.15;
+    margin-bottom: 2rem;
+  }
+  .about-grid {
+    gap: 0;
+  }
+  .about-grid .offering-section-title {
+    margin-bottom: 1.25rem;
+  }
+  .about-text {
+    font-size: 1.02rem;
+    line-height: 1.75;
+  }
+
+  .offering-grid-container {
+    gap: 1rem;
+  }
+  .grid-item {
+    padding: 1.75rem 1.5rem;
+  }
+  .grid-item > div:first-child {
+    margin-bottom: 1rem !important;
+  }
+  .grid-item > div:first-child svg {
+    width: 32px;
+    height: 32px;
+  }
+  .grid-item-title {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .gallery-grid {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .offering-grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .offering-hero-title {
+    font-size: 2.5rem;
+  }
+  .offering-section {
+    padding: 3.5rem 0;
+  }
+  .offering-section-title {
+    font-size: 2rem;
+  }
+  .gallery-grid {
+    grid-template-columns: 1fr;
   }
 }

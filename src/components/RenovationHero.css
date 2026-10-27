@@ -293,13 +293,30 @@
   .reno-intro { left: 16px; right: 16px; }
   .reno-title { font-size: 3.4rem; }
   .reno-lede { font-size: 1rem; }
-  .reno-cards { left: 16px; right: 16px; width: auto; bottom: 5.5rem; }
+  /* Cards and meter stay clear of the floating WhatsApp button (bottom-right, ~84px tall zone) */
+  .reno-cards { left: 16px; right: 16px; width: auto; bottom: 6.5rem; }
   .reno-card { padding: 1.5rem; }
   .reno-card-title { font-size: 2rem; }
   .reno-card-body { font-size: 0.88rem; }
   .reno-meter { right: auto; left: 16px; bottom: 2rem; }
   .reno-meter-track { width: 90px; }
   .reno-scroll-hint { display: none; }
+}
+
+@media (max-width: 480px) {
+  .reno-tag { font-size: 0.7rem; letter-spacing: 2.5px; margin-bottom: 1rem; }
+  .reno-title { font-size: 2.8rem; }
+  .reno-lede { font-size: 0.95rem; margin-bottom: 1.75rem; }
+  .reno-intro .offering-primary-btn { padding: 1rem 1.5rem; font-size: 0.75rem; letter-spacing: 1.5px; }
+  .reno-card { padding: 1.25rem 1.25rem 1.4rem; }
+  .reno-card-head { margin-bottom: 0.8rem; }
+  .reno-card-eyebrow { font-size: 0.64rem; letter-spacing: 2px; }
+  .reno-card-title { font-size: 1.75rem; }
+  .reno-card-subtitle { font-size: 0.7rem; letter-spacing: 1px; margin-bottom: 0.75rem; }
+  .reno-card-body { font-size: 0.82rem; line-height: 1.6; }
+  .reno-card-cta { margin-top: 1.1rem; padding: 0.85rem 1.25rem; font-size: 0.7rem; letter-spacing: 1.5px; white-space: nowrap; }
+  .reno-meter { gap: 0.6rem; font-size: 0.6rem; letter-spacing: 2px; }
+  .reno-meter-track { width: 56px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
