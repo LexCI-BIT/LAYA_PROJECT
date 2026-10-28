@@ -11,7 +11,7 @@ const SHOTS = [
   { title: 'Entrance Foyer', image: '/images/hero/foyer.jpg', origin: '50% 50%', from: 'scale(1.12) translateX(3%)', to: 'scale(1.12) translateX(-3%)' },
   { title: 'Living Room', image: '/images/hero/living.jpg', origin: '50% 50%', from: 'scale(1.12) translateX(-3%)', to: 'scale(1.12) translateX(3%)' },
   { title: 'Kitchen & Dining', image: '/images/hero/kitchen2.jpg', origin: '50% 45%', from: 'scale(1.03)', to: 'scale(1.13)' },
-  { title: 'Master Bedroom', image: '/images/hero/bedroom3.jpg?v=6', origin: '50% 50%', from: 'scale(1.12) translateX(-3%)', to: 'scale(1.12) translateX(3%)' },
+  { title: 'Master Bedroom', image: '/images/hero/bedroom_new.jpg', origin: '50% 50%', from: 'scale(1.12) translateX(-3%)', to: 'scale(1.12) translateX(3%)' },
   { title: 'The Balcony', image: '/images/hero/balcony.jpg?v=6', origin: '50% 55%', from: 'scale(1.15)', to: 'scale(1.07)' },
 ];
 
