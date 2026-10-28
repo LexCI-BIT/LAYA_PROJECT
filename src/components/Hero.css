@@ -8,13 +8,7 @@
   background-color: #000;
 }
 
-/* Showreel: the active shot drifts like a slow camera move, then hard-cuts to the next. */
-/* .hero-slides {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  animation: heroReelIn 0.9s ease-out both;
-} */
+
 .hero-slide {
   position: absolute;
   inset: 0;
@@ -22,17 +16,6 @@
   opacity: 0;
   z-index: 0;
 }
-
-
-.hero-slide {
-  position: absolute;
-  inset: 0;
-  visibility: hidden;
-}
-
-/* .hero-slide.is-active {
-  visibility: visible;
-} */
 .hero-slide.is-active {
   visibility: visible;
   opacity: 1;
