@@ -8,20 +8,38 @@
   background-color: #000;
 }
 
+/* Showreel: the active shot drifts like a slow camera move, then hard-cuts to the next. */
+.hero-slides {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  animation: heroReelIn 0.9s ease-out both;
+}
 
-.hero-slide {
+/* .hero-slide {
   position: absolute;
   inset: 0;
   visibility: hidden;
+}
+
+.hero-slide.is-active {
+  visibility: visible;
+} */
+ .hero-slide {
+  position: absolute;
+  inset: 0;
+  visibility: visible;
   opacity: 0;
   z-index: 0;
+  transition: opacity 1.2s ease-in-out;
 }
+
 .hero-slide.is-active {
   visibility: visible;
   opacity: 1;
   z-index: 1;
 }
-
+/* 
 .hero-slide img {
   width: 100%;
   height: 100%;
@@ -38,6 +56,33 @@
 
 .hero.is-paused .hero-slide.is-active img {
   animation-play-state: paused;
+} */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+  visibility: visible;
+  transition: none;
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+  z-index: 2;
+  pointer-events: auto;
+  animation: slideFadeIn 0.8s ease both;
+}
+
+.hero-slide.is-previous {
+  opacity: 1;
+  z-index: 1;
+  pointer-events: none;
+ 
+}
+
+.hero-slide.is-active img {
+  animation: heroShot var(--shot-duration) linear both;
 }
 
 @keyframes heroShot {
@@ -48,6 +93,24 @@
 @keyframes heroReelIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 /* The headline stays over every shot, including bright interiors, so keep a steady scrim on the left */
@@ -225,7 +288,7 @@
   margin-bottom: 1.5rem;
   letter-spacing: -1px;
   text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
-   font-size: clamp(2.8rem, 4.5vw, 4.5rem);
+   font-size: clamp(2rem, 3vw, 3rem);
 }
 
 /* .hero-title {
@@ -299,7 +362,7 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .hero-title { font-size: 3rem; }
+  .hero-title { font-size: 2.1rem; }
   .hero-rooms { right: 1rem; gap: 1rem; }
   .hero-room-label { display: none; }
   .hero-subtitle { font-size: 1.1rem; }
@@ -326,12 +389,13 @@
 } */
 
 .hero-logo {
-  width: 260px;
+  width: 380px;
   height: auto;
   max-width: 100%;
   object-fit: contain;
   display: block;
   margin-bottom: 1.5rem;
+  filter: brightness(1.08) drop-shadow(0 2px 14px rgba(0, 0, 0, 0.45));
 }
 
 
