@@ -5,7 +5,7 @@ export const projectsData = [
     title: 'Sliding Aluminium Wardrobe',
     shortDesc: 'Sleek, space-saving storage with premium metallic finish.',
     fullDesc: 'A minimalist masterpiece designed for compact urban spaces. This wardrobe uses high-precision sliding tracks and lightweight aluminium frames to provide maximum storage with zero floor-space compromise.',
-    image: 'https://images.jdmagicbox.com/quickquotes/images_main/-10g7zzx6.jpg',
+    image: 'public/images/wardrobe_sliding_aluminium.png',
     type: 'Sliding / Modular',
     materials: ['High-grade Aluminium', 'Frosted Glass', 'Soft-close tracks'],
     gallery: [
@@ -60,7 +60,7 @@ export const projectsData = [
     title: 'Straight Modular Kitchen',
     shortDesc: 'Compact efficiency for smart urban apartments.',
     fullDesc: 'Proof that small spaces can have big impact. This straight-line kitchen maximizes every inch of wall space with high-capacity cabinets and integrated appliance modules.',
-    image: 'https://images.jdmagicbox.com/quickquotes/images_main/multi-colour-aluminium-straight-modular-kitchen-for-home-2220644618-6gsp72jr.jpg',
+    image: 'public/images/luxury_modern_straight_modular_kitchen.png',
     type: 'Straight Line',
     materials: ['Hygienic Aluminium', 'Laminate Finish', 'Ergonomic Pull-outs'],
     gallery: [
@@ -126,7 +126,7 @@ export const projectsData = [
     title: 'Open-Shelf Wardrobe',
     shortDesc: 'Full-height wardrobe with lit open shelving and colour accents.',
     fullDesc: 'A floor-to-ceiling wardrobe wall combining hanging zones, drawers and shoe racks. Concealed LED strips light every shelf, while colour-accented aluminium shutters slide across to close the unit off completely.',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-qt99Fwhk7_YAxNN_ub6ogifGNBGXLQXGV1dJbPTcUQ&s=10',
+    image: 'public/images/Open_Shelf_Wardrobe.png',
     type: 'Hinged / Open Shelf',
     materials: ['Aluminium Frame', 'Matte Laminate Shutters', 'LED Profile Lighting'],
     gallery: [

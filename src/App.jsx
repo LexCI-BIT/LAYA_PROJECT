@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { ModalProvider } from './context/ModalContext';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
+import AboutUs from './pages/AboutUs';
 import PriceCalculatorMain from './pages/PriceCalculatorMain';
 import CalculatorIntro from './pages/calculator/CalculatorIntro';
 import CalculatorForm from './pages/calculator/CalculatorForm';
@@ -83,6 +84,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/about-us" element={<AboutUs />} />
             <Route path="/aluminium-manufacturing" element={<AluminiumManufacturing />} />
             <Route path="/price-calculator" element={<PriceCalculatorMain />} />
             <Route path="/price-calculator/:type" element={<CalculatorIntro />} />
