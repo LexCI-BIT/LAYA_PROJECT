@@ -288,7 +288,8 @@
 /* Why Source With Us: same look as the Home page's "Why Laya Space Design?" (WhyChooseUs.css) */
 .mfg-why {
   margin-top: 8rem;
-  padding: 7rem 0;
+  margin-bottom: 0;
+  padding: 7rem 0 0;
   background-color: #0d0d0d;
   color: #fff;
 }

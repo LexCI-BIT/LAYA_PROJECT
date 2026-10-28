@@ -507,3 +507,15 @@
     -webkit-mask-image: none;
   }
 }
+.aluminium-page-sections .mfg-why {
+  margin-bottom: 0 !important;
+}
+
+footer.footer {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+footer.footer > .container {
+  margin-top: 0 !important;
+}
