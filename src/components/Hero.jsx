@@ -224,7 +224,7 @@ const Hero = () => {
           <div className="animate-in">
             <div className="hero-content">
               <img
-                src="public/images/laya_logo_horizontal.png"
+                src="/images/laya-logo-horizontal-dark1.png"
                 alt="Laya Space Design"
                 className="hero-logo"
               />

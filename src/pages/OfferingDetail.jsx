@@ -221,7 +221,7 @@ const OfferingDetail = () => {
       )}
 
       {/* Gallery Section */}
-      {data.gallery && (
+      {/* {data.gallery && (
         <section className="offering-section">
           <div className="offering-container">
             <h2 className="offering-section-title">Project Inspiration</h2>
@@ -232,7 +232,7 @@ const OfferingDetail = () => {
             </div>
           </div>
         </section>
-      )}
+      )} */}
 
     </div>
   );

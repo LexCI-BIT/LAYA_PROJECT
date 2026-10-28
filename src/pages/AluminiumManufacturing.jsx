@@ -4,7 +4,7 @@ import { ArrowDown, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import ManufacturingUnit from '../components/ManufacturingUnit';
-import ManufacturingProjects from '../components/ManufacturingProjects';
+// import ManufacturingProjects from '../components/ManufacturingProjects';
 
 import './AluminiumManufacturing.css';
 
@@ -95,9 +95,9 @@ const AluminiumManufacturing = () => {
       </section>
 
       {/* Previous Projects Slideshow */}
-      <section className="aluminium-projects-section">
+      {/* <section className="aluminium-projects-section">
         <ManufacturingProjects />
-      </section>
+      </section> */}
 
     </main>
   );

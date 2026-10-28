@@ -27,7 +27,7 @@ const Footer = () => {
                 <div className="footer-main">
                     <div className="footer-brand">
                         <Link to="/" className="footer-logo-link" aria-label="Laya Space Design" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-                            <img src="/images/laya-logo-dark.png" alt="Laya Space Design" className="footer-logo-img" />
+                            <img src="/images/laya-logo-horizontal-dark1.png" alt="Laya Space Design" className="footer-logo-img" />
                         </Link>
                         <p className="tagline">Modern Aluminium Interiors Crafted for Elegant Living</p>
                         <p className="description">
