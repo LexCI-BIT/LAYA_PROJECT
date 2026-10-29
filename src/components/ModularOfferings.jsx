@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import './ModularOfferings.css';
+import { useNavigate } from "react-router-dom";
+
 
 const offerings = [
   {
@@ -26,6 +28,7 @@ const offerings = [
 
 export default function LatestOfferings() {
   const offeringsRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const container = offeringsRef.current;
@@ -79,6 +82,19 @@ export default function LatestOfferings() {
                 <p>{offering.desc}</p>
 
                 <button
+  className="offering-view-more"
+  onClick={() => {
+    if (offering.title === 'Wardrobes') {
+      navigate('/offerings/modular-cupboards');
+    } else if (offering.title === 'Exterior Elevations') {
+      navigate('/offerings/exterior-works');
+    }
+  }}
+>
+  View More
+</button>
+
+                {/* <button
                   className="offering-view-more"
                   onClick={() => {
                     if (offering.title === 'Wardrobes') {
@@ -87,7 +103,7 @@ export default function LatestOfferings() {
                   }}
                 >
                   View More
-                </button>
+                </button> */}
               </div>
             </article>
           ))}
