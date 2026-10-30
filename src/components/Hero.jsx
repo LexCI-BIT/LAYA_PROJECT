@@ -222,13 +222,13 @@ const Hero = () => {
       <div className="hero-content container">
         <div className="hero-text">
           <div className="animate-in">
-            <div className="hero-content">
+            {/* <div className="hero-content">
               <img
                 src="/images/laya-logo-horizontal-dark1.png"
                 alt="Laya Space Design"
                 className="hero-logo"
               />
-            </div>
+            </div> */}
 
             <h1 className="hero-title">Precision in Every Detail</h1>
             <p className="hero-subtitle">
