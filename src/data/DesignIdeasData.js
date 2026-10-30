@@ -4,7 +4,7 @@ export const designIdeas = {
             id: 'sliding-door-wardrobe',
             title: 'Sliding Door Wardrobe',
             desc: 'A space-saving wardrobe with smooth sliding doors and premium aluminium profiling, perfect for modern urban homes.',
-            image: 'https://images.jdmagicbox.com/quickquotes/images_main/-10g7zzx6.jpg',
+            image: '/images/slidingdoor.png',
             features: ['Space-saving sliding mechanism', 'Durable aluminium frame', 'Dust-proof door seals'],
             idealFor: ['Small rooms', 'Modern apartments'],
             gallery: [
@@ -41,7 +41,7 @@ export const designIdeas = {
             id: 'modular-wardrobe',
             title: 'Modular Wardrobe',
             desc: 'Highly customizable aluminium modular units that adapt to your evolving storage needs with ease.',
-            image: 'https://www.interiordesk.in/images/aluminium/slider/image2.jpg',
+            image: '/images/modularwardrobe.png',
             features: ['Adjustable shelving', 'Interchangeable modular units', 'Rust-proof aluminium build'],
             idealFor: ['Custom storage', 'Organized spaces'],
             gallery: [
@@ -113,7 +113,7 @@ export const designIdeas = {
             id: 'multi-door-wardrobe',
             title: 'Multi-Door Wardrobe',
             desc: 'Versatile 2-door or 3-door wardrobe configurations built with light, durable aluminium for everyday use.',
-            image: 'https://images.jdmagicbox.com/quickquotes/images_main/-10g7zzx6.jpg',
+            image: '/images/multidoor.jpeg',
             features: ['Sturdy construction', 'Cost-effective', 'Available in multiple finishes'],
             idealFor: ['Budget-friendly', 'Small to medium rooms'],
             gallery: [
@@ -127,7 +127,7 @@ export const designIdeas = {
             id: 'straight-kitchen',
             title: 'Straight Kitchen',
             desc: 'A sleek single-wall kitchen layout designed with durable aluminium cabinetry to maximize compact urban spaces.',
-            image: 'https://images.jdmagicbox.com/quickquotes/images_main/multi-colour-aluminium-straight-modular-kitchen-for-home-2220644618-6gsp72jr.jpg',
+            image: '/images/Straight_Modular_Kitchen.png',
             features: ['Space-efficient design', 'Durable aluminium build', 'Easy maintenance'],
             idealFor: ['Small homes', 'Studio apartments'],
             gallery: [
@@ -199,7 +199,7 @@ export const designIdeas = {
             id: 'modular-kitchen',
             title: 'Modular Kitchen',
             desc: 'Precision-crafted aluminium units designed for ultimate efficiency and professional-grade organization.',
-            image: 'https://images.squarespace-cdn.com/content/v1/65d325ddd662de7fdcb2411f/a1dfa9c2-d1ab-4cdc-82b3-43fdd0cec93d/Abhishek_Punyani_create_an_image_of_a_modular_kitchen_with_Smart_Dr_84dae51c-e938-46a4-a44b-51df31cc21be.png',
+            image: '/images/modular-kitchen.png',
             features: ['Pre-engineered units', 'Rust & Water resistant', 'Customizable storage'],
             idealFor: ['All homes'],
             gallery: [
@@ -249,7 +249,7 @@ export const designIdeas = {
             id: 'tv-unit-design',
             title: 'TV Unit Designs',
             desc: 'Sturdy and stylish aluminium TV units that serve as the functional focal point of your entertainment area.',
-            image: 'https://images.openai.com/static-rsc-3/Fbds49eFnXVW7EfF11oKKxqyvw1OTMeBtfMib_1don_VhBJOO9NPbDRyfzpnkD5Iqlb_bcBEfNQWfELSwlHioYvzAityUo2TBdGrgn8nzK8?purpose=fullsize&v=1',
+            image: '/images/tvunit.png',
             features: ['Modular storage', 'Precision-cut aluminium', 'Hidden wire management'],
             idealFor: ['Living rooms', 'Media centers'],
             gallery: [
@@ -261,7 +261,7 @@ export const designIdeas = {
             id: 'compact-living-room',
             title: 'Compact Living Room',
             desc: 'Smart layouts and slim-profile aluminium furniture designed to maximize comfort in smaller living areas.',
-            image: 'https://www.orangetree.in/cdn/shop/articles/Gallery-4ChiyoL-ShapedSofaBuyOnline_3.jpg?v=1722849681',
+            image: '/images/compact-living-room.jpg',
             features: ['Space maximization', 'Lightweight structures', 'Efficient zoning'],
             idealFor: ['Small apartments', 'Compact urban homes'],
             gallery: [
@@ -275,7 +275,7 @@ export const designIdeas = {
             id: 'foldable-furniture',
             title: 'Foldable Furniture',
             desc: 'Smart aluminium-framed furniture that provides versatility and easy storage for high-utility areas.',
-            image: 'https://m.media-amazon.com/images/I/719Cnhv-RVL._AC_UF894,1000_QL80_.jpg',
+            image: '/images/foldable.png',
             features: ['Easy storage', 'Sturdy metal frames', 'Multi-purpose usage'],
             idealFor: ['Studio apartments', 'Multi-functional rooms'],
             gallery: [

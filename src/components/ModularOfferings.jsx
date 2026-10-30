@@ -7,7 +7,7 @@ const offerings = [
   {
     title: 'Windows & Doors',
     desc: 'Premium aluminium windows and doors with sleek, modern finishes. Designed for durability, natural light, and everyday comfort.',
-    image: '/images/hero/windows.jpg',
+    image: '/images/hero/windows&doors.png',
   },
   {
     title: 'Wardrobes',

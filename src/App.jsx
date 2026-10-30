@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+// import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { ModalProvider } from './context/ModalContext';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
@@ -8,7 +9,7 @@ import PriceCalculatorMain from './pages/PriceCalculatorMain';
 import CalculatorIntro from './pages/calculator/CalculatorIntro';
 import CalculatorForm from './pages/calculator/CalculatorForm';
 import CalculatorResult from './pages/calculator/CalculatorResult';
-import DesignIdeasMain from './pages/DesignIdeasMain';
+// import DesignIdeasMain from './pages/DesignIdeasMain';
 import CategoryGrid from './pages/CategoryGrid';
 import IdeaDetail from './pages/IdeaDetail';
 import OfferingDetail from './pages/OfferingDetail';
@@ -91,7 +92,8 @@ function App() {
             <Route path="/price-calculator/:type" element={<CalculatorIntro />} />
             <Route path="/price-calculator/:type/form" element={<CalculatorForm />} />
             <Route path="/price-calculator/:type/result" element={<CalculatorResult />} />
-            <Route path="/design-ideas" element={<DesignIdeasMain />} />
+            {/* <Route path="/design-ideas" element={<DesignIdeasMain />} /> */}
+            <Route path="/design-ideas" element={<Navigate to="/" replace />} />
             <Route path="/design-ideas/:category" element={<CategoryGrid />} />
             <Route path="/design-ideas/:category/:id" element={<IdeaDetail />} />
             <Route path="/offerings/:slug" element={<OfferingDetail />} />
