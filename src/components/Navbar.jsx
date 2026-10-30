@@ -8,6 +8,7 @@ const Navbar = () => {
   const location = useLocation();
   const { openModal } = useModal();
   const [menuOpen, setMenuOpen] = useState(false);
+  const isProjectsPage = location.pathname.startsWith('/projects');
 
   const isSubPage = location.pathname !== '/';
 
@@ -52,10 +53,10 @@ const Navbar = () => {
   return (
     <nav
       className={`navbar navbar-single-line ${
-        isSubPage ? 'scrolled' : ''
-      } ${isSubPage ? 'subpage-navbar' : ''} ${
-        hasSolidNav ? 'solid-navbar' : ''
-      }`}
+    isSubPage ? 'scrolled' : ''
+  } ${isSubPage ? 'subpage-navbar' : ''} ${
+    hasSolidNav ? 'solid-navbar' : ''
+  } ${isProjectsPage ? 'projects-navbar' : ''}`}
     >
       <div className="navbar-single-container">
         <button
@@ -70,6 +71,13 @@ const Navbar = () => {
           <span />
           <span />
         </button>
+        <Link to="/" className="navbar-logo" aria-label="Laya Space Design">
+          <img
+            src="/images/laya-logo-horizontal.png"
+            alt="Laya Space Design"
+            className="navbar-logo-img"
+          />
+        </Link>
 
         <div className="navbar-single-links">
           <Link

@@ -37,7 +37,7 @@
   justify-content: center;
   gap: 24px;
   width: 100%;
-  min-height: 64px;
+  min-height: 76px;
   padding: 0 3%;
   margin: 0;
   box-sizing: border-box;
@@ -595,5 +595,78 @@
 .navbar.solid-navbar .dropdown-menu,
 .navbar.solid-navbar .nested-dropdown-menu {
   background: var(--bg-light);
+  color: var(--text-dark);
+}
+
+.navbar .navbar-logo {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  line-height: 0;
+}
+
+/* Desktop: pin the logo left so the links stay centered */
+@media (min-width: 1200px) {
+  .navbar .navbar-logo {
+    position: absolute;
+    left: 3%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.navbar .navbar-logo {
+  display: block;
+  line-height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar .navbar-logo img.navbar-logo-img {
+  display: block;
+  height: 64px;          /* same as .navbar-single-container min-height */
+  width: auto;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  object-fit: contain;
+}
+
+/* Desktop: pin to the left, full navbar height, links stay centered */
+@media (min-width: 1025px) {
+  .navbar .navbar-logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    transform: none;
+  }
+}
+
+/* Projects pages only: light black transparent navbar */
+.navbar.solid-navbar.projects-navbar {
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff;
+}
+
+.navbar.solid-navbar.projects-navbar .navbar-single-links,
+.navbar.solid-navbar.projects-navbar .navbar-single-links > a,
+.navbar.solid-navbar.projects-navbar .navbar-single-links .dropdown-trigger,
+.navbar.solid-navbar.projects-navbar .navbar-single-actions .icon-link {
+  color: #fff;
+}
+
+.navbar.solid-navbar.projects-navbar .consult-btn {
+  color: #fff;
+  background: rgba(235, 235, 235, 0.1);
+  border-color: #fff;
+}
+
+.navbar.solid-navbar.projects-navbar .consult-btn:hover {
+  background: #fff;
   color: var(--text-dark);
 }
