@@ -134,11 +134,11 @@ const Navbar = () => {
               </Link>
             </div>
           </div>
-
           <div className="nav-item-dropdown">
             <Link
-              to="/design-ideas"
+              to="/#design-ideas"
               className="dropdown-trigger nav-link-with-arrow"
+              onClick={(e) => handleHashLink(e, 'offerings')}
             >
               <span>Design Ideas</span>
               <svg
