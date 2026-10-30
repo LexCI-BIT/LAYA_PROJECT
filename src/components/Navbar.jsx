@@ -120,6 +120,9 @@ const Navbar = () => {
               <Link to="/offerings/modular-cupboards">
                 Modular Cupboards
               </Link>
+              <Link to="/glass-aluminium-partitions">
+  Glass & Aluminium Partitions
+</Link>
               <Link to="/offerings/exterior-works">
                 Exterior Works
               </Link>

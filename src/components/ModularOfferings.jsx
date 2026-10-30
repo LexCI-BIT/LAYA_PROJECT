@@ -89,9 +89,12 @@ export default function LatestOfferings() {
     } else if (offering.title === 'Exterior Elevations') {
       navigate('/offerings/exterior-works');
     }
+    else if (offering.title === 'Glass & Aluminium Partitions') {
+      navigate('/glass-aluminium-partitions');
+    }
   }}
 >
-  View More
+  Explore more
 </button>
 
                 {/* <button
