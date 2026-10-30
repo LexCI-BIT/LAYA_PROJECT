@@ -1,0 +1,747 @@
+
+/* ========================================
+   GLASS & ALUMINIUM PARTITIONS
+   Styled to match OfferingDetail.css
+======================================== */
+
+.glass-partition-hero {
+    min-height: 90vh;
+    min-height: 90svh;
+    padding: 180px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    background-color: #000;
+    background-image: url('/images/hero/partition.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+  }
+  
+  .glass-partition-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background:
+      linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.65) 0%,
+        rgba(0, 0, 0, 0.2) 48%,
+        rgba(0, 0, 0, 0) 75%
+      ),
+      linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.45) 0%,
+        transparent 35%
+      );
+  }
+  
+  .glass-partition-content {
+    position: relative;
+    z-index: 2;
+    max-width: 640px;
+    margin-left: 4rem;
+    color: #fff;
+    text-align: left;
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+    animation: glassPartitionReveal 0.9s ease-out both;
+  }
+  
+  .glass-partition-eyebrow {
+    display: block;
+    margin-bottom: 1.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    line-height: 1.7;
+    opacity: 0.9;
+  }
+  
+  .glass-partition-content h1 {
+    margin: 0 0 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -1px;
+  }
+  
+  .glass-partition-content p {
+    margin: 0 0 2.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .glass-partition-cta {
+    padding: 1.2rem 2.5rem;
+    background: #fff;
+    color: var(--bg-dark, #222);
+    border: 1px solid #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .glass-partition-cta:hover {
+    background: var(--bg-dark, #222);
+    color: #fff;
+    transform: translateY(-3px);
+  }
+  
+  .glass-partition-scroll {
+    position: absolute;
+    z-index: 2;
+    bottom: 2.5rem;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    transform: translateX(-50%);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    white-space: nowrap;
+  }
+  
+  .glass-partition-scroll-line {
+    width: 1px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.8);
+    animation: glassPartitionScroll 1.5s ease-in-out infinite;
+  }
+  
+  /* ========================================
+     ABOUT THIS SERVICE
+  ======================================== */
+  
+  .glass-about-service {
+    padding: 10rem 0;
+    background-color: var(--bg-light, #f8f7f5);
+    color: var(--text-dark, #252525);
+  }
+  
+  .glass-about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  
+  .glass-about-container h2 {
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1.15;
+  }
+  
+  .glass-about-container p {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: #555;
+  }
+  
+  /* ========================================
+     KEY BENEFITS
+  ======================================== */
+  
+  .glass-benefits {
+    padding: 10rem 0;
+    background-color: var(--bg-dark, #222120);
+    color: #fff;
+  }
+  
+  .glass-benefits-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .glass-benefits-container > h2 {
+    margin: 0 0 3rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 400;
+  }
+  
+  .glass-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem;
+  }
+  
+  .glass-benefit-card {
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+  }
+  
+  .glass-benefit-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .glass-benefit-icon {
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.85);
+    opacity: 0.8;
+  }
+  
+  .glass-benefit-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .glass-benefit-card h3 {
+    margin: 0 0 1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  
+  .glass-benefit-card p {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  /* ========================================
+     APPLICATIONS
+  ======================================== */
+  
+  .glass-applications {
+    padding: 10rem 0;
+    background-color: var(--bg-light, #f8f7f5);
+    color: var(--text-dark, #252525);
+  }
+  
+  .glass-applications-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .glass-applications-container > h2 {
+    margin: 0 0 3rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 400;
+  }
+  
+  .glass-applications-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem;
+  }
+  
+  .glass-application-card {
+    padding: 3rem;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.025);
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease;
+  }
+  
+  .glass-application-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .glass-application-icon {
+    margin-bottom: 1.5rem;
+    color: var(--text-dark, #252525);
+    opacity: 0.8;
+  }
+  
+  .glass-application-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .glass-application-card h3 {
+    margin: 0 0 1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  
+  .glass-application-card p {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  /* ========================================
+     ANIMATIONS
+  ======================================== */
+  
+  @keyframes glassPartitionReveal {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes glassPartitionScroll {
+    0%, 100% {
+      transform: scaleY(0.6);
+      transform-origin: top;
+    }
+  
+    50% {
+      transform: scaleY(1);
+      transform-origin: top;
+    }
+  }
+  
+  /* Disable hover lift on touch devices */
+  @media (hover: none) {
+    .glass-benefit-card:hover,
+    .glass-application-card:hover {
+      transform: none;
+    }
+  }
+  
+  /* ========================================
+     RESPONSIVE
+  ======================================== */
+  
+  @media (max-width: 1024px) {
+    .glass-about-container {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  
+    .glass-benefits-grid,
+    .glass-applications-grid {
+      gap: 1.5rem;
+    }
+  
+    .glass-partition-content h1 {
+      font-size: 3.5rem;
+    }
+  
+    .glass-about-service,
+    .glass-benefits,
+    .glass-applications {
+      padding: 7rem 0;
+    }
+  
+    .glass-benefit-card,
+    .glass-application-card {
+      padding: 2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .glass-partition-hero {
+      min-height: 80vh;
+      min-height: 80svh;
+      padding: 140px 0 80px;
+      background-position: 60% center;
+    }
+  
+    .glass-partition-overlay {
+      background:
+        linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.7),
+          rgba(0, 0, 0, 0.2)
+        ),
+        linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.4),
+          transparent 40%
+        );
+    }
+  
+    .glass-partition-content {
+      margin: 0 1.5rem;
+      max-width: 540px;
+    }
+  
+    .glass-partition-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 2.5px;
+      margin-bottom: 1rem;
+    }
+  
+    .glass-partition-content h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .glass-partition-content p {
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+  
+    .glass-partition-cta {
+      padding: 1rem 1.5rem;
+      font-size: 0.75rem;
+      letter-spacing: 1.5px;
+    }
+  
+    .glass-partition-scroll {
+      bottom: 1.5rem;
+      font-size: 0.6rem;
+    }
+  
+    .glass-about-service,
+    .glass-benefits,
+    .glass-applications {
+      padding: 4.5rem 0;
+    }
+  
+    .glass-about-container,
+    .glass-benefits-container,
+    .glass-applications-container {
+      padding: 0 1.5rem;
+    }
+  
+    .glass-about-container h2,
+    .glass-benefits-container > h2,
+    .glass-applications-container > h2 {
+      font-size: 2.3rem;
+      line-height: 1.15;
+    }
+  
+    .glass-about-container p {
+      font-size: 1.02rem;
+      line-height: 1.75;
+    }
+  
+    .glass-benefit-card,
+    .glass-application-card {
+      padding: 1.75rem 1.5rem;
+    }
+  
+    .glass-benefit-icon,
+    .glass-application-icon {
+      margin-bottom: 1rem;
+    }
+  
+    .glass-benefit-icon svg,
+    .glass-application-icon svg {
+      width: 32px;
+      height: 32px;
+    }
+  
+    .glass-benefit-card h3,
+    .glass-application-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .glass-benefits-grid,
+    .glass-applications-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .glass-partition-content h1 {
+      font-size: 2.5rem;
+    }
+  
+    .glass-about-service,
+    .glass-benefits,
+    .glass-applications {
+      padding: 3.5rem 0;
+    }
+  
+    .glass-about-container h2,
+    .glass-benefits-container > h2,
+    .glass-applications-container > h2 {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .glass-partition-content,
+    .glass-partition-scroll-line {
+      animation: none;
+    }
+  
+    .glass-partition-cta,
+    .glass-benefit-card,
+    .glass-application-card {
+      transition: none;
+    }
+  }
+
+  
+  .gp-hero {
+    position: relative;
+    height: 200vh;
+    background: #171715;
+    color: #fff;
+  }
+  
+  .gp-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    min-height: 550px;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  
+  .gp-stage {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+  
+  .gp-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    transform: scale(1.03);
+    transition: opacity 900ms ease, transform 1200ms ease;
+  }
+  
+  .gp-layer.is-visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .gp-shade {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.22) 60%,
+      transparent
+    );
+  }
+  
+  .gp-intro,
+  .gp-final {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: clamp(24px, 8vw, 120px);
+    width: min(600px, 80%);
+    transform: translateY(-50%);
+    transition: opacity 400ms ease, visibility 400ms ease;
+  }
+  
+  .gp-intro.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  
+  .gp-tag {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  
+  .gp-intro h1,
+  .gp-final h2 {
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    line-height: 1.05;
+  }
+  
+  .gp-intro h1 {
+    font-size: clamp(48px, 7vw, 96px);
+  }
+  
+  .gp-intro p,
+  .gp-final p {
+    margin: 24px 0;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+  
+ 
+
+  .gp-final {
+    position: absolute;
+    z-index: 2;
+    top: auto;
+    bottom: 8%;
+    left: 50%;
+    width: min(600px, 85%);
+    transform: translateX(-50%);
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 500ms ease, visibility 500ms ease;
+  }
+  
+  .gp-final.is-active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  
+  
+  .gp-final h2 {
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(40px, 6vw, 50px);
+    font-weight: 400;
+    line-height: 1.05;
+  }
+  
+  
+  .gp-final-cta {
+    padding: 15px 24px;
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+    font: inherit;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  
+  .gp-final-cta:hover {
+    background: #fff;
+    color: #171715;
+  }
+  
+  .gp-scroll-hint {
+    position: absolute;
+    z-index: 2;
+    left: clamp(24px, 8vw, 120px);
+    bottom: 35px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: opacity 300ms ease;
+  }
+  
+  .gp-scroll-hint.is-hidden {
+    opacity: 0;
+  }
+  
+  .gp-scroll-line {
+    width: 48px;
+    height: 1px;
+    background: #fff;
+  }
+  
+  @media (max-width: 700px) {
+    .gp-intro,
+    .gp-final {
+      left: 24px;
+      width: calc(100% - 48px);
+    }
+  
+    .gp-layer {
+      object-position: 60% center;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .gp-layer,
+    .gp-intro,
+    .gp-final,
+    .gp-scroll-hint {
+      transition: none;
+    }
+  }
+  
+ /* Keep navbar visible on Glass Partition page */
+body:has(.gp-hero) .navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 10000 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
+  }
+  
+  /* Override navbar hide-on-scroll styles on this page */
+  body:has(.gp-hero) .navbar.gp-navbar-hidden {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
+  }
+  /* Navbar behavior only on Glass Partition page */
+body:has(.gp-hero) .navbar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 10000 !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease,
+      transform 0.3s ease;
+  }
+  
+  body:has(.gp-hero) .navbar.gp-nav-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    pointer-events: auto;
+  }
+  
+  body:has(.gp-hero) .navbar.gp-nav-hidden {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-100%) !important;
+    pointer-events: none;
+  }

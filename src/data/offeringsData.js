@@ -48,6 +48,48 @@ export const offeringsData = {
       'https://image.made-in-china.com/2f0j00znMbsBKgfDqa/Minimalist-Aluminum-Alloy-Walk-in-Closet-Design-Custom-Modern-Aluminium-Profile-Frame-Sliding-Clear-Glass-Door-Wall-Wardrobe.webp'
     ]
   },
+
+
+'glass-aluminium-partitions': {
+  title: 'Glass & Aluminium Partitions',
+  shortTitle: 'MODERN GLASS & ALUMINIUM SOLUTIONS',
+  heroImage: '/images/hero/partition.jpg',
+  about:
+    'Our glass and aluminium partition solutions create modern, elegant spaces while maintaining openness and natural light. Designed for homes and offices, they combine durability, functionality, and contemporary style.',
+
+  benefits: [
+    {
+      icon: 'leaf', title: 'Modern & Elegant',desc: 'Sleek aluminium frames and refined glass finishes enhance contemporary interiors.', },
+    {
+      icon: 'grid',title: 'Space & Light',desc: 'Define separate areas while preserving natural light and an open atmosphere.',
+    },
+    {
+      icon: 'shield-check',title: 'Durable & Low Maintenance',desc: 'Quality materials provide lasting performance with minimal upkeep.',
+    },
+    {
+      icon: 'box', title: 'Flexible Design',desc: 'Customise layouts, frame finishes, and glass options for your space.',
+    },
+  ],
+
+  applications: [
+    {
+      icon: 'building',title: 'Office Partitions',desc: 'Create productive workspaces while maintaining openness and privacy.',
+    },
+    {
+      icon: 'house',title: 'Living Spaces',desc: 'Separate living and dining areas without blocking natural light.',
+    },
+    {
+      icon: 'store',title: 'Commercial Interiors',desc: 'Modern dividers for showrooms, studios, and retail spaces.',
+    },
+    {
+      icon: 'users',title: 'Meeting Rooms',desc: 'Create bright, professional meeting spaces with glass walls.',
+    },
+    {
+      icon: 'layout-grid',title: 'Custom Dividers',desc: 'Tailor partition layouts and finishes to your interior requirements.',
+    },
+  ],
+},
+
   'exterior-works': {
     title: 'Exterior Works',
     shortTitle: 'Durable Outdoor Applications',

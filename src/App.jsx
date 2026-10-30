@@ -20,6 +20,7 @@ import FloatingActions from './components/FloatingActions';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
 import AluminiumManufacturing from './pages/AluminiumManufacturing';
+import GlassPartition from './pages/GlassPartition';
 import './App.css';
 
 function App() {
@@ -97,6 +98,10 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:projectId" element={<ProjectDetail />} />
             <Route path="/cities/:citySlug" element={<CityDetail />} />
+            <Route
+  path="/glass-aluminium-partitions"
+  element={<GlassPartition/>}
+/>
           </Routes>
         </main>
 

@@ -120,6 +120,82 @@ export const RenovationIcon = (props) => (
     <path d="M3 21v-5h5" />
   </IconWrapper>
 );
+
+export const LeafIcon = (props) => (
+  <IconWrapper {...props}>
+    <path d="M11 20A7 7 0 0 1 4 13C4 5 20 3 20 3c0 0-2 16-10 16" />
+    <path d="M8 16c2-2 5-5 9-8" />
+  </IconWrapper>
+);
+
+export const GridIcon = (props) => (
+  <IconWrapper {...props}>
+    <rect x="3" y="3" width="7" height="7" rx="1" />
+    <rect x="14" y="3" width="7" height="7" rx="1" />
+    <rect x="3" y="14" width="7" height="7" rx="1" />
+    <rect x="14" y="14" width="7" height="7" rx="1" />
+  </IconWrapper>
+);
+
+export const ShieldCheckIcon = (props) => (
+  <IconWrapper {...props}>
+    <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z" />
+    <path d="m9 12 2 2 4-4" />
+  </IconWrapper>
+);
+
+export const BoxIcon = (props) => (
+  <IconWrapper {...props}>
+    <path d="m12 3 9 5-9 5-9-5 9-5Z" />
+    <path d="m3 8 9 5 9-5" />
+    <path d="M12 13v9" />
+    <path d="m3 8v10l9 4 9-4V8" />
+  </IconWrapper>
+);
+
+export const BuildingIcon = (props) => (
+  <IconWrapper {...props}>
+    <rect x="4" y="2" width="16" height="20" rx="1" />
+    <path d="M9 22v-4h6v4" />
+    <path d="M8 6h1M15 6h1M8 10h1M15 10h1M8 14h1M15 14h1" />
+  </IconWrapper>
+);
+
+export const HouseIcon = (props) => (
+  <IconWrapper {...props}>
+    <path d="m3 10 9-7 9 7" />
+    <path d="M5 9v12h14V9" />
+    <path d="M9 21v-7h6v7" />
+  </IconWrapper>
+);
+
+export const StoreIcon = (props) => (
+  <IconWrapper {...props}>
+    <path d="M3 10h18" />
+    <path d="m5 10 1-7h12l1 7" />
+    <path d="M5 10v11h14V10" />
+    <path d="M9 21v-7h6v7" />
+  </IconWrapper>
+);
+
+export const UsersIcon = (props) => (
+  <IconWrapper {...props}>
+    <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+    <circle cx="10" cy="7" r="4" />
+    <path d="M20 21v-2a4 4 0 0 0-3-3.87" />
+    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+  </IconWrapper>
+);
+
+export const LayoutGridIcon = (props) => (
+  <IconWrapper {...props}>
+    <rect x="3" y="3" width="7" height="7" rx="1" />
+    <rect x="14" y="3" width="7" height="7" rx="1" />
+    <rect x="14" y="14" width="7" height="7" rx="1" />
+    <rect x="3" y="14" width="7" height="7" rx="1" />
+  </IconWrapper>
+);
+
 export const IconRenderer = ({ iconName, size = 32 }) => {
   const name = iconName?.toLowerCase();
   const IconComponent = {
@@ -137,6 +213,16 @@ export const IconRenderer = ({ iconName, size = 32 }) => {
     execution: ExecutionIcon,
     delivery: DeliveryIcon,
     exterior: PartitionIcon,
+    star: CustomIcon,
+    leaf: LeafIcon,
+    grid: GridIcon,
+    'shield-check': ShieldCheckIcon,
+    box: BoxIcon,
+    building: BuildingIcon,
+    house: HouseIcon,
+    store: StoreIcon,
+    users: UsersIcon,
+    'layout-grid': LayoutGridIcon,
   }[name];
 
   return IconComponent ? <IconComponent size={size} /> : null;
