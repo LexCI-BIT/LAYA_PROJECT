@@ -207,7 +207,8 @@ const ManufacturingUnit = ({
           </section>
 
           {/* Types of Aluminium Products */}
-          <section className="container mfg-block block1">
+          <section className="mfg-types-band">
+          <div className="container mfg-block block1">
             <span className="mfg-eyebrow">
               OUR PRODUCT RANGE
             </span>
@@ -236,6 +237,7 @@ const ManufacturingUnit = ({
                 </figure>
               ))}
             </div>
+          </div>
           </section>
 
           {/* Why Source With Us */}

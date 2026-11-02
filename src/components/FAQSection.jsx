@@ -39,7 +39,7 @@ const FAQSection = () => {
             <div className="container faq-layout">
                 <div className="faq-intro reveal-on-scroll">
                     <span className="faq-eyebrow">FAQs</span>
-                    <h2 id="faq-title">Good to know<br />before we begin.</h2>
+                    <h2 id="faq-title">Good to know{" "}<br />before we begin.</h2>
                     <p>Quick answers about planning your aluminium interiors with Laya.</p>
                     <button className="faq-contact-button" onClick={openModal}>Ask us about your project <span aria-hidden="true">↗</span></button>
                 </div>

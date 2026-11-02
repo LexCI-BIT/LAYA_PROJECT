@@ -73,8 +73,10 @@ export default function LatestOfferings() {
               }`}
               key={offering.title}
             >
-              <div className="offering-image-wrap">
-                <img src={offering.image} alt={offering.title} />
+              <div className="offering-media">
+                <div className="offering-image-wrap">
+                  <img src={offering.image} alt={offering.title} />
+                </div>
               </div>
 
               <div className="offering-content">

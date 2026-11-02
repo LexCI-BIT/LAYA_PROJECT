@@ -1,0 +1,653 @@
+/* =====================================================================
+   Responsive layer — tablet (≤1024px) and mobile (≤600px / ≤480px)
+   Loaded last (from main.jsx) so it refines the component styles.
+   ===================================================================== */
+
+/* ---------- Global safety ---------- */
+img,
+video {
+  max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+/* ---------- Navbar ---------- */
+@media (max-width: 1024px) {
+  .navbar-single-container {
+    gap: 14px;
+    min-height: 68px;
+    padding: 0 16px;
+  }
+
+  .navbar .navbar-logo img.navbar-logo-img {
+    height: 54px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar-single-container {
+    gap: 10px;
+    min-height: 60px;
+    padding: 0 12px;
+  }
+
+  .navbar .navbar-logo img.navbar-logo-img {
+    height: 44px;
+  }
+
+  .navbar-single-actions {
+    right: 12px;
+    gap: 6px;
+  }
+
+  .navbar-single-actions .icon-link {
+    display: none;
+  }
+
+  .consult-btn {
+    padding: 0.55rem 0.65rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.6px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 360px) {
+  .navbar .navbar-logo img.navbar-logo-img {
+    height: 38px;
+  }
+
+  .consult-btn {
+    padding: 0.5rem 0.55rem;
+    font-size: 0.55rem;
+  }
+}
+
+/* ---------- Home hero: fill the screen on portrait devices ---------- */
+/* The blurred backdrop copy is only used on phones/tablets */
+.hero .hero-slide img.hero-slide-backdrop {
+  display: none;
+}
+
+/* Every slide fills the hero at every screen size (no black bars, no top-left crop) */
+.hero .hero-slide img,
+.hero .hero-slide:first-child .hero-image-motion img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 1024px) {
+
+}
+
+.hero .cta-primary,
+.hero .cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+@media (max-width: 1024px) {
+  .hero .cta-primary,
+  .hero .cta-secondary {
+    padding: 1rem 1.8rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-cta {
+    max-width: 420px;
+  }
+}
+
+/* Phones held sideways: short screen, keep text clear of the slide labels */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-room-label {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.15;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* ---------- Section rhythm: trim luxury spacing on smaller screens ---------- */
+@media (max-width: 1024px) {
+  .expertise,
+  .featured-projects,
+  .modular-journey,
+  .testimonials,
+  .manufacturing,
+  .glass-about-service,
+  .glass-benefits,
+  .glass-applications,
+  .offering-section,
+  .id-gallery,
+  .cf-process-section,
+  .city-about-section,
+  .city-services-section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .why-choose-us {
+    padding: 7rem 0;
+  }
+
+  .portfolio,
+  .final-cta,
+  .how-it-works,
+  .offering-cta,
+  .project-info-section,
+  .related-projects-section,
+  .cf-section {
+    padding-top: 5.5rem;
+    padding-bottom: 5.5rem;
+  }
+
+  .expertise-header,
+  .testimonials-title,
+  .journey-header {
+    margin-bottom: 4rem;
+  }
+
+  .why-header {
+    margin-bottom: 4.5rem;
+  }
+
+  .cta-banner {
+    padding: 5rem 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .expertise,
+  .featured-projects,
+  .modular-journey,
+  .testimonials,
+  .manufacturing,
+  .glass-about-service,
+  .glass-benefits,
+  .glass-applications,
+  .offering-section,
+  .id-gallery,
+  .cf-process-section,
+  .city-about-section,
+  .city-services-section,
+  .why-choose-us,
+  .portfolio,
+  .final-cta,
+  .how-it-works,
+  .offering-cta,
+  .project-info-section,
+  .related-projects-section,
+  .cf-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .expertise-header,
+  .testimonials-title,
+  .journey-header,
+  .why-header {
+    margin-bottom: 2.75rem;
+  }
+
+  .cta-banner {
+    padding: 3.5rem 1.5rem;
+  }
+
+  .projects-full-grid {
+    margin-bottom: 4rem;
+  }
+}
+
+/* ---------- Our Expertise ---------- */
+@media (max-width: 1024px) {
+  .expertise-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 0 2rem;
+  }
+
+  .expertise-card {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .expertise-icon {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .expertise-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+    padding: 0 1.25rem;
+  }
+
+  .expertise-title {
+    font-size: 2.3rem;
+  }
+
+  .expertise-card {
+    padding: 1.75rem 0.85rem;
+  }
+
+  .expertise-icon {
+    margin-bottom: 1rem;
+  }
+
+  .expertise-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .expertise-card-title {
+    font-size: 0.78rem;
+    letter-spacing: 1.2px;
+    margin-bottom: 0.6rem;
+  }
+
+  .expertise-card-desc {
+    font-size: 0.78rem;
+  }
+
+  /* No lift-on-hover on touch screens */
+  .expertise-card:hover {
+    transform: none;
+  }
+}
+
+/* ---------- Why Laya Space Design ---------- */
+@media (max-width: 1024px) {
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 2.5rem;
+    padding: 0 2rem;
+  }
+
+  .why-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 1.25rem;
+  }
+
+  .why-title {
+    font-size: 2.3rem;
+  }
+
+  .why-card {
+    padding: 0.5rem 0 0.5rem 1.5rem;
+  }
+
+  .why-card-title {
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .why-card:hover {
+    transform: none;
+  }
+}
+
+/* ---------- Modular journey (Idea → Enjoy) ---------- */
+@media (max-width: 768px) {
+  .journey-timeline {
+    gap: 2.5rem;
+    padding: 0 1.25rem;
+  }
+
+  .journey-title {
+    font-size: 2.4rem;
+  }
+}
+
+/* ---------- Latest offerings ---------- */
+@media (max-width: 600px) {
+  .latest-offerings-grid {
+    gap: 3rem;
+  }
+
+  .latest-offerings-heading h2 {
+    font-size: 2.4rem;
+  }
+}
+
+/* ---------- Testimonials ---------- */
+@media (max-width: 600px) {
+  .testimonials-title {
+    font-size: 2.3rem;
+  }
+}
+
+/* ---------- Price calculator pages ---------- */
+@media (max-width: 1024px) {
+  .cf-section-title {
+    font-size: 2.6rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .cf-faq-grid {
+    gap: 3rem;
+  }
+
+  .cf-hero-wrapper {
+    padding-top: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cf-faq-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .cf-faq-card {
+    padding: 0.75rem 0 0.75rem 1.5rem;
+  }
+
+  .cf-faq-card h4 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .cf-faq-card:hover {
+    transform: none;
+  }
+
+  .cf-segment-card {
+    flex: 0 0 82%;
+  }
+
+  .cf-segments-scroll {
+    gap: 1.25rem;
+  }
+
+  .cf-carousel-wrapper {
+    padding: 0 1.25rem;
+  }
+
+  .cf-carousel-arrow {
+    right: 0.75rem;
+    width: 48px;
+    height: 48px;
+  }
+
+  .cf-carousel-arrow svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cf-title {
+    font-size: 2.6rem;
+    letter-spacing: -0.5px;
+    margin-bottom: 2rem;
+  }
+
+  .cf-section-title {
+    font-size: 2.1rem;
+  }
+
+  .cf-hero-wrapper {
+    padding-top: 120px;
+  }
+
+  .cf-process-title {
+    font-size: 3rem;
+  }
+}
+
+/* ---------- Footer: two-column links on phones ---------- */
+@media (max-width: 480px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.25rem 1.25rem;
+    text-align: left;
+  }
+
+  .footer-grid .footer-col:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .footer-col a,
+  .footer-col p,
+  .footer-col span {
+    overflow-wrap: anywhere;
+  }
+}
+
+/* =====================================================================
+   Images & videos
+   ===================================================================== */
+
+/* Grid items never get pushed wider than their column by a large image */
+[class*="-grid"] > * {
+  min-width: 0;
+}
+
+img {
+  -webkit-user-drag: none;
+}
+
+/* Project detail gallery */
+@media (max-width: 1024px) {
+  .gallery-img {
+    height: 420px;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-images-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+  }
+
+  .gallery-image-wrapper {
+    min-width: 0;
+  }
+
+  .gallery-img {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .project-gallery-section {
+    padding-bottom: 4rem;
+  }
+}
+
+/* Testimonial videos: keep the 9:16 frame, sized to the screen so the quote stays in view */
+@media (max-width: 600px) {
+  .video-wrapper,
+  .video-card-wrapper {
+    width: min(100%, calc(68svh * 9 / 16));
+    height: auto;
+    max-height: none;
+    aspect-ratio: 9 / 16;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .video-wrapper {
+    justify-self: center;
+  }
+
+  .testimonial-video,
+  .testimonial-video-card {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Tablet: video cards sit beside the quote at a sensible size */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .video-card-wrapper {
+    height: min(55vh, 460px);
+  }
+
+  .video-wrapper {
+    height: min(65vh, 560px);
+  }
+}
+
+/* =====================================================================
+   Home hero on small & medium screens: the hero takes the photo's own
+   wide shape, so the whole photo shows edge to edge (nothing cut off
+   left/right). Tablets keep the text on the photo; phones put it below.
+   ===================================================================== */
+@media (max-width: 1024px) {
+  .hero {
+    --hero-nav: 68px;
+    display: block;
+    height: auto;
+    min-height: 0;
+    padding-top: var(--hero-nav);
+    background-color: #000;
+  }
+
+  .hero-slides {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+  }
+
+  /* No zoom/pan on small screens, so the full width of each photo stays in view */
+  .hero .hero-slide img,
+  .hero .hero-slide.is-active img {
+    animation: none;
+    transform: none;
+  }
+
+  /* Whole photo always visible, never cropped */
+  .hero .hero-slide img.hero-slide-photo {
+    object-fit: contain;
+    z-index: 1;
+  }
+
+  /* Blurred, darker copy of the same photo fills any space around it */
+  .hero .hero-slide img.hero-slide-backdrop {
+    display: block;
+    object-fit: cover;
+    filter: blur(18px) brightness(0.55);
+    transform: scale(1.15);
+    z-index: 0;
+  }
+
+  .hero-overlay {
+    top: var(--hero-nav);
+    height: auto;
+    aspect-ratio: 3 / 2;
+  }
+
+  .hero-content {
+    position: absolute;
+    top: var(--hero-nav);
+    left: 0;
+    right: 0;
+    height: calc(100vw * 2 / 3);
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-rooms {
+    right: 1.5rem;
+    bottom: 1.5rem;
+  }
+
+  .hero-scroll-hint {
+    display: none;
+  }
+}
+
+/* Phones: photo first, then heading and buttons underneath on black */
+@media (max-width: 600px) {
+  .hero {
+    --hero-nav: 60px;
+  }
+
+  .hero-overlay {
+    display: none;
+  }
+
+  .hero-content {
+    position: static;
+    height: auto;
+    display: block;
+    padding-top: 2rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .hero-rooms {
+    display: none;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+}
+
+/* Tablets in portrait: keep both hero buttons side by side on the photo */
+@media (min-width: 601px) and (max-width: 768px) {
+  .hero-cta {
+    flex-direction: row;
+    max-width: none;
+    gap: 0.75rem;
+  }
+
+  .hero .cta-primary,
+  .hero .cta-secondary {
+    width: auto;
+    padding: 0.85rem 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+}
