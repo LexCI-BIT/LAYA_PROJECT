@@ -54,7 +54,7 @@ const Testimonials = () => {
             desc: "\"From concept to completion, Laya Space Design delivered excellence at every step of our project.\""
         },
         {
-            src: "/videos/client_testimonial.mp4",
+            src: "/videos/client_testimonial-h264.mp4",
             title: "Beyond Expectations",
             desc: "\"The attention to detail and quality of materials used truly set them apart from every other team we considered.\""
         }

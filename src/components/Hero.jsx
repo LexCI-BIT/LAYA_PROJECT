@@ -201,9 +201,18 @@ const Hero = () => {
               i === previousShot && previousShot !== shot ? 'is-previous' : ''
             }`}
           >
+            {/* Soft blurred copy fills the frame behind the full photo on phones/tablets */}
             <img
               src={s.image}
               alt=""
+              className="hero-slide-backdrop"
+              aria-hidden="true"
+              decoding="async"
+            />
+            <img
+              src={s.image}
+              alt=""
+              className="hero-slide-photo"
               fetchPriority={i === 0 ? 'high' : 'auto'}
               decoding="async"
               style={{

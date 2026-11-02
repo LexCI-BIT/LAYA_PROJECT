@@ -410,3 +410,150 @@
     height: 240px !important;
   }
 }
+
+/* ============================================================
+   Framed brand backdrop behind each offering image
+   Logo colours: teal #038371, deep green #2C4C47, orange #FC751C
+   ============================================================ */
+.latest-offerings .offering-media {
+  position: relative;
+  min-width: 0;
+  padding: 36px 36px 36px 0;
+  isolation: isolate;
+}
+
+/* Solid brand panel, offset up-right */
+.latest-offerings .offering-media::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 72px;
+  left: 72px;
+  z-index: -2;
+  background: linear-gradient(140deg, #038371 0%, #2c4c47 100%);
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Fine hairline frame inside the panel */
+.latest-offerings .offering-media::after {
+  content: '';
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  bottom: 86px;
+  left: 86px;
+  z-index: -1;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  pointer-events: none;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.latest-offerings .offering-media .offering-image-wrap {
+  position: relative;
+  border-radius: 0;
+  box-shadow: 0 24px 48px -24px rgba(13, 14, 20, 0.55);
+}
+
+/* Orange corner bracket on the free corner of the image */
+.latest-offerings .offering-media .offering-image-wrap::after {
+  content: '';
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  width: 44px;
+  height: 44px;
+  border-left: 2px solid #fc751c;
+  border-bottom: 2px solid #fc751c;
+  z-index: 2;
+  pointer-events: none;
+  transition: transform 0.5s ease;
+}
+
+/* Reversed rows: mirror and switch to the warm palette */
+.latest-offerings .offering-card-reverse .offering-media {
+  order: 2;
+  padding: 36px 0 36px 36px;
+}
+.latest-offerings .offering-card-reverse .offering-content {
+  order: 1;
+}
+.latest-offerings .offering-card-reverse .offering-media::before {
+  top: 72px;
+  right: 72px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(140deg, #f08a45 0%, #c85d1e 100%);
+}
+.latest-offerings .offering-card-reverse .offering-media::after {
+  top: 86px;
+  right: 86px;
+  bottom: 14px;
+  left: 14px;
+}
+.latest-offerings .offering-card-reverse .offering-media .offering-image-wrap::after {
+  left: auto;
+  bottom: auto;
+  right: 14px;
+  top: 14px;
+  border: 0;
+  border-right: 2px solid #038371;
+  border-top: 2px solid #038371;
+}
+
+/* Hover: panel eases out, bracket tucks in */
+.latest-offerings .offering-card:hover .offering-media::before,
+.latest-offerings .offering-card:hover .offering-media::after {
+  transform: translate(6px, -6px);
+}
+.latest-offerings .offering-card-reverse:hover .offering-media::before,
+.latest-offerings .offering-card-reverse:hover .offering-media::after {
+  transform: translate(-6px, 6px);
+}
+.latest-offerings .offering-card:hover .offering-image-wrap::after {
+  transform: translate(4px, -4px);
+}
+.latest-offerings .offering-card-reverse:hover .offering-image-wrap::after {
+  transform: translate(-4px, 4px);
+}
+
+/* Short accent rule above each title */
+.latest-offerings .offering-content h3::before {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 2px;
+  margin-bottom: 18px;
+  background: #038371;
+}
+.latest-offerings .offering-card-reverse .offering-content h3::before {
+  background: #fc751c;
+}
+
+@media (max-width: 768px) {
+  .latest-offerings .offering-media,
+  .latest-offerings .offering-card-reverse .offering-media {
+    order: initial;
+  }
+  .latest-offerings .offering-card-reverse .offering-content {
+    order: initial;
+  }
+  .latest-offerings .offering-media {
+    padding: 20px 20px 20px 0;
+  }
+  .latest-offerings .offering-media::before { bottom: 40px; left: 40px; }
+  .latest-offerings .offering-media::after  { top: 8px; right: 8px; bottom: 48px; left: 48px; }
+  .latest-offerings .offering-card-reverse .offering-media {
+    padding: 20px 0 20px 20px;
+  }
+  .latest-offerings .offering-card-reverse .offering-media::before { top: 40px; right: 40px; bottom: 0; left: 0; }
+  .latest-offerings .offering-card-reverse .offering-media::after  { top: 48px; right: 48px; bottom: 8px; left: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .latest-offerings .offering-media::before,
+  .latest-offerings .offering-media::after,
+  .latest-offerings .offering-image-wrap::after {
+    transition: none;
+  }
+}

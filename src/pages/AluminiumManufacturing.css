@@ -519,3 +519,95 @@ footer.footer {
 footer.footer > .container {
   margin-top: 0 !important;
 }
+
+/* ============================================================
+   Types of Aluminium Products: dark band (matches Home's dark sections)
+   ============================================================ */
+.aluminium-page-sections .mfg-types-band {
+  background-color: #0d0d0d;
+  color: #fff;
+  margin-top: 8rem;
+  padding: 7rem 0;
+}
+
+.aluminium-page-sections .mfg-types-band .mfg-block {
+  margin-top: 0;
+}
+
+.aluminium-page-sections .mfg-types-band .mfg-eyebrow {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.aluminium-page-sections .mfg-types-band .mfg-subtitle {
+  color: #fff;
+}
+
+.aluminium-page-sections .mfg-types-band .mfg-product-media {
+  background: #1a1a1a;
+}
+
+.aluminium-page-sections .mfg-types-band .mfg-product figcaption {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ============================================================
+   Why Source With Us: white section
+   ============================================================ */
+.aluminium-page-sections .mfg-why {
+  background-color: #fff;
+  color: var(--text-dark);
+  margin-top: 0;
+  padding: 7rem 0;
+}
+
+.aluminium-page-sections .mfg-why .mfg-eyebrow {
+  color: var(--accent-gold);
+}
+
+.aluminium-page-sections .mfg-why .mfg-subtitle {
+  color: var(--text-dark);
+}
+
+.aluminium-page-sections .mfg-why .mfg-strength {
+  border-left-color: rgba(34, 33, 31, 0.55);
+  background: linear-gradient(90deg, rgba(34, 33, 31, 0.04) 0%, transparent 100%);
+}
+
+.aluminium-page-sections .mfg-why .mfg-strength h4 {
+  color: var(--text-dark);
+}
+
+.aluminium-page-sections .mfg-why .mfg-strength p {
+  color: rgba(34, 33, 31, 0.65);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .aluminium-page-sections .mfg-why .mfg-strength:hover {
+    border-left-color: var(--text-dark);
+    background: linear-gradient(90deg, rgba(34, 33, 31, 0.07) 0%, transparent 100%);
+  }
+}
+
+@media (max-width: 1024px) {
+  .aluminium-page-sections .mfg-types-band,
+  .aluminium-page-sections .mfg-why {
+    padding: 5rem 0;
+  }
+  .aluminium-page-sections .mfg-types-band {
+    margin-top: 5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .aluminium-page-sections .mfg-types-band,
+  .aluminium-page-sections .mfg-why {
+    padding: 3.5rem 0;
+  }
+  .aluminium-page-sections .mfg-types-band {
+    margin-top: 3.5rem;
+  }
+  .aluminium-page-sections .mfg-why {
+    margin-top: 0;
+  }
+}
