@@ -127,7 +127,7 @@ export const designIdeas = {
             id: 'straight-kitchen',
             title: 'Straight Kitchen',
             desc: 'A sleek single-wall kitchen layout designed with durable aluminium cabinetry to maximize compact urban spaces.',
-            image: '/images/Straight_Modular_Kitchen.png',
+            image: '/images/luxury_modern_straight_modular_kitchen.png',
             features: ['Space-efficient design', 'Durable aluminium build', 'Easy maintenance'],
             idealFor: ['Small homes', 'Studio apartments'],
             gallery: [
@@ -139,7 +139,7 @@ export const designIdeas = {
             id: 'l-shaped-kitchen',
             title: 'L-Shaped Kitchen',
             desc: 'A versatile kitchen layout utilizing precision-engineered aluminium corner solutions for a superior workflow.',
-            image: 'https://images.openai.com/static-rsc-3/6lK9oO4HRh47vOR2GACKheKQKdLz1SnGxsFX_9SPg2cM_6yJkYVmdqAfnaR5eAJkZEv_-SqXTxST3uSJQ44yTKd97kvYPfRs5YYug-NPR2Q?purpose=fullsize&v=1',
+            image: '/images/L-Shaped Kitchen.png',
             features: ['Corner space efficiency', 'Optimized work triangle', 'Modular aluminium units'],
             idealFor: ['Medium-sized homes'],
             gallery: [
