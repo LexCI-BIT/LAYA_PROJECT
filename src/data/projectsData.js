@@ -47,7 +47,7 @@ export const projectsData = [
     title: 'Walk-in Glass Wardrobe',
     shortDesc: 'The ultimate luxury in organization and visibility.',
     fullDesc: 'A boutique experience in your bedroom. This walk-in wardrobe features slim aluminium profiles and transparent glass, offering a stunning view of your curated collection while keeping everything dust-free.',
-    image: 'https://image.made-in-china.com/2f0j00znMbsBKgfDqa/Minimalist-Aluminum-Alloy-Walk-in-Closet-Design-Custom-Modern-Aluminium-Profile-Frame-Sliding-Clear-Glass-Door-Wall-Wardrobe.webp',
+    image: '/images/Walk-in wardrobe.png',
     type: 'Walk-in',
     materials: ['Slim Profile Aluminium', 'Tempered Glass', 'Integrated LED Lighting'],
     gallery: [
@@ -60,7 +60,7 @@ export const projectsData = [
     title: 'Straight Modular Kitchen',
     shortDesc: 'Compact efficiency for smart urban apartments.',
     fullDesc: 'Proof that small spaces can have big impact. This straight-line kitchen maximizes every inch of wall space with high-capacity cabinets and integrated appliance modules.',
-    image: 'public/images/luxury_modern_straight_modular_kitchen.png',
+    image: 'images/luxury_modern_straight_modular_kitchen.png',
     type: 'Straight Line',
     materials: ['Hygienic Aluminium', 'Laminate Finish', 'Ergonomic Pull-outs'],
     gallery: [
