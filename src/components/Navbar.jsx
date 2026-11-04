@@ -129,8 +129,8 @@ const Navbar = () => {
                 Modular Cupboards
               </Link>
               <Link to="/glass-aluminium-partitions">
-  Glass & Aluminium Partitions
-</Link>
+                Glass & Aluminium Partitions
+              </Link>
               <Link to="/offerings/exterior-works">
                 Exterior Works
               </Link>
@@ -277,25 +277,6 @@ const Navbar = () => {
               </Link>
 
               <Link to="/about-us">About Us</Link>
-              <Link to="/aluminium-manufacturing">
-                Aluminium Manufacturing
-              </Link>
-              <Link to="/projects">Projects</Link>
-
-              <details>
-                <summary>Design Ideas</summary>
-                <div className="mobile-submenu">
-                  <Link to="/design-ideas">All Design Ideas</Link>
-                  <Link to="/design-ideas/wardrobe">Wardrobe Designs</Link>
-                  <Link to="/design-ideas/kitchen">Kitchen Designs</Link>
-                  <Link to="/design-ideas/living-room">
-                    Living Room Designs
-                  </Link>
-                  <Link to="/design-ideas/space-saving">
-                    Space Saving Ideas
-                  </Link>
-                </div>
-              </details>
 
               <details>
                 <summary>Offerings</summary>
@@ -312,6 +293,9 @@ const Navbar = () => {
                   <Link to="/offerings/modular-cupboards">
                     Modular Cupboards
                   </Link>
+                  <Link to="/glass-aluminium-partitions">
+                    Glass & Aluminium Partitions
+                  </Link>
                   <Link to="/offerings/exterior-works">
                     Exterior Works
                   </Link>
@@ -323,6 +307,26 @@ const Navbar = () => {
               </details>
 
               <details>
+                <summary>Design Ideas</summary>
+                <div className="mobile-submenu">
+                  <Link to="/design-ideas">All Design Ideas</Link>
+                  <Link to="/design-ideas/wardrobe">Wardrobe Designs</Link>
+                  <Link to="/design-ideas/kitchen">Kitchen Designs</Link>
+                  <Link to="/design-ideas/living-room">
+                    Living Room Designs
+                  </Link>
+                  <Link to="/design-ideas/space-saving">
+                    Space Saving Ideas
+                  </Link>
+                </div>
+              </details>
+
+              <Link to="/aluminium-manufacturing">
+                Aluminium Manufacturing
+              </Link>
+              <Link to="/projects">Projects</Link>
+              
+              {/* <details>
                 <summary>Price Calculator</summary>
                 <div className="mobile-submenu">
                   <Link to="/price-calculator">All Calculators</Link>
@@ -358,7 +362,7 @@ const Navbar = () => {
                   </Link>
                   <Link to="/cities/guntur">Guntur</Link>
                 </div>
-              </details>
+              </details> */}
             </nav>
 
             <button

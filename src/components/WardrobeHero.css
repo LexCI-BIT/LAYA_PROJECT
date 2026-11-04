@@ -25,13 +25,12 @@
   height: 100%;
 } */
 
-
 .wd-stage {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: max(100%, calc(100svh * 1200 / 896));
-  aspect-ratio: 1200 / 896;
+  width: max(100%, calc(100svh * 4 / 3));
+  aspect-ratio: 4 / 3;
   transform: translate(-50%, -50%);
   perspective: 2600px;
   perspective-origin: 50% 45%;
@@ -55,10 +54,10 @@
 /* Interior starts dim and brightens as the doors open, like the LED strips switching on */
 .wd-interior-shade {
   position: absolute;
-  left: calc(197 / 1200 * 100%);
-  width: calc((1005 - 197) / 1200 * 100%);
-  top: calc(149 / 896 * 100%);
-  height: calc((676 - 149) / 896 * 100%);
+  left: 9.5%;
+  width: 77%;
+  top: 6%;
+  height: 84%;
   background: rgba(20, 12, 4, 0.55);
   opacity: calc(1 - var(--open));
   transition: opacity 0.9s ease;

@@ -6,25 +6,21 @@ import './WardrobeHero.css';
 
 // Closed and open renders of the same wardrobe from the same camera (1200x896 source grid).
 export const CLOSED_IMG = '/images/offerings/closed_door.png';
-export const OPEN_IMG = '/images/offerings/open_warbrode.jpg';
+export const OPEN_IMG = '/images/offerings/open_wardrobe.png';
 
 const IMG_W = 1448;
 const IMG_H = 1086;
+
 const DOOR_TOP = 80;
 const DOOR_BOTTOM = 960;
 
-// Door panels in source pixels, opened as three pairs of double doors: one pair per scroll.
-// const PAIRS = [
-//   [[197, 334], [334, 465]],
-//   [[465, 600], [600, 738]],
-//   [[738, 872], [872, 1005]],
-// ];
 const PAIRS = [
   [[115, 466], [466, 710]],
   [[710, 950], [950, 1265]],
 ];
+
 const LAST = PAIRS.length;
-const STEP_LOCK = 900; // door swing time plus trackpad inertia
+const STEP_LOCK = 900;
 
 const doorStyle = ([x1, x2]) => {
   const w = x2 - x1;
