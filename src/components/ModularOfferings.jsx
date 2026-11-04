@@ -84,20 +84,20 @@ export default function LatestOfferings() {
                 <p>{offering.desc}</p>
 
                 <button
-  className="offering-view-more"
-  onClick={() => {
-    if (offering.title === 'Wardrobes') {
-      navigate('/offerings/modular-cupboards');
-    } else if (offering.title === 'Exterior Elevations') {
-      navigate('/offerings/exterior-works');
-    }
-    else if (offering.title === 'Glass & Aluminium Partitions') {
-      navigate('/glass-aluminium-partitions');
-    }
-  }}
->
-  Explore more
-</button>
+                  className="offering-view-more"
+                  onClick={() => {
+                    if (offering.title === 'Wardrobes') {
+                      navigate('/offerings/modular-cupboards');
+                    } else if (offering.title === 'Exterior Elevations') {
+                      navigate('/offerings/exterior-works');
+                    }
+                    else if (offering.title === 'Glass & Aluminium Partitions') {
+                      navigate('/glass-aluminium-partitions');
+                    }
+                  }}
+                >
+                  Explore more
+                </button>
 
                 {/* <button
                   className="offering-view-more"

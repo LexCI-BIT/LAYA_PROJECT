@@ -375,3 +375,61 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Full-screen Offering Hero */
+.offering-detail-page .offering-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.offering-detail-page .offering-hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.offering-detail-page .offering-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4rem;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .offering-detail-page .offering-hero {
+    height: 100svh;
+    min-height: 100svh;
+  }
+
+  .offering-detail-page .offering-hero-content {
+    padding: 0 1.5rem;
+    width: 100%;
+  }
+
+  .offering-detail-page .offering-hero-title {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+    line-height: 1.1;
+  }
+
+  .offering-detail-page .offering-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
