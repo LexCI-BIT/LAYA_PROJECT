@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useModal } from '../context/ModalContext';
 import './FAQSection.css';
 
-const faqs = [
+const defaultFaqs = [
     {
         question: 'What interior solutions does Laya Space Design offer?',
         answer: 'We create aluminium interiors, modular kitchens and cupboards, wardrobes, TV units, partitions, exterior works, and renovation solutions.'
@@ -31,16 +31,23 @@ const faqs = [
     }
 ];
 
-const FAQSection = () => {
+const FAQSection = ({
+    faqs = defaultFaqs,
+    id = 'faqs',
+    eyebrow = 'FAQs',
+    title = <>Good to know{" "}<br />before we begin.</>,
+    intro = 'Quick answers about planning your aluminium interiors with Laya.'
+}) => {
     const { openModal } = useModal();
+    const titleId = `${id}-title`;
 
     return (
-        <section className="faq-section" id="faqs" aria-labelledby="faq-title">
+        <section className="faq-section" id={id} aria-labelledby={titleId}>
             <div className="container faq-layout">
                 <div className="faq-intro reveal-on-scroll">
-                    <span className="faq-eyebrow">FAQs</span>
-                    <h2 id="faq-title">Good to know{" "}<br />before we begin.</h2>
-                    <p>Quick answers about planning your aluminium interiors with Laya.</p>
+                    <span className="faq-eyebrow">{eyebrow}</span>
+                    <h2 id={titleId}>{title}</h2>
+                    <p>{intro}</p>
                     <button className="faq-contact-button" onClick={openModal}>Ask us about your project <span aria-hidden="true">↗</span></button>
                 </div>
 

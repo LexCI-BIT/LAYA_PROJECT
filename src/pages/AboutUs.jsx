@@ -1,10 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useRef } from 'react';
 import HowItWorks from '../components/HowItWorks';
+import FAQSection from '../components/FAQSection';
 import {
   ArrowDown,
   ArrowUpRight,
-  ChevronDown,
   Eye,
   Target,
   Workflow,
@@ -121,7 +120,6 @@ const clientSegments = [
 ];
 
 const AboutUs = () => {
-  const [activeFaq, setActiveFaq] = useState(0);
   const pageRef = useRef(null);
 
   // useEffect(() => {
@@ -412,79 +410,13 @@ const AboutUs = () => {
         </div>
       </section>
 
-      <section id="about-faq" className="about-faq">
-        <div className="container about-faq-grid">
-          <div
-            className="about-faq-intro"
-            data-reveal="slide-left"
-          >
-            <span className="about-eyebrow"> GOOD TO KNOW</span>
-
-            <h2>
-              Frequently
-              <br />
-              asked <em>questions.</em>
-            </h2>
-
-            <p>
-              Have something specific in mind? Find answers to
-              common questions about our services and process.
-            </p>
-
-            <figure className="about-image-frame about-faq-image">
-              <img
-                src="/images/about/faq.png"
-                alt="Interior design materials and finishes"
-                loading="lazy"
-              />
-              <figcaption>THE DETAILS MATTER</figcaption>
-            </figure>
-
-            <Link to="/#contact" className="about-text-link">
-              HAVE ANOTHER QUESTION?
-              <ArrowUpRight size={17} />
-            </Link>
-          </div>
-
-          <div
-            className="about-faq-list"
-            data-reveal="slide-right"
-          >
-        {faqs.map((faq, index) => {
-          const isOpen = activeFaq === index;
-          const answerId = `about-faq-answer-${index}`;
-
-          return (
-            <div
-              className="about-faq-reveal"
-              key={faq.question}
-              style={{ '--reveal-delay': `${index * 65}ms` }}
-              data-reveal="faq-item"
-            >
-              <article className={`about-faq-item ${isOpen ? 'is-open' : ''}`}>
-                <button
-                  className="about-faq-question"
-                  type="button"
-                  aria-expanded={isOpen}
-                  aria-controls={answerId}
-                  onClick={() => setActiveFaq(isOpen ? -1 : index)}
-                >
-                  <span>{faq.question}</span>
-                  <ChevronDown size={19} className="about-faq-chevron" />
-                </button>
-
-                {isOpen && (
-                  <div className="about-faq-answer" id={answerId}>
-                    <p>{faq.answer}</p>
-                  </div>
-                )}
-              </article>
-            </div>
-          );
-        })}
-          </div>
-        </div>
-      </section>
+      <FAQSection
+        faqs={faqs}
+        id="about-faq"
+        eyebrow="Good to know"
+        title={<>Frequently{" "}<br />asked <em>questions.</em></>}
+        intro="Have something specific in mind? Find answers to common questions about our services and process."
+      />
 
 
 

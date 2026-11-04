@@ -1,9 +1,9 @@
 .about-page {
-  --about-white: #f7f5f1;
-  --about-dark: #0d0d0d;
-  --about-gold: #e5bd78;
-  --about-text: #172832;
-  --about-muted: rgba(23, 40, 50, 0.7);
+  --about-white: var(--bg-light);
+  --about-dark: var(--bg-dark);
+  --about-gold: var(--accent-gold);
+  --about-text: var(--text-dark);
+  --about-muted: rgba(34, 33, 31, 0.7);
 
   width: 100%;
   overflow: clip;
@@ -29,10 +29,10 @@
 .about-page h1,
 .about-page h2 {
   font-family: 'Cormorant Garamond', serif;
-  font-weight: 300;
+  font-weight: 400;
 }
 .about-page h1 em,
-.about-page h2 em { font-weight: 300; }
+.about-page h2 em { font-weight: 400; }
 .about-page p { font-family: 'Inter', sans-serif; }
 
 .about-page .about-eyebrow {
@@ -49,12 +49,10 @@
    SECTION TITLES (shared by every section heading)
    ========================================================= */
 .about-page .about-section-heading h2,
-.about-page .about-faq-intro h2,
-.about-page .about-cta h2,
-.how-it-works .section-title {
+.about-page .about-cta h2 {
   font-family: 'Cormorant Garamond', serif !important;
-  font-size: clamp(3rem, 5.5vw, 5rem) !important;
-  font-weight: 300 !important;
+  font-size: clamp(2.4rem, 4vw, 3.5rem) !important;
+  font-weight: 400 !important;
   line-height: 1.02 !important;
   letter-spacing: -0.8px !important;
 }
@@ -62,15 +60,14 @@
 /* Vision / Mission sub-headings: smaller than the section titles */
 .about-page .about-purpose-content h2 {
   font-family: 'Cormorant Garamond', serif !important;
-  font-size: clamp(2.2rem, 3.6vw, 3.4rem) !important;
-  font-weight: 300 !important;
+  font-size: clamp(2rem, 3vw, 2.6rem) !important;
+  font-weight: 400 !important;
   line-height: 1.1 !important;
   letter-spacing: -0.5px !important;
 }
 
 .about-purpose-content h2 { margin: 0 0 28px; text-align: center; }
 .about-section-heading h2 { margin: 0 0 22px; }
-.about-faq-intro h2       { margin: 0 0 24px; text-align: left; }
 .about-cta h2             { margin: 0; text-align: left; }
 
 /* =========================================================
@@ -100,7 +97,7 @@
   bottom: 0;
   left: 0;
   padding: 28px 20px 16px;
-  background: linear-gradient(transparent, rgba(13, 13, 13, 0.72));
+  background: linear-gradient(transparent, rgba(34, 33, 31, 0.72));
   color: #fff;
   font-size: 0.62rem;
   font-weight: 500;
@@ -129,7 +126,6 @@
 .about-page [data-reveal="image-reveal"] { clip-path: inset(0 0 100% 0); transform: translateY(18px); }
 .about-page [data-reveal="process-step"] { transform: translateY(32px); }
 .about-page [data-reveal="client-card"]  { transform: translateY(28px) scale(0.98); }
-.about-page [data-reveal="faq-item"]     { transform: translateY(22px); }
 .about-page [data-reveal="cta-reveal"]   { transform: translateY(25px) scale(0.99); }
 
 /* Image reveal: animate the <img>, not the figure */
@@ -217,12 +213,12 @@
   margin: 0 0 28px;
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(3.6rem, 7vw, 6.7rem);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 0.98;
   letter-spacing: -1.5px;
   color: #fff;
 }
-.about-hero h1 em { font-weight: 300; color: #fff; }
+.about-hero h1 em { font-weight: 400; color: #fff; }
 
 .about-hero-content > p {
   max-width: 570px;
@@ -247,7 +243,7 @@
   text-decoration: none;
   transition: color 0.3s ease;
 }
-.about-hero-link:hover { color: #e5bd78; }
+.about-hero-link:hover { color: var(--about-gold); }
 .about-hero-link svg { transition: transform 0.3s ease; }
 .about-hero-link:hover svg { transform: translateY(4px); }
 
@@ -270,7 +266,6 @@
 .about-vision,
 .about-mission,
 .about-process,
-.about-faq,
 .about-clients { padding: 110px 0; }
 
 /* Only has an effect if a section also carries the .about-purpose class */
@@ -309,8 +304,8 @@
 /* "Our Vision" / "Our Mission" titles: same style as the "Our Clients" title */
 .about-page .about-purpose-label .about-eyebrow {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3rem, 5.5vw, 5rem);
-  font-weight: 300;
+  font-size: clamp(2.4rem, 4vw, 3.5rem);
+  font-weight: 400;
   line-height: 1.02;
   letter-spacing: -0.8px;
   text-transform: none;
@@ -349,7 +344,7 @@
   font-weight: 300;
   line-height: 1.95;
 }
-.about-vision .about-purpose-content p  { color: rgba(13, 13, 13, 0.72); }
+.about-vision .about-purpose-content p  { color: rgba(34, 33, 31, 0.72); }
 .about-mission .about-purpose-content p { color: rgba(255, 255, 255, 0.68); }
 
 .about-purpose-content > p:not(.about-lead) {
@@ -466,7 +461,7 @@
 .about-process .about-eyebrow { color: #77716a; }
 .about-process .about-section-heading h2,
 .about-process .about-section-heading h2 em { color: var(--about-dark); }
-.about-process .about-section-heading > p { color: rgba(13, 13, 13, 0.7); }
+.about-process .about-section-heading > p { color: rgba(34, 33, 31, 0.7); }
 
 .about-process-image {
   height: clamp(250px, 36vw, 430px);
@@ -478,8 +473,8 @@
 .about-process-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  border-top: 1px solid rgba(13, 13, 13, 0.18);
-  border-bottom: 1px solid rgba(13, 13, 13, 0.18);
+  border-top: 1px solid rgba(34, 33, 31, 0.18);
+  border-bottom: 1px solid rgba(34, 33, 31, 0.18);
 }
 
 .about-process-card {
@@ -487,11 +482,11 @@
   flex-direction: column;
   min-width: 0;
   padding: 30px 25px 35px;
-  border-right: 1px solid rgba(13, 13, 13, 0.15);
+  border-right: 1px solid rgba(34, 33, 31, 0.15);
   transition: background 0.3s ease;
 }
-.about-process-card:first-child { border-left: 1px solid rgba(13, 13, 13, 0.15); }
-.about-process-card:hover { background: rgba(13, 13, 13, 0.035); }
+.about-process-card:first-child { border-left: 1px solid rgba(34, 33, 31, 0.15); }
+.about-process-card:hover { background: rgba(34, 33, 31, 0.035); }
 
 .about-process-top {
   display: flex;
@@ -518,7 +513,7 @@
 .about-process-card > p {
   flex: 1;
   margin: 0;
-  color: rgba(13, 13, 13, 0.7);
+  color: rgba(34, 33, 31, 0.7);
   font-size: 0.84rem;
   font-weight: 300;
   line-height: 1.9;
@@ -534,104 +529,11 @@
 .about-process-card:hover .about-process-line { width: 70px; }
 
 /* =========================================================
-   FAQ (light background, dark text)
+   FAQ: uses the shared Home FAQSection component (FAQSection.css).
+   Keep its heading weight the same as on the Home page.
    ========================================================= */
-.about-faq { background: var(--about-white); color: var(--about-dark); }
-
-.about-faq-grid {
-  display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: 9%;
-  align-items: start;
-}
-
-.about-faq-intro { position: sticky; top: 110px; }
-.about-faq-intro .about-eyebrow { margin-bottom: 24px; color: #77716a; }
-.about-faq-intro h2,
-.about-faq-intro h2 em { color: var(--about-dark); }
-.about-faq-intro > p {
-  margin: 0 0 25px;
-  color: rgba(13, 13, 13, 0.7);
-  font-size: 0.9rem;
-  font-weight: 300;
-  line-height: 1.9;
-}
-
-.about-faq-image { height: 220px; margin: 30px 0; background: #e8e4dc; }
-.about-faq-image img { object-position: center; }
-
-.about-text-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  color: var(--about-dark);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-decoration: none;
-  transition: opacity 0.3s ease;
-}
-.about-text-link:hover { opacity: 0.7; }
-
-.about-faq-list { border-top: 1px solid rgba(13, 13, 13, 0.18); }
-
-/* Reveal wrapper: its className never changes, so React can't wipe "is-visible" */
-.about-faq-reveal { border-bottom: 1px solid rgba(13, 13, 13, 0.18); }
-.about-faq-item { border-bottom: 0; }
-
-.about-faq-question {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 22px;
-  width: 100%;
-  padding: 24px 0;
-  border: 0;
-  background: transparent;
-  color: var(--about-dark);
-  text-align: left;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 500;
-  line-height: 1.65;
-  cursor: pointer;
-}
-.about-faq-question svg {
-  flex-shrink: 0;
-  color: var(--about-dark);
-  transition: transform 0.35s ease;
-}
-.about-faq-item.is-open .about-faq-chevron { transform: rotate(180deg); }
-
-.about-page .about-faq-answer {
-  display: block;
-  width: 100%;
-  margin: 0;
-  padding: 0 35px 23px 0;
-  opacity: 1;
-  visibility: visible;
-  overflow: visible;
-  clip-path: none;
-  transform-origin: top;
-  animation: faq-answer-enter 0.35s ease-out both;
-}
-.about-page .about-faq-answer p {
-  display: block;
-  margin: 0;
-  padding: 0;
-  color: rgba(13, 13, 13, 0.78);
-  font-family: 'Inter', sans-serif;
-  font-size: 0.86rem;
-  font-weight: 300;
-  line-height: 1.9;
-  opacity: 1;
-  visibility: visible;
-}
-
-@keyframes faq-answer-enter {
-  from { opacity: 0; transform: translateY(-8px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
+.about-page .faq-intro h2,
+.about-page .faq-intro h2 em { font-weight: 300; }
 
 /* =========================================================
    OUR CLIENTS (dark background, light text)
@@ -787,30 +689,27 @@
 @media (max-width: 1024px) {
   .about-page .container { width: min(100% - 8%, 900px); }
 
-  .about-vision, .about-mission, .about-process, .about-faq, .about-clients {
+  .about-vision, .about-mission, .about-process, .about-clients {
     padding-top: 85px;
     padding-bottom: 85px;
   }
 
   .about-page .about-section-heading h2,
-  .about-page .about-faq-intro h2,
-  .about-page .about-cta h2,
-  .how-it-works .section-title { font-size: clamp(3rem, 6vw, 4.5rem) !important; }
+  .about-page .about-cta h2 { font-size: clamp(2.4rem, 5vw, 3.2rem) !important; }
 
-  .about-page .about-purpose-content h2 { font-size: clamp(2.2rem, 4.5vw, 3rem) !important; }
+  .about-page .about-purpose-content h2 { font-size: clamp(2rem, 4vw, 2.5rem) !important; }
 
-  .about-page .about-purpose-label .about-eyebrow { font-size: clamp(3rem, 6vw, 4.5rem); }
+  .about-page .about-purpose-label .about-eyebrow { font-size: clamp(2.4rem, 5vw, 3.2rem); }
 
   .about-vision-image  { height: 340px; }
   .about-mission-image { height: 440px; }
   .about-mission-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 30px; }
 
   .about-process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .about-process-card { min-height: 250px; border-bottom: 1px solid rgba(13, 13, 13, 0.15); }
-  .about-process-card:nth-child(odd) { border-left: 1px solid rgba(13, 13, 13, 0.15); }
+  .about-process-card { min-height: 250px; border-bottom: 1px solid rgba(34, 33, 31, 0.15); }
+  .about-process-card:nth-child(odd) { border-left: 1px solid rgba(34, 33, 31, 0.15); }
   .about-process-card:nth-last-child(-n + 2) { border-bottom: 0; }
 
-  .about-faq-grid { grid-template-columns: 0.85fr 1.15fr; gap: 6%; }
   .about-clients-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .about-cta-inner { align-items: flex-start; flex-direction: column; }
 }
@@ -847,22 +746,20 @@
   .about-hero-content > p { font-size: 0.95rem; }
   .about-hero-caption { right: 20px; bottom: 24px; font-size: 0.55rem; letter-spacing: 1.4px; }
 
-  .about-vision, .about-mission, .about-process, .about-faq, .about-clients {
+  .about-vision, .about-mission, .about-process, .about-clients {
     padding-top: 70px;
     padding-bottom: 70px;
   }
 
   .about-page .about-section-heading h2,
-  .about-page .about-faq-intro h2,
-  .about-page .about-cta h2,
-  .how-it-works .section-title {
-    font-size: clamp(2.7rem, 8vw, 4rem) !important;
+  .about-page .about-cta h2 {
+    font-size: clamp(2.2rem, 7vw, 2.8rem) !important;
     line-height: 1.05 !important;
   }
 
-  .about-page .about-purpose-content h2 { font-size: clamp(2rem, 6vw, 2.6rem) !important; }
+  .about-page .about-purpose-content h2 { font-size: clamp(1.9rem, 5.5vw, 2.3rem) !important; }
 
-  .about-page .about-purpose-label .about-eyebrow { font-size: clamp(2.7rem, 8vw, 4rem); line-height: 1.05; }
+  .about-page .about-purpose-label .about-eyebrow { font-size: clamp(2.2rem, 7vw, 2.8rem); line-height: 1.05; }
 
   .about-purpose-grid { gap: 32px; }
   .about-purpose-content .about-lead { font-size: 1.1rem; }
@@ -881,19 +778,14 @@
   .about-process-card:nth-child(odd) {
     min-height: auto;
     padding: 25px 22px 28px;
-    border-right: 1px solid rgba(13, 13, 13, 0.15);
-    border-bottom: 1px solid rgba(13, 13, 13, 0.15);
-    border-left: 1px solid rgba(13, 13, 13, 0.15);
+    border-right: 1px solid rgba(34, 33, 31, 0.15);
+    border-bottom: 1px solid rgba(34, 33, 31, 0.15);
+    border-left: 1px solid rgba(34, 33, 31, 0.15);
   }
   .about-process-card:last-child { border-bottom: 0; }
   .about-process-top { margin-bottom: 24px; }
   .about-process-card > p { max-width: 500px; }
 
-  .about-faq-grid { grid-template-columns: 1fr; gap: 40px; }
-  .about-faq-intro { position: static; }
-  .about-faq-image { max-width: 500px; height: 240px; }
-  .about-faq-question { gap: 16px; padding: 22px 0; font-size: 0.87rem; }
-  .about-page .about-faq-answer { padding-right: 15px; }
 
   .about-clients-grid { gap: 25px 18px; }
   .about-client-image { height: 200px; }
@@ -924,19 +816,17 @@
   .about-hero-link { font-size: 0.72rem; }
   .about-hero-caption { font-size: 0.48rem; letter-spacing: 1px; }
 
-  .about-vision, .about-mission, .about-process, .about-faq, .about-clients {
+  .about-vision, .about-mission, .about-process, .about-clients {
     padding-top: 58px;
     padding-bottom: 58px;
   }
 
   .about-page .about-section-heading h2,
-  .about-page .about-faq-intro h2,
-  .about-page .about-cta h2,
-  .how-it-works .section-title { font-size: 2.7rem !important; }
+  .about-page .about-cta h2 { font-size: 2.4rem !important; }
 
-  .about-page .about-purpose-content h2 { font-size: 2rem !important; }
+  .about-page .about-purpose-content h2 { font-size: 1.9rem !important; }
 
-  .about-page .about-purpose-label .about-eyebrow { font-size: 2.7rem; }
+  .about-page .about-purpose-label .about-eyebrow { font-size: 2.4rem; }
 
   .about-purpose-content .about-lead { font-size: 1.05rem; }
   .about-purpose-content p { font-size: 0.86rem; }
@@ -945,8 +835,6 @@
   .about-mission-image { height: 250px; }
 
   .about-process-image { height: 210px; }
-  .about-faq-question { font-size: 0.82rem; }
-  .about-faq-image { height: 200px; }
 
   .about-clients-grid { grid-template-columns: 1fr; gap: 24px; }
   .about-client-image { height: 230px; }
