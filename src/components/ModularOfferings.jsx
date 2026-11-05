@@ -86,7 +86,9 @@ export default function LatestOfferings() {
                 <button
                   className="offering-view-more"
                   onClick={() => {
-                    if (offering.title === 'Wardrobes') {
+                    if (offering.title === 'Windows & Doors') {
+                      navigate('/aluminium-manufacturing');
+                    } else if (offering.title === 'Wardrobes') {
                       navigate('/offerings/modular-cupboards');
                     } else if (offering.title === 'Exterior Elevations') {
                       navigate('/offerings/exterior-works');
