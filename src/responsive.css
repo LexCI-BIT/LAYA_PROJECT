@@ -498,8 +498,7 @@ img {
 
 /* Testimonial videos: keep the 9:16 frame, sized to the screen so the quote stays in view */
 @media (max-width: 600px) {
-  .video-wrapper,
-  .video-card-wrapper {
+  .video-wrapper {
     width: min(100%, calc(68svh * 9 / 16));
     height: auto;
     max-height: none;
@@ -512,20 +511,15 @@ img {
     justify-self: center;
   }
 
-  .testimonial-video,
-  .testimonial-video-card {
+  .testimonial-video {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 }
 
-/* Tablet: video cards sit beside the quote at a sensible size */
+/* Tablet: testimonial videos at a sensible size */
 @media (min-width: 601px) and (max-width: 1024px) {
-  .video-card-wrapper {
-    height: min(55vh, 460px);
-  }
-
   .video-wrapper {
     height: min(65vh, 560px);
   }
