@@ -3,7 +3,7 @@ import './WhyChooseUs.css';
 
 const WhyChooseUs = () => {
     const points = [
-        { title: '5+ Years Experience', desc: 'A legacy of excellence in interior architecture.' },
+        { title: '35+ Years Experience', desc: 'A legacy of excellence in interior architecture.' },
         { title: 'Premium Aluminium Quality', desc: 'High-grade materials for lasting durability.' },
         { title: 'Modern Designs', desc: 'Sleek, contemporary aesthetics for any space.' },
         { title: 'Durable & Low Maintenance', desc: 'Built to withstand time with minimal effort.' },
