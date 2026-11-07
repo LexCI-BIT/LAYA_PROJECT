@@ -28,6 +28,8 @@ const CalculatorIntro = () => {
     const introData = config.intro;
     // Format the ID for natural display (e.g., 'full-home' -> 'full home')
     const displayType = config.id.replace('-', ' ');
+    // Title-cased version for headings (e.g., 'full-home' -> 'Full Home')
+    const displayTypeTitle = displayType.replace(/\b\w/g, (c) => c.toUpperCase());
 
     return (
         <div className="calc-funnel-page intro-stage">
@@ -83,7 +85,7 @@ const CalculatorIntro = () => {
                             <div key={index} className="cf-process-card">
                                 <span className="cf-process-number">0{index + 1}</span>
                                 <div className="cf-process-content">
-                                    <h4 className="cf-process-step-title">{step.title}_</h4>
+                                    <h4 className="cf-process-step-title">{step.title}</h4>
                                     <p className="cf-process-step-desc">{step.desc}</p>
                                 </div>
                             </div>
@@ -124,7 +126,7 @@ const CalculatorIntro = () => {
             {/* 5. FAQ SECTION (Dark) */}
             <section className="cf-section dark-bg">
                 <div className="container">
-                    <h2 className="cf-section-title center">How the {displayType} Price Calculator Works</h2>
+                    <h2 className="cf-section-title center">How the {displayTypeTitle} Price Calculator Works</h2>
                     <div className="cf-faq-grid animate-in">
                         {introData.howItWorks.map((item, index) => (
                             <div key={index} className="cf-faq-card">

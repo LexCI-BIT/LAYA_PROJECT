@@ -13,14 +13,14 @@ export const offeringsData = {
     whyAluminium: [
       { title: 'Durability', desc: 'Will not crack, warp, or split over time.' },
       { title: 'Maintenance', desc: 'Easy to clean and requires no periodic polishing or painting.' },
-      { title: 'Customization', desc: 'Available in infinite finishes, from sleek metallic to realistic wood grains.' }
+      { title: 'Customisation', desc: 'Available in infinite finishes, from sleek metallic to realistic wood grains.' }
     ],
     applications: [
       { title: 'Wardrobes', icon: 'wardrobe', desc: 'Lightweight yet incredibly strong sliding or hinged storage solutions.' },
       { title: 'Kitchen Cabinets', icon: 'kitchen', desc: 'Hygienic, waterproof, and heat-resistant cabinets that stay like new.' },
       { title: 'TV Units', icon: 'tv-unit', desc: 'Minimalist designs that can support heavy screens and hide all cables seamlessly.' },
-      { title: 'Partitions', icon: 'partition', desc: 'Sleek room dividers that maximize light while providing necessary privacy.' },
-      { title: 'Storage Units', icon: 'storage', desc: 'Efficient organization for any space, from bathrooms to utility rooms.' }
+      { title: 'Partitions', icon: 'partition', desc: 'Sleek room dividers that maximise light while providing necessary privacy.' },
+      { title: 'Storage Units', icon: 'storage', desc: 'Efficient organisation for any space, from bathrooms to utility rooms.' }
     ],
     gallery: [
       'https://tiimg.tistatic.com/fp/1/008/622/aluminium-modular-kitchen-183.jpg',
@@ -31,17 +31,17 @@ export const offeringsData = {
     title: 'Modular Cupboards',
     shortTitle: 'Smart Storage Solutions',
     heroImage: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&q=80&w=2070',
-    about: 'Maximize your living space with our range of modular cupboards. Designed for the modern home, our storage solutions focus on organization, accessibility, and sleek aesthetics.',
+    about: 'Maximise your living space with our range of modular cupboards. Designed for the modern home, our storage solutions focus on organisation, accessibility, and sleek aesthetics.',
     types: [
       { title: 'Sliding Wardrobe', icon: 'wardrobe', desc: 'Perfect for compact rooms, these doors operate on a smooth track system to save floor space.' },
       { title: 'Hinged Wardrobe', icon: 'wardrobe', desc: 'The classic choice for larger rooms, offering full access to the wardrobe interior.' },
       { title: 'Mirror Wardrobe', icon: 'wardrobe', desc: 'Integrated full-length mirrors that make any room feel twice as large and bright.' },
-      { title: 'Floor-to-Ceiling', icon: 'wardrobe', desc: 'Utilizes every inch of vertical space for maximum storage capacity.' },
-      { title: 'Walk-in Wardrobe', icon: 'wardrobe', desc: 'The ultimate luxury in organization, with custom sections for every part of your wardrobe.' }
+      { title: 'Floor-to-Ceiling', icon: 'wardrobe', desc: 'Utilises every inch of vertical space for maximum storage capacity.' },
+      { title: 'Walk-in Wardrobe', icon: 'wardrobe', desc: 'The ultimate luxury in organisation, with custom sections for every part of your wardrobe.' }
     ],
     benefits: [
       { title: 'Space-Saving', icon: 'wardrobe', desc: 'Custom designs that adapt to the specific dimensions and constraints of your room.' },
-      { title: 'Organized Storage', icon: 'storage', desc: 'Precision-engineered compartments for accessories, shoes, and hanging garments.' },
+      { title: 'Organised Storage', icon: 'storage', desc: 'Precision-engineered compartments for accessories, shoes, and hanging garments.' },
       { title: 'Modern Look', icon: 'design', desc: 'Clean lines and premium finishes that complement any contemporary interior design.' }
     ],
     gallery: [
@@ -101,7 +101,7 @@ export const offeringsData = {
       { title: 'Aluminium Doors', icon: 'partition', desc: 'Secure and weather-resistant entrance solutions with high-precision locking systems.' },
       { title: 'Aluminium Windows', icon: 'partition', desc: 'Energy-efficient window frames that offer superior sound insulation and smooth operation.' },
       { title: 'Glass & Aluminium Partitions', icon: 'partition', desc: 'Commercial or residential partitions that create light-filled, functional outdoor spaces.' },
-      { title: 'Facade / Cladding', icon: 'partition', desc: 'Protective and decorative exterior wall systems that modernize any building profile.' }
+      { title: 'Facade / Cladding', icon: 'partition', desc: 'Protective and decorative exterior wall systems that modernise any building profile.' }
     ],
     benefits: [
       { title: 'Weather Resistant', icon: 'partition', desc: 'Specifically treated to resist UV rays, oxidation, and extreme temperature changes.' },
@@ -118,18 +118,18 @@ export const offeringsData = {
     title: 'Custom Designs',
     shortTitle: 'Tailored for Your Lifestyle',
     heroImage: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=2070',
-    about: 'We believe your home should reflect your unique personality. Our custom design service allows you to bring your vision to life with personalized aluminium interior solutions.',
+    about: 'We believe your home should reflect your unique personality. Our custom design service allows you to bring your vision to life with personalised aluminium interior solutions.',
     customizable: [
-      { title: 'Wardrobes', icon: 'wardrobe', desc: 'Bespoke layouts with specialized modules for your specific storage needs.' },
+      { title: 'Wardrobes', icon: 'wardrobe', desc: 'Bespoke layouts with specialised modules for your specific storage needs.' },
       { title: 'Kitchens', icon: 'kitchen', desc: 'Ergonomic designs that match your cooking style and space requirements.' },
-      { title: 'Storage Units', icon: 'storage', desc: 'Unique units for libraries, hobby rooms, or specialized equipment storage.' },
+      { title: 'Storage Units', icon: 'storage', desc: 'Unique units for libraries, hobby rooms, or specialised equipment storage.' },
       { title: 'TV Units', icon: 'tv-unit', desc: 'Feature walls designed to match your specific home entertainment setup.' },
       { title: 'Partitions', icon: 'partition', desc: 'Artistic room dividers with custom patterns and glass infills.' }
     ],
     process: [
       { step: 'Consultation', desc: 'Initial discussion to understand your lifestyle, needs, and design preferences.' },
       { step: 'Requirement Understanding', desc: 'Detailed site measurements and functional analysis of your space.' },
-      { step: 'Design', desc: 'Creation of 3D visualizations and technical drawings for your approval.' },
+      { step: 'Design', desc: 'Creation of 3D visualisations and technical drawings for your approval.' },
       { step: 'Execution', desc: 'Precision manufacturing and professional installation of your custom units.' }
     ],
     whyCustom: [
@@ -146,30 +146,30 @@ export const offeringsData = {
     renovatable: [
       { title: 'Old Wardrobes', icon: 'wardrobe', desc: 'Replace termite-eaten wood with sleek, modern aluminium frames and doors.' },
       { title: 'Outdated Kitchens', icon: 'kitchen', desc: 'Upgrade to moisture-resistant and hygienic modular aluminium cabinets.' },
-      { title: 'Storage Units', icon: 'storage', desc: 'Modernize utility areas and closets with efficient aluminium shelving systems.' },
+      { title: 'Storage Units', icon: 'storage', desc: 'Modernise utility areas and closets with efficient aluminium shelving systems.' },
       { title: 'Section Partitions', icon: 'partition', desc: 'Replace bulky wooden partitions with slim profile glass and aluminium dividers.' }
     ],
     benefits: [
       { title: 'Modern Look', icon: 'design', desc: 'Instantly update the aesthetic value of your property with contemporary materials.' },
       { title: 'Better Durability', icon: 'material', desc: 'Say goodbye to termite issues, warping, and frequent maintenance of old wood.' },
-      { title: 'Better Space Utilization', icon: 'storage', desc: 'Re-engineer your current layout to find more storage and usable area.' }
+      { title: 'Better Space Utilisation', icon: 'storage', desc: 'Re-engineer your current layout to find more storage and usable area.' }
     ],
     showcase: 'We provide end-to-end support, from dismantling old structures to the final reveal of your new aluminium space.'
   },
   'modular-kitchens': {
     title: 'Modular Kitchens',
     shortTitle: 'Precision in Every Detail',
-    heroImage: 'https://images.unsplash.com/photo-1556911220-e150223eaa77?auto=format&fit=crop&q=80&w=2070',
+    heroImage: '/images/hero/kitchen1.jpg',
     about: 'Transform your culinary experience with our premium aluminium modular kitchens. Designed for efficiency, hygiene, and timeless style, our kitchens are built to last a lifetime.',
     benefits: [
       { title: 'Zero Maintenance', icon: 'renovation', desc: 'No more polishing or deep cleaning required; a simple wipe keeps it looking brand new.' },
-      { title: 'Hygienic Surface', icon: 'kitchen', desc: 'Non-porous aluminium prevents bacterial growth and doesn\'t absorb cooking odors.' },
+      { title: 'Hygienic Surface', icon: 'kitchen', desc: 'Non-porous aluminium prevents bacterial growth and doesn\'t absorb cooking odours.' },
       { title: 'Heat Resistant', icon: 'material', desc: 'Perfect for the Indian kitchen environment, providing total safety from heat and steam.' },
       { title: 'Waterproof', icon: 'storage', desc: 'Total peace of mind against leaks and spills, with zero risk of swelling or rot.' }
     ],
     applications: [
-      { title: 'Island Kitchen', icon: 'kitchen', desc: 'A centerpiece design that adds luxury and additional workspace.' },
-      { title: 'L-Shaped Kitchen', icon: 'kitchen', desc: 'Maximizing corner efficiency and providing an expansive work triangle.' },
+      { title: 'Island Kitchen', icon: 'kitchen', desc: 'A centrepiece design that adds luxury and additional workspace.' },
+      { title: 'L-Shaped Kitchen', icon: 'kitchen', desc: 'Maximising corner efficiency and providing an expansive work triangle.' },
       { title: 'U-Shaped Kitchen', icon: 'kitchen', desc: 'Ideal for serious home chefs who need everything within arms reach.' },
       { title: 'Parallel Kitchen', icon: 'kitchen', desc: 'The most efficient layout for long, narrow spaces without compromising storage.' }
     ],
@@ -180,7 +180,7 @@ export const offeringsData = {
   'custom-tv-units': {
     title: 'Custom TV Units',
     shortTitle: 'Entertainment Redefined',
-    heroImage: 'https://images.unsplash.com/photo-1593060974411-73934303960d?auto=format&fit=crop&q=80&w=2070',
+    heroImage: '/images/tvunit.png',
     about: 'Elevate your living room with our sleek, contemporary aluminium TV units. We combine minimalism with intelligent storage to create a focal point that complements your home entertainment setup.',
     benefits: [
       { title: 'Sleek Aesthetic', icon: 'design', desc: 'Slim profiles and hidden cable management for a clean, futuristic look.' },
@@ -193,7 +193,7 @@ export const offeringsData = {
       { title: 'Minimalist Stands', icon: 'tv-unit', desc: 'Low-profile solutions for a refined and uncluttered living environment.' }
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1593060974411-73934303960d?auto=format&fit=crop&q=80&w=2070'
+      '/images/tvunit.png'
     ]
   }
 };

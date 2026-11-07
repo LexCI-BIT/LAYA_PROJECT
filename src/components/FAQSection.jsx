@@ -9,7 +9,7 @@ const defaultFaqs = [
         answer: 'We create aluminium interiors, modular kitchens and cupboards, wardrobes, TV units, partitions, exterior works, and renovation solutions.'
     },
     {
-        question: 'Can my design be customized to fit my space?',
+        question: 'Can my design be customised to fit my space?',
         answer: 'Yes. Designs can be tailored to your room dimensions, storage needs, preferred finishes, and the way you use your space.'
     },
     {

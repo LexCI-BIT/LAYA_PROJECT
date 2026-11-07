@@ -166,7 +166,7 @@ const OfferingDetail = () => {
       {data.customizable && (
         <section className="offering-section">
           <div className="offering-container">
-            <h2 className="offering-section-title">What can be Customized</h2>
+            <h2 className="offering-section-title">What can be Customised</h2>
             <div className="offering-grid-container">
               {data.customizable.map((item, i) => (
                 <div key={i} className="grid-item">

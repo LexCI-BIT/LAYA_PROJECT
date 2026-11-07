@@ -116,7 +116,7 @@ const Footer = () => {
                             <h4>Contact Us</h4>
                             <div className="contact-info">
                                 <p className="contact-phone"><strong>Phone:</strong> <a href="tel:+918341884094">+91 83418 84094</a></p>
-                                <p><strong>Email:</strong> <a href="mailto: layaspacedesign1993@gmail.com"> layaspacedesign1993@gmail.com</a></p>
+                                <p><strong>Email:</strong> <a href="mailto:layaspacedesign1993@gmail.com">layaspacedesign1993@gmail.com</a></p>
                                 <p><strong>Location:</strong> Telangana & Andhra Pradesh</p>
                                 <p><strong>Working Hours:</strong><br />Mon – Sat | 9:00 AM – 7:00 PM</p>
                             </div>

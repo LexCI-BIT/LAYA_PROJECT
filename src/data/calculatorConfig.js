@@ -70,8 +70,8 @@ export const calculatorConfigs = {
         },
         result: {
             title: 'Your Estimated Interior Cost',
-            subtitle: 'Based on your selections, here’s an approximate budget range for your home interiors using Laya Design’s premium aluminium technology.',
-            disclaimer: '*This estimate is approximate and may vary based on final measurements, customizations, and material preferences.'
+            subtitle: 'Based on your selections, here’s an approximate budget range for your home interiors using Laya Space Design’s premium aluminium technology.',
+            disclaimer: '*This estimate is approximate and may vary based on final measurements, customisations, and material preferences.'
         }
     },
     wardrobe: {
@@ -96,9 +96,9 @@ export const calculatorConfigs = {
             ],
             howItWorks: [
                 { title: 'Wardrobe Dimensions', desc: 'The overall size of your wardrobe has a major impact on pricing. Larger wardrobes generally require more materials and internal storage components, which influences the estimated cost.' },
-                { title: 'Wardrobe Style', desc: 'The type of wardrobe you choose also plays a key role in the estimate. Whether you prefer a sliding wardrobe, hinged wardrobe, or a more customized storage solution, the calculator adjusts the cost based on the design type you select.' },
+                { title: 'Wardrobe Style', desc: 'The type of wardrobe you choose also plays a key role in the estimate. Whether you prefer a sliding wardrobe, hinged wardrobe, or a more customised storage solution, the calculator adjusts the cost based on the design type you select.' },
                 { title: 'Material & Finish Selection', desc: 'The choice of material and finish affects both the look and performance of your wardrobe. From practical and minimal finishes to premium design options, the calculator reflects how your preferences influence the price.' },
-                { title: 'Accessories & Storage Features', desc: 'Additional storage elements and accessories can further customize your wardrobe. Options like drawers, mirrors, internal organizers, loft units, and utility add-ons are considered while calculating the estimated cost.' }
+                { title: 'Accessories & Storage Features', desc: 'Additional storage elements and accessories can further customise your wardrobe. Options like drawers, mirrors, internal organisers, loft units, and utility add-ons are considered while calculating the estimated cost.' }
             ]
         },
         form: {
@@ -159,7 +159,7 @@ export const calculatorConfigs = {
                 { title: 'Get estimate', desc: 'Instantly view a projected cost range for your ultimate kitchen.', icon: '🍳' }
             ],
             typeCards: [
-                { title: 'L-Shaped Kitchens', desc: 'A versatile kitchen layout utilizing precision corner solutions.', image: 'https://images.openai.com/static-rsc-3/6lK9oO4HRh47vOR2GACKheKQKdLz1SnGxsFX_9SPg2cM_6yJkYVmdqAfnaR5eAJkZEv_-SqXTxST3uSJQ44yTKd97kvYPfRs5YYug-NPR2Q?purpose=fullsize&v=1' },
+                { title: 'L-Shaped Kitchens', desc: 'A versatile kitchen layout utilising precision corner solutions.', image: 'https://images.openai.com/static-rsc-3/6lK9oO4HRh47vOR2GACKheKQKdLz1SnGxsFX_9SPg2cM_6yJkYVmdqAfnaR5eAJkZEv_-SqXTxST3uSJQ44yTKd97kvYPfRs5YYug-NPR2Q?purpose=fullsize&v=1' },
                 { title: 'U-Shaped Kitchens', desc: 'Maximum storage and efficiency featuring an integrated three-wall workspace.', image: 'https://www.oppeinhome.com/upload/image/product/thumb/20230419/u-shaped-luxury-grey-kitchen-cabinet-design-2.webp' },
                 { title: 'Parallel Kitchens', desc: 'An ultra-efficient layout ideal for narrow urban structural setups.', image: 'https://static.asianpaints.com/content/dam/asianpaintsbeautifulhomes/202301/parallel-kitchen-designs-for-homes-of-all-sizes/title-parallel-kitchen-with-storage.jpg.transform/bh-tb-image-container/image.webp' },
                 { title: 'Island Kitchens', desc: 'The pinnacle of modern design acting as a central hub for social cooking.', image: 'https://images.openai.com/static-rsc-3/bFVufxqnL9vsU0j4sVC3iuHnKBK3xgb9miFTIJM6dryHeh9AbcvEeUrN70tU4JeK0s8JOFQ-BXBqnqjspFEYuIjtfg9zRUrwJlLtCOuoAg8?purpose=fullsize&v=1' }
@@ -221,7 +221,7 @@ export const calculatorConfigs = {
             title: 'What is the Living Room Cost Calculator?',
             subtitle: 'Get an approximate estimate for your living room interiors based on space and design preferences.',
             heroImage: '/calculator/living_room.jpg',
-            shortIntro: 'The living room is the heart of your home. Use our calculator to understand the approximate cost of creating a premium, modern living space using Laya Design’s precision aluminium technology.',
+            shortIntro: 'The living room is the heart of your home. Use our calculator to understand the approximate cost of creating a premium, modern living space using Laya Space Design’s precision aluminium technology.',
             steps: [
                 { title: 'Choose living room size', desc: 'Tell us the approximate floor area of your living room.', icon: '📏' },
                 { title: 'Select key elements', desc: 'Choose if you want a TV unit, storage cabinets, or full-wall panelling.', icon: '🛋️' },
@@ -281,7 +281,7 @@ export const calculatorConfigs = {
         result: {
             title: 'Your Estimated Living Room Cost',
             subtitle: 'Based on your selections, here’s an approximate budget range for your premium aluminium living room interiors.',
-            disclaimer: '*This estimate is approximate and may vary based on exact measurements and hardware customizations.'
+            disclaimer: '*This estimate is approximate and may vary based on exact measurements and hardware customisations.'
         }
     }
 };
