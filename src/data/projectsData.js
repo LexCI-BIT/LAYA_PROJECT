@@ -5,7 +5,7 @@ export const projectsData = [
     title: 'Sliding Aluminium Wardrobe',
     shortDesc: 'Sleek, space-saving storage with premium metallic finish.',
     fullDesc: 'A minimalist masterpiece designed for compact urban spaces. This wardrobe uses high-precision sliding tracks and lightweight aluminium frames to provide maximum storage with zero floor-space compromise.',
-    image: 'public/images/wardrobe_sliding_aluminium.png',
+    image: '/images/wardrobe_sliding_aluminium.png',
     type: 'Sliding / Modular',
     materials: ['High-grade Aluminium', 'Frosted Glass', 'Soft-close tracks'],
     gallery: [
@@ -33,19 +33,19 @@ export const projectsData = [
     title: 'Architectural Louvers',
     shortDesc: 'Custom exterior cladding for privacy and sun protection.',
     fullDesc: 'Transforming building facades with functional elegance. Our aluminium louvers provide superior ventilation and sun control while maintaining a sharp, modern building profile.',
-    image: 'https://in.saint-gobain-glass.com/sites/in.saint-gobain-glass.com/files/2026-03/Textured-glass-and-Metal-Divider.jpg',
+    image: '/images/offerings/exterior-works.jpg',
     type: 'Exterior Cladding',
     materials: ['Weather-resistant Aluminium', 'Architectural Finishes'],
     gallery: [
       'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=2070',
-      '/images/offerings/exterior-works.jpg'
+      '/images/hero/exterior1.jpg'
     ]
   },
   {
     id: 'walk-in-glass-wardrobe',
     category: 'WARDROBE',
     title: 'Walk-in Glass Wardrobe',
-    shortDesc: 'The ultimate luxury in organization and visibility.',
+    shortDesc: 'The ultimate luxury in organisation and visibility.',
     fullDesc: 'A boutique experience in your bedroom. This walk-in wardrobe features slim aluminium profiles and transparent glass, offering a stunning view of your curated collection while keeping everything dust-free.',
     image: '/images/Walk-in wardrobe.png',
     type: 'Walk-in',
@@ -59,8 +59,8 @@ export const projectsData = [
     category: 'KITCHEN',
     title: 'Straight Modular Kitchen',
     shortDesc: 'Compact efficiency for smart urban apartments.',
-    fullDesc: 'Proof that small spaces can have big impact. This straight-line kitchen maximizes every inch of wall space with high-capacity cabinets and integrated appliance modules.',
-    image: 'images/luxury_modern_straight_modular_kitchen.png',
+    fullDesc: 'Proof that small spaces can have big impact. This straight-line kitchen maximises every inch of wall space with high-capacity cabinets and integrated appliance modules.',
+    image: '/images/luxury_modern_straight_modular_kitchen.png',
     type: 'Straight Line',
     materials: ['Hygienic Aluminium', 'Laminate Finish', 'Ergonomic Pull-outs'],
     gallery: [
@@ -72,10 +72,10 @@ export const projectsData = [
     category: 'LIVING ROOM',
     title: 'Custom TV Unit',
     shortDesc: 'Integrated feature wall with hidden wire management.',
-    fullDesc: 'The centerpiece of your living room. Our custom TV units use aluminium framing to support even the largest screens, with built-in channels for a completely wireless aesthetic.',
+    fullDesc: 'The centrepiece of your living room. Our custom TV units use aluminium framing to support even the largest screens, with built-in channels for a completely wireless aesthetic.',
     image: 'https://images.openai.com/static-rsc-3/92Pjmexslj8VU0tUUtZxzXaD1_hZiqHvG4S3cSS5wA7Wf2PBedxzT0RGBk24QCW-Wy6AQJZo8N7Q3jBjEGj1C0Hz0Qljovs5tAqKT9aFJTI?purpose=fullsize&v=1',
     type: 'Wall Mounted / Built-in',
-    materials: ['Grey Anodized Aluminium', 'Matte Panels', 'Integrated Storage'],
+    materials: ['Grey Anodised Aluminium', 'Matte Panels', 'Integrated Storage'],
     gallery: [
       'https://images.unsplash.com/photo-1594904351111-a072f80b1a71?auto=format&fit=crop&q=80&w=2070'
     ]
@@ -84,7 +84,7 @@ export const projectsData = [
     id: 'minimalist-partition',
     category: 'CUSTOM',
     title: 'Minimalist Partition',
-    shortDesc: 'Sleek room dividers that maximize light flow.',
+    shortDesc: 'Sleek room dividers that maximise light flow.',
     fullDesc: 'Define your space without closing it off. These slender aluminium partitions with glass inserts provide acoustic and visual separation while keeping your interior bright and airy.',
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGpU59gvwl40t3MOgjSUfCgwwuC3xQb7gHRkP1WXMpYQ&s=10',
     type: 'Room Divider',
@@ -126,7 +126,7 @@ export const projectsData = [
     title: 'Open-Shelf Wardrobe',
     shortDesc: 'Full-height wardrobe with lit open shelving and colour accents.',
     fullDesc: 'A floor-to-ceiling wardrobe wall combining hanging zones, drawers and shoe racks. Concealed LED strips light every shelf, while colour-accented aluminium shutters slide across to close the unit off completely.',
-    image: 'public/images/Open_Shelf_Wardrobe.png',
+    image: '/images/Open_Shelf_Wardrobe.png',
     type: 'Hinged / Open Shelf',
     materials: ['Aluminium Frame', 'Matte Laminate Shutters', 'LED Profile Lighting'],
     gallery: [

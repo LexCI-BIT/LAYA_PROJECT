@@ -28,7 +28,7 @@ export const designIdeas = {
         {
             id: 'walk-in-wardrobe',
             title: 'Walk-in Wardrobe',
-            desc: 'The ultimate luxury storage solution. Custom-built aluminium walk-in closets designed for maximum organization.',
+            desc: 'The ultimate luxury storage solution. Custom-built aluminium walk-in closets designed for maximum organisation.',
             image: 'https://images.openai.com/static-rsc-3/ubVGNnSHZnlItFVysDJ2UTuydM4Nrh6PRONJWv044ljke3NSIv56OXI2hsR2cLAirLf7xlrmOv4mSsBSdKeYA3wQlQ5W5QCEbCQZ5LsXaCI?purpose=fullsize&v=1',
             features: ['Maximum storage volume', 'Elegant aluminium structural supports', 'Integrated LED lighting options'],
             idealFor: ['Large bedrooms', 'Luxury homes'],
@@ -40,10 +40,10 @@ export const designIdeas = {
         {
             id: 'modular-wardrobe',
             title: 'Modular Wardrobe',
-            desc: 'Highly customizable aluminium modular units that adapt to your evolving storage needs with ease.',
+            desc: 'Highly customisable aluminium modular units that adapt to your evolving storage needs with ease.',
             image: '/images/modularwardrobe.png',
             features: ['Adjustable shelving', 'Interchangeable modular units', 'Rust-proof aluminium build'],
-            idealFor: ['Custom storage', 'Organized spaces'],
+            idealFor: ['Custom storage', 'Organised spaces'],
             gallery: [
                 'https://www.regalokitchens.com/images/wardrobe/modular-wardrobe-in-gurugram.jpg',
                 'https://image.made-in-china.com/2f0j00YNUMlzKrhFoQ/Contemporary-Wardrobe-Closet-for-Bedroom-with-Modular-Storage-System.webp'
@@ -64,10 +64,10 @@ export const designIdeas = {
         {
             id: 'l-shaped-wardrobe',
             title: 'L-Shaped Wardrobe',
-            desc: 'Smart corner solutions utilizing precision-engineered aluminium frames to maximize every inch of your room.',
+            desc: 'Smart corner solutions utilising precision-engineered aluminium frames to maximise every inch of your room.',
             image: 'https://i.pinimg.com/736x/17/cf/81/17cf8143aec03d8a9eb1cb6007603ec1.jpg',
-            features: ['Corner space optimization', 'Seamless joint construction', 'Deep storage access'],
-            idealFor: ['Corner spaces', 'Space optimization'],
+            features: ['Corner space optimisation', 'Seamless joint construction', 'Deep storage access'],
+            idealFor: ['Corner spaces', 'Space optimisation'],
             gallery: [
                 'https://image.made-in-china.com/2f0j00zwBbeSidQMcf/Custom-L-Shaped-Reasonable-Price-Open-Wardrobe-Closet-Corner-Wardrobes.jpg',
                 'https://www.decorpot.com/images/210965996915-creative-l-shape-wardrobe-designs-for-bedroom.jpg'
@@ -100,9 +100,9 @@ export const designIdeas = {
         {
             id: 'floor-to-ceiling-wardrobe',
             title: 'Floor-to-Ceiling Wardrobe',
-            desc: 'Maximize your vertical space with full-height aluminium wardrobes that offer a seamless, built-in appearance.',
+            desc: 'Maximise your vertical space with full-height aluminium wardrobes that offer a seamless, built-in appearance.',
             image: 'https://www.online-bedrooms.co.uk/cdn/shop/files/Light-Green-4Panel_2afddc54-eb04-4a47-9574-9619fd5c6b6f.jpg?v=1765190594&width=1200',
-            features: ['Maximized storage', 'Clean seamless look', 'Custom height engineering'],
+            features: ['Maximised storage', 'Clean seamless look', 'Custom height engineering'],
             idealFor: ['Maximum storage', 'Minimal design'],
             gallery: [
                 'https://images.livspace-cdn.com/w:3840/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/di-2026-1769081758-Ayx2Q/jfm-1769081772-NQyUm/wr-1769099842-o7rYY/wr-25-1771493690-69YUC.jpg',
@@ -126,7 +126,7 @@ export const designIdeas = {
         {
             id: 'straight-kitchen',
             title: 'Straight Kitchen',
-            desc: 'A sleek single-wall kitchen layout designed with durable aluminium cabinetry to maximize compact urban spaces.',
+            desc: 'A sleek single-wall kitchen layout designed with durable aluminium cabinetry to maximise compact urban spaces.',
             image: '/images/luxury_modern_straight_modular_kitchen.png',
             features: ['Space-efficient design', 'Durable aluminium build', 'Easy maintenance'],
             idealFor: ['Small homes', 'Studio apartments'],
@@ -138,9 +138,9 @@ export const designIdeas = {
         {
             id: 'l-shaped-kitchen',
             title: 'L-Shaped Kitchen',
-            desc: 'A versatile kitchen layout utilizing precision-engineered aluminium corner solutions for a superior workflow.',
+            desc: 'A versatile kitchen layout utilising precision-engineered aluminium corner solutions for a superior workflow.',
             image: '/images/L-Shaped Kitchen.png',
-            features: ['Corner space efficiency', 'Optimized work triangle', 'Modular aluminium units'],
+            features: ['Corner space efficiency', 'Optimised work triangle', 'Modular aluminium units'],
             idealFor: ['Medium-sized homes'],
             gallery: [
                 'https://images.livspace-cdn.com/w:3840/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/design-ideas-thumbnails-1628773921-7vSz1/ond-2025-1760339464-9fGBa/ki-1761212078-ww7cM/37-1761212103-o3T7l.jpg',
@@ -198,9 +198,9 @@ export const designIdeas = {
         {
             id: 'modular-kitchen',
             title: 'Modular Kitchen',
-            desc: 'Precision-crafted aluminium units designed for ultimate efficiency and professional-grade organization.',
+            desc: 'Precision-crafted aluminium units designed for ultimate efficiency and professional-grade organisation.',
             image: '/images/modular-kitchen.png',
-            features: ['Pre-engineered units', 'Rust & Water resistant', 'Customizable storage'],
+            features: ['Pre-engineered units', 'Rust & Water resistant', 'Customisable storage'],
             idealFor: ['All homes'],
             gallery: [
                 'https://www.beautifulhomes.asianpaints.com/content/dam/asianpaintsbeautifulhomes/gallery/modular-kitchen/modern-u-shaped-kitchen-with-terracotta-cabinets-and-white-marble-backsplash/modern-kitchen-with-sleek-cabinets.jpg.transform/bh-gallery-listing/image.webp',
@@ -251,7 +251,7 @@ export const designIdeas = {
             desc: 'Sturdy and stylish aluminium TV units that serve as the functional focal point of your entertainment area.',
             image: '/images/tvunit.png',
             features: ['Modular storage', 'Precision-cut aluminium', 'Hidden wire management'],
-            idealFor: ['Living rooms', 'Media centers'],
+            idealFor: ['Living rooms', 'Media centres'],
             gallery: [
                 'https://images.openai.com/static-rsc-3/6iXaVOfAjHU32K-8E3Wg_TzbLwdt3PRG2JX4Xfh4F0HRQmSZLDZF3fSeFRHOd4jI2tlCZAoUCsSYKPDuOQ11RL452eY4OfOfsIzNrKtFRt0?purpose=fullsize&v=1',
                 'https://images.openai.com/static-rsc-3/sSVnMkAULdwZhrVAjeFz0tiEsYTxRxJsVVa4skxLAeyMYR0cmZgyT0K4nydRYktMQZg_0uBz14VKTvIuCQj6b5wjuWtK-RhLfIME-AO0Vuc?purpose=fullsize&v=1'
@@ -260,9 +260,9 @@ export const designIdeas = {
         {
             id: 'compact-living-room',
             title: 'Compact Living Room',
-            desc: 'Smart layouts and slim-profile aluminium furniture designed to maximize comfort in smaller living areas.',
+            desc: 'Smart layouts and slim-profile aluminium furniture designed to maximise comfort in smaller living areas.',
             image: '/images/compact-living-room.jpg',
-            features: ['Space maximization', 'Lightweight structures', 'Efficient zoning'],
+            features: ['Space maximisation', 'Lightweight structures', 'Efficient zoning'],
             idealFor: ['Small apartments', 'Compact urban homes'],
             gallery: [
                 'https://hips.hearstapps.com/hmg-prod/images/natashalyon-margate-living-room-681ce9cf8130d.jpeg',
@@ -286,7 +286,7 @@ export const designIdeas = {
         {
             id: 'multi-functional-furniture',
             title: 'Multi-Functional Furniture',
-            desc: 'Precision-engineered units that transition between different functions to maximize your home\'s utility.',
+            desc: 'Precision-engineered units that transition between different functions to maximise your home\'s utility.',
             image: 'https://www.estre.in/cdn/shop/files/1_0a70eb5c-3e73-46d2-b4b4-fab5ac11be63.jpg?v=1743762650',
             features: ['Functionality transition', 'Durable aluminium joints', 'Clever design'],
             idealFor: ['Small spaces', 'Modern living'],
@@ -300,7 +300,7 @@ export const designIdeas = {
             title: 'Wall-Mounted Storage',
             desc: 'Free up your floor space with high-strength aluminium wall units that offer both style and security.',
             image: 'https://m.media-amazon.com/images/I/61G9GdBYl4L._AC_UF894,1000_QL80_.jpg',
-            features: ['Vertical maximization', 'Strong weight capacity', 'Custom modular sizing'],
+            features: ['Vertical maximisation', 'Strong weight capacity', 'Custom modular sizing'],
             idealFor: ['All rooms', 'Narrow hallways'],
             gallery: [
                 'https://images.openai.com/static-rsc-3/l71rlPp2uJeUFZwg-BuJ0OUk9LCrGuZgoZH1Vpm6vfV6y3H72SOgol74NiZV-25GqYzGTw1Jhv3gBJbXx5Nem0pLwMqenGZmpOREWExSu6M?purpose=fullsize&v=1',
@@ -310,12 +310,12 @@ export const designIdeas = {
         {
             id: 'under-bed-storage',
             title: 'Under-Bed Storage',
-            desc: 'Utilize every inch with smooth-gliding aluminium drawers designed to fit perfectly beneath your bed frame.',
+            desc: 'Utilise every inch with smooth-gliding aluminium drawers designed to fit perfectly beneath your bed frame.',
             image: 'https://indiannest.in/cdn/shop/files/H637c3b5302f94db5bb76503853cb083aA.jpg_720x720q50.jpg?v=1694332548',
             features: ['Hidden storage', 'Smooth sliding rails', 'Dust-proof seals'],
-            idealFor: ['Bedrooms', 'Organizing linens'],
+            idealFor: ['Bedrooms', 'Organising linens'],
             gallery: [
-                'https://kateandmark.in/cdn/shop/files/1doublebeddoublecushionbeddoublebeddoublebed.webp?v=1755251566',
+                'https://images.woodenstreet.de/image/data/bed-with-storage/ferguson-bed-with-storage/walnut/updated/new-logo/new+-3D/13.jpg',
                 'https://images.openai.com/static-rsc-3/T3MPs2fuRMDow89vvs-jhVRX-kXWoPih6BcxT1p_5zCFe6_yg4aS1VaXF2MVHdPP3tHWo7wtgxo7O-far5nC9YCKU0gam684sQE-ET7ayfY?purpose=fullsize&v=1'
             ]
         },
