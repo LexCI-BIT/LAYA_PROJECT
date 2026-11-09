@@ -28,6 +28,11 @@ body {
   overflow-x: hidden;
 }
 
+/* Buttons and form fields use the site font instead of the browser default (Arial) */
+button, input, select, textarea {
+  font-family: inherit;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 400;

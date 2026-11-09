@@ -128,7 +128,6 @@ video {
 
 @media (max-width: 600px) {
   .hero-title {
-    font-size: 2rem;
     line-height: 1.15;
   }
 
@@ -570,10 +569,6 @@ img {
   .hero-rooms {
     display: none;
   }
-
-  .hero-title {
-    font-size: 2rem;
-  }
 }
 
 /* Tablets in portrait: keep both hero buttons side by side on the photo */
@@ -588,10 +583,6 @@ img {
   .hero .cta-secondary {
     width: auto;
     padding: 0.85rem 1.5rem;
-  }
-
-  .hero-title {
-    font-size: 2rem;
   }
 
   .hero-subtitle {

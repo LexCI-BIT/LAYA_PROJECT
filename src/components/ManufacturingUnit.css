@@ -173,7 +173,7 @@
 .mfg-service-title {
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--text-dark);
@@ -245,7 +245,7 @@
 .mfg-strength h4 {
   font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.5px;
   margin-bottom: 0.5rem;
   color: var(--text-dark);

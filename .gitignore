@@ -27,3 +27,6 @@ node_modules/
 dist/
 public/images/hero/bedroom1.jpg
 public/images/hero/bedroom1.jpg
+
+# Claude Code local settings (preview servers)
+.claude/

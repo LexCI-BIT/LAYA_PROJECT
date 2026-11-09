@@ -269,7 +269,7 @@
 .cf-faq-card h4 {
     font-family: 'Inter', sans-serif;
     font-size: 1.2rem;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 1.5rem;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -448,7 +448,7 @@
     border: none;
     border-radius: 0;
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 600;
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -544,7 +544,7 @@
     padding: 1.4rem;
     border-radius: 0;
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 600;
     text-decoration: none;
     letter-spacing: 2px;
     text-transform: uppercase;
