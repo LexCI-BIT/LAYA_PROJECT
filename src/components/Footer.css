@@ -28,6 +28,8 @@
     url('/images/hero/living1.jpg') center 60% / cover no-repeat;
   border: 1px solid rgba(197, 160, 89, 0.35);
   box-shadow: 0 18px 45px rgba(34, 33, 31, 0.18);
+  /* Keeps the card clear of the fixed navbar when "Contact Us" scrolls to it */
+  scroll-margin-top: 110px;
 }
 
 .footer-cta-text {
@@ -163,16 +165,6 @@
   max-width: 220px;
   object-fit: contain;
   display: block;
-}
-
-.footer-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2rem;
-  font-weight: 400;
-  margin-bottom: 1rem;
-  letter-spacing: 4px;
-  color: #fff;
-  text-transform: uppercase;
 }
 
 .footer-social {
@@ -384,12 +376,6 @@
     /* extra bottom space so the floating WhatsApp button doesn't cover the text */
     padding: 1rem 0 5.5rem;
   }
-  
-  .footer-bottom-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem 2rem;
-  }
 }
 
 @media (max-width: 480px) {
@@ -429,13 +415,5 @@
   .link-btn:hover {
     transform: none;
   }
-  
-  .footer-logo {
-    font-size: 1.6rem;
-    letter-spacing: 2px;
-  }
 }
-
-
-
 

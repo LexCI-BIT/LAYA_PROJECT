@@ -13,7 +13,6 @@ import IdeaDetail from './pages/IdeaDetail';
 import OfferingDetail from './pages/OfferingDetail';
 import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
-import CityDetail from './pages/CityDetail';
 import ConsultationModal from './components/ConsultationModal';
 import FloatingActions from './components/FloatingActions';
 import Footer from './components/Footer';
@@ -96,7 +95,8 @@ function App() {
             <Route path="/offerings/:slug" element={<OfferingDetail />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:projectId" element={<ProjectDetail />} />
-            <Route path="/cities/:citySlug" element={<CityDetail />} />
+            {/* City pages were removed; send old links to Home */}
+            <Route path="/cities/*" element={<Navigate to="/" replace />} />
             <Route
   path="/glass-aluminium-partitions"
   element={<GlassPartition/>}

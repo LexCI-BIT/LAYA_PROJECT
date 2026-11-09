@@ -206,32 +206,6 @@
   opacity: 0.8;
 }
 
-/* CTA Section */
-.offering-cta {
-  text-align: center;
-  padding: 8rem 0;
-  background-color: var(--bg-light);
-}
-
-.offering-cta-btn {
-  background-color: var(--bg-dark);
-  color: #fff;
-  border: none;
-  padding: 1.2rem 3.5rem;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.offering-cta-btn:hover {
-  background-color: #000;
-  transform: scale(1.05);
-}
-
 /* Card lift only on real pointers: on touch it sticks after a tap */
 @media (hover: none) {
   .grid-item:hover {

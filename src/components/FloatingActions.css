@@ -35,36 +35,6 @@
   height: 28px;
 }
 
-.sticky-book-btn {
-  background: var(--text-dark);
-  color: #fff;
-  border: none;
-  padding: 1.2rem 2.2rem;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  transition: all 0.4s ease;
-  font-family: 'Inter', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-.sticky-book-btn:hover {
-  background: #333;
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-}
-
-.btn-icon {
-  font-size: 1.3rem;
-}
-
 @media (max-width: 768px) {
   /* Bottom-right corner on phones: mid-screen it covered hero text */
   .floating-actions-container {
@@ -73,22 +43,6 @@
     right: 16px;
     left: auto;
     transform: none;
-  }
-  
-  .sticky-book-btn .btn-text {
-    display: none;
-  }
-  
-  .sticky-book-btn {
-    padding: 1.2rem;
-    width: 65px;
-    height: 65px;
-    justify-content: center;
-  }
-  
-  .btn-icon {
-    font-size: 1.5rem;
-    margin: 0;
   }
   
   .floating-whatsapp {

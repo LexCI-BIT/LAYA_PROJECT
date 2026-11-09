@@ -82,8 +82,7 @@ video {
 }
 
 /* Every slide fills the hero at every screen size (no black bars, no top-left crop) */
-.hero .hero-slide img,
-.hero .hero-slide:first-child .hero-image-motion img {
+.hero .hero-slide img {
   position: absolute;
   inset: 0;
   display: block;
@@ -92,10 +91,6 @@ video {
   max-width: none;
   object-fit: cover;
   object-position: center;
-}
-
-@media (max-width: 1024px) {
-
 }
 
 .hero .cta-primary,
@@ -154,9 +149,7 @@ video {
   .glass-applications,
   .offering-section,
   .id-gallery,
-  .cf-process-section,
-  .city-about-section,
-  .city-services-section {
+  .cf-process-section {
     padding-top: 6rem;
     padding-bottom: 6rem;
   }
@@ -166,9 +159,7 @@ video {
   }
 
   .portfolio,
-  .final-cta,
   .how-it-works,
-  .offering-cta,
   .project-info-section,
   .related-projects-section,
   .cf-section {
@@ -185,10 +176,6 @@ video {
   .why-header {
     margin-bottom: 4.5rem;
   }
-
-  .cta-banner {
-    padding: 5rem 2.5rem;
-  }
 }
 
 @media (max-width: 600px) {
@@ -203,13 +190,9 @@ video {
   .offering-section,
   .id-gallery,
   .cf-process-section,
-  .city-about-section,
-  .city-services-section,
   .why-choose-us,
   .portfolio,
-  .final-cta,
   .how-it-works,
-  .offering-cta,
   .project-info-section,
   .related-projects-section,
   .cf-section {
@@ -222,10 +205,6 @@ video {
   .journey-header,
   .why-header {
     margin-bottom: 2.75rem;
-  }
-
-  .cta-banner {
-    padding: 3.5rem 1.5rem;
   }
 
   .projects-full-grid {
@@ -567,10 +546,6 @@ img {
   .hero-rooms {
     right: 1.5rem;
     bottom: 1.5rem;
-  }
-
-  .hero-scroll-hint {
-    display: none;
   }
 }
 
