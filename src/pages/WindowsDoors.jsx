@@ -2,7 +2,8 @@
 import React from 'react';
 import { useModal } from '../context/ModalContext';
 import { IconRenderer } from '../components/Icons';
-import './WindowsDoors.css';
+// Built from the Glass Partition page's layout, so it uses that page's styles
+import './GlassPartition.css';
 
 const WINDOWS_DOORS_IMG = '/images/offerings/windowsanddoors.png';
 
@@ -68,7 +69,7 @@ export default function WindowsDoors() {
   return (
     <>
       {/* HERO */}
-      <section className="gp-hero wd-hero">
+      <section className="gp-hero">
         <div className="gp-sticky">
           <div className="gp-stage">
             <img
