@@ -70,7 +70,7 @@ const clientSegments = [
     title: 'Hospitality & Retail',
     description:
       'Space-conscious solutions for customer-facing and hospitality environments.',
-    image: '/images/about/clients/hospitality.jpg',
+    image: '/images/about/clients/retail.png',
     alt: 'Hospitality and retail interior'
   },
   {
