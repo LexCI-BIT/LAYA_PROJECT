@@ -1,0 +1,536 @@
+
+/* ========================================
+   WINDOWS & DOORS
+   LAYA PAGE STYLING
+======================================== */
+
+
+/* ========================================
+   ABOUT THIS SERVICE
+======================================== */
+
+.wd-about-service {
+    padding: 10rem 0;
+    background-color: var(--bg-light, #f8f7f5);
+    color: var(--text-dark, #252525);
+  }
+  
+  .wd-about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  
+  .wd-about-container h2 {
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1.15;
+  }
+  
+  .wd-about-container p {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: #555;
+  }
+  
+  
+  /* ========================================
+     KEY BENEFITS
+  ======================================== */
+  
+  .wd-benefits {
+    padding: 10rem 0;
+    background-color: var(--bg-dark, #222120);
+    color: #fff;
+  }
+  
+  .wd-benefits-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .wd-benefits-container > h2 {
+    margin: 0 0 3rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 400;
+  }
+  
+  .wd-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem;
+  }
+  
+  .wd-benefit-card {
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+  }
+  
+  .wd-benefit-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .wd-benefit-icon {
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.85);
+    opacity: 0.8;
+  }
+  
+  .wd-benefit-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .wd-benefit-card h3 {
+    margin: 0 0 1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  
+  .wd-benefit-card p {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  
+  /* ========================================
+     WINDOWS & DOORS APPLICATIONS
+  ======================================== */
+  
+  .wd-applications {
+    padding: 10rem 0;
+    background-color: var(--bg-light, #f8f7f5);
+    color: var(--text-dark, #252525);
+  }
+  
+  .wd-applications-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .wd-applications-container > h2 {
+    margin: 0 0 3rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 400;
+  }
+  
+  .wd-applications-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem;
+  }
+  
+  .wd-application-card {
+    padding: 3rem;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.025);
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease;
+  }
+  
+  .wd-application-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .wd-application-icon {
+    margin-bottom: 1.5rem;
+    color: var(--text-dark, #252525);
+    opacity: 0.8;
+  }
+  
+  .wd-application-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .wd-application-card h3 {
+    margin: 0 0 1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  
+  .wd-application-card p {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  
+  /* ========================================
+     STATIC WINDOWS & DOORS HERO
+  ======================================== */
+  
+  .wd-hero {
+    position: relative;
+    height: 100vh;
+    height: 100svh;
+    min-height: 620px;
+    background: #171715;
+    color: #fff;
+    overflow: hidden;
+  }
+  
+  .wd-sticky {
+    position: relative;
+    top: auto;
+    height: 100%;
+    min-height: inherit;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  
+  .wd-stage {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+  
+  .wd-layer {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 1;
+    transform: none;
+  }
+  
+  .wd-shade {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.22) 60%,
+      transparent
+    );
+  }
+  
+  .wd-intro {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: clamp(24px, 8vw, 120px);
+    width: min(600px, 80%);
+    transform: translateY(-50%);
+  }
+  
+  .wd-tag {
+    display: block;
+    margin-bottom: 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  
+  .wd-intro h1 {
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 7vw, 96px);
+    font-weight: 400;
+    line-height: 1.05;
+  }
+  
+  .wd-intro p {
+    margin: 24px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+  
+  
+  /* ========================================
+     CONSULTATION BUTTON
+  ======================================== */
+  
+  .wd-intro .offering-primary-btn {
+    padding: 1.2rem 2.5rem;
+    background: #fff;
+    color: var(--bg-dark, #222);
+    border: 1px solid #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .wd-intro .offering-primary-btn:hover {
+    background: var(--bg-dark, #222);
+    color: #fff;
+    transform: translateY(-3px);
+  }
+  
+  
+  /* ========================================
+     ANIMATIONS
+  ======================================== */
+  
+  @keyframes wdHeroReveal {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  
+  /* ========================================
+     NAVBAR
+  ======================================== */
+  
+  body:has(.wd-hero) .navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 10000 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
+  }
+  
+  
+  /* ========================================
+     DISABLE HOVER ON TOUCH DEVICES
+  ======================================== */
+  
+  @media (hover: none) {
+    .wd-benefit-card:hover,
+    .wd-application-card:hover {
+      transform: none;
+    }
+  }
+  
+  
+  /* ========================================
+     RESPONSIVE
+  ======================================== */
+  
+  @media (max-width: 1024px) {
+    .wd-about-container {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  
+    .wd-benefits-grid,
+    .wd-applications-grid {
+      gap: 1.5rem;
+    }
+  
+    .wd-about-service,
+    .wd-benefits,
+    .wd-applications {
+      padding: 7rem 0;
+    }
+  
+    .wd-benefit-card,
+    .wd-application-card {
+      padding: 2rem;
+    }
+  }
+  
+  
+  @media (max-width: 768px) {
+  
+    .wd-about-service,
+    .wd-benefits,
+    .wd-applications {
+      padding: 4.5rem 0;
+    }
+  
+    .wd-about-container,
+    .wd-benefits-container,
+    .wd-applications-container {
+      padding: 0 1.5rem;
+    }
+  
+    .wd-about-container h2,
+    .wd-benefits-container > h2,
+    .wd-applications-container > h2 {
+      font-size: 2.3rem;
+      line-height: 1.15;
+    }
+  
+    .wd-about-container p {
+      font-size: 1.02rem;
+      line-height: 1.75;
+    }
+  
+    .wd-benefit-card,
+    .wd-application-card {
+      padding: 1.75rem 1.5rem;
+    }
+  
+    .wd-benefit-icon,
+    .wd-application-icon {
+      margin-bottom: 1rem;
+    }
+  
+    .wd-benefit-icon svg,
+    .wd-application-icon svg {
+      width: 32px;
+      height: 32px;
+    }
+  
+    .wd-benefit-card h3,
+    .wd-application-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+  
+    .wd-hero {
+      min-height: 80svh;
+    }
+  
+    .wd-intro {
+      left: 24px;
+      width: calc(100% - 48px);
+    }
+  
+    .wd-layer {
+      object-position: 60% center;
+    }
+  
+    .wd-intro h1 {
+      font-size: clamp(40px, 9vw, 58px);
+    }
+  
+    .wd-intro p {
+      font-size: 14px;
+    }
+  }
+  
+  
+  @media (max-width: 640px) {
+    .wd-benefits-grid,
+    .wd-applications-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+  
+  
+  @media (max-width: 480px) {
+  
+    .wd-about-service,
+    .wd-benefits,
+    .wd-applications {
+      padding: 3.5rem 0;
+    }
+  
+    .wd-about-container h2,
+    .wd-benefits-container > h2,
+    .wd-applications-container > h2 {
+      font-size: 2rem;
+    }
+  }
+  
+  
+  /* ========================================
+     REDUCED MOTION
+  ======================================== */
+  
+  @media (prefers-reduced-motion: reduce) {
+    .wd-benefit-card,
+    .wd-application-card,
+    .wd-layer,
+    .wd-intro {
+      transition: none;
+      animation: none;
+    }
+  }
+/* Responsive Windows & Doors hero image */
+.wd-stage {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .wd-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center center;
+  }
+  
+  /* Tablet */
+  @media (max-width: 1024px) {
+    .wd-layer {
+      object-position: 60% center;
+    }
+  }
+  
+  /* Mobile */
+  @media (max-width: 700px) {
+    .wd-hero {
+      min-height: 100svh;
+      height: 100svh;
+    }
+  
+    .wd-sticky {
+      min-height: 100svh;
+      height: 100%;
+    }
+  
+    .wd-stage {
+      height: 100%;
+    }
+  
+    .wd-layer {
+      object-fit: cover;
+      object-position: 60% center;
+    }
+  
+    .wd-intro {
+      width: calc(100% - 48px);
+      left: 24px;
+      right: 24px;
+    }
+  }
