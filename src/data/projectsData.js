@@ -86,7 +86,7 @@ export const projectsData = [
     title: 'Minimalist Partition',
     shortDesc: 'Sleek room dividers that maximise light flow.',
     fullDesc: 'Define your space without closing it off. These slender aluminium partitions with glass inserts provide acoustic and visual separation while keeping your interior bright and airy.',
-    image: '/images/projects/minimalist-partition-1.webp',
+    image: '/images/projects/minimalist_partition.png',
     type: 'Room Divider',
     materials: ['Slimline Aluminium', 'Fluted Glass', 'Floor-to-ceiling Track'],
     gallery: [
