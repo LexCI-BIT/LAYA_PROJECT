@@ -9,13 +9,20 @@ const Navbar = () => {
   const { openModal } = useModal();
   const [menuOpen, setMenuOpen] = useState(false);
   const isProjectsPage = location.pathname.startsWith('/projects');
+  // Calculator intro pages (/price-calculator/wardrobe etc.) sit on a photo
+  const isCalculatorIntro = /^\/price-calculator\/[^/]+\/?$/.test(location.pathname);
 
   const isSubPage = location.pathname !== '/';
 
   const hasSolidNav =
     location.pathname.startsWith('/projects') ||
     location.pathname.startsWith('/design-ideas') ||
+    /^\/price-calculator\/?$/.test(location.pathname) ||
+    isCalculatorIntro ||
     /^\/price-calculator\/[^/]+\/(form|result)$/.test(location.pathname);
+
+  // Light-background pages (dark text, no tinted bar): same logo, dark "SPACE DESIGN"
+  const isLightNav = hasSolidNav && !isProjectsPage && !isCalculatorIntro;
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -56,7 +63,7 @@ const Navbar = () => {
     isSubPage ? 'scrolled' : ''
   } ${isSubPage ? 'subpage-navbar' : ''} ${
     hasSolidNav ? 'solid-navbar' : ''
-  } ${isProjectsPage ? 'projects-navbar' : ''}`}
+  } ${isProjectsPage || isCalculatorIntro ? 'projects-navbar' : ''}`}
     >
       <div className="navbar-single-container">
         <button
@@ -73,7 +80,11 @@ const Navbar = () => {
         </button>
         <Link to="/" className="navbar-logo" aria-label="Laya Space Design">
           <img
-            src="/images/laya-logo-horizontal.png"
+            src={
+              isLightNav
+                ? '/images/laya-logo-horizontal-darktext.png'
+                : '/images/laya-logo-horizontal.png'
+            }
             alt="Laya Space Design"
             className="navbar-logo-img"
           />
@@ -309,7 +320,6 @@ const Navbar = () => {
               <details>
                 <summary>Design Ideas</summary>
                 <div className="mobile-submenu">
-                  <Link to="/design-ideas">All Design Ideas</Link>
                   <Link to="/design-ideas/wardrobe">Wardrobe Designs</Link>
                   <Link to="/design-ideas/kitchen">Kitchen Designs</Link>
                   <Link to="/design-ideas/living-room">
@@ -325,44 +335,6 @@ const Navbar = () => {
                 Aluminium Manufacturing
               </Link>
               <Link to="/projects">Projects</Link>
-              
-              {/* <details>
-                <summary>Price Calculator</summary>
-                <div className="mobile-submenu">
-                  <Link to="/price-calculator">All Calculators</Link>
-                  <Link to="/price-calculator/wardrobe">
-                    Wardrobe Cost Calculator
-                  </Link>
-                  <Link to="/price-calculator/kitchen">
-                    Kitchen Cost Calculator
-                  </Link>
-                  <Link to="/price-calculator/living-room">
-                    Living Room Cost Calculator
-                  </Link>
-                  <Link to="/price-calculator/full-home">
-                    Full Home Interior Calculator
-                  </Link>
-                </div>
-              </details>
-
-              <details>
-                <summary>Cities</summary>
-                <div className="mobile-submenu">
-                  <span className="mobile-submenu-label">Telangana</span>
-                  <Link to="/cities/hyderabad">Hyderabad</Link>
-                  <Link to="/cities/warangal">Warangal</Link>
-                  <Link to="/cities/karimnagar">Karimnagar</Link>
-
-                  <span className="mobile-submenu-label">
-                    Andhra Pradesh
-                  </span>
-                  <Link to="/cities/vijayawada">Vijayawada</Link>
-                  <Link to="/cities/visakhapatnam">
-                    Visakhapatnam
-                  </Link>
-                  <Link to="/cities/guntur">Guntur</Link>
-                </div>
-              </details> */}
             </nav>
 
             <button

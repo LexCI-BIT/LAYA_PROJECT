@@ -31,7 +31,7 @@ export const citiesData = {
       { title: "Local Support", text: "Dedicated service teams for Warangal." }
     ],
     serviceIntro: "Need modern interiors in Warangal? Explore our specialised aluminium offerings.",
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=2070"
+    image: "/images/cities/warangal-1.webp"
   },
   karimnagar: {
     name: "Karimnagar",
@@ -48,7 +48,7 @@ export const citiesData = {
       { title: "Premium Quality", text: "Only the finest aluminium grades used." }
     ],
     serviceIntro: "The best aluminium interiors in Karimnagar are just a consultation away.",
-    image: "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&q=80&w=2070"
+    image: "/images/cities/karimnagar-1.webp"
   },
   vijayawada: {
     name: "Vijayawada",
@@ -65,7 +65,7 @@ export const citiesData = {
       { title: "Trusted Brand", text: "Quality assurance you can rely on." }
     ],
     serviceIntro: "Experience the future of home interiors in Vijayawada with Laya Space Design.",
-    image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80&w=2070"
+    image: "/images/cities/vijayawada-1.webp"
   },
   visakhapatnam: {
     name: "Visakhapatnam",

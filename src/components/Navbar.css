@@ -524,16 +524,6 @@
   color: var(--accent-gold);
 }
 
-.mobile-submenu-label {
-  margin-top: 0.5rem;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--accent-gold);
-}
-
 .mobile-menu-cta {
   margin: auto 1.5rem 1.5rem;
   padding: 1rem;
@@ -592,6 +582,11 @@
   color: #fff;
 }
 
+/* Mobile menu (hamburger) button: dark on light pages */
+.navbar.solid-navbar .menu-toggle {
+  color: var(--text-dark);
+}
+
 .navbar.solid-navbar .dropdown-menu,
 .navbar.solid-navbar .nested-dropdown-menu {
   background: var(--bg-light);
@@ -645,7 +640,7 @@
   }
 }
 
-/* Projects pages only: light black transparent navbar */
+/* Projects and calculator intro pages: light black transparent navbar */
 .navbar.solid-navbar.projects-navbar {
   background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(8px);
@@ -656,7 +651,8 @@
 .navbar.solid-navbar.projects-navbar .navbar-single-links,
 .navbar.solid-navbar.projects-navbar .navbar-single-links > a,
 .navbar.solid-navbar.projects-navbar .navbar-single-links .dropdown-trigger,
-.navbar.solid-navbar.projects-navbar .navbar-single-actions .icon-link {
+.navbar.solid-navbar.projects-navbar .navbar-single-actions .icon-link,
+.navbar.solid-navbar.projects-navbar .menu-toggle {
   color: #fff;
 }
 

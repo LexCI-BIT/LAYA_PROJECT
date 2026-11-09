@@ -9,8 +9,8 @@ export const projectsData = [
     type: 'Sliding / Modular',
     materials: ['High-grade Aluminium', 'Frosted Glass', 'Soft-close tracks'],
     gallery: [
-      'https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&q=80&w=2070',
-      'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&q=80&w=2070'
+      '/images/projects/sliding-aluminium-wardrobe-1.webp',
+      '/images/projects/sliding-aluminium-wardrobe-2.webp'
     ]
   },
   {
@@ -19,11 +19,11 @@ export const projectsData = [
     title: 'Modern L-Shaped Kitchen',
     shortDesc: 'Waterproof and fire-resistant modular kitchen system.',
     fullDesc: 'Engineered for the modern chef, this L-shaped kitchen combines hygiene with high durability. The aluminium structure ensures resistance to moisture and pests, making it a lifelong investment for any home.',
-    image: 'https://tiimg.tistatic.com/fp/1/008/622/aluminium-modular-kitchen-183.jpg',
+    image: '/images/projects/modern-l-shaped-kitchen-1.webp',
     type: 'L-Shaped Modular',
     materials: ['Powder-coated Aluminium', 'Quartz Countertop', 'Stainless Steel Hardware'],
     gallery: [
-      'https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=2070',
+      '/images/projects/modern-l-shaped-kitchen-2.webp',
       '/images/renovation/kitchen-aluminium.jpg'
     ]
   },
@@ -37,7 +37,7 @@ export const projectsData = [
     type: 'Exterior Cladding',
     materials: ['Weather-resistant Aluminium', 'Architectural Finishes'],
     gallery: [
-      'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=2070',
+      '/images/projects/architectural-louvers-1.webp',
       '/images/hero/exterior1.jpg'
     ]
   },
@@ -51,7 +51,7 @@ export const projectsData = [
     type: 'Walk-in',
     materials: ['Slim Profile Aluminium', 'Tempered Glass', 'Integrated LED Lighting'],
     gallery: [
-      'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&q=80&w=2070'
+      '/images/projects/sliding-aluminium-wardrobe-2.webp'
     ]
   },
   {
@@ -64,7 +64,7 @@ export const projectsData = [
     type: 'Straight Line',
     materials: ['Hygienic Aluminium', 'Laminate Finish', 'Ergonomic Pull-outs'],
     gallery: [
-      'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2070'
+      '/images/projects/straight-modular-kitchen-1.webp'
     ]
   },
   {
@@ -73,11 +73,11 @@ export const projectsData = [
     title: 'Custom TV Unit',
     shortDesc: 'Integrated feature wall with hidden wire management.',
     fullDesc: 'The centrepiece of your living room. Our custom TV units use aluminium framing to support even the largest screens, with built-in channels for a completely wireless aesthetic.',
-    image: 'https://images.openai.com/static-rsc-3/92Pjmexslj8VU0tUUtZxzXaD1_hZiqHvG4S3cSS5wA7Wf2PBedxzT0RGBk24QCW-Wy6AQJZo8N7Q3jBjEGj1C0Hz0Qljovs5tAqKT9aFJTI?purpose=fullsize&v=1',
+    image: '/images/projects/custom-tv-unit-1.webp',
     type: 'Wall Mounted / Built-in',
     materials: ['Grey Anodised Aluminium', 'Matte Panels', 'Integrated Storage'],
     gallery: [
-      'https://images.unsplash.com/photo-1594904351111-a072f80b1a71?auto=format&fit=crop&q=80&w=2070'
+      '/images/projects/custom-tv-unit-2.webp'
     ]
   },
   {
@@ -86,24 +86,11 @@ export const projectsData = [
     title: 'Minimalist Partition',
     shortDesc: 'Sleek room dividers that maximise light flow.',
     fullDesc: 'Define your space without closing it off. These slender aluminium partitions with glass inserts provide acoustic and visual separation while keeping your interior bright and airy.',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGpU59gvwl40t3MOgjSUfCgwwuC3xQb7gHRkP1WXMpYQ&s=10',
+    image: '/images/projects/minimalist-partition-1.webp',
     type: 'Room Divider',
     materials: ['Slimline Aluminium', 'Fluted Glass', 'Floor-to-ceiling Track'],
     gallery: [
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2070'
-    ]
-  },
-  {
-    id: 'premium-balcony-railing',
-    category: 'EXTERIOR',
-    title: 'Premium Balcony Railing',
-    shortDesc: 'Rust-proof safety solutions with high visibility.',
-    fullDesc: 'Safety meets breathtaking views. Our balcony railings are built to last a lifetime against sun and rain, using high-tension glass and reinforced aluminium profiles.',
-    image: '/images/hero/balcony.jpg?v=2',
-    type: 'Safety Railing',
-    materials: ['T-Grade Aluminium', 'Toughened Glass', 'Non-corrosive Fixings'],
-    gallery: [
-      'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&q=80&w=2070'
+      '/images/projects/minimalist-partition-2.webp'
     ]
   },
   {
@@ -153,11 +140,11 @@ export const projectsData = [
     title: 'Glass Staircase & Foyer',
     shortDesc: 'Floating staircase with frameless glass railing.',
     fullDesc: 'A double-height foyer designed around a floating staircase. Frameless toughened-glass railings on concealed aluminium channels keep the space open and bright, framed by full-height aluminium glazing.',
-    image: '/images/hero/foyer.jpg',
+    image: '/images/hero/foyer1.jpg',
     type: 'Staircase Railing',
     materials: ['Concealed Aluminium Channel', 'Toughened Glass', 'Stainless Fixings'],
     gallery: [
-      '/images/hero/foyer.jpg'
+      '/images/hero/foyer1.jpg'
     ]
   }
 ];

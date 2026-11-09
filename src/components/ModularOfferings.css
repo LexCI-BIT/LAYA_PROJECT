@@ -98,29 +98,10 @@
   transition: transform 0.6s ease;
 }
 
-/* .offering-image-wrap {
-  width: 100%;
-  height: 340px;
-  overflow: hidden;
-  border-radius: 5px;
-  background: #191a20;
-} */
-
-/* .offering-image-wrap img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-} */
-
 .offering-image-wrap:hover img {
   transform: scale(1.04);
 }
 
-/* .offering-content {
-  padding: 25px 5px;
-} */
 .offering-content {
   padding-left: 0px !important;
   padding-right: 20px !important;
@@ -241,10 +222,6 @@
   height: 100%;
   object-fit: cover;
 }
-/* .latest-offerings .offering-card {
-  grid-template-columns: 1fr 1fr !important;
-  column-gap: 30px !important;
-} */
 
 .offering-card:last-child .offering-content p {
   font-size: 16px !important;

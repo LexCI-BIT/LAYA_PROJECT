@@ -1,24 +1,24 @@
 .featured-projects {
-  padding: 10rem 0;
-  background-color: var(--bg-light);
+  padding: 5rem 0;
+  background-color: #0d0d0d;
   text-align: center;
 }
 
 .projects-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
 }
 
 .projects-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: 3rem;
   font-weight: 300;
-  margin-bottom: 1rem;
-  color: var(--text-dark);
+  margin-bottom: 0.75rem;
+  color: #fff;
 }
 
 .projects-subtitle {
-  color: #666;
+  color: rgba(255, 255, 255, 0.6);
   font-size: 1rem;
   max-width: 600px;
   margin: 0 auto;
@@ -27,7 +27,7 @@
 .projects-marquee {
   position: relative;
   overflow: hidden;
-  padding: 1.5rem 0 2.5rem;
+  padding: 1rem 0 1.75rem;
   /* Fade the cards out at both edges */
   -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
   mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
@@ -70,7 +70,7 @@
 .project-image {
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   background-color: #f0f0f0;
 }
@@ -144,15 +144,15 @@
 }
 
 .projects-footer {
-  margin-top: 3.5rem;
+  margin-top: 2.25rem;
 }
 
 .view-all-projects-btn {
   display: inline-block;
   padding: 1.2rem 3rem;
   background-color: transparent;
-  color: var(--bg-dark);
-  border: 1px solid var(--bg-dark);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
   font-family: 'Inter', sans-serif;
   font-size: 0.85rem;
   font-weight: 600;
@@ -163,8 +163,9 @@
 }
 
 .view-all-projects-btn:hover {
-  background-color: var(--bg-dark);
-  color: #fff;
+  background-color: #fff;
+  border-color: #fff;
+  color: #0d0d0d;
 }
 
 @media (max-width: 768px) {

@@ -13,13 +13,13 @@ const calculatorOptions = [
         id: 'kitchen',
         title: 'Kitchen Cost Calculator',
         desc: 'Get an approximate cost for your modular kitchen design.',
-        image: 'https://images.jdmagicbox.com/quickquotes/images_main/multi-colour-aluminium-straight-modular-kitchen-for-home-2220644618-6gsp72jr.jpg'
+        image: '/images/design-ideas/kitchen-designs-1.webp'
     },
     {
         id: 'full-home',
         title: 'Full Home Interior Calculator',
         desc: 'Understand the estimated budget for your complete home interior project.',
-        image: 'https://images.openai.com/static-rsc-3/UNmxYJWsewoRVo8LC4HcA3cS59UwcZx4jLyjhLGgwgJ7zxcyZgqiJ-dUrkWQK_Rs9g4w1MCgsT7DrZiKwDhJpkxp3qcDgSFMYSsah5-1mXw?purpose=fullsize&v=1'
+        image: '/images/design-ideas/luxury-living-room-1.webp'
     },
     {
         id: 'living-room',

@@ -22,9 +22,13 @@ const ProjectCard = ({ project, isClone }) => (
     </Link>
 );
 
+// Projects left out of the home page carousel (they still appear on the Projects page)
+const HIDDEN_ON_HOME = [];
+const featuredProjects = projectsData.filter((p) => !HIDDEN_ON_HOME.includes(p.id));
+
 const FeaturedProjects = () => {
     // Speed scales with the number of projects so each card moves at the same pace
-    const duration = `${projectsData.length * 5}s`;
+    const duration = `${featuredProjects.length * 5}s`;
 
     return (
         <section className="featured-projects" id="projects">
@@ -37,10 +41,10 @@ const FeaturedProjects = () => {
 
             <div className="projects-marquee reveal-on-scroll delay-100">
                 <div className="projects-track" style={{ '--marquee-duration': duration }}>
-                    {projectsData.map((project) => (
+                    {featuredProjects.map((project) => (
                         <ProjectCard key={project.id} project={project} />
                     ))}
-                    {projectsData.map((project) => (
+                    {featuredProjects.map((project) => (
                         <ProjectCard key={`${project.id}-clone`} project={project} isClone />
                     ))}
                 </div>

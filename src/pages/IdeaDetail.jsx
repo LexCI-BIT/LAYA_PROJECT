@@ -19,7 +19,7 @@ const IdeaDetail = () => {
             <section className="id-hero">
                 <div className="container">
                     <nav className="breadcrumb">
-                        <Link to="/design-ideas">Design Ideas</Link> /
+                        <span>Design Ideas</span> /
                         <Link to={`/design-ideas/${category}`}> {category.replace('-', ' ').replace(/\b\w/g, (c) => c.toUpperCase())}</Link> /
                         <span> {idea.title}</span>
                     </nav>

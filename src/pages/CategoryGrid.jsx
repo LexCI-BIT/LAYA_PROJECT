@@ -17,7 +17,7 @@ const CategoryGrid = () => {
             <section className="cg-hero">
                 <div className="container">
                     <nav className="breadcrumb">
-                        <Link to="/design-ideas">Design Ideas</Link> / <span>{categoryData.title}</span>
+                        <span>Design Ideas</span> / <span>{categoryData.title}</span>
                     </nav>
                     <h1 className="cg-title">{categoryData.title}</h1>
                     <p className="cg-subtitle">{categoryData.desc}</p>
