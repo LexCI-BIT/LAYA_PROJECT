@@ -21,16 +21,12 @@ export const offeringsData = {
       { title: 'TV Units', icon: 'tv-unit', desc: 'Minimalist designs that can support heavy screens and hide all cables seamlessly.' },
       { title: 'Partitions', icon: 'partition', desc: 'Sleek room dividers that maximise light while providing necessary privacy.' },
       { title: 'Storage Units', icon: 'storage', desc: 'Efficient organisation for any space, from bathrooms to utility rooms.' }
-    ],
-    gallery: [
-      'https://tiimg.tistatic.com/fp/1/008/622/aluminium-modular-kitchen-183.jpg',
-      'https://images.jdmagicbox.com/quickquotes/images_main/-10g7zzx6.jpg'
     ]
   },
   'modular-cupboards': {
     title: 'Modular Cupboards',
     shortTitle: 'Smart Storage Solutions',
-    heroImage: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&q=80&w=2070',
+    heroImage: '/images/projects/sliding-aluminium-wardrobe-1.webp',
     about: 'Maximise your living space with our range of modular cupboards. Designed for the modern home, our storage solutions focus on organisation, accessibility, and sleek aesthetics.',
     types: [
       { title: 'Sliding Wardrobe', icon: 'wardrobe', desc: 'Perfect for compact rooms, these doors operate on a smooth track system to save floor space.' },
@@ -43,9 +39,6 @@ export const offeringsData = {
       { title: 'Space-Saving', icon: 'wardrobe', desc: 'Custom designs that adapt to the specific dimensions and constraints of your room.' },
       { title: 'Organised Storage', icon: 'storage', desc: 'Precision-engineered compartments for accessories, shoes, and hanging garments.' },
       { title: 'Modern Look', icon: 'design', desc: 'Clean lines and premium finishes that complement any contemporary interior design.' }
-    ],
-    gallery: [
-      'https://image.made-in-china.com/2f0j00znMbsBKgfDqa/Minimalist-Aluminum-Alloy-Walk-in-Closet-Design-Custom-Modern-Aluminium-Profile-Frame-Sliding-Clear-Glass-Door-Wall-Wardrobe.webp'
     ]
   },
 
@@ -107,17 +100,12 @@ export const offeringsData = {
       { title: 'Weather Resistant', icon: 'partition', desc: 'Specifically treated to resist UV rays, oxidation, and extreme temperature changes.' },
       { title: 'Durable', icon: 'material', desc: 'Heavy-duty profiles that maintain structural integrity over decades of outdoor exposure.' },
       { title: 'Low Maintenance', icon: 'renovation', desc: 'Requires only occasional cleaning to maintain its premium finish.' }
-    ],
-    gallery: [
-      'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=2070',
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2070',
-      'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&q=80&w=2070'
     ]
   },
   'custom-designs': {
     title: 'Custom Designs',
     shortTitle: 'Tailored for Your Lifestyle',
-    heroImage: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=2070',
+    heroImage: '/images/offerings/custom-designs-1.webp',
     about: 'We believe your home should reflect your unique personality. Our custom design service allows you to bring your vision to life with personalised aluminium interior solutions.',
     customizable: [
       { title: 'Wardrobes', icon: 'wardrobe', desc: 'Bespoke layouts with specialised modules for your specific storage needs.' },
@@ -141,7 +129,7 @@ export const offeringsData = {
   'renovation': {
     title: 'Renovation',
     shortTitle: 'Transform Existing Spaces',
-    heroImage: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=2070',
+    heroImage: '/images/offerings/renovation-1.webp',
     about: 'Upgrade your outdated interiors with our modern aluminium replacement services. We transform old, deteriorating spaces into fresh, contemporary, and durable environments.',
     renovatable: [
       { title: 'Old Wardrobes', icon: 'wardrobe', desc: 'Replace termite-eaten wood with sleek, modern aluminium frames and doors.' },
@@ -172,9 +160,6 @@ export const offeringsData = {
       { title: 'L-Shaped Kitchen', icon: 'kitchen', desc: 'Maximising corner efficiency and providing an expansive work triangle.' },
       { title: 'U-Shaped Kitchen', icon: 'kitchen', desc: 'Ideal for serious home chefs who need everything within arms reach.' },
       { title: 'Parallel Kitchen', icon: 'kitchen', desc: 'The most efficient layout for long, narrow spaces without compromising storage.' }
-    ],
-    gallery: [
-      'https://tiimg.tistatic.com/fp/1/008/622/aluminium-modular-kitchen-183.jpg'
     ]
   },
   'custom-tv-units': {
@@ -191,9 +176,6 @@ export const offeringsData = {
       { title: 'Floating Units', icon: 'tv-unit', desc: 'Wall-mounted designs that create a sense of space and modern luxury.' },
       { title: 'Feature Wall Units', icon: 'tv-unit', desc: 'Full-height installations that incorporate shelving, lighting, and storage.' },
       { title: 'Minimalist Stands', icon: 'tv-unit', desc: 'Low-profile solutions for a refined and uncluttered living environment.' }
-    ],
-    gallery: [
-      '/images/tvunit.png'
     ]
   }
 };

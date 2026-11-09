@@ -3,12 +3,7 @@ import HowItWorks from '../components/HowItWorks';
 import FAQSection from '../components/FAQSection';
 import {
   ArrowDown,
-  ArrowUpRight,
-  Eye,
-  Target,
-  Workflow,
-  Users,
-  CheckCircle2
+  ArrowUpRight
 } from 'lucide-react';
 import './AboutUs.css';
 
@@ -42,37 +37,6 @@ const faqs = [
     question: 'How can I request a consultation?',
     answer:
       'Use the consultation or WhatsApp option on our website to share your requirements. Our team can then discuss your project and the appropriate next steps.'
-  }
-];
-
-const processSteps = [
-  {
-    number: '01',
-    title: 'Understand',
-    description:
-      'We begin by understanding your vision, requirements, space, budget and functional expectations.',
-    icon: Users
-  },
-  {
-    number: '02',
-    title: 'Plan',
-    description:
-      'We explore suitable materials, design possibilities, dimensions and solutions for your project.',
-    icon: Target
-  },
-  {
-    number: '03',
-    title: 'Create',
-    description:
-      'We coordinate design, product selection and customised solutions around the agreed requirements.',
-    icon: Workflow
-  },
-  {
-    number: '04',
-    title: 'Deliver',
-    description:
-      'We focus on quality, precision and coordination to help bring the planned solution to life.',
-    icon: CheckCircle2
   }
 ];
 
@@ -121,41 +85,6 @@ const clientSegments = [
 
 const AboutUs = () => {
   const pageRef = useRef(null);
-
-  // useEffect(() => {
-  //   const page = pageRef.current;
-
-  //   if (!page) return undefined;
-
-  //   const elements = page.querySelectorAll('[data-reveal]');
-
-  //   if (!('IntersectionObserver' in window)) {
-  //     elements.forEach((element) => {
-  //       element.classList.add('is-visible');
-  //     });
-
-  //     return undefined;
-  //   }
-
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       entries.forEach((entry) => {
-  //         if (entry.isIntersecting) {
-  //           entry.target.classList.add('is-visible');
-  //           observer.unobserve(entry.target);
-  //         }
-  //       });
-  //     },
-  //     {
-  //       threshold: 0.12,
-  //       rootMargin: '0px 0px -45px 0px'
-  //     }
-  //   );
-
-  //   elements.forEach((element) => observer.observe(element));
-
-  //   return () => observer.disconnect();
-  // }, []);
 
   useEffect(() => {
   const page = pageRef.current;

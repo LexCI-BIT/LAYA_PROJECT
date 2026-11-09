@@ -206,20 +206,6 @@
   opacity: 0.8;
 }
 
-/* Gallery Section */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-}
-
-.gallery-img {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-radius: 2px;
-}
-
 /* CTA Section */
 .offering-cta {
   text-align: center;
@@ -349,10 +335,6 @@
     font-size: 1.05rem;
     margin-bottom: 0.5rem;
   }
-
-  .gallery-grid {
-    gap: 1rem;
-  }
 }
 
 @media (max-width: 640px) {
@@ -370,9 +352,6 @@
   }
   .offering-section-title {
     font-size: 2rem;
-  }
-  .gallery-grid {
-    grid-template-columns: 1fr;
   }
 }
 

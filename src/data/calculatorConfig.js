@@ -13,12 +13,6 @@ export const calculatorConfigs = {
                 { title: 'Choose finish level', desc: 'Select a style and finish preference that matches your budget and taste.', icon: '✨' },
                 { title: 'Get estimated cost', desc: 'View an approximate interior estimate for your selected requirements.', icon: '📄' }
             ],
-            typeCards: [
-                { title: '1 BHK', desc: 'Compact and efficient interior layouts for active urban living.', image: 'https://images.openai.com/static-rsc-3/PkqK2W4uQVM-16T7TioTKehbPLOaM1L7thjz2hSyawUkThxYp3QII3hT8Up77CihnA4JOwnPD5aplSzMlu-E3lZqDL5KNuXH26kYUmZFsLI?purpose=fullsize&v=1' },
-                { title: '2 BHK', desc: 'Smart and stylish interior solutions for comfortable modern living.', image: 'https://images.openai.com/static-rsc-3/3WpJeH4wE5CkqOx-tN2P50P3WRieHDvXlc0ENQx8YRwvhOnedDXiZcGfARC9XTAK7cuxyO5iOEcXTLfljVdecBlnd1P4_bi7mw-XPhhbGGU?purpose=fullsize&v=1' },
-                { title: '3 BHK', desc: 'Spacious and elegant designs tailored for growing families.', image: 'https://images.openai.com/static-rsc-3/UNmxYJWsewoRVo8LC4HcA3cS59UwcZx4jLyjhLGgwgJ7zxcyZgqiJ-dUrkWQK_Rs9g4w1MCgsT7DrZiKwDhJpkxp3qcDgSFMYSsah5-1mXw?purpose=fullsize&v=1' },
-                { title: 'Villa / Duplex', desc: 'Luxury, high-end interiors engineered for expansive, multi-level living spaces.', image: 'https://images.openai.com/static-rsc-3/v_6q8vXKteRRmmGCcC76_tUIuTGXjTMClCl3BgrGLmzfQaw7FhuO01S-d8WDJcEqiwl8AmqC-0Ese7gwRITxAkRS9H4RU3f5r7KttcyCzf8?purpose=fullsize&v=1' }
-            ],
             howItWorks: [
                 { title: 'Home Type', desc: 'Helps us understand the baseline size and layout of your home.' },
                 { title: 'Rooms to Design', desc: 'Helps us strictly estimate the scope of your custom joinery project.' },
@@ -88,12 +82,6 @@ export const calculatorConfigs = {
                 { title: 'Choose finish level', desc: 'Select a premium style and finish preference matching your vision.', icon: '✨' },
                 { title: 'Get estimated cost', desc: 'Receive your instant approximate quote for planning.', icon: '📄' }
             ],
-            typeCards: [
-                { title: 'Sliding Wardrobes', desc: 'Sleek, modular space-saving designs for any modern bedroom.', image: 'https://images.jdmagicbox.com/quickquotes/images_main/-10g7zzx6.jpg' },
-                { title: 'Hinged Wardrobes', desc: 'Classic full-access storage built with structural integrity.', image: 'https://image.made-in-china.com/365f3j00kVjorApsSeqb/Modern-Design-Aluminium-Bedroom-Glass-Door-Wardrobe-Price-Hinged-Wardrobe.webp' },
-                { title: 'Walk-In Closets', desc: 'The ultimate luxury storage solution tailored to your master suite.', image: 'https://images.openai.com/static-rsc-3/ubVGNnSHZnlItFVysDJ2UTuydM4Nrh6PRONJWv044ljke3NSIv56OXI2hsR2cLAirLf7xlrmOv4mSsBSdKeYA3wQlQ5W5QCEbCQZ5LsXaCI?purpose=fullsize&v=1' },
-                { title: 'Mirror Wardrobes', desc: 'Dual-purpose designs that dramatically increase visual room size.', image: 'https://images.openai.com/static-rsc-3/P7q3OcwUznO7yuBf10iV5KBuOrr5ScqlLv8wnh2ATOw-oFNF4gsVqSbCkVxypOa-xms6oeX3VaBETlrQ__r0PoGOgs5f_8T6LyKc-jGOkFI?purpose=fullsize&v=1' }
-            ],
             howItWorks: [
                 { title: 'Wardrobe Dimensions', desc: 'The overall size of your wardrobe has a major impact on pricing. Larger wardrobes generally require more materials and internal storage components, which influences the estimated cost.' },
                 { title: 'Wardrobe Style', desc: 'The type of wardrobe you choose also plays a key role in the estimate. Whether you prefer a sliding wardrobe, hinged wardrobe, or a more customised storage solution, the calculator adjusts the cost based on the design type you select.' },
@@ -158,12 +146,6 @@ export const calculatorConfigs = {
                 { title: 'Choose finish', desc: 'Select between our foundational basics, best-selling premium, or high-end luxury finishes.', icon: '✨' },
                 { title: 'Get estimate', desc: 'Instantly view a projected cost range for your ultimate kitchen.', icon: '🍳' }
             ],
-            typeCards: [
-                { title: 'L-Shaped Kitchens', desc: 'A versatile kitchen layout utilising precision corner solutions.', image: 'https://images.openai.com/static-rsc-3/6lK9oO4HRh47vOR2GACKheKQKdLz1SnGxsFX_9SPg2cM_6yJkYVmdqAfnaR5eAJkZEv_-SqXTxST3uSJQ44yTKd97kvYPfRs5YYug-NPR2Q?purpose=fullsize&v=1' },
-                { title: 'U-Shaped Kitchens', desc: 'Maximum storage and efficiency featuring an integrated three-wall workspace.', image: 'https://www.oppeinhome.com/upload/image/product/thumb/20230419/u-shaped-luxury-grey-kitchen-cabinet-design-2.webp' },
-                { title: 'Parallel Kitchens', desc: 'An ultra-efficient layout ideal for narrow urban structural setups.', image: 'https://static.asianpaints.com/content/dam/asianpaintsbeautifulhomes/202301/parallel-kitchen-designs-for-homes-of-all-sizes/title-parallel-kitchen-with-storage.jpg.transform/bh-tb-image-container/image.webp' },
-                { title: 'Island Kitchens', desc: 'The pinnacle of modern design acting as a central hub for social cooking.', image: 'https://images.openai.com/static-rsc-3/bFVufxqnL9vsU0j4sVC3iuHnKBK3xgb9miFTIJM6dryHeh9AbcvEeUrN70tU4JeK0s8JOFQ-BXBqnqjspFEYuIjtfg9zRUrwJlLtCOuoAg8?purpose=fullsize&v=1' }
-            ],
             howItWorks: [
                 { title: 'Kitchen Type', desc: 'Helps us calculate corner mechanisms and overall joinery complexity.' },
                 { title: 'Kitchen Size', desc: 'Defines the raw material volume block needed.' },
@@ -227,11 +209,6 @@ export const calculatorConfigs = {
                 { title: 'Select key elements', desc: 'Choose if you want a TV unit, storage cabinets, or full-wall panelling.', icon: '🛋️' },
                 { title: 'Choose finish level', desc: 'Select between our basic, premium, or ultra-luxury aluminium finishes.', icon: '✨' },
                 { title: 'Get estimated cost', desc: 'View an instant approximate quote for your living room interiors.', icon: '📄' }
-            ],
-            typeCards: [
-                { title: 'TV Units', desc: 'Modern, floating, or full-height TV units made with durable aluminium.', image: 'https://images.openai.com/static-rsc-3/bFVufxqnL9vsU0j4sVC3iuHnKBK3xgb9miFTIJM6dryHeh9AbcvEeUrN70tU4JeK0s8JOFQ-BXBqnqjspFEYuIjtfg9zRUrwJlLtCOuoAg8?purpose=fullsize&v=1' },
-                { title: 'Storage & Display', desc: 'Custom shelves and storage units designed for both style and utility.', image: 'https://images.jdmagicbox.com/quickquotes/images_main/multi-colour-aluminium-straight-modular-kitchen-for-home-2220644618-6gsp72jr.jpg' },
-                { title: 'Full Wall Design', desc: 'Architecturally inspired wall treatments that redefine your space.', image: 'https://images.openai.com/static-rsc-3/ubVGNnSHZnlItFVysDJ2UTuydM4Nrh6PRONJWv044ljke3NSIv56OXI2hsR2cLAirLf7xlrmOv4mSsBSdKeYA3wQlQ5W5QCEbCQZ5LsXaCI?purpose=fullsize&v=1' }
             ],
             howItWorks: [
                 { title: 'Space Dimensions', desc: 'The overall size of your living room guides the material volume and structural complexity.' },

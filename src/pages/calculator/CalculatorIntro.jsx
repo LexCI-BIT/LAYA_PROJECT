@@ -1,25 +1,15 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
-import { useModal } from '../../context/ModalContext';
 import { calculatorConfigs } from '../../data/calculatorConfig';
 import './CalculatorFunnel.css';
 
 const CalculatorIntro = () => {
     const { type } = useParams();
-    const { openModal } = useModal();
     const config = calculatorConfigs[type];
-    const scrollRef = useRef(null);
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [type]);
-
-    const scrollNext = () => {
-        if (scrollRef.current) {
-            // Scroll by a significant amount to show the next card
-            scrollRef.current.scrollBy({ left: 450, behavior: 'smooth' });
-        }
-    };
 
     if (!config) {
         return <Navigate to="/price-calculator" replace />;
@@ -94,36 +84,7 @@ const CalculatorIntro = () => {
                 </div>
             </section>
 
-            {/* 4. ESTIMATES SECTION (Light - Catchy Carousel) */}
-            <section className="cf-section light-bg">
-                <div className="container cf-carousel-container">
-                    <h2 className="cf-section-title dark-text center">Estimates for Every Requirement</h2>
-                    
-                    <div className="cf-carousel-wrapper">
-                        <div className="cf-segments-scroll" ref={scrollRef}>
-                            {introData.typeCards.map((card, index) => (
-                                <div key={index} className="cf-segment-card">
-                                    <div className="cf-segment-image">
-                                        <img src={card.image} alt={card.title} />
-                                    </div>
-                                    <div className="cf-segment-content">
-                                        <h3>{card.title}</h3>
-                                        <p>{card.desc}</p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                        
-                        <button className="cf-carousel-arrow next" onClick={scrollNext} aria-label="Next projects">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                <path d="M9 18l6-6-6-6" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </section>
-
-            {/* 5. FAQ SECTION (Dark) */}
+            {/* 4. FAQ SECTION (Dark) */}
             <section className="cf-section dark-bg">
                 <div className="container">
                     <h2 className="cf-section-title center">How the {displayTypeTitle} Price Calculator Works</h2>

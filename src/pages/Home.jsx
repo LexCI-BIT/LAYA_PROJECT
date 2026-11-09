@@ -4,7 +4,6 @@ import Expertise from '../components/Expertise';
 import WhyChooseUs from '../components/WhyChooseUs';
 import ManufacturingUnit from '../components/ManufacturingUnit';
 import ModularOfferings from '../components/ModularOfferings';
-// import HowItWorks from '../components/HowItWorks';
 import FeaturedProjects from '../components/FeaturedProjects';
 import PriceCalculatorPreview from '../components/PriceCalculatorPreview';
 import ModularJourney from '../components/ModularJourney';
@@ -19,7 +18,6 @@ const Home = () => {
             <WhyChooseUs />
             <ManufacturingUnit showIntro={true} showBody={false}/>
             <ModularOfferings />
-            {/* <HowItWorks /> */}
             <FeaturedProjects />
             <PriceCalculatorPreview />
             <ModularJourney />

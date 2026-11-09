@@ -100,17 +100,6 @@ export default function LatestOfferings() {
                 >
                   Explore more
                 </button>
-
-                {/* <button
-                  className="offering-view-more"
-                  onClick={() => {
-                    if (offering.title === 'Wardrobes') {
-                      window.location.href = '/modular-offerings';
-                    }
-                  }}
-                >
-                  View More
-                </button> */}
               </div>
             </article>
           ))}

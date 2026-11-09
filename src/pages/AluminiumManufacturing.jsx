@@ -1,10 +1,9 @@
 
 import React from 'react';
-import { ArrowDown, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import ManufacturingUnit from '../components/ManufacturingUnit';
-// import ManufacturingProjects from '../components/ManufacturingProjects';
 
 import './AluminiumManufacturing.css';
 
@@ -65,15 +64,6 @@ const AluminiumManufacturing = () => {
 
           </div>
 
-          {/* Scroll Cue
-          <a
-            className="aluminium-scroll-cue"
-            href="#what-we-offer"
-          >
-            <ArrowDown size={16} />
-            Scroll to explore
-          </a> */}
-
         </div>
 
         {/* Hero Caption */}
@@ -93,11 +83,6 @@ const AluminiumManufacturing = () => {
           showBody={true}
         />
       </section>
-
-      {/* Previous Projects Slideshow */}
-      {/* <section className="aluminium-projects-section">
-        <ManufacturingProjects />
-      </section> */}
 
     </main>
   );

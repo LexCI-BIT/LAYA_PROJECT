@@ -38,15 +38,15 @@ const products = [
   },
   {
     title: 'Door & Window Profiles',
-    image: 'https://image.made-in-china.com/2f0j00RNFcsMQBQjkZ/Manufacture-Modern-Custom-Made-Window-and-Aluminum-Aluminium-Profile-Metal-Door-Sliding-Doors.webp'
+    image: '/images/manufacturing/door-and-window-profiles-1.webp'
   },
   {
     title: 'Partition & Interior Sections',
-    image: 'https://i.pinimg.com/474x/cd/49/f1/cd49f1b6a3b453389aa60e92bf9133ac.jpg'
+    image: '/images/manufacturing/partition-and-interior-sections-1.webp'
   },
   {
     title: 'Custom-Fabricated Components',
-    image: 'https://www.alineautomation.com/wp-content/uploads/2025/06/A-lineAutomation-399414-AluminumProfileBars-BlogBanner1-1024x536.jpg'
+    image: '/images/manufacturing/custom-fabricated-components-1.webp'
   }
 ];
 

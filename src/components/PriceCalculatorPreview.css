@@ -3,70 +3,266 @@
   background-color: var(--bg-light);
 }
 
-.calc-banner {
-  background-color: var(--bg-dark);
-  padding: 5rem 6rem;
-  display: flex;
+.pcp-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: 4.5rem;
   align-items: center;
-  justify-content: space-between;
-  text-align: left;
-  color: #fff;
-  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.calc-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3rem;
-  font-weight: 300;
+/* Left: text */
+.pcp-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--accent-gold);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
   margin-bottom: 1rem;
 }
 
-.calc-text {
+.pcp-eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--accent-gold);
+}
+
+.pcp-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--text-dark);
+  margin: 0 0 1rem;
+}
+
+.pcp-text {
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
   font-weight: 300;
-  opacity: 0.8;
-  max-width: 500px;
+  line-height: 1.6;
+  color: rgba(34, 33, 31, 0.75);
+  max-width: 440px;
+  margin: 0 0 2rem;
 }
 
-.calc-btn {
-  background-color: #fff;
-  color: var(--bg-dark);
-  border: 1px solid #fff;
-  padding: 1.2rem 2.8rem;
+.pcp-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.5rem;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.pcp-steps li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+.pcp-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border: 1px solid rgba(197, 160, 89, 0.6);
+  border-radius: 50%;
+  color: var(--accent-gold);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.pcp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--text-dark);
+  color: #fff;
+  border: 1px solid var(--text-dark);
+  padding: 1.1rem 2.4rem;
   font-family: 'Inter', sans-serif;
   font-size: 0.8rem;
   font-weight: 600;
-  text-transform: uppercase;
   letter-spacing: 2px;
-  cursor: pointer;
-  transition: all 0.4s ease;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.35s ease;
 }
 
-.calc-btn:hover {
-  background-color: transparent;
+.pcp-btn svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.35s ease;
+}
+
+.pcp-btn:hover {
+  background-color: var(--accent-gold);
+  border-color: var(--accent-gold);
+  color: var(--text-dark);
+}
+
+.pcp-btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* Right: calculator tiles */
+.pcp-tiles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.pcp-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 2rem 1.75rem 1.75rem;
+  background-color: #fff;
+  border: 1px solid rgba(34, 33, 31, 0.1);
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--text-dark);
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.pcp-tile-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid rgba(197, 160, 89, 0.55);
+  color: var(--accent-gold);
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+.pcp-tile-icon svg {
+  stroke-width: 1.5;
+}
+
+.pcp-tile-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-top: 0.35rem;
+}
+
+.pcp-tile-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(34, 33, 31, 0.6);
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.pcp-tile-cta svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.35s ease;
+}
+
+.pcp-tile:hover {
+  transform: translateY(-4px);
+  border-color: rgba(197, 160, 89, 0.7);
+  box-shadow: 0 16px 40px rgba(34, 33, 31, 0.08);
+}
+
+.pcp-tile:hover .pcp-tile-icon {
+  background-color: var(--accent-gold);
+  border-color: var(--accent-gold);
   color: #fff;
 }
 
-.calc-banner:hover {
-  transform: scale(1.01);
-  box-shadow: 0 40px 80px rgba(0,0,0,0.15);
+.pcp-tile:hover .pcp-tile-cta {
+  color: var(--text-dark);
+}
+
+.pcp-tile:hover .pcp-tile-cta svg {
+  transform: translateX(3px);
 }
 
 @media (max-width: 1024px) {
-  .calc-banner {
-    flex-direction: column;
-    text-align: center;
-    padding: 5rem 3rem;
+  .price-calculator-preview {
+    padding: 4.5rem 0;
+  }
+
+  .pcp-layout {
+    grid-template-columns: 1fr;
     gap: 3rem;
   }
-  .calc-text {
-    margin: 0 auto;
+
+  .pcp-content {
+    text-align: center;
+  }
+
+  .pcp-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .pcp-steps {
+    justify-content: center;
+    text-align: left;
   }
 }
 
 @media (max-width: 768px) {
-  .calc-title {
+  .pcp-title {
     font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .price-calculator-preview {
+    padding: 3.5rem 0;
+  }
+
+  .pcp-tiles {
+    gap: 0.75rem;
+  }
+
+  .pcp-tile {
+    padding: 1.4rem 1.1rem 1.2rem;
+    gap: 0.7rem;
+    border-radius: 10px;
+  }
+
+  .pcp-tile-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .pcp-tile-name {
+    font-size: 1.3rem;
+    margin-top: 0.15rem;
+  }
+
+  .pcp-tile-cta {
+    font-size: 0.62rem;
+    letter-spacing: 1px;
+  }
+
+  .pcp-btn {
+    width: 100%;
+    justify-content: center;
   }
 }

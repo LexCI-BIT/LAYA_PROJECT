@@ -6,25 +6,7 @@
   height: 100svh;
 }
 
-/* Behaves like object-fit: cover for the 1200x896 renders, so door cut-outs stay aligned */
-/* .wd-stage {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: max(100%, calc(100svh * 1200 / 896));
-  aspect-ratio: 1200 / 896;
-  transform: translate(-50%, -50%);
-  perspective: 2600px;
-  perspective-origin: 50% 45%;
-}
-
-.wd-base {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-} */
-
+/* Behaves like object-fit: cover for the 4:3 renders, so door cut-outs stay aligned */
 .wd-stage {
   position: absolute;
   left: 50%;

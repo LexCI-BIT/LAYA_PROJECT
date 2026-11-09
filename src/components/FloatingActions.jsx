@@ -1,10 +1,7 @@
 import React from 'react';
-import { useModal } from '../context/ModalContext';
 import './FloatingActions.css';
 
 const FloatingActions = () => {
-    const { openModal } = useModal();
-
     const whatsappNumber = "918341884094"; // +91 83418 84094 (wa.me needs digits only)
     const whatsappMessage = encodeURIComponent("Hi, I’m interested in aluminium interiors. I would like a consultation.");
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;

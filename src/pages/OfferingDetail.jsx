@@ -220,20 +220,6 @@ const OfferingDetail = () => {
         </section>
       )}
 
-      {/* Gallery Section */}
-      {/* {data.gallery && (
-        <section className="offering-section">
-          <div className="offering-container">
-            <h2 className="offering-section-title">Project Inspiration</h2>
-            <div className="gallery-grid">
-              {data.gallery.map((img, i) => (
-                <img key={i} src={img} alt="Inspiration" className="gallery-img" />
-              ))}
-            </div>
-          </div>
-        </section>
-      )} */}
-
     </div>
   );
 };
