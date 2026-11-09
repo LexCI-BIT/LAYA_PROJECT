@@ -48,8 +48,7 @@
 /* =========================================================
    SECTION TITLES (shared by every section heading)
    ========================================================= */
-.about-page .about-section-heading h2,
-.about-page .about-cta h2 {
+.about-page .about-section-heading h2 {
   font-family: 'Cormorant Garamond', serif !important;
   font-size: clamp(2.4rem, 4vw, 3.5rem) !important;
   font-weight: 400 !important;
@@ -68,7 +67,6 @@
 
 .about-purpose-content h2 { margin: 0 0 28px; text-align: center; }
 .about-section-heading h2 { margin: 0 0 22px; }
-.about-cta h2             { margin: 0; text-align: left; }
 
 /* =========================================================
    IMAGE FRAME + REVEAL ANIMATIONS
@@ -265,7 +263,6 @@
    ========================================================= */
 .about-vision,
 .about-mission,
-.about-process,
 .about-clients { padding: 110px 0; }
 
 /* Only has an effect if a section also carries the .about-purpose class */
@@ -455,80 +452,6 @@
 }
 
 /* =========================================================
-   HOW IT WORKS
-   ========================================================= */
-.about-process { background: var(--about-white); color: var(--about-dark); }
-.about-process .about-eyebrow { color: #77716a; }
-.about-process .about-section-heading h2,
-.about-process .about-section-heading h2 em { color: var(--about-dark); }
-.about-process .about-section-heading > p { color: rgba(34, 33, 31, 0.7); }
-
-.about-process-image {
-  height: clamp(250px, 36vw, 430px);
-  margin-bottom: 55px;
-  background: #e8e4dc;
-}
-.about-process-image img { object-position: center 48%; }
-
-.about-process-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  border-top: 1px solid rgba(34, 33, 31, 0.18);
-  border-bottom: 1px solid rgba(34, 33, 31, 0.18);
-}
-
-.about-process-card {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  padding: 30px 25px 35px;
-  border-right: 1px solid rgba(34, 33, 31, 0.15);
-  transition: background 0.3s ease;
-}
-.about-process-card:first-child { border-left: 1px solid rgba(34, 33, 31, 0.15); }
-.about-process-card:hover { background: rgba(34, 33, 31, 0.035); }
-
-.about-process-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 38px;
-  color: var(--about-dark);
-}
-.about-process-top > span {
-  font-family: 'Inter', sans-serif;
-  font-size: 2rem;
-  font-weight: 300;
-}
-
-.about-process-card h3 {
-  margin: 0 0 15px;
-  color: var(--about-dark);
-  font-family: 'Inter', sans-serif;
-  font-size: 0.94rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-.about-process-card > p {
-  flex: 1;
-  margin: 0;
-  color: rgba(34, 33, 31, 0.7);
-  font-size: 0.84rem;
-  font-weight: 300;
-  line-height: 1.9;
-}
-
-.about-process-line {
-  width: 35px;
-  height: 1px;
-  margin-top: 28px;
-  background: var(--about-dark);
-  transition: width 0.35s ease;
-}
-.about-process-card:hover .about-process-line { width: 70px; }
-
-/* =========================================================
    FAQ: uses the shared Home FAQSection component (FAQSection.css).
    Keep its heading weight the same as on the Home page.
    ========================================================= */
@@ -640,62 +563,17 @@
 }
 
 /* =========================================================
-   CONTACT CTA
-   ========================================================= */
-.about-cta { padding: 85px 0; background: var(--about-dark); color: #fff; }
-
-.about-cta-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 45px;
-}
-.about-cta .about-eyebrow { margin-bottom: 20px; color: rgba(255, 255, 255, 0.65); }
-.about-cta h2 em { color: #fff; }
-
-.about-cta-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 14px;
-}
-
-.about-cta-primary,
-.about-cta-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  min-height: 54px;
-  padding: 16px 22px;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-align: center;
-  text-decoration: none;
-  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-}
-
-.about-cta-primary { border: 1px solid #fff; background: #fff; color: var(--about-dark); }
-.about-cta-primary:hover { transform: translateY(-2px); background: #e8e5df; border-color: #e8e5df; }
-
-.about-cta-secondary { border: 1px solid rgba(255, 255, 255, 0.35); background: transparent; color: #fff; }
-.about-cta-secondary:hover { border-color: #fff; color: #fff; }
-
-/* =========================================================
    TABLET  (max-width: 1024px)
    ========================================================= */
 @media (max-width: 1024px) {
   .about-page .container { width: min(100% - 8%, 900px); }
 
-  .about-vision, .about-mission, .about-process, .about-clients {
+  .about-vision, .about-mission, .about-clients {
     padding-top: 85px;
     padding-bottom: 85px;
   }
 
-  .about-page .about-section-heading h2,
-  .about-page .about-cta h2 { font-size: clamp(2.4rem, 5vw, 3.2rem) !important; }
+  .about-page .about-section-heading h2 { font-size: clamp(2.4rem, 5vw, 3.2rem) !important; }
 
   .about-page .about-purpose-content h2 { font-size: clamp(2rem, 4vw, 2.5rem) !important; }
 
@@ -705,13 +583,7 @@
   .about-mission-image { height: 440px; }
   .about-mission-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 30px; }
 
-  .about-process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .about-process-card { min-height: 250px; border-bottom: 1px solid rgba(34, 33, 31, 0.15); }
-  .about-process-card:nth-child(odd) { border-left: 1px solid rgba(34, 33, 31, 0.15); }
-  .about-process-card:nth-last-child(-n + 2) { border-bottom: 0; }
-
   .about-clients-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .about-cta-inner { align-items: flex-start; flex-direction: column; }
 }
 
 /* =========================================================
@@ -746,13 +618,12 @@
   .about-hero-content > p { font-size: 0.95rem; }
   .about-hero-caption { right: 20px; bottom: 24px; font-size: 0.55rem; letter-spacing: 1.4px; }
 
-  .about-vision, .about-mission, .about-process, .about-clients {
+  .about-vision, .about-mission, .about-clients {
     padding-top: 70px;
     padding-bottom: 70px;
   }
 
-  .about-page .about-section-heading h2,
-  .about-page .about-cta h2 {
+  .about-page .about-section-heading h2 {
     font-size: clamp(2.2rem, 7vw, 2.8rem) !important;
     line-height: 1.05 !important;
   }
@@ -771,22 +642,6 @@
   .about-page .about-section-heading { margin-bottom: 42px; }
   .about-section-heading > p { font-size: 0.89rem; }
 
-  .about-process-image { height: 260px; margin-bottom: 35px; }
-  .about-process-grid { grid-template-columns: 1fr; }
-  .about-process-card,
-  .about-process-card:first-child,
-  .about-process-card:nth-child(odd) {
-    min-height: auto;
-    padding: 25px 22px 28px;
-    border-right: 1px solid rgba(34, 33, 31, 0.15);
-    border-bottom: 1px solid rgba(34, 33, 31, 0.15);
-    border-left: 1px solid rgba(34, 33, 31, 0.15);
-  }
-  .about-process-card:last-child { border-bottom: 0; }
-  .about-process-top { margin-bottom: 24px; }
-  .about-process-card > p { max-width: 500px; }
-
-
   .about-clients-grid { gap: 25px 18px; }
   .about-client-image { height: 200px; }
   .about-client-content { min-height: 155px; padding-top: 20px; }
@@ -795,12 +650,6 @@
   .about-client-note { align-items: flex-start; gap: 16px; margin-top: 38px; }
   .about-client-note-line { margin-top: 13px; }
   .about-client-note p { font-size: 0.95rem; }
-
-  .about-cta { padding: 65px 0; }
-  .about-cta-inner { gap: 35px; }
-  .about-cta-actions { align-items: stretch; flex-direction: column; width: 100%; }
-  .about-cta-primary,
-  .about-cta-secondary { width: 100%; }
 }
 
 /* =========================================================
@@ -816,13 +665,12 @@
   .about-hero-link { font-size: 0.72rem; }
   .about-hero-caption { font-size: 0.48rem; letter-spacing: 1px; }
 
-  .about-vision, .about-mission, .about-process, .about-clients {
+  .about-vision, .about-mission, .about-clients {
     padding-top: 58px;
     padding-bottom: 58px;
   }
 
-  .about-page .about-section-heading h2,
-  .about-page .about-cta h2 { font-size: 2.4rem !important; }
+  .about-page .about-section-heading h2 { font-size: 2.4rem !important; }
 
   .about-page .about-purpose-content h2 { font-size: 1.9rem !important; }
 
@@ -834,16 +682,10 @@
   .about-vision-image,
   .about-mission-image { height: 250px; }
 
-  .about-process-image { height: 210px; }
-
   .about-clients-grid { grid-template-columns: 1fr; gap: 24px; }
   .about-client-image { height: 230px; }
   .about-client-content { min-height: 125px; }
   .about-client-note p { font-size: 0.9rem; }
-
-  .about-cta { padding: 55px 0; }
-  .about-cta-primary,
-  .about-cta-secondary { padding: 15px 12px; font-size: 0.64rem; }
 }
 
 /* =========================================================

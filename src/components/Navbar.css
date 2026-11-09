@@ -185,79 +185,6 @@
   display: none;
 }
 
-.nested-dropdown-item {
-  position: relative;
-  width: 100%;
-}
-
-.nested-dropdown-item > a {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 0.7rem 1.5rem;
-  color: var(--text-dark);
-  font-size: 0.8rem;
-  text-decoration: none;
-  transition: background-color 0.2s ease;
-}
-
-.nested-dropdown-item > a:hover {
-  background: rgba(0, 0, 0, 0.05);
-}
-
-.dropdown-arrow-right {
-  flex-shrink: 0;
-  transition: transform 0.3s ease;
-}
-
-.nested-dropdown-item:hover > a .dropdown-arrow-right,
-.nested-dropdown-item:focus-within > a .dropdown-arrow-right {
-  transform: translateX(3px);
-}
-
-.nested-dropdown-menu {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  min-width: 200px;
-  padding: 8px 0;
-  display: flex;
-  flex-direction: column;
-  background: var(--bg-light);
-  color: var(--text-dark);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transform: translateX(8px);
-  transition: opacity 0.25s ease, transform 0.25s ease,
-    visibility 0.25s ease;
-  z-index: 2005;
-}
-
-.nested-dropdown-item:hover > .nested-dropdown-menu,
-.nested-dropdown-item:focus-within > .nested-dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transform: translateX(0);
-}
-
-.nested-dropdown-menu > a {
-  padding: 0.65rem 1.4rem;
-  color: var(--text-dark);
-  font-size: 0.78rem;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: background-color 0.2s ease;
-}
-
-.nested-dropdown-menu > a:hover {
-  background: rgba(0, 0, 0, 0.05);
-}
-
 .navbar-single-actions {
   position: absolute;
   right: 3%;
@@ -303,8 +230,7 @@
   color: var(--text-dark);
 }
 
-.navbar.solid-navbar .dropdown-menu,
-.navbar.solid-navbar .nested-dropdown-menu {
+.navbar.solid-navbar .dropdown-menu {
   background: var(--bg-light);
   color: var(--text-dark);
 }
@@ -587,8 +513,7 @@
   color: var(--text-dark);
 }
 
-.navbar.solid-navbar .dropdown-menu,
-.navbar.solid-navbar .nested-dropdown-menu {
+.navbar.solid-navbar .dropdown-menu {
   background: var(--bg-light);
   color: var(--text-dark);
 }

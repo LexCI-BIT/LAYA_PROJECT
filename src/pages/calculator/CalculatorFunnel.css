@@ -378,15 +378,6 @@
     color: #0d0d0d;
 }
 
-.opt-price-tag {
-    font-size: 0.9rem;
-    opacity: 0.6;
-}
-
-.cf-option-btn.selected .opt-price-tag {
-    opacity: 1;
-}
-
 .cf-step-actions {
     margin-top: 4rem;
     display: flex;

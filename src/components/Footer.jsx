@@ -11,7 +11,7 @@ const Footer = () => {
             {/* CTA card */}
             <div className="footer-cta">
                 <div className="container">
-                    <div className="footer-cta-card">
+                    <div className="footer-cta-card" id="free-consultation">
                         <div className="footer-cta-text">
                             <span className="footer-cta-eyebrow">Free Design Consultation</span>
                             <h3 className="footer-cta-title">Need help designing your space?</h3>
@@ -96,17 +96,17 @@ const Footer = () => {
                             <div className="city-group">
                                 <h5>Telangana</h5>
                                 <ul>
-                                    <li><Link to="/cities/hyderabad">Hyderabad</Link></li>
-                                    <li><Link to="/cities/warangal">Warangal</Link></li>
-                                    <li><Link to="/cities/karimnagar">Karimnagar</Link></li>
+                                    <li><span className="footer-plain-item">Hyderabad</span></li>
+                                    <li><span className="footer-plain-item">Warangal</span></li>
+                                    <li><span className="footer-plain-item">Karimnagar</span></li>
                                 </ul>
                             </div>
                             <div className="city-group">
                                 <h5>Andhra Pradesh</h5>
                                 <ul>
-                                    <li><Link to="/cities/vijayawada">Vijayawada</Link></li>
-                                    <li><Link to="/cities/visakhapatnam">Visakhapatnam</Link></li>
-                                    <li><Link to="/cities/guntur">Guntur</Link></li>
+                                    <li><span className="footer-plain-item">Vijayawada</span></li>
+                                    <li><span className="footer-plain-item">Visakhapatnam</span></li>
+                                    <li><span className="footer-plain-item">Guntur</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -119,6 +119,8 @@ const Footer = () => {
                                 <li><Link to="/#modular-journey">Our Process</Link></li>
                                 <li><button className="link-btn" onClick={openModal}>Consultation</button></li>
                                 <li><Link to="/#faqs">FAQs</Link></li>
+                                {/* Scrolls to the consultation card above, on whichever page the visitor is on */}
+                                <li><Link to="#free-consultation">Contact Us</Link></li>
                             </ul>
                         </div>
 
@@ -136,7 +138,7 @@ const Footer = () => {
 
                 <div className="footer-bottom">
                     <p className="copyright">
-                        © 1993–{new Date().getFullYear()} Laya Space Design. Engineers & Contractors in Architectural Aluminium Building Products. All Rights Reserved.
+                        © {new Date().getFullYear()} Laya Space Design. Engineers & Contractors in Architectural Aluminium Building Products. All Rights Reserved.
                     </p>
                 </div>
             </div>
