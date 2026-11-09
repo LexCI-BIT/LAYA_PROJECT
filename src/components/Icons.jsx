@@ -196,6 +196,57 @@ export const LayoutGridIcon = (props) => (
   </IconWrapper>
 );
 
+export const SlidingWindowIcon = (props) => (
+  <IconWrapper {...props}>
+    <rect x="3" y="3" width="18" height="18" rx="1" />
+    <path d="M12 3v18" />
+    <path d="M3 12h18" />
+    <path d="M8 8h1M15 8h1M8 16h1M15 16h1" />
+  </IconWrapper>
+);
+
+export const CasementWindowIcon = (props) => (
+  <IconWrapper {...props}>
+    <rect x="3" y="3" width="18" height="18" rx="1" />
+    <path d="M12 3v18M3 12h9" />
+    <path d="m12 3 8 9-8 9" />
+  </IconWrapper>
+);
+
+export const FrenchWindowIcon = (props) => (
+  <IconWrapper {...props}>
+    <rect x="3" y="3" width="18" height="18" rx="1" />
+    <path d="M12 3v18M3 12h18" />
+    <path d="M7.5 7.5h1M15.5 7.5h1M7.5 15.5h1M15.5 15.5h1" />
+  </IconWrapper>
+);
+
+export const SlidingDoorIcon = (props) => (
+  <IconWrapper {...props}>
+    <rect x="3" y="2" width="18" height="20" rx="1" />
+    <path d="M12 2v20" />
+    <path d="M9 12h1M15 12h1" />
+    <path d="M6 22v-2M18 22v-2" />
+  </IconWrapper>
+);
+
+export const BiFoldDoorIcon = (props) => (
+  <IconWrapper {...props}>
+    <rect x="3" y="2" width="18" height="20" rx="1" />
+    <path d="M12 2v20M3 2l9 4 9-4M3 22l9-4 9 4" />
+    <path d="M8 12h1M15 12h1" />
+  </IconWrapper>
+);
+
+export const EntranceDoorIcon = (props) => (
+  <IconWrapper {...props}>
+    <rect x="4" y="2" width="16" height="20" rx="1" />
+    <path d="M8 2v20" />
+    <circle cx="15" cy="12" r="1" />
+  </IconWrapper>
+);
+
+
 export const IconRenderer = ({ iconName, size = 32 }) => {
   const name = iconName?.toLowerCase();
   const IconComponent = {
@@ -223,6 +274,12 @@ export const IconRenderer = ({ iconName, size = 32 }) => {
     store: StoreIcon,
     users: UsersIcon,
     'layout-grid': LayoutGridIcon,
+    'sliding-window': SlidingWindowIcon,
+'casement-window': CasementWindowIcon,
+'french-window': FrenchWindowIcon,
+'sliding-door': SlidingDoorIcon,
+'bi-fold-door': BiFoldDoorIcon,
+'entrance-door': EntranceDoorIcon,
   }[name];
 
   return IconComponent ? <IconComponent size={size} /> : null;

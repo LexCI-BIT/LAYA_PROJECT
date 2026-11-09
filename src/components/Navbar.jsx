@@ -139,6 +139,9 @@ const Navbar = () => {
               <Link to="/offerings/modular-cupboards">
                 Modular Cupboards
               </Link>
+              <Link to="/windows-doors">
+  Windows & Doors
+</Link>
               <Link to="/glass-aluminium-partitions">
                 Glass & Aluminium Partitions
               </Link>
@@ -304,6 +307,9 @@ const Navbar = () => {
                   <Link to="/offerings/modular-cupboards">
                     Modular Cupboards
                   </Link>
+                  <Link to="/windows-doors">
+  Windows & Doors
+</Link>
                   <Link to="/glass-aluminium-partitions">
                     Glass & Aluminium Partitions
                   </Link>

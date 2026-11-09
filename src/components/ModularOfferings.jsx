@@ -87,7 +87,7 @@ export default function LatestOfferings() {
                   className="offering-view-more"
                   onClick={() => {
                     if (offering.title === 'Windows & Doors') {
-                      navigate('/aluminium-manufacturing');
+                      navigate('/windows-doors');
                     } else if (offering.title === 'Wardrobes') {
                       navigate('/offerings/modular-cupboards');
                     } else if (offering.title === 'Exterior Elevations') {

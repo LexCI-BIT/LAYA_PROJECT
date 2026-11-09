@@ -19,6 +19,7 @@ import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
 import AluminiumManufacturing from './pages/AluminiumManufacturing';
 import GlassPartition from './pages/GlassPartition';
+import WindowsDoors from './pages/WindowsDoors';
 import './App.css';
 
 function App() {
@@ -97,6 +98,7 @@ function App() {
             <Route path="/projects/:projectId" element={<ProjectDetail />} />
             {/* City pages were removed; send old links to Home */}
             <Route path="/cities/*" element={<Navigate to="/" replace />} />
+            <Route path="/windows-doors" element={<WindowsDoors />} />
             <Route
   path="/glass-aluminium-partitions"
   element={<GlassPartition/>}
