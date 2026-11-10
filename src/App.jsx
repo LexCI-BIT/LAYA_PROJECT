@@ -20,6 +20,7 @@ import CustomCursor from './components/CustomCursor';
 import AluminiumManufacturing from './pages/AluminiumManufacturing';
 import GlassPartition from './pages/GlassPartition';
 import WindowsDoors from './pages/WindowsDoors';
+import PageMeta from './components/PageMeta';
 import './App.css';
 
 function App() {
@@ -78,6 +79,7 @@ function App() {
 
   return (
     <ModalProvider>
+      <PageMeta />
       <CustomCursor />
       <div className="app-wrapper">
         <Navbar />

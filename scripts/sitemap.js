@@ -4,8 +4,7 @@ import { offeringsData } from '../src/data/offeringsData.js';
 import { projectsData } from '../src/data/projectsData.js';
 import { categories, designIdeas } from '../src/data/DesignIdeasData.js';
 import { calculatorConfigs } from '../src/data/calculatorConfig.js';
-
-const SITE_URL = 'https://www.layaspacedesign.com';
+import { SITE_URL } from '../src/seo/site.js';
 
 // Pages with their own fixed route in App.jsx
 const STATIC_PAGES = [
