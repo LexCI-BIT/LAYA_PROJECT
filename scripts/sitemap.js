@@ -20,8 +20,6 @@ const STATIC_PAGES = [
 // Entries in offeringsData that should not be listed as /offerings/<slug>
 const EXCLUDED_OFFERINGS = [
   'glass-aluminium-partitions', // has its own page at /glass-aluminium-partitions
-  'modular-kitchens', // not linked anywhere on the site
-  'custom-tv-units', // not linked anywhere on the site
 ];
 
 // Also used by scripts/head-tags.js, which writes an HTML file for each of these pages
