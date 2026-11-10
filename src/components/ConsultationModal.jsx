@@ -4,6 +4,7 @@ import {
     validateName, validatePhone, validateEmail, validateRequired,
     validateMaxLength, validateAll, trimValues
 } from '../utils/formValidation';
+import { submitLead } from '../utils/submitLead';
 import './ConsultationModal.css';
 
 const initialFormData = {
@@ -32,6 +33,8 @@ const ConsultationModal = () => {
 
 const ConsultationModalContent = ({ closeModal }) => {
     const [submitted, setSubmitted] = useState(false);
+    // 'idle', 'sending' or 'error' while the enquiry is on its way to the leads Sheet
+    const [sendStatus, setSendStatus] = useState('idle');
     const [formData, setFormData] = useState(initialFormData);
     const [errors, setErrors] = useState({});
     const [touched, setTouched] = useState({});
@@ -54,22 +57,39 @@ const ConsultationModalContent = ({ closeModal }) => {
         setErrors({ ...errors, [name]: rules[name](value) });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        if (sendStatus === 'sending') return;
+        const form = e.currentTarget;
         const formErrors = validateAll(formData, rules);
         setErrors(formErrors);
         setTouched(Object.keys(rules).reduce((acc, key) => ({ ...acc, [key]: true }), {}));
 
         const firstInvalid = Object.keys(rules).find((key) => formErrors[key]);
         if (firstInvalid) {
-            e.currentTarget.querySelector(`[name="${firstInvalid}"]`)?.focus();
+            form.querySelector(`[name="${firstInvalid}"]`)?.focus();
             return;
         }
 
-        // Simulate API call
-        console.log('Form Submitted:', trimValues(formData));
-        setSubmitted(true);
-        timeoutRef.current = setTimeout(closeModal, 3000);
+        const lead = trimValues(formData);
+        setSendStatus('sending');
+        try {
+            await submitLead({
+                form: 'Consultation',
+                name: lead.name,
+                phone: lead.phone,
+                email: lead.email,
+                city: lead.city,
+                requirement: lead.requirement,
+                details: lead.message,
+                website: form.elements.website.value
+            });
+            setSubmitted(true);
+            timeoutRef.current = setTimeout(closeModal, 3000);
+        } catch (error) {
+            console.error('Consultation enquiry was not sent:', error);
+            setSendStatus('error');
+        }
     };
 
     const fieldProps = (name) => ({
@@ -151,7 +171,18 @@ const ConsultationModalContent = ({ closeModal }) => {
                                 ></textarea>
                                 {renderError('message')}
                             </div>
-                            <button type="submit" className="submit-btn-premium">Submit Requirement</button>
+                            {/* Spam trap: hidden from visitors, only bots fill it in */}
+                            <input type="text" name="website" className="form-honeypot" tabIndex={-1} autoComplete="off" aria-hidden="true" />
+                            <button type="submit" className="submit-btn-premium" disabled={sendStatus === 'sending'}>
+                                {sendStatus === 'sending' ? 'Sending…' : 'Submit Requirement'}
+                            </button>
+                            {sendStatus === 'error' && (
+                                <p className="form-submit-error" role="alert">
+                                    Sorry, your request couldn't be sent. Please try again, or call{' '}
+                                    <a href="tel:+918341884094">+91 83418 84094</a> or{' '}
+                                    <a href="https://wa.me/918341884094" target="_blank" rel="noopener noreferrer">message us on WhatsApp</a>.
+                                </p>
+                            )}
                         </form>
                     </div>
                 ) : (
