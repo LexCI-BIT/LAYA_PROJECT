@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useParams, Navigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { offeringsData } from '../data/offeringsData';
+import NotFound from './NotFound';
 import { useModal } from '../context/ModalContext';
 import { IconRenderer } from '../components/Icons';
 import RenovationHero, { WOOD_IMG, ALUMINIUM_IMG } from '../components/RenovationHero';
@@ -51,8 +52,9 @@ const OfferingDetail = () => {
     return () => observer.disconnect();
   }, [slug, failedSlug]);
 
+  // Unknown or removed offerings get the same "Page not found" page as any other bad address
   if (!data) {
-    return <Navigate to="/" />;
+    return <NotFound />;
   }
 
   return (

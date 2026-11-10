@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import './ModularOfferings.css';
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const offerings = [
@@ -8,27 +8,30 @@ const offerings = [
     title: 'Windows & Doors',
     desc: 'Premium aluminium windows and doors with sleek, modern finishes. Designed for durability, natural light, and everyday comfort.',
     image: '/images/hero/windows&doors.png',
+    link: '/windows-doors',
   },
   {
     title: 'Wardrobes',
     desc: 'Custom-designed aluminium wardrobes with elegant glass finishes. Smart storage solutions that combine style and functionality.',
     image: '/images/hero/closet.jpeg',
+    link: '/offerings/modular-cupboards',
   },
   {
     title: 'Glass & Aluminium Partitions',
     desc: 'Contemporary glass and aluminium partitions for stylish interiors. Create defined spaces while maintaining openness and light.',
     image: '/images/hero/partition.jpg',
+    link: '/glass-aluminium-partitions',
   },
   {
     title: 'Exterior Elevations',
     desc: 'Modern exterior designs featuring premium aluminium elements. Enhance your building’s appearance with clean lines and lasting appeal.',
     image: '/images/hero/elevation.jpeg',
+    link: '/offerings/exterior-works',
   },
 ];
 
 export default function LatestOfferings() {
   const offeringsRef = useRef(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const container = offeringsRef.current;
@@ -83,23 +86,10 @@ export default function LatestOfferings() {
                 <h3>{offering.title}</h3>
                 <p>{offering.desc}</p>
 
-                <button
-                  className="offering-view-more"
-                  onClick={() => {
-                    if (offering.title === 'Windows & Doors') {
-                      navigate('/windows-doors');
-                    } else if (offering.title === 'Wardrobes') {
-                      navigate('/offerings/modular-cupboards');
-                    } else if (offering.title === 'Exterior Elevations') {
-                      navigate('/offerings/exterior-works');
-                    }
-                    else if (offering.title === 'Glass & Aluminium Partitions') {
-                      navigate('/glass-aluminium-partitions');
-                    }
-                  }}
-                >
+                {/* A real link (not a button) so search engines can follow it to the offering page */}
+                <Link to={offering.link} className="offering-view-more">
                   Explore more
-                </button>
+                </Link>
               </div>
             </article>
           ))}

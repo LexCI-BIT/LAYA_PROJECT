@@ -143,39 +143,5 @@ export const offeringsData = {
       { title: 'Better Space Utilisation', icon: 'storage', desc: 'Re-engineer your current layout to find more storage and usable area.' }
     ],
     showcase: 'We provide end-to-end support, from dismantling old structures to the final reveal of your new aluminium space.'
-  },
-  'modular-kitchens': {
-    title: 'Modular Kitchens',
-    shortTitle: 'Precision in Every Detail',
-    heroImage: '/images/hero/kitchen1.jpg',
-    about: 'Transform your culinary experience with our premium aluminium modular kitchens. Designed for efficiency, hygiene, and timeless style, our kitchens are built to last a lifetime.',
-    benefits: [
-      { title: 'Zero Maintenance', icon: 'renovation', desc: 'No more polishing or deep cleaning required; a simple wipe keeps it looking brand new.' },
-      { title: 'Hygienic Surface', icon: 'kitchen', desc: 'Non-porous aluminium prevents bacterial growth and doesn\'t absorb cooking odours.' },
-      { title: 'Heat Resistant', icon: 'material', desc: 'Perfect for the Indian kitchen environment, providing total safety from heat and steam.' },
-      { title: 'Waterproof', icon: 'storage', desc: 'Total peace of mind against leaks and spills, with zero risk of swelling or rot.' }
-    ],
-    applications: [
-      { title: 'Island Kitchen', icon: 'kitchen', desc: 'A centrepiece design that adds luxury and additional workspace.' },
-      { title: 'L-Shaped Kitchen', icon: 'kitchen', desc: 'Maximising corner efficiency and providing an expansive work triangle.' },
-      { title: 'U-Shaped Kitchen', icon: 'kitchen', desc: 'Ideal for serious home chefs who need everything within arms reach.' },
-      { title: 'Parallel Kitchen', icon: 'kitchen', desc: 'The most efficient layout for long, narrow spaces without compromising storage.' }
-    ]
-  },
-  'custom-tv-units': {
-    title: 'Custom TV Units',
-    shortTitle: 'Entertainment Redefined',
-    heroImage: '/images/tvunit.png',
-    about: 'Elevate your living room with our sleek, contemporary aluminium TV units. We combine minimalism with intelligent storage to create a focal point that complements your home entertainment setup.',
-    benefits: [
-      { title: 'Sleek Aesthetic', icon: 'design', desc: 'Slim profiles and hidden cable management for a clean, futuristic look.' },
-      { title: 'High Strength', icon: 'material', desc: 'Easily supports the heaviest screens and high-end audio-visual equipment.' },
-      { title: 'Versatile Finishes', icon: 'material', desc: 'From matte black to wood-grain finishes, matching any interior theme seamlessly.' }
-    ],
-    applications: [
-      { title: 'Floating Units', icon: 'tv-unit', desc: 'Wall-mounted designs that create a sense of space and modern luxury.' },
-      { title: 'Feature Wall Units', icon: 'tv-unit', desc: 'Full-height installations that incorporate shelving, lighting, and storage.' },
-      { title: 'Minimalist Stands', icon: 'tv-unit', desc: 'Low-profile solutions for a refined and uncluttered living environment.' }
-    ]
   }
 };
