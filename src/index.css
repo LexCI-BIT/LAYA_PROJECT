@@ -33,6 +33,15 @@ button, input, select, textarea {
   font-family: inherit;
 }
 
+/* Spam trap field on enquiry forms: invisible to visitors, but bots still fill it in */
+.form-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 400;

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Navigate, useNavigate } from 'react-router-dom';
 import { calculatorConfigs } from '../../data/calculatorConfig';
 import { validateName, validatePhone, validateCity, validateEmail, validateAll, trimValues } from '../../utils/formValidation';
+import { submitLead } from '../../utils/submitLead';
 import './CalculatorFunnel.css';
 
 const leadRules = {
@@ -21,6 +22,7 @@ const CalculatorForm = () => {
     const [leadInfo, setLeadInfo] = useState({ name: '', phone: '', city: '', email: '' });
     const [leadErrors, setLeadErrors] = useState({});
     const [leadTouched, setLeadTouched] = useState({});
+    const [sending, setSending] = useState(false);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -107,25 +109,58 @@ const CalculatorForm = () => {
         };
     };
 
-    const submitForm = (e) => {
+    // e.g. "Kitchen Type: L-Shaped; Kitchen Size: Medium. Estimate: ₹1,20,000 – ₹1,50,000"
+    const describeChoices = (estimate) => {
+        const choices = sections
+            .map((sec) => {
+                const picked = selections[sec.id];
+                if (!picked || (Array.isArray(picked) && picked.length === 0)) return null;
+                const value = Array.isArray(picked) ? picked.map((item) => item.label).join(', ') : picked.label;
+                return `${sec.title}: ${value}`;
+            })
+            .filter(Boolean)
+            .join('; ');
+        const range = `₹${estimate.min.toLocaleString('en-IN')} – ₹${estimate.max.toLocaleString('en-IN')}`;
+        return `${choices}. Estimate: ${range}`;
+    };
+
+    const submitForm = async (e) => {
         e.preventDefault();
+        if (sending) return;
+        const form = e.currentTarget;
         const formErrors = validateAll(leadInfo, leadRules);
         setLeadErrors(formErrors);
         setLeadTouched({ name: true, phone: true, city: true, email: true });
 
         const firstInvalid = Object.keys(leadRules).find((key) => formErrors[key]);
         if (firstInvalid) {
-            e.currentTarget.querySelector(`[name="${firstInvalid}"]`)?.focus();
+            form.querySelector(`[name="${firstInvalid}"]`)?.focus();
             return;
         }
 
-        // Here, an API call would normally fire to save the lead.
-
         const estimate = calculateTotal();
+        const lead = trimValues(leadInfo);
+
+        // Save the enquiry to the leads Sheet; the visitor gets their estimate even if this fails
+        setSending(true);
+        try {
+            await submitLead({
+                form: 'Price calculator',
+                name: lead.name,
+                phone: lead.phone,
+                email: lead.email,
+                city: lead.city,
+                requirement: type.charAt(0).toUpperCase() + type.slice(1).replace(/-/g, ' '),
+                details: describeChoices(estimate),
+                website: form.elements.website.value
+            });
+        } catch (error) {
+            console.error('Calculator enquiry was not sent:', error);
+        }
 
         // Push to result page with the data
         navigate(`/price-calculator/${type}/result`, {
-            state: { estimate, selections, leadInfo: trimValues(leadInfo) }
+            state: { estimate, selections, leadInfo: lead }
         });
     };
 
@@ -194,7 +229,11 @@ const CalculatorForm = () => {
                             <input id="lead-email" type="email" autoComplete="email" maxLength={100} placeholder="you@example.com" {...leadFieldProps('email')} />
                             {renderLeadError('email')}
                         </div>
-                        <button type="submit" className="cf-btn-submit">View My Estimate</button>
+                        {/* Spam trap: hidden from visitors, only bots fill it in */}
+                        <input type="text" name="website" className="form-honeypot" tabIndex={-1} autoComplete="off" aria-hidden="true" />
+                        <button type="submit" className="cf-btn-submit" disabled={sending}>
+                            {sending ? 'Preparing your estimate…' : 'View My Estimate'}
+                        </button>
                     </form>
                 </div>
             );
