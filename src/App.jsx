@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { ModalProvider } from './context/ModalContext';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
@@ -21,6 +21,7 @@ import AluminiumManufacturing from './pages/AluminiumManufacturing';
 import GlassPartition from './pages/GlassPartition';
 import WindowsDoors from './pages/WindowsDoors';
 import PageMeta from './components/PageMeta';
+import NotFound from './pages/NotFound';
 import './App.css';
 
 function App() {
@@ -92,19 +93,18 @@ function App() {
             <Route path="/price-calculator/:type" element={<CalculatorIntro />} />
             <Route path="/price-calculator/:type/form" element={<CalculatorForm />} />
             <Route path="/price-calculator/:type/result" element={<CalculatorResult />} />
-            <Route path="/design-ideas" element={<Navigate to="/" replace />} />
             <Route path="/design-ideas/:category" element={<CategoryGrid />} />
             <Route path="/design-ideas/:category/:id" element={<IdeaDetail />} />
             <Route path="/offerings/:slug" element={<OfferingDetail />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:projectId" element={<ProjectDetail />} />
-            {/* City pages were removed; send old links to Home */}
-            <Route path="/cities/*" element={<Navigate to="/" replace />} />
             <Route path="/windows-doors" element={<WindowsDoors />} />
             <Route
   path="/glass-aluminium-partitions"
   element={<GlassPartition/>}
 />
+            {/* Old addresses (/cities/..., /design-ideas) are redirected by vercel.json */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
 
