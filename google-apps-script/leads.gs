@@ -10,12 +10,19 @@
  * so the website's URL keeps working.
  */
 
-const SHEET_NAME = 'Leads';
+const SHEET_NAME = "Leads";
 
-// Optional: an email address that gets a message for every new enquiry. Leave '' to turn off.
-const NOTIFY_EMAIL = '';
-
-const HEADERS = ['Date', 'Form', 'Name', 'Phone', 'Email', 'City', 'Requirement', 'Details', 'Page'];
+const HEADERS = [
+  "Date",
+  "Form",
+  "Name",
+  "Phone",
+  "Email",
+  "City",
+  "Requirement",
+  "Details",
+  "Page",
+];
 
 // Longest value kept for each field; anything longer is cut
 const MAX_LENGTH = {
@@ -40,7 +47,8 @@ function doPost(e) {
     Object.keys(MAX_LENGTH).forEach((key) => {
       lead[key] = clean(data[key], MAX_LENGTH[key]);
     });
-    if (!lead.name || !lead.phone) return reply({ ok: false, error: 'missing-fields' });
+    if (!lead.name || !lead.phone)
+      return reply({ ok: false, error: "missing-fields" });
 
     // Stops two enquiries arriving at the same moment from overwriting each other
     const lock = LockService.getScriptLock();
@@ -61,17 +69,18 @@ function doPost(e) {
       lock.releaseLock();
     }
 
-    if (NOTIFY_EMAIL) notify(lead);
     return reply({ ok: true });
   } catch (err) {
     console.error(err);
-    return reply({ ok: false, error: 'server-error' });
+    return reply({ ok: false, error: "server-error" });
   }
 }
 
 // Opening the Web app URL in a browser shows this, which confirms the deployment works
 function doGet() {
-  return ContentService.createTextOutput('Laya Space Design leads endpoint is running.');
+  return ContentService.createTextOutput(
+    "Laya Space Design leads endpoint is running.",
+  );
 }
 
 function getSheet() {
@@ -80,14 +89,17 @@ function getSheet() {
   if (!sheet) {
     sheet = spreadsheet.insertSheet(SHEET_NAME);
     sheet.appendRow(HEADERS);
-    sheet.getRange(1, 1, 1, HEADERS.length).setFontWeight('bold');
+    sheet.getRange(1, 1, 1, HEADERS.length).setFontWeight("bold");
     sheet.setFrozenRows(1);
   }
   return sheet;
 }
 
 function clean(value, max) {
-  return String(value == null ? '' : value).replace(/\s+/g, ' ').trim().slice(0, max);
+  return String(value == null ? "" : value)
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, max);
 }
 
 // Text starting with = + - @ would be run as a spreadsheet formula, so store it as plain text
@@ -98,22 +110,24 @@ function asText(text) {
 function notify(lead) {
   MailApp.sendEmail({
     to: NOTIFY_EMAIL,
-    subject: 'New website enquiry: ' + lead.name + ' (' + lead.form + ')',
+    subject: "New website enquiry: " + lead.name + " (" + lead.form + ")",
     body: [
-      'Form: ' + lead.form,
-      'Name: ' + lead.name,
-      'Phone: ' + lead.phone,
-      'Email: ' + (lead.email || '-'),
-      'City: ' + (lead.city || '-'),
-      'Requirement: ' + (lead.requirement || '-'),
-      'Details: ' + (lead.details || '-'),
-      'Page: ' + lead.page,
-      '',
-      'All enquiries: ' + SpreadsheetApp.getActiveSpreadsheet().getUrl(),
-    ].join('\n'),
+      "Form: " + lead.form,
+      "Name: " + lead.name,
+      "Phone: " + lead.phone,
+      "Email: " + (lead.email || "-"),
+      "City: " + (lead.city || "-"),
+      "Requirement: " + (lead.requirement || "-"),
+      "Details: " + (lead.details || "-"),
+      "Page: " + lead.page,
+      "",
+      "All enquiries: " + SpreadsheetApp.getActiveSpreadsheet().getUrl(),
+    ].join("\n"),
   });
 }
 
 function reply(result) {
-  return ContentService.createTextOutput(JSON.stringify(result)).setMimeType(ContentService.MimeType.JSON);
+  return ContentService.createTextOutput(JSON.stringify(result)).setMimeType(
+    ContentService.MimeType.JSON,
+  );
 }
