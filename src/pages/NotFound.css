@@ -1,0 +1,97 @@
+/* Dark like the other page heroes, so the transparent navbar's white text stays readable */
+.not-found {
+  /* Fills the whole screen, so the footer only appears once the visitor scrolls */
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 140px 24px 80px;
+  background: #171715;
+  color: #fff;
+  text-align: center;
+}
+
+.not-found-content {
+  max-width: 560px;
+}
+
+.not-found-code {
+  display: block;
+  margin-bottom: 1rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.not-found h1 {
+  margin: 0 0 1rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.not-found p {
+  margin: 0 0 2.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.not-found-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.not-found-primary,
+.not-found-secondary {
+  padding: 1.1rem 2.2rem;
+  border: 1px solid #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.not-found-primary {
+  background: #fff;
+  color: #171715;
+}
+
+.not-found-primary:hover {
+  background: transparent;
+  color: #fff;
+}
+
+.not-found-secondary {
+  color: #fff;
+}
+
+.not-found-secondary:hover {
+  background: #fff;
+  color: #171715;
+}
+
+@media (max-width: 480px) {
+  .not-found-actions {
+    flex-direction: column;
+  }
+}
+
+/* On this page only: drop the footer's consultation card and the light gap above the footer */
+body:has(.not-found) .footer-cta {
+  display: none;
+}
+
+body:has(.not-found) .footer {
+  margin-top: 0;
+}
