@@ -32,7 +32,7 @@ const STATIC_PAGES = {
   '/': {
     title: SITE_NAME,
     // 1200x630 card (logo, headline, service areas) so link previews show as a large banner
-    image: '/images/social/home-preview.jpg',
+    image: '/images/social/home-banner.jpg',
     description:
       'Aluminium interiors, windows, doors and partitions for homes and offices in Hyderabad, Warangal, Karimnagar and Andhra Pradesh, with 35+ years of experience.',
   },
