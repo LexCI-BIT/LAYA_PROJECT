@@ -107,25 +107,6 @@ function asText(text) {
   return /^[=+\-@]/.test(text) ? "'" + text : text;
 }
 
-function notify(lead) {
-  MailApp.sendEmail({
-    to: NOTIFY_EMAIL,
-    subject: "New website enquiry: " + lead.name + " (" + lead.form + ")",
-    body: [
-      "Form: " + lead.form,
-      "Name: " + lead.name,
-      "Phone: " + lead.phone,
-      "Email: " + (lead.email || "-"),
-      "City: " + (lead.city || "-"),
-      "Requirement: " + (lead.requirement || "-"),
-      "Details: " + (lead.details || "-"),
-      "Page: " + lead.page,
-      "",
-      "All enquiries: " + SpreadsheetApp.getActiveSpreadsheet().getUrl(),
-    ].join("\n"),
-  });
-}
-
 function reply(result) {
   return ContentService.createTextOutput(JSON.stringify(result)).setMimeType(
     ContentService.MimeType.JSON,

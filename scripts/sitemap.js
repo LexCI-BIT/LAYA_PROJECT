@@ -24,7 +24,8 @@ const EXCLUDED_OFFERINGS = [
   'custom-tv-units', // not linked anywhere on the site
 ];
 
-const sitemapPaths = () => [
+// Also used by scripts/head-tags.js, which writes an HTML file for each of these pages
+export const sitemapPaths = () => [
   ...STATIC_PAGES,
   ...Object.keys(offeringsData)
     .filter((slug) => !EXCLUDED_OFFERINGS.includes(slug))
