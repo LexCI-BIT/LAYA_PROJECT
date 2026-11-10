@@ -1,0 +1,9 @@
+# Let all search engines crawl the site
+User-agent: *
+Allow: /
+
+# The calculator's form and result steps depend on what each visitor enters, so keep them out of search results
+Disallow: /price-calculator/*/form
+Disallow: /price-calculator/*/result
+
+Sitemap: https://www.layaspacedesign.com/sitemap.xml
