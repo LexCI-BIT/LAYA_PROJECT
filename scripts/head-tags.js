@@ -22,11 +22,12 @@ const withPageTags = (html, meta) => {
   page = replaceTag(page, /<meta property="og:title" content="[^"]*"/, `<meta property="og:title" content="${escapeHtml(meta.title)}"`);
   page = replaceTag(page, /<meta property="og:description" content="[^"]*"/, `<meta property="og:description" content="${escapeHtml(meta.description)}"`);
   page = replaceTag(page, /<meta property="og:image" content="[^"]*"/, `<meta property="og:image" content="${escapeHtml(meta.image)}"`);
-  return replaceTag(
-    page,
-    /<\/head>/,
-    `  <link rel="canonical" href="${escapeHtml(meta.canonical)}" />\n    <meta property="og:url" content="${escapeHtml(meta.canonical)}" />\n  </head>`
-  );
+  page = replaceTag(page, /<meta name="twitter:image" content="[^"]*"/, `<meta name="twitter:image" content="${escapeHtml(meta.image)}"`);
+  page = replaceTag(page, /<meta property="og:url" content="[^"]*"/, `<meta property="og:url" content="${escapeHtml(meta.canonical)}"`);
+  // The width/height in index.html describe the Home banner card, not this page's image
+  page = replaceTag(page, /\s*<meta property="og:image:width" content="[^"]*" \/>/, '');
+  page = replaceTag(page, /\s*<meta property="og:image:height" content="[^"]*" \/>/, '');
+  return replaceTag(page, /<\/head>/, `  <link rel="canonical" href="${escapeHtml(meta.canonical)}" />\n  </head>`);
 };
 
 export default function headTags() {
