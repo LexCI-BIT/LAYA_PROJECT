@@ -61,13 +61,13 @@ const STATIC_PAGES = {
     title: withBrand('Windows & Doors'),
     description:
       'Sliding, casement and French windows plus sliding, bi-fold and entrance doors in premium aluminium, made for light, durability and sound insulation.',
-    image: '/images/offerings/windowsanddoors.png',
+    image: '/images/offerings/windowsanddoors.jpg',
   },
   '/glass-aluminium-partitions': {
     title: withBrand('Glass & Aluminium Partitions'),
     description:
       'Glass and aluminium partitions for offices, meeting rooms and homes that define spaces while keeping them open, bright and low-maintenance.',
-    image: '/images/offerings/partition_full.png',
+    image: '/images/offerings/partition_full.jpg',
   },
 };
 

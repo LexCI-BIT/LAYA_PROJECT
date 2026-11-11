@@ -70,7 +70,7 @@ const clientSegments = [
     title: 'Hospitality & Retail',
     description:
       'Space-conscious solutions for customer-facing and hospitality environments.',
-    image: '/images/about/clients/retail.png',
+    image: '/images/about/clients/retail.jpg',
     alt: 'Hospitality and retail interior'
   },
   {
@@ -205,7 +205,7 @@ const AboutUs = () => {
               data-reveal="image-reveal"
             >
               <img
-                src="/images/about/vision.png"
+                src="/images/about/vision.jpg"
                 alt="Thoughtfully designed contemporary interior"
                 loading="lazy"
               />
@@ -231,7 +231,7 @@ const AboutUs = () => {
               data-reveal="image-reveal"
             >
               <img
-                src="/images/about/mission.png"
+                src="/images/about/mission.jpg"
                 alt="Materials and details in a modern architectural space"
                 loading="lazy"
               />
