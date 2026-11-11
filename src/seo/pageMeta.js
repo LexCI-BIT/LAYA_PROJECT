@@ -34,7 +34,7 @@ const STATIC_PAGES = {
     // Square logo, so it stays clear when WhatsApp shows a small square thumbnail
     image: '/images/social/home-logo.png',
     description:
-      'Aluminium interiors, windows, doors and partitions in Hyderabad, Warangal, Karimnagar and Andhra Pradesh. 35+ years of experience.',
+      'Aluminium interiors, windows, doors and partitions. 35+ years of experience.',
   },
   '/about-us': {
     title: withBrand('About Us'),
