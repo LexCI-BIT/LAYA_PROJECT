@@ -5,7 +5,7 @@ import { useModal } from '../context/ModalContext';
 import './Hero.css';
 
 const SHOTS = [
-  { title: 'Exterior', image: '/images/hero/exterior.png?v=2', origin: '50% 50%', from: 'scale(1)', to: 'scale(1.12)' },
+  { title: 'Exterior', image: '/images/hero/exterior.jpg?v=2', origin: '50% 50%', from: 'scale(1)', to: 'scale(1.12)' },
   { title: 'Entrance Foyer', image: '/images/hero/foyer.jpg', origin: '50% 50%', from: 'scale(1.12) translateX(3%)', to: 'scale(1.12) translateX(-3%)' },
   { title: 'Living Room', image: '/images/hero/living.jpg', origin: '50% 50%', from: 'scale(1.12) translateX(-3%)', to: 'scale(1.12) translateX(3%)' },
   { title: 'Kitchen & Dining', image: '/images/hero/kitchen2.jpg', origin: '50% 45%', from: 'scale(1.03)', to: 'scale(1.13)' },

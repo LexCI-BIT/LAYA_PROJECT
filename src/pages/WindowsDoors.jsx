@@ -5,7 +5,7 @@ import { IconRenderer } from '../components/Icons';
 // Built from the Glass Partition page's layout, so it uses that page's styles
 import './GlassPartition.css';
 
-const WINDOWS_DOORS_IMG = '/images/offerings/windowsanddoors.png';
+const WINDOWS_DOORS_IMG = '/images/offerings/windowsanddoors.jpg';
 
 const products = [
     {

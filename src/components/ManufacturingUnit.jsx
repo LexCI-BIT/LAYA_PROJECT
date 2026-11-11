@@ -34,7 +34,7 @@ const services = [
 const products = [
   {
     title: 'Aluminium Sections & Profiles',
-    image: '/images/manufacturing/Aluminium-Sections-Profiles.png'
+    image: '/images/manufacturing/Aluminium-Sections-Profiles.jpg'
   },
   {
     title: 'Door & Window Profiles',
@@ -122,7 +122,7 @@ const ManufacturingUnit = ({
               <div className="mfg-3d-object">
                 <img
                   className="mfg-intro-main mfg-3d-image"
-                  src="/images/manufacturing/aluminium-manufacturing1.png"
+                  src="/images/manufacturing/aluminium-manufacturing1.webp"
                   alt="Aluminium profiles with metallic liquid splash"
                   loading="eager"
                 />

@@ -4,7 +4,7 @@ import { offeringsData } from '../data/offeringsData';
 import { IconRenderer } from '../components/Icons';
 import './GlassPartition.css';
 
-const PARTITION_IMG = '/images/offerings/partition_full.png';
+const PARTITION_IMG = '/images/offerings/partition_full.jpg';
 
 export default function GlassPartitionHero() {
   const { openModal } = useModal();

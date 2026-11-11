@@ -4,7 +4,7 @@ export const designIdeas = {
             id: 'sliding-door-wardrobe',
             title: 'Sliding Door Wardrobe',
             desc: 'A space-saving wardrobe with smooth sliding doors and premium aluminium profiling, perfect for modern urban homes.',
-            image: '/images/slidingdoor.png',
+            image: '/images/slidingdoor.jpg',
             features: ['Space-saving sliding mechanism', 'Durable aluminium frame', 'Dust-proof door seals'],
             idealFor: ['Small rooms', 'Modern apartments'],
             gallery: [
@@ -127,7 +127,7 @@ export const designIdeas = {
             id: 'straight-kitchen',
             title: 'Straight Kitchen',
             desc: 'A sleek single-wall kitchen layout designed with durable aluminium cabinetry to maximise compact urban spaces.',
-            image: '/images/luxury_modern_straight_modular_kitchen.png',
+            image: '/images/luxury_modern_straight_modular_kitchen.jpg',
             features: ['Space-efficient design', 'Durable aluminium build', 'Easy maintenance'],
             idealFor: ['Small homes', 'Studio apartments'],
             gallery: [
@@ -139,7 +139,7 @@ export const designIdeas = {
             id: 'l-shaped-kitchen',
             title: 'L-Shaped Kitchen',
             desc: 'A versatile kitchen layout utilising precision-engineered aluminium corner solutions for a superior workflow.',
-            image: '/images/L-Shaped Kitchen.png',
+            image: '/images/L-Shaped Kitchen.jpg',
             features: ['Corner space efficiency', 'Optimised work triangle', 'Modular aluminium units'],
             idealFor: ['Medium-sized homes'],
             gallery: [

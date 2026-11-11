@@ -5,8 +5,8 @@ import './RenovationHero.css';
 import './WardrobeHero.css';
 
 // Closed and open renders of the same wardrobe from the same camera (1200x896 source grid).
-export const CLOSED_IMG = '/images/offerings/closed_door.png';
-export const OPEN_IMG = '/images/offerings/open_wardrobe.png';
+export const CLOSED_IMG = '/images/offerings/closed_door.jpg';
+export const OPEN_IMG = '/images/offerings/open_wardrobe.jpg';
 
 const IMG_W = 1448;
 const IMG_H = 1086;

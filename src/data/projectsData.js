@@ -5,7 +5,7 @@ export const projectsData = [
     title: 'Sliding Aluminium Wardrobe',
     shortDesc: 'Sleek, space-saving storage with premium metallic finish.',
     fullDesc: 'A minimalist masterpiece designed for compact urban spaces. This wardrobe uses high-precision sliding tracks and lightweight aluminium frames to provide maximum storage with zero floor-space compromise.',
-    image: '/images/wardrobe_sliding_aluminium.png',
+    image: '/images/wardrobe_sliding_aluminium.jpg',
     type: 'Sliding / Modular',
     materials: ['High-grade Aluminium', 'Frosted Glass', 'Soft-close tracks'],
     gallery: [
@@ -47,7 +47,7 @@ export const projectsData = [
     title: 'Walk-in Glass Wardrobe',
     shortDesc: 'The ultimate luxury in organisation and visibility.',
     fullDesc: 'A boutique experience in your bedroom. This walk-in wardrobe features slim aluminium profiles and transparent glass, offering a stunning view of your curated collection while keeping everything dust-free.',
-    image: '/images/Walk-in wardrobe.png',
+    image: '/images/Walk-in wardrobe.jpg',
     type: 'Walk-in',
     materials: ['Slim Profile Aluminium', 'Tempered Glass', 'Integrated LED Lighting'],
     gallery: [
@@ -60,7 +60,7 @@ export const projectsData = [
     title: 'Straight Modular Kitchen',
     shortDesc: 'Compact efficiency for smart urban apartments.',
     fullDesc: 'Proof that small spaces can have big impact. This straight-line kitchen maximises every inch of wall space with high-capacity cabinets and integrated appliance modules.',
-    image: '/images/luxury_modern_straight_modular_kitchen.png',
+    image: '/images/luxury_modern_straight_modular_kitchen.jpg',
     type: 'Straight Line',
     materials: ['Hygienic Aluminium', 'Laminate Finish', 'Ergonomic Pull-outs'],
     gallery: [
@@ -86,7 +86,7 @@ export const projectsData = [
     title: 'Minimalist Partition',
     shortDesc: 'Sleek room dividers that maximise light flow.',
     fullDesc: 'Define your space without closing it off. These slender aluminium partitions with glass inserts provide acoustic and visual separation while keeping your interior bright and airy.',
-    image: '/images/projects/minimalist_partition.png',
+    image: '/images/projects/minimalist_partition.jpg',
     type: 'Room Divider',
     materials: ['Slimline Aluminium', 'Fluted Glass', 'Floor-to-ceiling Track'],
     gallery: [
@@ -113,7 +113,7 @@ export const projectsData = [
     title: 'Open-Shelf Wardrobe',
     shortDesc: 'Full-height wardrobe with lit open shelving and colour accents.',
     fullDesc: 'A floor-to-ceiling wardrobe wall combining hanging zones, drawers and shoe racks. Concealed LED strips light every shelf, while colour-accented aluminium shutters slide across to close the unit off completely.',
-    image: '/images/Open_Shelf_Wardrobe.png',
+    image: '/images/Open_Shelf_Wardrobe.jpg',
     type: 'Hinged / Open Shelf',
     materials: ['Aluminium Frame', 'Matte Laminate Shutters', 'LED Profile Lighting'],
     gallery: [

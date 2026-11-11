@@ -160,7 +160,7 @@
   isolation: isolate;
   background:
     linear-gradient(180deg, rgba(8, 10, 11, 0.42) 0%, rgba(8, 10, 11, 0.52) 48%, rgba(8, 10, 11, 0.72) 100%),
-    url('/images/about/hero.png') center center / cover no-repeat;
+    url('/images/about/hero.jpg') center center / cover no-repeat;
   color: #fff;
   text-align: center;
 }
