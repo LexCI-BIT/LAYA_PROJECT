@@ -166,7 +166,7 @@ const serviceDetails = (page, url, image) => ({
   description: page.description,
   url,
   image,
-  provider: { '@id': `${SITE_URL}/#organization` },
+  provider: { '@type': 'Organization', name: SITE_NAME, url: `${SITE_URL}/` },
   areaServed: SERVICE_AREAS,
 });
 

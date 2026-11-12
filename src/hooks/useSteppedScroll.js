@@ -8,7 +8,7 @@ const SWIPE_THRESHOLD = 40;
 // it stays finished and scrolls like a normal section until the page is reloaded or the hero is mounted again.
 // `lockMs` covers the step animation plus trackpad inertia.
 const useSteppedScroll = (last, lockMs) => {
-  const [reduced] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  const [reduced] = useState(() => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   const [stage, setStage] = useState(reduced ? last : 0);
   const stageRef = useRef(stage);
   const busyRef = useRef(false);
