@@ -64,7 +64,6 @@ export const calculatorConfigs = {
         },
         result: {
             title: 'Your Estimated Interior Cost',
-            subtitle: 'Based on your selections, here’s an approximate budget range for your home interiors using Laya Space Design’s premium aluminium technology.',
             disclaimer: '*This estimate is approximate and may vary based on final measurements, customisations, and material preferences.'
         }
     },
@@ -128,7 +127,6 @@ export const calculatorConfigs = {
         },
         result: {
             title: 'Your Estimated Wardrobe Cost',
-            subtitle: 'Based on your selections, here’s an approximate budget range for your precision-engineered aluminium wardrobe.',
             disclaimer: '*This estimate is approximate. Exact price will depend on interior partition layouts, drawer counts, and hardware choices.'
         }
     },
@@ -192,7 +190,6 @@ export const calculatorConfigs = {
         },
         result: {
             title: 'Your Estimated Kitchen Cost',
-            subtitle: 'Based on your selections, here’s an approximate budget range for your state-of-the-art modular kitchen.',
             disclaimer: '*This estimate is approximate and may vary based on exact square footage, accessory hardware (like tandem boxes), and appliance integration needs.'
         }
     },
@@ -257,7 +254,6 @@ export const calculatorConfigs = {
         },
         result: {
             title: 'Your Estimated Living Room Cost',
-            subtitle: 'Based on your selections, here’s an approximate budget range for your premium aluminium living room interiors.',
             disclaimer: '*This estimate is approximate and may vary based on exact measurements and hardware customisations.'
         }
     }
