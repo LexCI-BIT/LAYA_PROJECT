@@ -22,7 +22,7 @@ const CalculatorResult = () => {
         return <Navigate to={`/price-calculator/${type}`} replace />;
     }
 
-    const { title, subtitle, disclaimer } = config.result;
+    const { title, disclaimer } = config.result;
 
     return (
         <div className="calc-funnel-page result-stage">
@@ -30,8 +30,7 @@ const CalculatorResult = () => {
                 <div className="cf-result-card animate-in">
                     <div className="cf-result-header">
                         <h2>{title}</h2>
-                        {leadInfo.name && <p className="greet-name">Hi {leadInfo.name},</p>}
-                        <p className="cf-result-subtitle">{subtitle}</p>
+                        {leadInfo.name && <p className="greet-name">Hi {leadInfo.name},</p>}
                     </div>
 
                     <div className="cf-price-reveal">
@@ -42,7 +41,7 @@ const CalculatorResult = () => {
                     </div>
 
                     <div className="cf-summary-box">
-                        <h3>Your Configuration Details</h3>
+                        <h3>Your Selections</h3>
                         <div className="cf-summary-list">
                             {config.form.sections.map(section => {
                                 const selected = selections[section.id];
@@ -83,14 +82,7 @@ const CalculatorResult = () => {
                         <Link to={`/price-calculator`} className="cf-btn-tertiary">
                             Calculate Another Space
                         </Link>
-                    </div>
-
-                    <div className="cf-social-inspiration">
-                        <p>Follow us for daily design inspiration & project updates</p>
-                        <a href="https://www.instagram.com/laya.aluminiums?igsh=MWhsOWRiODk3aXV1MQ==" target="_blank" rel="noopener noreferrer" className="cf-instagram-link">
-                             Follow on Instagram
-                        </a>
-                    </div>
+                    </div>
                 </div>
             </div>
         </div>

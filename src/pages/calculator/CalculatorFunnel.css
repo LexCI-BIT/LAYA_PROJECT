@@ -471,85 +471,110 @@
    PAGE 3: RESULT PAGE 
 --------------------*/
 .cf-result-card {
-    max-width: 700px;
-    margin: 8rem auto;
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 2.5rem 2.5rem 2rem;
     background: #0d0d0d;
     border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 0;
-    padding: 5rem;
-    box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
     text-align: center;
 }
 
 .cf-result-header h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
+    font-size: 2.4rem;
+    line-height: 1.15;
+    margin-bottom: 0.6rem;
     color: #fff;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .greet-name {
-    font-size: 1.3rem;
-    color: rgba(255,255,255,0.6);
-    margin-bottom: 0.8rem;
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 1.5rem;
 }
 
 .cf-price-reveal {
-    background: transparent;
-    border-radius: 0;
-    padding: 3rem;
-    margin-bottom: 4rem;
-    display: inline-block;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem 1.5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #fff;
 }
 
+.cf-price-reveal .cf-currency,
 .cf-price-reveal .cf-amount {
-    font-size: 5rem;
     font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    line-height: 1.1;
     color: #fff;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .cf-summary-box {
     text-align: left;
-    background: rgba(255, 255, 255, 0.02);
-    padding: 3rem;
-    margin-bottom: 4rem;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.25rem;
 }
 
 .cf-summary-box h3 {
-    margin-bottom: 2rem;
-    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 3px;
-    color: rgba(255,255,255,0.5);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    padding-bottom: 1rem;
+    color: rgba(255,255,255,0.75);
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    padding-bottom: 0.75rem;
 }
 
 .cf-summary-item {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.cf-summary-item:last-child {
+    margin-bottom: 0;
 }
 
 .cf-sum-key {
-    color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.7);
 }
 
 .cf-sum-val {
     color: #fff;
     font-weight: 500;
+    text-align: right;
+}
+
+.cf-disclaimer p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.7);
+    margin: 0 0 1.5rem;
+}
+
+.cf-result-ctas {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.cf-result-ctas .cf-btn-primary,
+.cf-btn-whatsapp {
+    width: 100%;
+    padding: 1.1rem;
+    font-size: 0.85rem;
+    box-sizing: border-box;
 }
 
 .cf-btn-whatsapp {
     background-color: #25D366;
     color: #fff;
-    padding: 1.4rem;
-    border-radius: 0;
-    font-size: 1rem;
     font-weight: 600;
     text-decoration: none;
     letter-spacing: 2px;
@@ -563,7 +588,31 @@
 
 .cf-btn-whatsapp:hover {
     background-color: #1EBE5D;
-    transform: translateY(-5px);
+}
+
+.cf-btn-tertiary {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.85);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.cf-btn-tertiary:hover {
+    color: #fff;
+}
+
+/* The page already has its own consultation and WhatsApp buttons, so the footer's repeat is hidden here */
+body:has(.result-stage) .footer-cta {
+    display: none;
+}
+
+body:has(.result-stage) .footer {
+    margin-top: 0;
+}
+
+.result-stage {
+    padding: 140px 0 80px;
 }
 
 /* Animations */
@@ -574,39 +623,6 @@
 
 .animate-in {
     animation: animateIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-}
-
-.cf-social-inspiration {
-    margin-top: 4rem;
-    padding-top: 3rem;
-    border-top: 1px solid rgba(255,255,255,0.08);
-    text-align: center;
-}
-
-.cf-social-inspiration p {
-    font-size: 1rem;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 1.5rem;
-}
-
-.cf-instagram-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 1rem 2.5rem;
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: all 0.4s ease;
-}
-
-.cf-instagram-link:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(220, 39, 67, 0.3);
 }
 
 @media (max-width: 1024px) {
@@ -628,7 +644,9 @@
 @media (max-width: 768px) {
     .cf-title { font-size: 3.5rem; }
     .cf-process-grid { grid-template-columns: 1fr; gap: 4rem; }
-    .cf-step-wrapper, .cf-result-card { padding: 3rem 2rem; }
+    .cf-step-wrapper { padding: 3rem 2rem; }
+    .cf-result-card { padding: 2rem 1.25rem 1.5rem; }
     .cf-options-grid { grid-template-columns: 1fr; }
-    .cf-price-reveal .cf-amount { font-size: 3.5rem; }
+    .cf-price-reveal .cf-currency, .cf-price-reveal .cf-amount { font-size: 2rem; }
+    .cf-result-header h2 { font-size: 1.9rem; }
 }
