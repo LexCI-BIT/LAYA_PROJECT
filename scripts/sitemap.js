@@ -1,7 +1,6 @@
 // Vite build step that writes sitemap.xml from the site's data files,
-// so new offerings, projects, design ideas and calculators are listed automatically on every build.
+// so new offerings, design ideas and calculators are listed automatically on every build.
 import { offeringsData } from '../src/data/offeringsData.js';
-import { projectsData } from '../src/data/projectsData.js';
 import { categories, designIdeas } from '../src/data/DesignIdeasData.js';
 import { calculatorConfigs } from '../src/data/calculatorConfig.js';
 import { SITE_URL } from '../src/seo/site.js';
@@ -28,7 +27,6 @@ export const sitemapPaths = () => [
   ...Object.keys(offeringsData)
     .filter((slug) => !EXCLUDED_OFFERINGS.includes(slug))
     .map((slug) => `/offerings/${slug}`),
-  ...projectsData.map((project) => `/projects/${project.id}`),
   ...categories.flatMap((category) => [
     `/design-ideas/${category.id}`,
     ...(designIdeas[category.id] || []).map((idea) => `/design-ideas/${category.id}/${idea.id}`),

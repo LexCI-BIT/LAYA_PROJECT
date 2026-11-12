@@ -12,7 +12,6 @@ import CategoryGrid from './pages/CategoryGrid';
 import IdeaDetail from './pages/IdeaDetail';
 import OfferingDetail from './pages/OfferingDetail';
 import Projects from './pages/Projects';
-import ProjectDetail from './pages/ProjectDetail';
 import ConsultationModal from './components/ConsultationModal';
 import FloatingActions from './components/FloatingActions';
 import Footer from './components/Footer';
@@ -97,7 +96,6 @@ function App() {
             <Route path="/design-ideas/:category/:id" element={<IdeaDetail />} />
             <Route path="/offerings/:slug" element={<OfferingDetail />} />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/projects/:projectId" element={<ProjectDetail />} />
             <Route path="/windows-doors" element={<WindowsDoors />} />
             <Route
   path="/glass-aluminium-partitions"

@@ -11,7 +11,7 @@ const products = [
     {
       title: 'Sliding Windows',
       icon: 'sliding-window',
-      desc: 'Elegant sliding windows designed for smooth operation, natural light and modern living spaces.',
+      desc: 'Elegant aluminium sliding windows designed for smooth operation, natural light and modern living spaces.',
     },
     {
       title: 'Casement Windows',
@@ -21,7 +21,7 @@ const products = [
     {
       title: 'French Windows',
       icon: 'french-window',
-      desc: 'Stylish full-height windows that create an open connection between indoor and outdoor spaces.',
+      desc: 'Stylish full-height aluminium French windows that connect indoor and outdoor spaces.',
     },
     {
       title: 'Sliding Doors',
@@ -31,7 +31,7 @@ const products = [
     {
       title: 'Bi-fold Doors',
       icon: 'bi-fold-door',
-      desc: 'Modern folding door systems that open up your space with seamless functionality.',
+      desc: 'Modern aluminium bi-fold door systems that open up your space with seamless functionality.',
     },
     {
       title: 'Entrance Doors',
@@ -54,7 +54,7 @@ const products = [
     {
       icon: 'grid',
       title: 'Sound Insulation',
-      desc: 'Quality window and door systems designed to improve indoor comfort and reduce outside noise.',
+      desc: 'Quality aluminium window and door systems that improve indoor comfort and reduce outside noise.',
     },
     {
       icon: 'design',
@@ -114,10 +114,12 @@ export default function WindowsDoors() {
           <h2>About this Service</h2>
 
           <p>
-             From elegant sliding windows to contemporary entrance doors,
-            every design combines durability, functionality and
-            refined aesthetics. Our solutions are tailored to bring
-            natural light, comfort and style into your spaces.
+            From elegant sliding windows to contemporary entrance doors,
+            our aluminium windows and doors combine durability,
+            functionality and refined design to bring natural light,
+            comfort and style into your spaces. We supply and install
+            them for homes and buildings across Hyderabad, Warangal,
+            Karimnagar and Andhra Pradesh.
           </p>
         </div>
       </section>
@@ -125,7 +127,7 @@ export default function WindowsDoors() {
       {/* BENEFITS */}
       <section className="glass-benefits">
         <div className="glass-benefits-container">
-          <h2>Key Benefits</h2>
+          <h2>Benefits of Aluminium Windows & Doors</h2>
 
           <div className="glass-benefits-grid">
             {benefits.map((benefit, index) => (
@@ -148,7 +150,7 @@ export default function WindowsDoors() {
       {/* PRODUCTS / APPLICATIONS */}
       <section className="glass-applications">
         <div className="glass-applications-container">
-          <h2>Our Windows & Doors</h2>
+          <h2>Types of Aluminium Windows & Doors</h2>
 
           <div className="glass-applications-grid">
             {products.map((product, index) => (

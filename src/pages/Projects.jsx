@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { projectsData } from '../data/projectsData';
 import './Projects.css';
 
@@ -43,16 +42,16 @@ const Projects = () => {
 
           <div className="projects-full-grid">
             {filteredProjects.map((project) => (
-              <Link to={`/projects/${project.id}`} key={project.id} className="project-detail-card" data-cursor-text="VIEW PROJECT">
+              <article key={project.id} className="project-detail-card">
                 <div className="project-card-image-wrapper">
-                  <img src={project.image} alt={project.title} className="project-card-img" />
+                  <img src={project.image} alt={`${project.title}: ${project.shortDesc}`} className="project-card-img" />
                 </div>
                 <div className="project-card-content">
                   <span className="project-card-tag">{project.category}</span>
                   <h3 className="project-card-name">{project.title}</h3>
                   <p className="project-card-summary">{project.shortDesc}</p>
                 </div>
-              </Link>
+              </article>
             ))}
           </div>
         </div>
