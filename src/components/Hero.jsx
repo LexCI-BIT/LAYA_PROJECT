@@ -22,7 +22,7 @@ const Hero = () => {
   const [previousShot, setPreviousShot] = useState(0);
   const [paused, setPaused] = useState(false);
   const [inView, setInView] = useState(true);
-  const [reducedMotion] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  const [reducedMotion] = useState(() => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
 
   const changeShot = (nextShot) => {
     setPreviousShot(shot);

@@ -40,7 +40,7 @@ const ease = (x) => x * x * (3 - 2 * x);
 const RenovationHero = ({ data }) => {
   const { openModal } = useModal();
   const sectionRef = useRef(null);
-  const [reduced] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  const [reduced] = useState(() => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   // Reduced motion shows a static half-transformed scene with the middle card
   const [active, setActive] = useState(reduced ? 1 : -1);
 

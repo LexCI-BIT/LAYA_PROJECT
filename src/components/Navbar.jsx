@@ -236,7 +236,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {createPortal(
+      {typeof document !== 'undefined' && createPortal(
         <div
           className={`mobile-menu ${menuOpen ? 'open' : ''}`}
           inert={!menuOpen}
