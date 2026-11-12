@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 import ManufacturingUnit from '../components/ManufacturingUnit';
 
@@ -54,13 +53,6 @@ const AluminiumManufacturing = () => {
               Explore Our Capabilities
               <ArrowRight size={17} />
             </a>
-
-            <Link
-              className="aluminium-secondary-cta"
-              to="/#contact"
-            >
-              Talk to Our Team
-            </Link>
 
           </div>
 

@@ -155,6 +155,14 @@
   transform: translateY(0);
 }
 
+/* Right after a dropdown link is clicked, the menu closes even though the mouse is still over it */
+.nav-item-dropdown.dropdown-closed > .dropdown-menu {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(8px);
+}
+
 .dropdown-menu > a {
   display: block;
   padding: 0.7rem 1.5rem;

@@ -12,6 +12,14 @@ const Navbar = () => {
   // Calculator intro pages (/price-calculator/wardrobe etc.) sit on a photo
   const isCalculatorIntro = /^\/price-calculator\/[^/]+\/?$/.test(location.pathname);
 
+  // A dropdown stays open while the mouse is over it or a link inside it has focus. After a link is clicked
+  // it is closed on purpose, and opens again the next time the mouse comes back to it.
+  const closeDropdown = (e) => {
+    e.currentTarget.closest('.nav-item-dropdown').classList.add('dropdown-closed');
+    document.activeElement?.blur();
+  };
+  const reopenDropdown = (e) => e.currentTarget.classList.remove('dropdown-closed');
+
   const isSubPage = location.pathname !== '/';
 
   const hasSolidNav =
@@ -107,7 +115,7 @@ const Navbar = () => {
             <span>About Us</span>
           </Link>
 
-          <div className="nav-item-dropdown">
+          <div className="nav-item-dropdown" onMouseLeave={reopenDropdown}>
             <Link
               to="/#offerings"
               className="dropdown-trigger nav-link-with-arrow"
@@ -132,7 +140,7 @@ const Navbar = () => {
               </svg>
             </Link>
 
-            <div className="dropdown-menu">
+            <div className="dropdown-menu" onClick={closeDropdown}>
               <Link to="/offerings/aluminium-interiors">
                 Aluminium Interiors
               </Link>
@@ -156,7 +164,7 @@ const Navbar = () => {
               </Link>
             </div>
           </div>
-          <div className="nav-item-dropdown">
+          <div className="nav-item-dropdown" onMouseLeave={reopenDropdown}>
             <Link
               to="/#design-ideas"
               className="dropdown-trigger nav-link-with-arrow"
@@ -181,7 +189,7 @@ const Navbar = () => {
               </svg>
             </Link>
 
-            <div className="dropdown-menu">
+            <div className="dropdown-menu" onClick={closeDropdown}>
               <Link to="/design-ideas/wardrobe">
                 Wardrobe Designs
               </Link>
