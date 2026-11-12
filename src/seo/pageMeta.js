@@ -1,10 +1,9 @@
 // Title, description, canonical URL and preview image for every page.
-// Fixed pages are written by hand below; offerings, projects, design ideas and calculators
+// Fixed pages are written by hand below; offerings, design ideas and calculators
 // are built from their data files, so new entries get sensible tags automatically.
 import { matchPath } from 'react-router-dom';
-import { SITE_URL, SITE_NAME } from './site';
+import { SITE_URL, SITE_NAME, SERVICE_AREAS } from './site';
 import { offeringsData } from '../data/offeringsData';
-import { projectsData } from '../data/projectsData';
 import { categories, designIdeas } from '../data/DesignIdeasData';
 import { calculatorConfigs } from '../data/calculatorConfig';
 
@@ -59,12 +58,14 @@ const STATIC_PAGES = {
   },
   '/windows-doors': {
     title: withBrand('Windows & Doors'),
+    serviceName: 'Windows & Doors',
     description:
       'Sliding, casement and French windows plus sliding, bi-fold and entrance doors in premium aluminium, made for light, durability and sound insulation.',
     image: '/images/offerings/windowsanddoors.jpg',
   },
   '/glass-aluminium-partitions': {
     title: withBrand('Glass & Aluminium Partitions'),
+    serviceName: 'Glass & Aluminium Partitions',
     description:
       'Glass and aluminium partitions for offices, meeting rooms and homes that define spaces while keeping them open, bright and low-maintenance.',
     image: '/images/offerings/partition_full.jpg',
@@ -83,33 +84,6 @@ const OFFERING_DESCRIPTIONS = {
     'Personalised aluminium wardrobes, kitchens, storage units, TV units and partitions, designed around your space, style and needs.',
   renovation:
     'Replace old wardrobes, outdated kitchens, storage units and partitions with modern, durable aluminium for a fresh, contemporary home.',
-};
-
-// Hand-written from each project's own description and materials in projectsData.js;
-// a new project without an entry here uses its description from the data
-const PROJECT_DESCRIPTIONS = {
-  'sliding-aluminium-wardrobe':
-    'A sliding aluminium wardrobe with frosted glass and soft-close tracks, giving compact urban homes maximum storage without using extra floor space.',
-  'modern-l-shaped-kitchen':
-    'An L-shaped modular kitchen in powder-coated aluminium with a quartz countertop, built to resist moisture and pests for a hygienic, long-lasting home.',
-  'architectural-louvers':
-    'Weather-resistant aluminium louvers that add privacy, ventilation and sun control while giving the building facade a sharp, modern profile.',
-  'walk-in-glass-wardrobe':
-    'A walk-in wardrobe with slim aluminium profiles, tempered glass and integrated LED lighting that keeps your collection on display and dust-free.',
-  'straight-modular-kitchen':
-    'A straight-line aluminium kitchen for compact apartments, with high-capacity cabinets, ergonomic pull-outs and integrated appliance modules.',
-  'custom-tv-unit':
-    'A wall-mounted aluminium TV unit with matte panels, integrated storage and built-in cable channels for a clean, wire-free feature wall.',
-  'minimalist-partition':
-    'Slimline aluminium room dividers with fluted glass that separate spaces visually and acoustically while keeping interiors bright and airy.',
-  'island-modular-kitchen':
-    'An island kitchen with aluminium carcasses, wood-finish shutters and a quartz countertop: the warmth of timber with moisture and termite resistance.',
-  'open-shelf-wardrobe':
-    'A floor-to-ceiling aluminium wardrobe with hanging zones, drawers, shoe racks and LED-lit open shelves behind colour-accented sliding shutters.',
-  'bedroom-wall-paneling':
-    'A bedroom built around a backlit geometric headboard wall of aluminium-framed fabric and wood panels, with matching floating side tables.',
-  'glass-staircase-foyer':
-    'A double-height foyer with a floating staircase, frameless toughened-glass railings on concealed aluminium channels and full-height glazing.',
 };
 
 // Offerings whose real page lives at a different URL
@@ -138,20 +112,9 @@ const findPage = (pathname) => {
     if (canonical) return { ...STATIC_PAGES[canonical], path: canonical };
     return {
       title: withBrand(data.title),
+      serviceName: data.title,
       description: OFFERING_DESCRIPTIONS[slug] ?? shorten(data.about),
       image: data.heroImage,
-      path: pathname,
-    };
-  }
-
-  match = matchPath('/projects/:projectId', pathname);
-  if (match) {
-    const project = projectsData.find((p) => p.id === match.params.projectId);
-    if (!project) return null;
-    return {
-      title: withBrand(project.title),
-      description: PROJECT_DESCRIPTIONS[project.id] ?? shorten(project.fullDesc || project.shortDesc),
-      image: project.image,
       path: pathname,
     };
   }
@@ -194,16 +157,32 @@ const findPage = (pathname) => {
 
 const absolute = (path) => encodeURI(`${SITE_URL}${path}`);
 
+// Hidden schema.org details telling Google which service a page offers and where
+const serviceDetails = (page, url, image) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: page.serviceName,
+  serviceType: page.serviceName,
+  description: page.description,
+  url,
+  image,
+  provider: { '@id': `${SITE_URL}/#organization` },
+  areaServed: SERVICE_AREAS,
+});
+
 export const getPageMeta = (pathname) => {
   const cleanPath = pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname;
   const page = findPage(cleanPath);
-  if (!page) return { ...NOT_FOUND, image: absolute(DEFAULT_IMAGE), canonical: null };
+  if (!page) return { ...NOT_FOUND, image: absolute(DEFAULT_IMAGE), canonical: null, structuredData: null };
 
+  const canonical = absolute(page.path);
+  const image = absolute(page.image || DEFAULT_IMAGE);
   return {
     title: page.title,
     description: page.description,
-    image: absolute(page.image || DEFAULT_IMAGE),
-    canonical: absolute(page.path),
+    image,
+    canonical,
     noindex: false,
+    structuredData: page.serviceName ? serviceDetails(page, canonical, image) : null,
   };
 };

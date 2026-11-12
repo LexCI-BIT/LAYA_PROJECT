@@ -3,6 +3,7 @@
   "redirects": [
     { "source": "/cities/:path*", "destination": "/", "permanent": true },
     { "source": "/design-ideas", "destination": "/", "permanent": true },
+    { "source": "/projects/:path*", "destination": "/projects", "permanent": true },
     { "source": "/offerings/glass-aluminium-partitions", "destination": "/glass-aluminium-partitions", "permanent": true }
   ],
   "rewrites": [

@@ -55,7 +55,7 @@ export default function GlassPartitionHero() {
       {data.benefits && (
         <section className="glass-benefits">
           <div className="glass-benefits-container">
-            <h2>Key Benefits</h2>
+            <h2>{data.benefitsHeading}</h2>
             <div className="glass-benefits-grid">
               {data.benefits.map((benefit, index) => (
                 <article className="glass-benefit-card" key={index}>
@@ -74,7 +74,7 @@ export default function GlassPartitionHero() {
       {data.applications && (
         <section className="glass-applications">
           <div className="glass-applications-container">
-            <h2>Applications</h2>
+            <h2>{data.applicationsHeading}</h2>
             <div className="glass-applications-grid">
               {data.applications.map((app, index) => (
                 <article className="glass-application-card" key={index}>

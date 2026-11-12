@@ -4,14 +4,8 @@ import { projectsData } from '../data/projectsData';
 import './FeaturedProjects.css';
 
 const ProjectCard = ({ project, isClone }) => (
-    <Link
-        to={`/projects/${project.id}`}
-        className="project-card"
-        data-cursor-text="VIEW PROJECT"
-        // The cloned set only exists to make the loop seamless, so hide it from screen readers and keyboard focus
-        aria-hidden={isClone || undefined}
-        tabIndex={isClone ? -1 : undefined}
-    >
+    // The cloned set only exists to make the loop seamless, so hide it from screen readers
+    <div className="project-card" aria-hidden={isClone || undefined}>
         <div className="project-image">
             <img src={project.image} alt={isClone ? '' : project.title} loading="lazy" />
         </div>
@@ -19,7 +13,7 @@ const ProjectCard = ({ project, isClone }) => (
             <h3 className="project-card-title">{project.title}</h3>
             <p className="project-card-category">{project.category}</p>
         </div>
-    </Link>
+    </div>
 );
 
 // Projects left out of the home page carousel (they still appear on the Projects page)

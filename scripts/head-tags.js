@@ -27,7 +27,11 @@ const withPageTags = (html, meta) => {
   // The width/height in index.html describe the Home banner card, not this page's image
   page = replaceTag(page, /\s*<meta property="og:image:width" content="[^"]*" \/>/, '');
   page = replaceTag(page, /\s*<meta property="og:image:height" content="[^"]*" \/>/, '');
-  return replaceTag(page, /<\/head>/, `  <link rel="canonical" href="${escapeHtml(meta.canonical)}" />\n  </head>`);
+  // Offering pages also get hidden Service details for Google (same id PageMeta.jsx updates in the browser)
+  const service = meta.structuredData
+    ? `  <script type="application/ld+json" id="page-structured-data">${JSON.stringify(meta.structuredData).replace(/</g, '\\u003c')}</script>\n`
+    : '';
+  return replaceTag(page, /<\/head>/, `  <link rel="canonical" href="${escapeHtml(meta.canonical)}" />\n${service}  </head>`);
 };
 
 export default function headTags() {

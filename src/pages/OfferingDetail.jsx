@@ -62,7 +62,7 @@ const OfferingDetail = () => {
       {/* Hero Section */}
       {scrollHero && failedSlug !== slug ? <scrollHero.Component data={data} /> : (
       <section className={`offering-hero ${data.heroBelowNav ? 'offering-hero-below-nav' : ''}`} ref={data.heroBelowNav ? heroRef : null}>
-        <img src={data.heroImage} alt={data.title} className="offering-hero-img" />
+        <img src={data.heroImage} alt={data.heroAlt || data.title} className="offering-hero-img" />
         <div className="offering-hero-content">
           <span className="offering-tag">{data.shortTitle}</span>
           <h1 className="offering-hero-title">{data.title}</h1>
@@ -88,7 +88,7 @@ const OfferingDetail = () => {
       {data.benefits && (
         <section className="offering-section dark">
           <div className="offering-container">
-            <h2 className="offering-section-title">Key Benefits</h2>
+            <h2 className="offering-section-title">{data.benefitsHeading || 'Key Benefits'}</h2>
             <div className="offering-grid-container">
               {data.benefits.map((benefit, i) => (
                 <div key={i} className="grid-item">
@@ -108,7 +108,7 @@ const OfferingDetail = () => {
       {data.applications && (
         <section className="offering-section">
           <div className="offering-container">
-            <h2 className="offering-section-title">Applications</h2>
+            <h2 className="offering-section-title">{data.applicationsHeading || 'Applications'}</h2>
             <div className="offering-grid-container">
               {data.applications.map((app, i) => (
                 <div key={i} className="grid-item">
@@ -128,7 +128,7 @@ const OfferingDetail = () => {
       {data.types && (
         <section className="offering-section">
           <div className="offering-container">
-            <h2 className="offering-section-title">Types of {data.title}</h2>
+            <h2 className="offering-section-title">{data.typesHeading || `Types of ${data.title}`}</h2>
             <div className="offering-grid-container">
               {data.types.map((type, i) => (
                 <div key={i} className="grid-item">
@@ -148,7 +148,7 @@ const OfferingDetail = () => {
       {data.services && (
         <section className="offering-section">
           <div className="offering-container">
-            <h2 className="offering-section-title">Services Included</h2>
+            <h2 className="offering-section-title">{data.servicesHeading || 'Services Included'}</h2>
             <div className="offering-grid-container">
               {data.services.map((service, i) => (
                 <div key={i} className="grid-item">
@@ -168,7 +168,7 @@ const OfferingDetail = () => {
       {data.customizable && (
         <section className="offering-section">
           <div className="offering-container">
-            <h2 className="offering-section-title">What can be Customised</h2>
+            <h2 className="offering-section-title">{data.customizableHeading || 'What can be Customised'}</h2>
             <div className="offering-grid-container">
               {data.customizable.map((item, i) => (
                 <div key={i} className="grid-item">
@@ -188,7 +188,7 @@ const OfferingDetail = () => {
       {data.renovatable && (
         <section className="offering-section">
           <div className="offering-container">
-            <h2 className="offering-section-title">What can be Renovated</h2>
+            <h2 className="offering-section-title">{data.renovatableHeading || 'What can be Renovated'}</h2>
             <div className="offering-grid-container">
               {data.renovatable.map((item, i) => (
                 <div key={i} className="grid-item">
@@ -208,7 +208,7 @@ const OfferingDetail = () => {
       {data.process && (
         <section className="offering-section dark">
           <div className="offering-container">
-            <h2 className="offering-section-title">Our Process</h2>
+            <h2 className="offering-section-title">{data.processHeading || 'Our Process'}</h2>
             <div className="offering-grid-container">
               {data.process.map((p, i) => (
                 <div key={i} className="grid-item">
