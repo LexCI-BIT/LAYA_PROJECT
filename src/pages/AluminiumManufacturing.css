@@ -134,8 +134,7 @@
   flex-wrap: wrap;
 }
 
-.aluminium-primary-cta,
-.aluminium-secondary-cta {
+.aluminium-primary-cta {
   display: inline-flex;
   align-items: center;
   gap: 12px;
@@ -155,17 +154,6 @@
 .aluminium-primary-cta:hover {
   background: #f2d6a3;
   transform: translateY(-2px);
-}
-
-.aluminium-secondary-cta {
-  color: #fff;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-  padding: 12px 0;
-}
-
-.aluminium-secondary-cta:hover {
-  color: #e5bd78;
-  border-color: #e5bd78;
 }
 
 /* Bottom-right caption */
@@ -307,9 +295,6 @@
     font-size: 0.72rem;
   }
 
-  .aluminium-secondary-cta {
-    font-size: 0.72rem;
-  }
 }
 
 .aluminium-page-sections .mfg-why {

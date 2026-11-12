@@ -74,9 +74,6 @@ const HowItWorks = () => {
                         </div>
                     ))}
                 </div>
-                <div className="how-it-works-footer">
-                    <button className="learn-more-btn">Learn More</button>
-                </div>
             </div>
         </section>
     );

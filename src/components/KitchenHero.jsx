@@ -91,7 +91,6 @@ const KitchenHero = ({ data }) => {
         <div className={`wd-final ${done ? 'is-active' : ''}`} aria-hidden={!done}>
           <h2 className="wd-final-title">From bare walls to a finished kitchen.</h2>
           <p className="wd-final-sub">{PIECES.map((piece) => piece.label).join(' · ')}</p>
-          <button className="reno-card-cta" onClick={openModal} tabIndex={done ? 0 : -1}>Design Your Interior</button>
         </div>
 
         <div className={`wd-scroll-hint ${done ? 'is-hidden' : ''}`} aria-hidden="true">

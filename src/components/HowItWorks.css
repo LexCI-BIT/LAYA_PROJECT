@@ -111,42 +111,6 @@
   text-align: center;
 }
 
-.how-it-works-footer {
-  margin-top: 5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.learn-more-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  color: #5c4828;
-  border: 1px solid #9f824b;
-  padding: 1rem 2.5rem;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.78rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-decoration: none;
-  cursor: pointer;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease,
-    border-color 0.3s ease,
-    transform 0.3s ease;
-}
-
-.learn-more-btn:hover {
-  background-color: #b69a62;
-  color: #ffffff;
-  border-color: #b69a62;
-  transform: translateY(-2px);
-}
-
 .how-step-connector {
   position: absolute;
   top: 40px;
@@ -241,9 +205,6 @@
     font-size: 0.88rem;
   }
 
-  .how-it-works-footer {
-    margin-top: 3.5rem;
-  }
 }
 
 @media (max-width: 480px) {
@@ -280,17 +241,11 @@
     line-height: 1.75;
   }
 
-  .learn-more-btn {
-    padding: 0.9rem 1.5rem;
-    font-size: 0.7rem;
-    letter-spacing: 1.5px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .how-step-icon,
-  .how-step-title,
-  .learn-more-btn {
+  .how-step-title {
     transition: none;
   }
 }

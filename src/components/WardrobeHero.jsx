@@ -79,7 +79,6 @@ const WardrobeHero = ({ data }) => {
         <div className={`wd-final ${done ? 'is-active' : ''}`} aria-hidden={!done}>
           <h2 className="wd-final-title">Everything in its place.</h2>
           <p className="wd-final-sub">LED-lit shelving · Hanging rails · Pull-out accessory trays · Shoe racks</p>
-          <button className="reno-card-cta" onClick={openModal} tabIndex={done ? 0 : -1}>Design Your Wardrobe</button>
         </div>
 
         <div className={`wd-scroll-hint ${done ? 'is-hidden' : ''}`} aria-hidden="true">
