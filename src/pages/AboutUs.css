@@ -655,6 +655,15 @@
 /* =========================================================
    SMALL MOBILE  (max-width: 480px)
    ========================================================= */
+/* Phones get the 1000px copy of the hero photo */
+@media (max-width: 600px) {
+  .about-hero {
+    background:
+      linear-gradient(180deg, rgba(8, 10, 11, 0.42) 0%, rgba(8, 10, 11, 0.52) 48%, rgba(8, 10, 11, 0.72) 100%),
+      url('/images/about/hero-sm.webp') center center / cover no-repeat;
+  }
+}
+
 @media (max-width: 480px) {
   .about-page .container { width: calc(100% - 36px); }
 

@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Pause, Play } from 'lucide-react';
 import { useModal } from '../context/ModalContext';
+import { responsiveImage } from '../utils/responsiveImage';
 import './Hero.css';
 
 const SHOTS = [
@@ -73,14 +74,16 @@ const Hero = () => {
           >
             {/* Soft blurred copy fills the frame behind the full photo on phones/tablets */}
             <img
-              src={s.image}
+              {...responsiveImage(s.image)}
+              sizes="100vw"
               alt=""
               className="hero-slide-backdrop"
               aria-hidden="true"
               decoding="async"
             />
             <img
-              src={s.image}
+              {...responsiveImage(s.image)}
+              sizes="100vw"
               alt=""
               className="hero-slide-photo"
               fetchPriority={i === 0 ? 'high' : 'auto'}

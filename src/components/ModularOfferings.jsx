@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { responsiveImage } from '../utils/responsiveImage';
 import './ModularOfferings.css';
 import { Link } from "react-router-dom";
 
@@ -78,7 +79,7 @@ export default function LatestOfferings() {
             >
               <div className="offering-media">
                 <div className="offering-image-wrap">
-                  <img src={offering.image} alt={offering.title} />
+                  <img {...responsiveImage(offering.image)} sizes="(max-width: 600px) 100vw, 400px" alt={offering.title} />
                 </div>
               </div>
 

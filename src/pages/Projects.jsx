@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { projectsData } from '../data/projectsData';
+import { responsiveImage } from '../utils/responsiveImage';
 import './Projects.css';
 
 const Projects = () => {
@@ -44,7 +45,7 @@ const Projects = () => {
             {filteredProjects.map((project) => (
               <article key={project.id} className="project-detail-card">
                 <div className="project-card-image-wrapper">
-                  <img src={project.image} alt={`${project.title}: ${project.shortDesc}`} className="project-card-img" />
+                  <img {...responsiveImage(project.image)} sizes="(max-width: 600px) 100vw, 400px" alt={`${project.title}: ${project.shortDesc}`} className="project-card-img" />
                 </div>
                 <div className="project-card-content">
                   <span className="project-card-tag">{project.category}</span>
