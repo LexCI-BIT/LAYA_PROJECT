@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { useModal } from '../context/ModalContext';
+import { responsiveImage } from '../utils/responsiveImage';
 import './ManufacturingUnit.css';
 
 
@@ -122,7 +123,8 @@ const ManufacturingUnit = ({
               <div className="mfg-3d-object">
                 <img
                   className="mfg-intro-main mfg-3d-image"
-                  src="/images/manufacturing/aluminium-manufacturing1.webp"
+                  {...responsiveImage('/images/manufacturing/aluminium-manufacturing1.webp')}
+                  sizes="(max-width: 600px) 100vw, 560px"
                   alt="Aluminium profiles with metallic liquid splash"
                   loading="eager"
                 />

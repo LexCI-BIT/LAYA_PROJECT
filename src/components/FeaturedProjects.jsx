@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { projectsData } from '../data/projectsData';
+import { responsiveImage } from '../utils/responsiveImage';
 import './FeaturedProjects.css';
 
 const ProjectCard = ({ project, isClone }) => (
     // The cloned set only exists to make the loop seamless, so hide it from screen readers
     <div className="project-card" aria-hidden={isClone || undefined}>
         <div className="project-image">
-            <img src={project.image} alt={isClone ? '' : project.title} loading="lazy" />
+            <img {...responsiveImage(project.image)} sizes="(max-width: 600px) 80vw, 420px" alt={isClone ? '' : project.title} loading="lazy" />
         </div>
         <div className="project-info">
             <h3 className="project-card-title">{project.title}</h3>
